@@ -1,0 +1,11 @@
+type: marketplace
+title: "Kotlin Onboarding: Collections and co."
+language: English
+summary: TODO
+vendor:
+  name: JetBrains
+  email: support@jetbrains.com
+  url: https://www.jetbrains.com/
+programming_language: Kotlin
+content:
+- duckShopServer
