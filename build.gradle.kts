@@ -150,7 +150,7 @@ configure(subprojects.filter { server in it.name }) {
     }
 
     dependencies {
-        implementation(project(":common"))
+//        implementation(project(":common"))
         implementation(project(":utils"))
 
         implementation("org.springframework.boot:spring-boot-starter-web")
@@ -158,9 +158,9 @@ configure(subprojects.filter { server in it.name }) {
         implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.14.1")
     }
 
-    tasks.named("processResources") {
-        dependsOn(":$gameName$frontendSuffix:build")
-    }
+//    tasks.named("processResources") {
+//        dependsOn(":$gameName$frontendSuffix:build")
+//    }
 
     sourceSets {
         getByName("main").java.srcDirs("$gameName/src/main/kotlin")
@@ -173,57 +173,57 @@ configure(subprojects.filter { server in it.name }) {
     }
 }
 
-configure(subprojects.filter { frontendSuffix in it.name }) {
-    val projectName = this.name
-    val gameName = projectName.getGameName(frontendSuffix)
-
-    apply {
-        plugin("org.siouan.frontend-jdk11")
-    }
-
-    frontend {
-        nodeDistributionProvided.set(false)
-        nodeVersion.set("16.17.1")
-
-        yarnEnabled.set(true)
-        yarnVersion.set("3.0.0")
-
-        installScript.set("install")
-    }
-
-    val addCommonTypesTask = tasks.register<Exec>("addCommonTypes") {
-        outputs.upToDateWhen { false }
-        workingDir = projectDir
-        commandLine("yarn", "remove", "common-types")
-        commandLine("yarn", "add", "common-types@file:$rootDir/common/build/libs/common-types")
-    }
-    addCommonTypesTask {
-        mustRunAfter(":common:build")
-    }
-
-    val yarnRunBuildTask = tasks.register<Exec>("yarnRunBuildTask") {
-        commandLine("yarn", "run", "build")
-    }
-
-    val serveResourcesTask = tasks.register("serveResources") {
-        dependsOn(yarnRunBuildTask)
-        val serverResources = rootProject.subprojects
-            .filter { gameName in it.name && server in it.name }
-            // the project name looks like: gameName-moduleName
-            .map { "$rootDir/$gameName$server/${it.name.split('-').last()}/src/main/resources/static/" }
-        val staticFolder = "$rootDir/$gameName$frontendSuffix/build"
-        doLast {
-            serverResources.forEach { resourcesPath ->
-                rootProject.delete(resourcesPath)
-                copy {
-                    from(staticFolder)
-                    into(resourcesPath)
-                }
-            }
-        }
-    }
-
-    serveResourcesTask {
-        mustRunAfter(":$gameName$frontendSuffix:${yarnRunBuildTask.name}")
-    }
-}
+//configure(subprojects.filter { frontendSuffix in it.name }) {
+//    val projectName = this.name
+//    val gameName = projectName.getGameName(frontendSuffix)
+//
+//    apply {
+//        plugin("org.siouan.frontend-jdk11")
+//    }
+//
+//    frontend {
+//        nodeDistributionProvided.set(false)
+//        nodeVersion.set("16.17.1")
+//
+//        yarnEnabled.set(true)
+//        yarnVersion.set("3.0.0")
+//
+//        installScript.set("install")
+//    }
+//
+//    val addCommonTypesTask = tasks.register<Exec>("addCommonTypes") {
+//        outputs.upToDateWhen { false }
+//        workingDir = projectDir
+//        commandLine("yarn", "remove", "common-types")
+//        commandLine("yarn", "add", "common-types@file:$rootDir/common/build/libs/common-types")
+//    }
+//    addCommonTypesTask {
+//        mustRunAfter(":common:build")
+//    }
+//
+//    val yarnRunBuildTask = tasks.register<Exec>("yarnRunBuildTask") {
+//        commandLine("yarn", "run", "build")
+//    }
+//
+//    val serveResourcesTask = tasks.register("serveResources") {
+//        dependsOn(yarnRunBuildTask)
+//        val serverResources = rootProject.subprojects
+//            .filter { gameName in it.name && server in it.name }
+//            // the project name looks like: gameName-moduleName
+//            .map { "$rootDir/$gameName$server/${it.name.split('-').last()}/src/main/resources/static/" }
+//        val staticFolder = "$rootDir/$gameName$frontendSuffix/build"
+//        doLast {
+//            serverResources.forEach { resourcesPath ->
+//                rootProject.delete(resourcesPath)
+//                copy {
+//                    from(staticFolder)
+//                    into(resourcesPath)
+//                }
+//            }
+//        }
+//    }
+//
+//    serveResourcesTask {
+//        mustRunAfter(":$gameName$frontendSuffix:${yarnRunBuildTask.name}")
+//    }
+//}

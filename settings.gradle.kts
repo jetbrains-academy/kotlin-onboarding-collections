@@ -1,4 +1,4 @@
-rootProject.name = "CSC_Kotlin_Course_Part2"
+rootProject.name = "CSC_Kotlin_Course_Part3"
 
 pluginManagement {
     repositories {
