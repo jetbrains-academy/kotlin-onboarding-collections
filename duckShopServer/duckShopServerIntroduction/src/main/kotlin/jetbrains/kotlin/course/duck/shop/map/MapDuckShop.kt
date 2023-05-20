@@ -12,8 +12,7 @@ class MapDuckShop(ducksNumber: Int) {
         do {
             val duck = DuckModel.generateDuck()
             if (duck !in generatedDucks.keys) {
-                // TODO: Generate random number
-                generatedDucks[duck] = GameSettings.MAX_DUCK_PRICE
+                generatedDucks[duck] = (100..GameSettings.MAX_DUCK_PRICE).random()
             }
         } while (generatedDucks.size < ducksNumber)
         return generatedDucks

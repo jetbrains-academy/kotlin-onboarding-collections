@@ -6,7 +6,7 @@ enum class DuckColor {
     ;
 }
 
-enum class DuckAccessuare {
+enum class DuckAccessory {
     Hat,
     TShirt,
     ;
@@ -15,13 +15,13 @@ enum class DuckAccessuare {
 // TODO: add more attributes
 data class DuckModel(
     val color: DuckColor,
-    val accessuares: Set<DuckAccessuare>
+    val accessories: Set<DuckAccessory>
 ) {
     companion object {
         // TODO: generate random number of accessuares
         fun generateDuck() = DuckModel(
             color = DuckColor.values().random(),
-            accessuares = DuckAccessuare.values().toMutableList().shuffled().take((DuckAccessuare.values().size)).toSet()
+            accessories = DuckAccessory.values().toMutableList().shuffled().take((DuckAccessory.values().size)).toSet()
         )
     }
 }

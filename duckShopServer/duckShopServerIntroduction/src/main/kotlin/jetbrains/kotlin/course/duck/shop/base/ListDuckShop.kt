@@ -8,5 +8,5 @@ class ListDuckShop(ducksNumber: Int) : ListOrSetDuckShop() {
 
     fun sortByColor() = ducks.sortBy { it.color }
 
-    fun sortByAccessuaresCount() = ducks.sortBy { it.accessuares.size }
+    fun sortByAccessoriesCount() = ducks.sortBy { it.accessories.size }
 }

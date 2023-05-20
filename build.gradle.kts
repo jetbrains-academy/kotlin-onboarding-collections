@@ -150,7 +150,7 @@ configure(subprojects.filter { server in it.name }) {
     }
 
     dependencies {
-//        implementation(project(":common"))
+        implementation(project(":common"))
         implementation(project(":utils"))
 
         implementation("org.springframework.boot:spring-boot-starter-web")

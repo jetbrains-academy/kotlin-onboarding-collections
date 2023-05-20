@@ -1,6 +1,6 @@
 package jetbrains.kotlin.course.duck.shop.base
 
-import jetbrains.kotlin.course.duck.shop.duck.DuckAccessuare
+import jetbrains.kotlin.course.duck.shop.duck.DuckAccessory
 import jetbrains.kotlin.course.duck.shop.duck.DuckColor
 import jetbrains.kotlin.course.duck.shop.duck.DuckModel
 import jetbrains.kotlin.course.duck.shop.util.GameSettings
@@ -21,12 +21,12 @@ abstract class ListOrSetDuckShop {
 
     fun removeDuckByColor(color: DuckColor) = ducks.removeIf { it.color == color }
 
-    fun filterByAccessuare(accessuare: DuckAccessuare) = ducks.filter { accessuare in it.accessuares }
+    fun filterByAccessory(accessory: DuckAccessory) = ducks.filter { accessory in it.accessories }
 
     fun shuffle() = ducks.shuffled()
 
-    fun countDucksByColorAndAccessuare(color: DuckColor, accessuare: DuckAccessuare): Int = run {
-        val (with, _) = ducks.partition { it.color == color && accessuare in it.accessuares }
+    fun countDucksByColorAndAccessory(color: DuckColor, accessory: DuckAccessory): Int = run {
+        val (with, _) = ducks.partition { it.color == color && accessory in it.accessories }
         with.size
     }
 }
