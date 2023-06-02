@@ -4,3 +4,11 @@ files:
   visible: false
 - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/OldSchoolApplication.kt
   visible: true
+- name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/mode/GameModeModel.kt
+  visible: true
+- name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/photo/PhotoCharacter.kt
+  visible: true
+- name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/mode/GameModeService.kt
+  visible: true
+- name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/mode/GameModeResource.kt
+  visible: true

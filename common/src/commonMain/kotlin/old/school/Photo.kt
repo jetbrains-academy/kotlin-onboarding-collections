@@ -7,7 +7,7 @@ import kotlin.js.JsExport
 
 @OptIn(ExperimentalJsExport::class)
 @JsExport
-data class JsFrame(
-    val id: Int,
-    val title: String,
+data class JsPhoto(
+    val name: String,
+    val description: String? = null,
 )
