@@ -91,9 +91,14 @@
   margin-bottom: 1vmin;
 }
 
-.App-teams-button-back {
+.App-button-back {
   background-image: url('assets/back_button.svg');
   background-size: contain;
+  width: 20vmin;
+  height: 5vmin;
+  position: absolute;
+  top: 1vmin;
+  right: 5vmin;
 }
 
 .App-container {
@@ -105,3 +110,139 @@
 }
 
 /****************BASE***************/
+
+.App-button-collection {
+  background-size: contain;
+  width: 15vmin;
+  height: 5vmin;
+}
+
+.App-button-list {
+  background-image: url('assets/list_button.svg');
+}
+
+.App-button-set {
+  background-image: url('assets/set_button.svg');
+}
+
+.App-button-map {
+  background-image: url('assets/map_button.svg');
+}
+
+.App-photo-album-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-photo-purple-bg {
+  height: 31vmin;
+  width: 40vmin;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url('assets/photo_purple_bg.svg');
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.App-photo-purple-bg-left {
+  margin-left: -1vmin;
+  justify-content: right;
+}
+
+.App-photo-purple-bg-right {
+  margin-left: -1vmin;
+  justify-content: left;
+}
+
+.App-photo-purple-separator {
+  height: 31vmin;
+  width: 4vmin;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url('assets/photo_purple_separator.svg');
+}
+
+.App-photo-white-bg {
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 27vmin;
+  width: 36vmin;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.App-photo-white-bg-left {
+  background-image: url('assets/photo_white_bg_left.svg');
+}
+
+.App-photo-white-bg-right {
+  background-image: url('assets/photo_white_bg_right.svg');
+}
+
+.App-photo-gray-bg {
+  background-image: url('assets/photo_gray_bg.svg');
+  height: 17vmin;
+  width: 15vmin;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 1vmin;
+  margin-left: 1vmin;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.App-photo-image {
+  height: 13vmin;
+  width: 12.5vmin;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-bottom: 2vmin;
+  margin-right: 0.5vmin;
+}
+
+.App-photo-image-olivia {
+  background-image: url('assets/images/olivia.svg');
+}
+
+.App-photo-image-emily {
+  background-image: url('assets/images/emily.svg');
+}
+
+.App-photo-image-emma {
+  background-image: url('assets/images/emma.svg');
+}
+
+.App-photo-image-charlotte {
+  background-image: url('assets/images/charlotte.svg');
+}
+
+.App-photo-image-henry {
+  background-image: url('assets/images/henry.svg');
+}
+
+.App-photo-image-daniel {
+  background-image: url('assets/images/daniel.svg');
+}
+
+.App-photo-image-noah {
+  background-image: url('assets/images/noah.svg');
+}
+
+.App-photo-image-david {
+  background-image: url('assets/images/david.svg');
+}
+
+.App-photo-description {
+  color: black;
+  font-size: 20px;
+  text-align: center;
+  margin-top: -1.7vmin;
+}
