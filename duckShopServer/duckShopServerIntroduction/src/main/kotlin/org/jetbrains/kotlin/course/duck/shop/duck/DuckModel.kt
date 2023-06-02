@@ -1,3 +1,5 @@
+@file:Suppress("ForbiddenComment")
+
 package org.jetbrains.kotlin.course.duck.shop.duck
 
 enum class DuckColor {
