@@ -1,0 +1,107 @@
+/****************BASE***************/
+
+.font-link-base {
+  font-family: 'Inter', sans-serif;
+  color: black;
+}
+
+.font-link-bold {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+}
+
+.font-link-light {
+  font-family: 'Inter', sans-serif;
+  font-weight: 200;
+}
+
+.App-logo {
+  height: 20vmin;
+  pointer-events: none;
+}
+
+.App-big-name {
+  font-size: 10vmin;
+  margin-top: 2vmin;
+  margin-bottom: 2vmin;
+}
+
+.App-small-name {
+  font-size: 4vmin;
+  margin-top: 0;
+  margin-bottom: 2vmin;
+  color: white;
+}
+
+.App-header-base {
+  font-size: calc(10px + 2vmin);
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.App-header-white {
+  background-image: url('assets/bg_white.svg');
+}
+
+.App-header-black {
+  background-image: url('assets/bg.svg');
+}
+
+.App-main-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-buttons-container {
+  min-height: 10vmin;
+  display: block;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-display-flex {
+  display: flex;
+}
+
+.App-button-base {
+  height: 10vmin;
+  margin-top: 5vmin;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-color: transparent;
+  border: none;
+  background-position: center;
+  cursor:pointer;
+  color: white;
+  font-size: 100%;
+  font-family: 'Inter', sans-serif;
+}
+
+.App-button-start {
+  background-image: url('assets/play_button.svg');
+  width: 30vmin;
+  height: 6vmin;
+  margin-top: 4vmin;
+  background-size: contain;
+  margin-bottom: 1vmin;
+}
+
+.App-teams-button-back {
+  background-image: url('assets/back_button.svg');
+  background-size: contain;
+}
+
+.App-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+}
+
+/****************BASE***************/
