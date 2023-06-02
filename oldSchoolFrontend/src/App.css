@@ -91,9 +91,14 @@
   margin-bottom: 1vmin;
 }
 
-.App-teams-button-back {
+.App-button-back {
   background-image: url('assets/back_button.svg');
   background-size: contain;
+  width: 20vmin;
+  height: 5vmin;
+  position: absolute;
+  top: 1vmin;
+  right: 5vmin;
 }
 
 .App-container {
