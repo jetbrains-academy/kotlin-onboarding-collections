@@ -9,3 +9,4 @@ vendor:
 programming_language: Kotlin
 content:
 - duckShopServer
+- oldSchoolServer
