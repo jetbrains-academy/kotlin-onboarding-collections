@@ -4,8 +4,6 @@ files:
   visible: false
 - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/OldSchoolApplication.kt
   visible: true
-- name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/mode/GameModeModel.kt
-  visible: true
 - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/photo/PhotoCharacter.kt
   visible: true
 - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/mode/GameModeService.kt
@@ -16,3 +14,15 @@ files:
   visible: true
 - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/functions/GameFunctionsResource.kt
   visible: true
+- name: test/HairTypeTestClass.kt
+  visible: false
+- name: test/ColorTestClass.kt
+  visible: false
+- name: test/AccessoryTestClass.kt
+  visible: false
+- name: test/GameModeServiceTestClass.kt
+  visible: false
+- name: test/PhotoCharacterTestClass.kt
+  visible: false
+- name: test/GameFunctionsServiceTestClass.kt
+  visible: false
