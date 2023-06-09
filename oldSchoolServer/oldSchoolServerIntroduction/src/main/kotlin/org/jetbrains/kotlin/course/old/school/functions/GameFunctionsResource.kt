@@ -21,4 +21,10 @@ class GameFunctionsResource(val service: GameFunctionsService) {
     fun findPhoto(@RequestBody body: Body): String? = with(service) {
         body.names.findPhoto(body.color)?.name?.lowercase()
     }
+
+    @CrossOrigin
+    @PostMapping("/groupByByColor")
+    fun groupByPhotosByColor(@RequestBody names: List<String>): List<String> = with(service) {
+        names.groupByPhotosByColor().map { it.name }
+    }
 }

@@ -59,25 +59,41 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
     function findPhoto(color: String) {
         if (color === defaultOption || color == "") {
             indexToHighLightSetter(-1)
-            return
         } else {
             axios.post("/functions/find", {
                 "names": photos.map((photo) => photo.name),
                 "color": color
             }, {headers: {'Content-Type': 'application/json'}})
                 .then((response) => {
-                    for (let index in photos) {
-                        if (photos[index].name.toLowerCase() === response.data) {
-                            indexToHighLightSetter(+index)
-                            break
+                    function updateIndex() {
+                        for (let index in photos) {
+                            if (photos[index].name.toLowerCase() === response.data) {
+                                indexToHighLightSetter(+index)
+                                return
+                            }
                         }
+                        indexToHighLightSetter(-1)
                     }
+
+                    updateIndex()
                 })
         }
     }
 
     function shouldBeBlocked() {
         return userFunction == possibleOptions[0]
+    }
+
+    function groupByAction(type: String) {
+        if (type == defaultOption || type == "") {
+            return
+        }
+        if (type == "background color") {
+            axios.post("/functions/groupByByColor", photos.map((photo) => photo.name), {headers: {'Content-Type': 'application/json'}})
+                .then((response) => {
+                    console.log(response.data)
+                })
+        }
     }
 
     return (
@@ -119,7 +135,7 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
                                     findPhoto(e.target.value.toString())
                                 }}
                         >
-                            <option value="">{defaultOption}</option>
+                            <option value={defaultOption}>{defaultOption}</option>
                             {
                                 possibleColors.map( (color) =>
                                     <option key={color}>{color}</option> )
@@ -130,11 +146,15 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
                         <select name="actions-dropdown-group-by"
                                 id="conditions-group-by"
                                 value = {selectedGroupByMethod}
-                                onChange={(e) => selectedGroupByMethodSetter(e.target.value.toString())}
+                                onChange={(e) => {
+                                    console.log(e.target.value.toString())
+                                    selectedGroupByMethodSetter(e.target.value.toString())
+                                    groupByAction(e.target.value.toString())
+                                }}
                         >
-                            <option value="">{defaultOption}</option>
-                            <option value="">background color</option>
-                            <option value="">accessories</option>
+                            <option value={defaultOption}>{defaultOption}</option>
+                            <option value="background color">background color</option>
+                            <option value="accessories">accessories</option>
                         </select>
                     </div>
                 </div> : <div className="App-base-text">

@@ -216,8 +216,8 @@
   flex-direction: column;
 }
 
-.App-photo-gray-bg-highlighted {
-  background-image: url('assets/photo_gray_bg_highlighted.svg');
+.App-photo-gray-bg-grayscale {
+  filter: grayscale(100);
 }
 
 .App-photo-image {
