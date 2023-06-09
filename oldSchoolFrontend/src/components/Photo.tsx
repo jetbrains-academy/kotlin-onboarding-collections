@@ -6,7 +6,9 @@ type PhotoProps = {
 
 export default function Photo({photoInfo}: PhotoProps) {
     const baseClasses = "App-photo-image "
-    return (<div className="App-photo-gray-bg">
+
+    const baseClassesForBg = "App-photo-gray-bg "
+    return (<div className={photoInfo.shouldBeHighlighted ? baseClassesForBg + "App-photo-gray-bg-highlighted" : baseClassesForBg}>
         {
             <div className={photoInfo.imageClass == null ? baseClasses : baseClasses + photoInfo.imageClass}>
                 <div className="App-photo-image"></div>

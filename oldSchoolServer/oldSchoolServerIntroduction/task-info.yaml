@@ -12,3 +12,7 @@ files:
   visible: true
 - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/mode/GameModeResource.kt
   visible: true
+- name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/functions/GameFunctionsService.kt
+  visible: true
+- name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/functions/GameFunctionsResource.kt
+  visible: true
