@@ -129,6 +129,10 @@
   background-image: url('assets/map_button.svg');
 }
 
+.App-base-text {
+  margin-bottom: 2vmin;
+}
+
 .App-photo-album-container {
   display: flex;
   flex-direction: row;
@@ -210,6 +214,10 @@
   justify-content: center;
   display: flex;
   flex-direction: column;
+}
+
+.App-photo-gray-bg-grayscale {
+  filter: grayscale(100);
 }
 
 .App-photo-image {
@@ -298,4 +306,51 @@
   font-size: 15px;
   text-align: center;
   margin-top: -1.7vmin;
+}
+
+.App-functions-container {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2vmin;
+}
+
+.App-dropdown-container {
+  margin-right: 1vmin;
+}
+
+.App-input-container {
+  margin-left: 1vmin;
+}
+
+select {
+  border-radius: 0;
+  width: 25vmin;
+  height: 3vmin;
+  padding: 0.5vmin;
+  border: 1px solid #bababa;
+  font-size: 1.5vmin;
+
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url('assets/dropdown_arrow.svg');
+  background-repeat: no-repeat, repeat;
+  background-position: right .7em top 50%, 0 0;
+  background-size: .65em auto, 100%;
+}
+
+/* For IE (thanks to @SaiManoj) */
+select::-ms-expand {
+  display: none;
+}
+
+.App-not-clickable {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.App-display-none {
+  display: none;
 }
