@@ -9,8 +9,8 @@ type MainActionsScreenProps = {
     gameStateSetter: (gs: GameState) => void
 }
 
-const possibleOptions = ["Select function", "find", "groupBy"]
-const defaultOption = "Select condition"
+const possibleOptions = ["Select function", "Find by background color", "Group by condition"]
+const defaultOption = "Select option"
 
 export default function MainActionsScreen({gameStateSetter}: MainActionsScreenProps) {
     let [photos, photosSetter] = useState<Array<JsPhoto>>([])
@@ -34,7 +34,11 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
     function initCollectionOfPhotos(url: string) {
         axios.get(url).then(async (response) => {
             photosSetter(response.data as Array<JsPhoto>)
-            console.log(photos)
+
+            userFunctionSetter(possibleOptions[0])
+            selectedColorSetter(defaultOption)
+            selectedGroupByMethodSetter(defaultOption)
+            indexToHighLightSetter(-1)
         })
     }
 
@@ -84,15 +88,33 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
         return userFunction == possibleOptions[0]
     }
 
+    function sendGroupByRequest(url: string) {
+        axios.post(url, photos.map((photo) => photo.name), {headers: {'Content-Type': 'application/json'}})
+            .then((response) => {
+                let grouped = (response.data as Array<string>).filter(function(elem, index, self) {
+                    return index === self.indexOf(elem);
+                })
+                let sorted: Array<JsPhoto> = []
+                grouped.forEach(k => {
+                    let n = photos.filter(obj => {
+                        return obj.name === k
+                    })
+                    if (n.length > 0) {
+                        n.forEach(item => sorted.push(item))
+                    }
+                })
+                photosSetter(sorted)
+            })
+    }
+
     function groupByAction(type: String) {
         if (type == defaultOption || type == "") {
             return
         }
         if (type == "background color") {
-            axios.post("/functions/groupByByColor", photos.map((photo) => photo.name), {headers: {'Content-Type': 'application/json'}})
-                .then((response) => {
-                    console.log(response.data)
-                })
+            sendGroupByRequest("/functions/groupByByColor")
+        } else if (type == "hair type and hat") {
+            sendGroupByRequest("/functions/groupByPhotosByHairAndHat")
         }
     }
 
@@ -131,14 +153,14 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
                                 id="conditions-find"
                                 value = {selectedColor}
                                 onChange={(e) => {
-                                    selectedColorSetter(e.target.value.toString())
                                     findPhoto(e.target.value.toString())
+                                    selectedColorSetter(e.target.value.toString())
                                 }}
                         >
-                            <option value={defaultOption}>{defaultOption}</option>
+                            <option value={defaultOption}>Select color</option>
                             {
                                 possibleColors.map( (color) =>
-                                    <option key={color}>{color}</option> )
+                                    <option key={color} value={color}>{color}</option> )
                             }
                         </select>
                     </div>
@@ -147,14 +169,13 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
                                 id="conditions-group-by"
                                 value = {selectedGroupByMethod}
                                 onChange={(e) => {
-                                    console.log(e.target.value.toString())
-                                    selectedGroupByMethodSetter(e.target.value.toString())
                                     groupByAction(e.target.value.toString())
+                                    selectedGroupByMethodSetter(e.target.value.toString())
                                 }}
                         >
-                            <option value={defaultOption}>{defaultOption}</option>
+                            <option value={defaultOption}>Select condition</option>
                             <option value="background color">background color</option>
-                            <option value="accessories">accessories</option>
+                            <option value="hair type and hat">hair type and hat</option>
                         </select>
                     </div>
                 </div> : <div className="App-base-text">

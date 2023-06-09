@@ -27,4 +27,10 @@ class GameFunctionsResource(val service: GameFunctionsService) {
     fun groupByPhotosByColor(@RequestBody names: List<String>): List<String> = with(service) {
         names.groupByPhotosByColor().map { it.name }
     }
+
+    @CrossOrigin
+    @PostMapping("/groupByPhotosByHairAndHat")
+    fun groupByPhotosByHairAndHat(@RequestBody names: List<String>): List<String> = with(service) {
+        names.groupByPhotosByHairAndHat().map { it.name }
+    }
 }
