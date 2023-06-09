@@ -5,9 +5,20 @@ enum class PhotoCharacter {
     Emily,
     Emma,
     Charlotte,
+    Diana,
+    Alice,
+    Helena,
+    Evie,
+
     Henry,
     Daniel,
     Noah,
-    David
+    David,
+    Leo,
+    Jamie,
+    Larry,
+    Thomas,
+    Oliver,
+    Edward
     ;
 }

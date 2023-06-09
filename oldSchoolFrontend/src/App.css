@@ -137,8 +137,8 @@
 }
 
 .App-photo-purple-bg {
-  height: 31vmin;
-  width: 40vmin;
+  height: 34vmin;
+  width: 42vmin;
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url('assets/photo_purple_bg.svg');
@@ -149,17 +149,17 @@
 }
 
 .App-photo-purple-bg-left {
-  margin-left: -1vmin;
   justify-content: right;
+  margin-right: -0.5vmin;
 }
 
 .App-photo-purple-bg-right {
-  margin-left: -1vmin;
   justify-content: left;
+  margin-left: -0.5vmin;
 }
 
 .App-photo-purple-separator {
-  height: 31vmin;
+  height: 34vmin;
   width: 4vmin;
   background-repeat: no-repeat;
   background-size: contain;
@@ -169,12 +169,8 @@
 .App-photo-white-bg {
   background-repeat: no-repeat;
   background-size: contain;
-  height: 27vmin;
-  width: 36vmin;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: row;
+  height: 32vmin;
+  width: 39vmin;
 }
 
 .App-photo-white-bg-left {
@@ -185,10 +181,27 @@
   background-image: url('assets/photo_white_bg_right.svg');
 }
 
+.App-photo-row {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.App-photo-row-top {
+  padding-top: 3vmin;
+  padding-bottom: 0.5vmin;
+}
+
+.App-photo-row-bottom {
+  padding-top: 0.5vmin;
+  padding-bottom: 2vmin;
+}
+
 .App-photo-gray-bg {
   background-image: url('assets/photo_gray_bg.svg');
-  height: 17vmin;
-  width: 15vmin;
+  height: 13vmin;
+  width: 10vmin;
   background-repeat: no-repeat;
   background-size: contain;
   margin-right: 1vmin;
@@ -200,12 +213,16 @@
 }
 
 .App-photo-image {
-  height: 13vmin;
-  width: 12.5vmin;
+  height: 8vmin;
+  width: 8vmin;
   background-repeat: no-repeat;
   background-size: contain;
   margin-bottom: 2vmin;
-  margin-right: 0.5vmin;
+  margin-right: 0;
+}
+
+.App-photo-image-alice {
+  background-image: url('assets/images/alice.svg');
 }
 
 .App-photo-image-olivia {
@@ -222,6 +239,42 @@
 
 .App-photo-image-charlotte {
   background-image: url('assets/images/charlotte.svg');
+}
+
+.App-photo-image-diana {
+  background-image: url('assets/images/diana.svg');
+}
+
+.App-photo-image-edward {
+  background-image: url('assets/images/edward.svg');
+}
+
+.App-photo-image-evie {
+  background-image: url('assets/images/evie.svg');
+}
+
+.App-photo-image-helena {
+  background-image: url('assets/images/helena.svg');
+}
+
+.App-photo-image-jamie {
+  background-image: url('assets/images/jamie.svg');
+}
+
+.App-photo-image-larry {
+  background-image: url('assets/images/larry.svg');
+}
+
+.App-photo-image-leo {
+  background-image: url('assets/images/leo.svg');
+}
+
+.App-photo-image-oliver {
+  background-image: url('assets/images/oliver.svg');
+}
+
+.App-photo-image-thomas {
+  background-image: url('assets/images/thomas.svg');
 }
 
 .App-photo-image-henry {
@@ -242,7 +295,7 @@
 
 .App-photo-description {
   color: black;
-  font-size: 20px;
+  font-size: 15px;
   text-align: center;
   margin-top: -1.7vmin;
 }
