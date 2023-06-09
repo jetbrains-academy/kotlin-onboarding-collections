@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service
 @Service
 class GameModeService {
     companion object {
-        const val MAX_NUMBER_OF_PHOTOS = 4
+        const val MAX_NUMBER_OF_PHOTOS = 12
     }
     private fun generateRandomCharacter() = PhotoCharacter.values().random()
 
