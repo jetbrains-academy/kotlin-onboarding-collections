@@ -4,7 +4,7 @@ Tasks:
 + Implement generateRandomCharacter + generateListOfCharacters
 + Implement generateSetOfCharacters
 + Implement generateMapOfCharacters
-- Implement getAllPossibleColors
-- Implement toColor, toPhotoCharacters, findPhoto
-- Implement groupByPhotosByColor
-- Implement groupByPhotosByHairAndHat
++ Implement getAllPossibleColors
++ Implement toColor, toPhotoCharacters, findPhoto
++ Implement groupPhotosByColor
++ Implement groupPhotosByHairAndHat
