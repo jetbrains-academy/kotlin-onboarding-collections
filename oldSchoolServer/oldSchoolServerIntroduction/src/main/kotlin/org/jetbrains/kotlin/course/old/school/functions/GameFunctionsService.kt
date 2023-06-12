@@ -19,10 +19,10 @@ class GameFunctionsService {
         return toPhotoCharacters().find { it.backgroundColor == color }
     }
 
-    fun Iterable<String>.groupByPhotosByColor() = toPhotoCharacters()
+    fun Iterable<String>.groupPhotosByColor() = toPhotoCharacters()
         .groupBy { it.backgroundColor }.map { it.value }.flatten()
 
-    fun Iterable<String>.groupByPhotosByHairAndHat() = toPhotoCharacters()
+    fun Iterable<String>.groupPhotosByHairAndHat() = toPhotoCharacters()
         .groupBy { it.hairType }
         .mapValues { it.value.groupBy { character ->
                 character.accessories?.contains(Accessory.Hat) ?: false
