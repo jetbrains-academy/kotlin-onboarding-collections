@@ -175,11 +175,11 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
                         >
                             <option value={defaultOption}>Select condition</option>
                             <option value="background color">background color</option>
-                            <option value="hair type and hat">hair type and hat</option>
+                            <option value="hair type and hat">hair tone and hat</option>
                         </select>
                     </div>
                 </div> : <div className="App-base-text">
-                    <div className="font-link-base">Please, initialize the photos!</div>
+                    <div className="font-link-base">Please initialize the photos!</div>
                 </div>
             }
             <PhotoAlbum photos={photos} indexToHighLight={indexToHighLight}></PhotoAlbum>
