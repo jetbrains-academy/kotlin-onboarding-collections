@@ -69,6 +69,7 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
                 "color": color
             }, {headers: {'Content-Type': 'application/json'}})
                 .then((response) => {
+                    console.log(response)
                     function updateIndex() {
                         for (let index in photos) {
                             if (photos[index].name.toLowerCase() === response.data) {
@@ -77,6 +78,9 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
                             }
                         }
                         indexToHighLightSetter(-1)
+                        if (response.data == '') {
+                            alert("No pictures were found!");
+                        }
                     }
 
                     updateIndex()
@@ -184,9 +188,9 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
             }
             <PhotoAlbum photos={photos} indexToHighLight={indexToHighLight}></PhotoAlbum>
             <div className="App-buttons-container">
-                <button className="App-button-base App-game-button-bottom-base App-button-collection App-button-list" onClick={() => initListOfPhotos()}></button>
-                <button className="App-button-base App-game-button-bottom-base App-button-collection App-button-set" onClick={() => initSetOfPhotos()}></button>
-                <button className="App-button-base App-game-button-bottom-base App-button-collection App-button-map" onClick={() => initMapOfPhotos()}></button>
+                <button className="App-button-base App-button-collection App-button-list" onClick={() => initListOfPhotos()}></button>
+                <button className="App-button-base App-button-collection App-button-set" onClick={() => initSetOfPhotos()}></button>
+                <button className="App-button-base App-button-collection App-button-map" onClick={() => initMapOfPhotos()}></button>
             </div>
         </div>
     );
