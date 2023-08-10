@@ -8,4 +8,5 @@ import kotlin.js.JsExport
 data class JsDuck(
     val name: String,
     val description: String? = null,
+    val hasKotlinAttribute: Boolean = false,
 )

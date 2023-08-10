@@ -123,3 +123,104 @@
 .App-button-map {
   background-image: url('assets/map_button.svg');
 }
+
+.App-ducks-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-ducks-row {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.App-ducks-row-top {
+  padding-top: 3vmin;
+  padding-bottom: 0.5vmin;
+}
+
+.App-ducks-row-bottom {
+  padding-top: 0.5vmin;
+  padding-bottom: 2vmin;
+}
+
+.App-duck-container {
+  background-image: url('assets/duck_box.svg');
+  height: 18vmin;
+  width: 18vmin;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 1vmin;
+  margin-right: 1vmin;
+}
+
+
+.App-duck-image {
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-bottom: 2vmin;
+  margin-right: 0;
+}
+
+.App-duck-image-alex {
+  background-image: url('assets/ducks/alex.svg');
+}
+
+.App-duck-image-daniel {
+  background-image: url('assets/ducks/daniel.svg');
+}
+
+.App-duck-image-dorian {
+  background-image: url('assets/ducks/dorian.svg');
+}
+
+.App-duck-image-jack {
+  background-image: url('assets/ducks/jack.svg');
+}
+
+.App-duck-image-kristian {
+  background-image: url('assets/ducks/kristian.svg');
+}
+
+.App-duck-image-leo {
+  background-image: url('assets/ducks/leo.svg');
+}
+
+.App-duck-image-mrpink {
+  background-image: url('assets/ducks/mr.pink.svg');
+}
+
+.App-duck-image-oliver {
+  background-image: url('assets/ducks/oliver.svg');
+}
+
+.App-duck-image-piter {
+  background-image: url('assets/ducks/piter.svg');
+}
+
+.App-duck-image-vanessa {
+  background-image: url('assets/ducks/vanessa.svg');
+}
+
+
+.App-duck-container-label {
+  background-image: url('assets/duck_label.svg');
+  position: absolute;
+  font-size: 15px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  margin-top: -4.7vmin;
+  margin-left: 0.5vmin;
+  width: 8vmin;
+  text-align: center;
+}
+
+.App-display-none {
+  display: none;
+}

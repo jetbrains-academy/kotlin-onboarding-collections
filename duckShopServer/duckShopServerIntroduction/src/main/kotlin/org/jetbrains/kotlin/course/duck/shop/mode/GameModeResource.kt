@@ -12,15 +12,15 @@ class CardResource(val service: GameModeService) {
     @CrossOrigin
     @GetMapping("/list")
     fun generateListOfCharacters(): List<JsDuck> =
-        service.generateListOfDucks().map { JsDuck(it.customName ?: it.name) }
+        service.generateListOfDucks().map { JsDuck(it.customName ?: it.name, hasKotlinAttribute = it.hasKotlinAttribute) }
 
     @CrossOrigin
     @GetMapping("/set")
     fun generateSetOfCharacters(): List<JsDuck> = service.generateSetOfDucks()
-        .map { JsDuck(it.customName ?: it.name) }
+        .map { JsDuck(it.customName ?: it.name, hasKotlinAttribute = it.hasKotlinAttribute) }
 
     @CrossOrigin
     @GetMapping("/map")
     fun generateMapOfCharacters(): List<JsDuck> = service.generateMapOfDucks()
-        .map { JsDuck(it.key.name, it.value) }
+        .map { JsDuck(it.key.name, it.value, hasKotlinAttribute = it.key.hasKotlinAttribute) }
 }

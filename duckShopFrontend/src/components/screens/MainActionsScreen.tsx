@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 import {duck} from "common-types";
 import JsDuck = duck.shop.JsDuck;
 import axios from "axios";
+import DuckContainer from "../DuckContainer";
 
 type MainActionsScreenProps = {
     gameStateSetter: (gs: GameState) => void
@@ -14,7 +15,6 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
     function initDuckShop(url: string) {
         axios.get(url).then(async (response) => {
             ducksSetter(response.data as Array<JsDuck>)
-            console.log(ducks)
         })
     }
 
@@ -40,8 +40,12 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
                 <button className="App-button-base App-game-button-bottom-base App-button-back" onClick={() => gameStateSetter(GameState.START)}></button>
             </div>
             {
-                wasGameInitialized() ? <div className="App-functions-container">
-                </div> : <div className="App-base-text">
+                wasGameInitialized() ?
+                    <div>
+                        <div className="App-functions-container"></div>
+                        <DuckContainer ducks={ducks}></DuckContainer>
+                    </div>
+                    : <div className="App-base-text">
                     <div className="font-link-base">Please initialize the duck shop!</div>
                 </div>
             }
