@@ -3,3 +3,9 @@ custom_name: Duck Shop - Introduction
 files:
 - name: test/Tests.kt
   visible: false
+- name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/mode/GameModeService.kt
+  visible: true
+- name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/duck/Duck.kt
+  visible: true
+- name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/mode/GameModeResource.kt
+  visible: true

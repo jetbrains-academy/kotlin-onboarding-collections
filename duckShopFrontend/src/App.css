@@ -105,3 +105,21 @@
 }
 
 /****************BASE***************/
+
+.App-button-collection {
+  background-size: contain;
+  width: 15vmin;
+  height: 5vmin;
+}
+
+.App-button-list {
+  background-image: url('assets/list_button.svg');
+}
+
+.App-button-set {
+  background-image: url('assets/set_button.svg');
+}
+
+.App-button-map {
+  background-image: url('assets/map_button.svg');
+}
