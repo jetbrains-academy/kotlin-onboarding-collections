@@ -83,7 +83,7 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
         sendActionRequest("sort", (response) => {
             ducksSetter(response.data as Array<JsDuck>)
             pressedFunctionSetter("")
-            infoTextSetter("Ducks have been sorted \naccording to the price of stuff!")
+            infoTextSetter("Ducks have been sorted \naccording to the price of the stuff!")
         })
     }
 
@@ -94,11 +94,11 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
                 return
             }
             if (result[0].length == 0) {
-                alert("Sorry, ducks with Kotlin stuff were not found!")
+                alert("Sorry, ducks with Kotlin stuff haven’t been found!")
             } else {
                 ducksSetter(result.reduce((accumulator, value) => accumulator.concat(value), []))
                 pressedFunctionSetter(PARTITION_FUNCTION)
-                infoTextSetter("The ducks with Kotlin stuff were moved \ninto the beginning of the collection!")
+                infoTextSetter("Ducks with Kotlin stuff have been moved \nto the beginning of the collection!")
             }
         })
     }
@@ -111,7 +111,7 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
             } else {
                 ducksSetter(response.data as Array<JsDuck>)
                 pressedFunctionSetter("")
-                infoTextSetter("Only ducks with Kotlin \nstuff were left!")
+                infoTextSetter("Only ducks with Kotlin \nstuff have been left!")
             }
         })
     }
