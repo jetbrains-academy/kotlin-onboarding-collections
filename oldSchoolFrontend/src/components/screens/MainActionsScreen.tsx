@@ -90,7 +90,8 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
                         for (let index in photos) {
                             if (photos[index].name.toLowerCase() === response.data) {
                                 indexToHighLightSetter(+index)
-                                infoTextSetter("Only the first photo with " + color + "\nbackground color has been found!")
+                                let article = color == "orange" ? "an" : "a"
+                                infoTextSetter("Only the first photo with " + article + " " + color + "\nbackground color has been found!")
                                 return
                             }
                         }
@@ -136,10 +137,10 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
         }
         if (type == "background color") {
             sendGroupByRequest("/functions/groupByByColor")
-            infoTextSetter("Photos with the same background color\nwere grouped.")
+            infoTextSetter("Photos have been grouped according to\nthe background color.")
         } else if (type == "hair type and hat") {
             sendGroupByRequest("/functions/groupByPhotosByHairAndHat")
-            infoTextSetter("Photos with the same hair tone (dark or light) were grouped.\nInside each group photos were grouped by a hat presence.")
+            infoTextSetter("Photos have been grouped according to the hair tone (dark or light).\nInside each group, photos are grouped according to the absence/presence of a hat.")
         }
     }
 

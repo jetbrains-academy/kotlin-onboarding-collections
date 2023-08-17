@@ -90,6 +90,9 @@
   background-size: contain;
   margin-bottom: 1vmin;
 }
+.App-button-start:hover {
+  opacity: 85%;
+}
 
 .App-teams-button-back {
   background-image: url('assets/back_button.svg');
@@ -105,3 +108,60 @@
 }
 
 /****************BASE***************/
+
+.App-button-back {
+  background-image: url('assets/back_button.svg');
+  background-size: contain;
+  width: 20vmin;
+  height: 5vmin;
+  position: absolute;
+  top: 1vmin;
+  right: 5vmin;
+}
+.App-button-back:hover {
+  background-image: url('assets/back_button_hover.svg');
+}
+
+
+.App-functions-container {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
+
+.App-button-action {
+  background-size: contain;
+  height: 4vmin;
+  width: 10vmin;
+  margin: 0 0.25vmin 0.25vmin;
+}
+
+.App-button-eat {
+  background-image: url('assets/buttons/eat-button.svg');
+}
+.App-button-eat:hover {
+  background-image: url('assets/buttons/eat-button-hover.svg');
+}
+
+.App-button-sleep {
+  background-image: url('assets/buttons/sleep-button.svg');
+}
+.App-button-sleep:hover {
+  background-image: url('assets/buttons/sleep-button-hover.svg');
+}
+
+.App-button-play {
+  background-image: url('assets/buttons/play-button.svg');
+}
+.App-button-play:hover {
+  background-image: url('assets/buttons/play-button-hover.svg');
+}
+
+.App-button-clean {
+  background-image: url('assets/buttons/clean-button.svg');
+}
+.App-button-clean:hover {
+  background-image: url('assets/buttons/clean-button-hover.svg');
+}
