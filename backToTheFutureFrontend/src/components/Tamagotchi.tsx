@@ -11,6 +11,9 @@ type TamagotchiProps = {
 
 export default function Tamagotchi({eat, sleep, play, clean, state}: TamagotchiProps) {
     function getImageClass() {
+        if (eat + sleep + play + clean == 0) {
+            return "App-tamagotchi-image-alert"
+        }
         if (state == State.Cleaning) {
             return "App-tamagotchi-image-cleaning"
         }
