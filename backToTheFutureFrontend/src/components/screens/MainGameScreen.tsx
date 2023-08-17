@@ -10,15 +10,21 @@ type MainGameScreenProps = {
 }
 
 const MAX_SIZE = 16
+const MAX_VALUE = 100
+
+const QUEUE = "Queue"
+const STACK = "Stack"
 
 export default function MainGameScreen({gameStateSetter}: MainGameScreenProps) {
     let [state, stateSetter] = useState<State>(State.Base)
     let [commands, commandsSetter] = useState<Array<Command>>([])
 
-    let [eatScale, eatScaleSetter] = useState<number>(100);
-    let [cleanScale, cleanScaleSetter] = useState<number>(100);
-    let [playScale, playScaleSetter] = useState<number>(100);
-    let [sleepScale, sleepScaleSetter] = useState<number>(100);
+    let [eatScale, eatScaleSetter] = useState<number>(MAX_VALUE);
+    let [cleanScale, cleanScaleSetter] = useState<number>(MAX_VALUE);
+    let [playScale, playScaleSetter] = useState<number>(MAX_VALUE);
+    let [sleepScale, sleepScaleSetter] = useState<number>(MAX_VALUE);
+
+    let [mode, modeSetter] = useState<String>(QUEUE)
 
     let [isInProgress, isInProgressSetter] = useState<boolean>(false)
 
@@ -34,10 +40,19 @@ export default function MainGameScreen({gameStateSetter}: MainGameScreenProps) {
         commandsSetter(clonedCommands)
     }
 
+    function getCommand() {
+        if (mode == QUEUE) {
+            const command = commands[0]
+            setCommands(commands.slice(1, MAX_SIZE))
+            return command
+        }
+        const command = commands[commands.length - 1]
+        setCommands(commands.slice(0, commands.length - 1))
+        return command
+    }
+
     function removeFromQueue() {
-        const command = commands[0]
-        setCommands(commands.slice(1, MAX_SIZE))
-        performCommand(command)
+        performCommand(getCommand())
     }
 
     function performCommand(command: Command) {
@@ -69,27 +84,19 @@ export default function MainGameScreen({gameStateSetter}: MainGameScreenProps) {
 
     useEffect(() => {
         const timer = setTimeout(() => {
+            if (isAlive()) {
+                // TODO: get from server
+                const states = [State.Playing, State.Cleaning, State.Eating, State.Sleeping]
+
+                const randomState = states[randomIntFromInterval(0, states.length - 1)]
+                const randomDamage = randomIntFromInterval(10, 20)
+
+                decreaseValues(randomState, randomDamage)
+            }
             setDamages(damages + 1)
-            // TODO: get from server
-            const states = [State.Playing, State.Cleaning, State.Eating, State.Sleeping]
-
-            const randomState = states[randomIntFromInterval(0, states.length - 1)]
-            const randomDamage = randomIntFromInterval(10, 20)
-
-            decreaseValues(randomState, randomDamage)
         }, 3000)
         return () => clearTimeout(timer)
     }, [damages])
-
-    // useEffect(() => {
-    //     // TODO: get from server
-    //     const states = [State.Playing, State.Cleaning, State.Eating, State.Sleeping]
-    //
-    //     const randomState = states[randomIntFromInterval(0, states.length - 1)]
-    //     const randomDamage = randomIntFromInterval(0, 5)
-    //
-    //     decreaseValues(randomState, randomDamage)
-    // }, [])
 
     function putIntoQueue(command: Command) {
         if (commands.length >= MAX_SIZE) {
@@ -114,8 +121,8 @@ export default function MainGameScreen({gameStateSetter}: MainGameScreenProps) {
 
     function increaseValue(value: number, amountToIncrease: number) {
         const newValue = value + amountToIncrease
-        if (newValue > 100) {
-            return 100
+        if (newValue > MAX_VALUE) {
+            return MAX_VALUE
         }
         return newValue
     }
@@ -192,6 +199,23 @@ export default function MainGameScreen({gameStateSetter}: MainGameScreenProps) {
         runAction(State.Playing)
     }
 
+    function isAlive() {
+        return eatScale + sleepScale + cleanScale + playScale > 0
+    }
+
+    function newGame() {
+        commandsSetter([])
+        stateSetter(State.Base)
+        isInProgressSetter(false)
+        modeSetter(QUEUE)
+        eatScaleSetter(MAX_VALUE)
+        cleanScaleSetter(MAX_VALUE)
+        playScaleSetter(MAX_VALUE)
+        sleepScaleSetter(MAX_VALUE)
+    }
+
+    const BASE_BUTTON_CLASSES = "App-button-base App-button-collection"
+
     return (
         <div className="App-main-container">
             <div className="App-buttons-container">
@@ -201,21 +225,36 @@ export default function MainGameScreen({gameStateSetter}: MainGameScreenProps) {
                 }></button>
             </div>
             <div className="App-functions-container">
-                <button className={"App-button-base App-button-action App-button-eat "}
+                <button className={"App-button-base App-button-action App-button-eat " + (isAlive() ? "" : "App-unclickable-button")}
                         onClick={() => putIntoQueue(Command.Eat)}></button>
-                <button className={"App-button-base App-button-action App-button-sleep "}
+                <button className={"App-button-base App-button-action App-button-sleep " + (isAlive() ? "" : "App-unclickable-button")}
                         onClick={() => putIntoQueue(Command.Sleep)}></button>
-                <button className={"App-button-base App-button-action App-button-clean "}
+                <button className={"App-button-base App-button-action App-button-clean " + (isAlive() ? "" : "App-unclickable-button")}
                         onClick={() => putIntoQueue(Command.Clean)}></button>
-                <button className={"App-button-base App-button-action App-button-play "}
+                <button className={"App-button-base App-button-action App-button-play " + (isAlive() ? "" : "App-unclickable-button")}
                         onClick={() => putIntoQueue(Command.Play)}></button>
             </div>
             <Tamagotchi clean={cleanScale} eat={eatScale} play={playScale} sleep={sleepScale}
                         state={state}></Tamagotchi>
-            <div className={"App-commands-container "}>
-                <CommandRowProps commands={commands.slice(0, 8)}></CommandRowProps>
-                <CommandRowProps commands={commands.slice(8, MAX_SIZE)}></CommandRowProps>
-            </div>
+            {
+                isAlive() ? <div>
+                        <div className={"App-buttons-container "}>
+                            <button
+                                className={BASE_BUTTON_CLASSES + " App-button-queue" + (mode == QUEUE ? " App-button-queue-focused" : "")}
+                               onClick={() => modeSetter(QUEUE)}></button>
+                            <button
+                                className={BASE_BUTTON_CLASSES + " App-button-stack" + (mode == STACK ? " App-button-stack-focused" : "")}
+                                onClick={() => modeSetter(STACK)}></button>
+                        </div>
+                        <div className={"App-commands-container "}>
+                            <CommandRowProps commands={commands.slice(0, 8)}></CommandRowProps>
+                            <CommandRowProps commands={commands.slice(8, MAX_SIZE)}></CommandRowProps>
+                        </div>
+                    </div>
+                    : <div className={"App-try-again-container "}>
+                    <button className={"App-button-base App-button-action App-button-try-again "} onClick={() => newGame()}></button>
+                </div>
+            }
         </div>
     )
 }

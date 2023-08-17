@@ -166,6 +166,24 @@
   background-image: url('assets/buttons/clean-button-hover.svg');
 }
 
+.App-try-again-container {
+  width: 100%;
+  align-content: center;
+  justify-content: center;
+  display: flex;
+  height: 16vmin;
+}
+
+.App-button-try-again {
+  background-image: url('assets/buttons/try_again.svg');
+  height: 6vmin;
+  width: 20vmin;
+  margin-top: 1vmin;
+}
+.App-button-try-again:hover{
+  background-image: url('assets/buttons/try_again-hover.svg');
+}
+
 .App-tamagotchi-container {
   display: flex;
   flex-direction: column;
@@ -196,6 +214,10 @@
 
 .App-tamagotchi-image-base {
   background-image: url('assets/actions/dog-resize.svg');
+}
+.App-tamagotchi-image-alert {
+  background-image: url('assets/actions/alert.svg');
+  margin-top: 1vmin;
 }
 
 @keyframes blink {
@@ -307,4 +329,47 @@
 
 .App-command-container-sleep {
   background-image: url('assets/commands/small-sleep.svg');
+}
+
+.App-unclickable-button {
+  pointer-events: none;
+  opacity: 40%;
+}
+
+
+.App-buttons-container {
+  min-height: 10vmin;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1vmin;
+}
+
+.App-button-collection {
+  background-size: contain;
+  width: 17vmin;
+  height: 6vmin;
+  margin-top: 2vmin;
+}
+
+.App-button-queue {
+  background-image: url('assets/buttons/queue.svg');
+  margin-right: 2vmin;
+}
+.App-button-queue:hover {
+  background-image: url('assets/buttons/queue-hover.svg');
+}
+.App-button-queue-focused {
+  background-image: url('assets/buttons/queue-focused.svg');
+}
+
+.App-button-stack {
+  background-image: url('assets/buttons/stack.svg');
+}
+.App-button-stack:hover {
+  background-image: url('assets/buttons/stack-hover.svg');
+}
+.App-button-stack-focused {
+  background-image: url('assets/buttons/stack-focused.svg');
 }
