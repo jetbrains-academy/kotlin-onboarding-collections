@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="enable-background:new 0 0 136 136" viewBox="0 0 136 136">
+  <defs>
+    <symbol id="eye-open">
+      <path d="M77 64h3v3h-3zM80 64h3v3h-3zM80 61h3v3h-3zM83 61h3v3h-3zM86 61h3v3h-3zM86 64h3v3h-3zM89 64h3v3h-3zM86 67h3v3h-3zM83 67h3v3h-3zM83 64h3v3h-3z" style="display:inline;fill:#474c41"/>
+      <path d="M83 64h3v3h-3z" style="fill:#b3c497"/>
+      <path d="M80 67h3v3h-3z" style="fill:#474c41"/>
+    </symbol>
+    <symbol id="eye-close">
+      <path d="M77 64h3v3h-3zM80 64h3v3h-3zM86 64h3v3h-3zM89 64h3v3h-3zM86 67h3v3h-3zM83 67h3v3h-3zM83 64h3v3h-3zM80 67h3v3h-3z" style="fill:#474c41"/>
+    </symbol>
+    <style>
+      @keyframes tonque{0%,30%{transform:translateY(0)}to{transform:translateY(4px)}}@keyframes eyes{0%,90%{opacity:1}to{opacity:0}}.eye-open{animation:eyes 3s steps(1,start) infinite}
+    </style>
+  </defs>
+  <g id="dog">
+    <g>
+      <path d="M40 112h3v3h-3zM43 115h51v14H43zM40 109h3v3h-3zM40 106h3v3h-3zM37 103h3v3h-3zM34 100h3v3h-3zM34 97h3v3h-3zM31 94h3v3h-3zM37 106h3v3h-3zM31 97h3v3h-3zM28 94h3v3h-3zM28 88h3v3h-3zM28 82h3v3h-3zM31 73h3v3h-3zM31 67h3v3h-3zM61 61h3v3h-3zM71 61h3v3h-3zM61 64h3v3h-3zM71 64h3v3h-3zM71 67h3v3h-3zM74 70h3v3h-3zM61 67h3v3h-3zM58 70h3v3h-3zM55 73h3v3h-3zM52 76h3v3h-3zM77 73h3v3h-3zM80 76h3v3h-3zM83 79h3v3h-3zM49 79h3v3h-3zM83 82h3v3h-3zM49 82h3v3h-3zM83 85h3v3h-3zM86 85h3v3h-3zM43 82h3v3h-3zM89 82h3v3h-3zM46 85h3v3h-3zM49 85h3v3h-3zM83 88h3v3h-3zM49 88h3v3h-3zM80 91h3v3h-3zM66 85h3v3h-3zM66 88h3v3h-3z" style="fill:#474c41"/>
+      <path d="M68 120h3v3h-3zM65 117h3v9h-3zM71 123h3v3h-3zM71 117h3v3h-3z" style="fill:#b3c497"/>
+      <path d="M66 91h3v3h-3zM69 85h3v3h-3zM63 85h3v3h-3zM60 82h3v3h-3zM60 79h3v3h-3zM63 79h9v6h-9zM72 82h3v3h-3zM72 79h3v3h-3zM77 94h3v3h-3zM52 91h3v3h-3zM55 94h3v3h-3zM58 94h19v3H58zM31 76h3v3h-3zM28 91h3v3h-3zM28 85h3v3h-3zM28 79h3v3h-3zM31 70h3v3h-3zM31 64h3v3h-3zM61 58h3v3h-3zM71 58h3v3h-3zM31 61h3v3h-3zM61 55h3v3h-3zM71 55h3v3h-3zM34 58h3v3h-3zM37 55h3v3h-3zM40 52h3v3h-3zM43 49h3v3h-3zM43 46h3v3h-3zM46 46h3v3h-3zM49 43h3v3h-3zM52 40h3v3h-3zM82 40h3v3h-3zM85 43h3v3h-3zM88 46h3v3h-3zM91 46h3v3h-3zM91 49h3v3h-3zM94 52h3v3h-3zM97 55h3v3h-3zM100 58h3v3h-3zM103 61h3v3h-3zM103 67h3v3h-3zM106 79h3v3h-3zM103 64h3v3h-3zM103 70h3v3h-3zM106 82h3v3h-3zM103 73h3v3h-3zM106 85h3v3h-3zM103 76h3v3h-3zM106 88h3v3h-3zM103 91h3v3h-3zM103 94h3v3h-3zM100 97h3v3h-3zM100 100h3v3h-3zM97 103h3v3h-3zM94 106h3v3h-3zM94 109h3v3h-3zM94 112h3v3h-3zM55 37h3v3h-3zM52 34h3v3h-3zM52 37h3v3h-3zM82 34h3v6h-3zM49 28h3v3h-3zM49 31h3v12h-3zM85 28h3v15h-3zM46 22h3v3h-3zM88 22h3v3h-3zM43 16h3v3h-3zM91 16h3v3h-3zM28 16h3v3h-3zM106 16h3v3h-3zM25 22h3v3h-3zM109 22h3v3h-3zM25 28h3v3h-3zM109 28h3v3h-3zM25 34h3v3h-3zM109 34h3v3h-3zM25 40h3v3h-3zM109 40h3v3h-3zM25 46h3v3h-3zM109 46h3v3h-3zM28 52h3v3h-3zM106 52h3v3h-3zM28 55h3v3h-3zM106 55h3v3h-3zM28 58h3v3h-3zM106 58h3v3h-3zM52 31h3v3h-3zM82 31h3v3h-3zM49 25h3v3h-3zM85 25h3v3h-3zM46 19h3v3h-3zM88 19h3v3h-3zM25 19h3v3h-3zM109 19h3v3h-3zM25 25h3v3h-3zM109 25h3v3h-3zM25 31h3v3h-3zM109 31h3v3h-3zM25 37h3v3h-3zM109 37h3v3h-3zM25 43h3v3h-3zM109 43h3v3h-3zM28 49h3v3h-3zM106 49h3v3h-3zM40 13h3v3h-3zM94 13h3v3h-3zM37 13h3v3h-3zM97 13h3v3h-3zM34 13h3v3h-3zM100 13h3v3h-3zM31 13h3v3h-3zM103 13h3v3h-3zM61 37h3v3h-3zM67 37h3v3h-3zM73 37h3v3h-3zM58 37h3v3h-3zM64 37h3v3h-3zM70 37h3v3h-3zM76 37h3v3h-3zM79 37h3v3h-3z" style="fill:#474c41"/>
+    </g>
+    <g style="animation:tonque 1s steps(2,end) infinite">
+      <path d="M60 97h3v3h-3zM60 100h3v3h-3zM60 103h3v3h-3zM75 103h3v3h-3zM63 106h3v3h-3zM66 106h3v3h-3zM69 106h3v3h-3zM72 106h3v3h-3zM75 100h3v3h-3zM75 97h3v3h-3zM68 97h3v3h-3zM68 100h3v3h-3zM60 94h3v3h-3zM75 94h3v3h-3zM68 94h3v3h-3z" style="fill:#474c41"/>
+    </g>
+    <g>
+      <use href="#eye-close"/>
+      <use class="eye-open" href="#eye-open"/>
+    </g>
+    <g transform="translate(-34)">
+      <use href="#eye-close"/>
+      <use class="eye-open" href="#eye-open"/>
+    </g>
+  </g>
+</svg>

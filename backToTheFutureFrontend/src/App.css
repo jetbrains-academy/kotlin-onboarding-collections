@@ -90,6 +90,9 @@
   background-size: contain;
   margin-bottom: 1vmin;
 }
+.App-button-start:hover {
+  opacity: 85%;
+}
 
 .App-teams-button-back {
   background-image: url('assets/back_button.svg');
@@ -105,3 +108,203 @@
 }
 
 /****************BASE***************/
+
+.App-button-back {
+  background-image: url('assets/back_button.svg');
+  background-size: contain;
+  width: 20vmin;
+  height: 5vmin;
+  position: absolute;
+  top: 1vmin;
+  right: 5vmin;
+}
+.App-button-back:hover {
+  background-image: url('assets/back_button_hover.svg');
+}
+
+
+.App-functions-container {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
+
+.App-button-action {
+  background-size: contain;
+  height: 4vmin;
+  width: 10vmin;
+  margin: 0 0.25vmin 0.25vmin;
+}
+
+.App-button-eat {
+  background-image: url('assets/buttons/eat-button.svg');
+}
+.App-button-eat:hover {
+  background-image: url('assets/buttons/eat-button-hover.svg');
+}
+
+.App-button-sleep {
+  background-image: url('assets/buttons/sleep-button.svg');
+}
+.App-button-sleep:hover {
+  background-image: url('assets/buttons/sleep-button-hover.svg');
+}
+
+.App-button-play {
+  background-image: url('assets/buttons/play-button.svg');
+}
+.App-button-play:hover {
+  background-image: url('assets/buttons/play-button-hover.svg');
+}
+
+.App-button-clean {
+  background-image: url('assets/buttons/clean-button.svg');
+}
+.App-button-clean:hover {
+  background-image: url('assets/buttons/clean-button-hover.svg');
+}
+
+.App-tamagotchi-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: contain;
+  background-image: url('assets/tamagotchi_bg.svg');
+  background-repeat: no-repeat;
+  width: 26vmin;
+  height: 32vmin;
+  margin-top: 4vmin;
+  margin-bottom: 4vmin;
+}
+
+.App-tamagotchi-image-container {
+  width: 5.5vmin;
+  height: 8vmin;
+  margin-top: -3vmin;
+  margin-bottom: 1vmin;
+}
+
+.App-tamagotchi-image {
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+}
+
+.App-tamagotchi-image-base {
+  background-image: url('assets/actions/default.svg');
+}
+
+@keyframes blink {
+  from {
+    opacity:1
+  }
+  to {
+    opacity:0
+  }
+}
+
+.App-tamagotchi-image-cleaning {
+  background-image: url('assets/actions/clean.svg');
+  animation:blink 1s steps(3,end) infinite alternate-reverse;
+}
+
+.App-tamagotchi-image-eating {
+  background-image: url('assets/actions/eat.svg');
+  margin-top: 50%;
+  animation:blink 1s steps(3,end) infinite alternate-reverse;
+}
+
+.App-tamagotchi-image-sleeping {
+  background-image: url('assets/actions/sleep.svg');
+  animation:blink 1s steps(3,end) infinite alternate-reverse;
+}
+
+.App-tamagotchi-image-playing {
+  background-image: url('assets/actions/play.svg');
+  margin-top: 25%;
+  animation:blink 1s steps(3,end) infinite alternate-reverse;
+}
+
+
+.App-scales-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: left;
+
+  margin-bottom: -5vmin;
+}
+.App-scales-container-row {
+  display: flex;
+  flex-direction: row;
+
+  width: 15vmin;
+}
+
+.App-scales-container-row-top {
+  margin-bottom: 1vmin;
+}
+
+.App-scale-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: left;
+
+  color: #474C41;
+  font-size: 1vmin;
+  width: 50%;
+  padding-left: 1vmin;
+  padding-right: 1vmin;
+}
+
+.App-scale-container-value {
+  margin-top: 0.3vmin;
+
+  height: 0.3vmin;
+  background: #474C41;
+}
+
+.App-commands-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: left;
+  height: 16vmin;
+}
+.App-commands-container-row {
+  display: flex;
+  flex-direction: row;
+  height: 50%;
+  margin-top: 1vmin;
+  margin-bottom: 1vmin;
+}
+
+.App-command-container {
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 6vmin;
+
+  margin-left: 0.3vmin;
+  margin-right: 0.3vmin;
+}
+
+.App-command-container-clean {
+  background-image: url('assets/commands/small-clean.svg');
+}
+
+.App-command-container-eat {
+  background-image: url('assets/commands/small-eat.svg');
+}
+
+.App-command-container-play {
+  background-image: url('assets/commands/small-play.svg');
+}
+
+.App-command-container-sleep {
+  background-image: url('assets/commands/small-sleep.svg');
+}
