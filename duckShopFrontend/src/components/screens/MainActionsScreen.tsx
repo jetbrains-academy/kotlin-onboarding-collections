@@ -147,30 +147,53 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
     return (
         <div className="App-main-container">
             <div className="App-buttons-container">
-                <button className="App-button-base App-game-button-bottom-base App-button-back" onClick={() => gameStateSetter(GameState.START)}></button>
+                <button className="App-button-base App-game-button-bottom-base App-button-back" onClick={() => {
+                    gameStateSetter(GameState.START)
+                    infoTextSetter("")
+                }
+                }></button>
             </div>
             {
                 wasGameInitialized() ?
                     <div>
-                        <div className="App-info-container"><div className="App-info-container-text font-link-base">{infoText}</div></div>
+                        <div className="App-info-container">
+                            <div className="App-info-container-text font-link-base">{infoText}</div>
+                        </div>
                         <div className="App-functions-container">
-                            <button className={"App-button-base App-button-action App-button-add " + (canAddDuck() ? "" : "App-unclickable-button")} onClick={() => addDuck()}></button>
-                            <button className={"App-button-base App-button-action App-button-remove" + (canRemoveDuck() ? "" : "App-unclickable-button")} onClick={() => removeDuck()}></button>
-                            <button className={BASE_BUTTON_ACTION_CLASSES + " App-button-sort" + (mode == LIST_MODE ? "" : " App-unclickable-button")} onClick={() => sortDucks()}></button>
-                            <button className={BASE_BUTTON_ACTION_CLASSES + " App-button-shuffle" + (mode == LIST_MODE ? "" : " App-unclickable-button")} onClick={() => shuffleDucks()}></button>
-                            <button className={BASE_BUTTON_ACTION_CLASSES + " App-button-filter"} onClick={() => filterDuck()}></button>
-                            <button className={BASE_BUTTON_ACTION_CLASSES + " App-button-partition" + (mode == MAP_MODE ? " App-unclickable-button" : "")} onClick={() => partitionDucks()}></button>
+                            <button
+                                className={"App-button-base App-button-action App-button-add " + (canAddDuck() ? "" : "App-unclickable-button")}
+                                onClick={() => addDuck()}></button>
+                            <button
+                                className={"App-button-base App-button-action App-button-remove" + (canRemoveDuck() ? "" : "App-unclickable-button")}
+                                onClick={() => removeDuck()}></button>
+                            <button
+                                className={BASE_BUTTON_ACTION_CLASSES + " App-button-sort" + (mode == LIST_MODE ? "" : " App-unclickable-button")}
+                                onClick={() => sortDucks()}></button>
+                            <button
+                                className={BASE_BUTTON_ACTION_CLASSES + " App-button-shuffle" + (mode == LIST_MODE ? "" : " App-unclickable-button")}
+                                onClick={() => shuffleDucks()}></button>
+                            <button className={BASE_BUTTON_ACTION_CLASSES + " App-button-filter"}
+                                    onClick={() => filterDuck()}></button>
+                            <button
+                                className={BASE_BUTTON_ACTION_CLASSES + " App-button-partition" + (mode == MAP_MODE ? " App-unclickable-button" : "")}
+                                onClick={() => partitionDucks()}></button>
                         </div>
                         <DuckContainer ducks={ducks} pressedFunction={pressedFunction}></DuckContainer>
                     </div>
                     : <div className="App-base-text">
-                    <div className="font-link-base">Please initialize the duck shop!</div>
-                </div>
+                        <div className="font-link-base">Please initialize the duck shop!</div>
+                    </div>
             }
             <div className="App-buttons-container">
-                <button className={BASE_BUTTON_COLLECTION_CLASSES + " App-button-list" + (mode == LIST_MODE ? " App-button-list-focused" : "")} onClick={() => initListOfDucks()}></button>
-                <button className={BASE_BUTTON_COLLECTION_CLASSES + " App-button-set" + (mode == SET_MODE ? " App-button-set-focused" : "")} onClick={() => initSetOfDucks()}></button>
-                <button className={BASE_BUTTON_COLLECTION_CLASSES + " App-button-map" + (mode == MAP_MODE ? " App-button-map-focused" : "")} onClick={() => initMapOfDucks()}></button>
+                <button
+                    className={BASE_BUTTON_COLLECTION_CLASSES + " App-button-list" + (mode == LIST_MODE ? " App-button-list-focused" : "")}
+                    onClick={() => initListOfDucks()}></button>
+                <button
+                    className={BASE_BUTTON_COLLECTION_CLASSES + " App-button-set" + (mode == SET_MODE ? " App-button-set-focused" : "")}
+                    onClick={() => initSetOfDucks()}></button>
+                <button
+                    className={BASE_BUTTON_COLLECTION_CLASSES + " App-button-map" + (mode == MAP_MODE ? " App-button-map-focused" : "")}
+                    onClick={() => initMapOfDucks()}></button>
             </div>
         </div>
     );

@@ -90,6 +90,9 @@
   background-size: contain;
   margin-bottom: 1vmin;
 }
+.App-button-start:hover {
+  opacity: 85%;
+}
 
 .App-button-back {
   background-image: url('assets/back_button.svg');
@@ -99,6 +102,9 @@
   position: absolute;
   top: 1vmin;
   right: 5vmin;
+}
+.App-button-back:hover {
+  background-image: url('assets/back_button_hover.svg');
 }
 
 .App-container {
@@ -118,15 +124,34 @@
 }
 
 .App-button-list {
-  background-image: url('assets/list_button.svg');
+  background-image: url('assets/buttons/list_button.svg');
+}
+.App-button-list:hover {
+  background-image: url('assets/buttons/list_hover.svg');
 }
 
 .App-button-set {
-  background-image: url('assets/set_button.svg');
+  background-image: url('assets/buttons/set_button.svg');
+}
+.App-button-set:hover {
+  background-image: url('assets/buttons/set_hover.svg');
 }
 
 .App-button-map {
-  background-image: url('assets/map_button.svg');
+  background-image: url('assets/buttons/map_button.svg');
+}
+.App-button-map:hover {
+  background-image: url('assets/buttons/map_hover.svg');
+}
+
+.App-button-list-focused {
+  background-image: url('assets/buttons/list_focused.svg');
+}
+.App-button-set-focused {
+  background-image: url('assets/buttons/set_focused.svg');
+}
+.App-button-map-focused {
+  background-image: url('assets/buttons/map_focused.svg');
 }
 
 .App-base-text {
@@ -353,4 +378,18 @@ select::-ms-expand {
 
 .App-display-none {
   display: none;
+}
+
+.App-info-container {
+  text-align: center;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 60%;
+}
+
+.App-info-container-text {
+  color: #5f5e5e;
+  font-size: 2.5vmin;
+  white-space: pre-line;
 }
