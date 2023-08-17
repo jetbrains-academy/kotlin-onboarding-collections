@@ -195,7 +195,7 @@
 }
 
 .App-tamagotchi-image-base {
-  background-image: url('assets/actions/default.svg');
+  background-image: url('assets/actions/dog-resize.svg');
 }
 
 @keyframes blink {
