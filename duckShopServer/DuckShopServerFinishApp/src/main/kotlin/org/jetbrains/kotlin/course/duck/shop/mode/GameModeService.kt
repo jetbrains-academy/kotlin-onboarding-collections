@@ -10,13 +10,7 @@ import org.springframework.stereotype.Service
 class GameModeService {
     fun generateListOfDucks() = List(MAX_NUMBER_OF_DUCKS) { generateRandomDuck() }
 
-    fun generateSetOfDucks(): Set<Duck> {
-        val ducks = mutableSetOf<Duck>()
-        repeat(MAX_NUMBER_OF_DUCKS) {
-            ducks.addOneDuck()
-        }
-        return ducks
-    }
+    fun generateSetOfDucks() = Duck.values().toList().shuffled().take(MAX_NUMBER_OF_DUCKS).toSet()
 
     fun generateMapOfDucks(): Map<Duck, String> {
         val ducks = mutableMapOf<Duck, String>()

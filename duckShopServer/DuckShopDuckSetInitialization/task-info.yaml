@@ -1,5 +1,5 @@
-type: theory
-custom_name: Duck Shop - List definition
+type: edu
+custom_name: Duck Shop - Duck Set Initialization
 files:
   - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/duck/Duck.kt
     visible: true
@@ -25,3 +25,9 @@ files:
     visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/DuckShopApplication.kt
     visible: true
+  - name: test/DuckClassTestMethods.kt
+    visible: false
+  - name: test/GameModeServiceTestClass.kt
+    visible: false
+  - name: test/Tests.kt
+    visible: false

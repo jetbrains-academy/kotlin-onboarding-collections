@@ -5,6 +5,7 @@ content:
   - duckShopServerHowToRun
   - duckShopServerListDefinition
   - DuckShopDucksListInitialization
-  - Duck ShopSetDefinition
+  - DuckShopSetDefinition
+  - DuckShopDuckSetInitialization
   - DuckShopServerFinishApp
 is_template_based: false

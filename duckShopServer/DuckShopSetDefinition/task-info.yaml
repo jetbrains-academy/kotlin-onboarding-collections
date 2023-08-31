@@ -1,5 +1,5 @@
 type: theory
-custom_name: Duck Shop - List definition
+custom_name: Duck Shop - Set definition
 files:
   - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/duck/Duck.kt
     visible: true

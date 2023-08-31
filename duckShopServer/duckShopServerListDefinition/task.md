@@ -45,7 +45,7 @@ TODO
 </div>
 
 ```kotlin
-val listWithNumbers1 = listOf(1, 2, 3) // The type can be inferred, a list with elements 1 ,2, 3 will be created
+val listWithNumbers1 = listOf(1, 2, 3) // The type can be inferred, a list with elements 1, 2, 3 will be created
 ```
 
 In some cases you need to create a list with `N` elements 

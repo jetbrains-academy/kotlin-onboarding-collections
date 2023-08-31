@@ -1,9 +1,6 @@
 package org.jetbrains.kotlin.course.duck.shop.mode
 
 import org.jetbrains.kotlin.course.duck.shop.duck.Duck
-import org.jetbrains.kotlin.course.duck.shop.duck.addOneDuck
-import org.jetbrains.kotlin.course.duck.shop.duck.generateRandomDuck
-import org.jetbrains.kotlin.course.duck.shop.utils.MAX_NUMBER_OF_DUCKS
 import org.springframework.stereotype.Service
 
 @Service
