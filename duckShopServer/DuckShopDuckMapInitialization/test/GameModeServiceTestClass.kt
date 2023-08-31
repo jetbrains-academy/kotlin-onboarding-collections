@@ -20,6 +20,16 @@ internal val generateSetOfDucksMethod = TestMethod(
     returnTypeJava = "Set",
 )
 
+internal val generateMapOfDucksMethod = TestMethod(
+    "generateMapOfDucks",
+    returnType = TestKotlinType(
+        "Map",
+        params = listOf("org.jetbrains.kotlin.course.duck.shop.duck.Duck"),
+    ),
+    returnTypeJava = "Map",
+)
+
+
 internal val gameModeServiceTestClass = TestClass(
     "GameModeService",
     "org.jetbrains.kotlin.course.duck.shop.mode",

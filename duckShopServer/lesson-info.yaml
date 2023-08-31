@@ -7,5 +7,7 @@ content:
   - DuckShopDucksListInitialization
   - DuckShopSetDefinition
   - DuckShopDuckSetInitialization
+  - DuckShopMapDefinition
+  - DuckShopDuckMapInitialization
   - DuckShopServerFinishApp
 is_template_based: false

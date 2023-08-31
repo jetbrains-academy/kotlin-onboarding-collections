@@ -6,7 +6,7 @@ internal val generateListOfDucksMethod = TestMethod(
     "generateListOfDucks",
     returnType = TestKotlinType(
         "List",
-        abbreviation = "jetbrains.kotlin.course.alias.card.Card"
+        params = listOf("org.jetbrains.kotlin.course.duck.shop.duck.Duck"),
     ),
     returnTypeJava = "List",
 )

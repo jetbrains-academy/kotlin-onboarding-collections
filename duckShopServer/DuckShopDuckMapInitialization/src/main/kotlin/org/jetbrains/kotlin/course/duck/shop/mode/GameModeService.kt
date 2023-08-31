@@ -2,6 +2,7 @@ package org.jetbrains.kotlin.course.duck.shop.mode
 
 import org.jetbrains.kotlin.course.duck.shop.duck.Duck
 import org.jetbrains.kotlin.course.duck.shop.duck.generateRandomDuck
+import org.jetbrains.kotlin.course.duck.shop.duck.getDescription
 import org.jetbrains.kotlin.course.duck.shop.utils.MAX_NUMBER_OF_DUCKS
 import org.springframework.stereotype.Service
 
@@ -11,7 +12,10 @@ class GameModeService {
     // but this way demonstrates different approaches to work with collections
     fun generateListOfDucks() = List(MAX_NUMBER_OF_DUCKS) { generateRandomDuck() }
 
-    fun generateSetOfDucks() = Duck.values().toList().shuffled().take(MAX_NUMBER_OF_DUCKS).toSet()
+    fun generateSetOfDucks() = getRandomDucks().toSet()
 
-    fun generateMapOfDucks(): Map<Duck, String> = TODO("Not implemented yet")
+    // It is better to move common code into a separated function
+    private fun getRandomDucks() = Duck.values().toList().shuffled().take(MAX_NUMBER_OF_DUCKS)
+
+    fun generateMapOfDucks() = getRandomDucks().associateWith { it.getDescription() }
 }
