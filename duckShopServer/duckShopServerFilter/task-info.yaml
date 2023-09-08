@@ -1,0 +1,39 @@
+type: edu
+custom_name: Duck Shop - Filter Function
+files:
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/duck/Duck.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/functions/action/GameActionFunctionsResource.kt
+    visible: false
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/functions/action/GameActionFunctionsService.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/functions/change/GameChangeFunctionsResource.kt
+    visible: false
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/functions/change/GameChangeFunctionsService.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/functions/common/RequestBody.kt
+    visible: false
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/mode/GameModeResource.kt
+    visible: false
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/mode/GameModeService.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/utils/Converters.kt
+    visible: false
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/utils/GameMode.kt
+    visible: false
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/utils/GameUtil.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/DuckShopApplication.kt
+    visible: true
+  - name: test/DuckClassTestMethods.kt
+    visible: false
+  - name: test/GameChangeFunctionsService.kt
+    visible: false
+  - name: test/GameChangeFunctionsServiceTestClass.kt
+    visible: false
+  - name: test/GameModeServiceTestClass.kt
+    visible: false
+  - name: test/Tests.kt
+    visible: false
+  - name: test/GameActionFunctionsServiceTestClass.kt
+    visible: false
