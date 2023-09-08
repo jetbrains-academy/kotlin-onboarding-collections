@@ -28,8 +28,6 @@ files:
     visible: false
   - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/DuckShopApplication.kt
     visible: true
-  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/tmp.kt
-    visible: true
   - name: src/main/resources/static/precache-manifest.70fad1423aecd2cc1dc8df1c8a51ab6a.js
     visible: true
   - name: src/main/resources/static/precache-manifest.79d5bbf541fc215a96f9bc662f0e090b.js

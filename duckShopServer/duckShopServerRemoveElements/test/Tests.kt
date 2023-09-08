@@ -45,7 +45,7 @@ class Test {
             gameChangeFunctionsServiceTestClass,
             removeRandomDuckListMethod,
             "list",
-            Duck.values().toList().shuffled()
+            Duck.entries.toList().shuffled()
         ) { output, errorPrefix, currentDucks ->
             (output as? List<Duck>) ?: run {
                 assert(false) { "$errorPrefix for the list $currentDucks it returns $output" }
@@ -60,7 +60,7 @@ class Test {
             gameChangeFunctionsServiceTestClass,
             removeRandomDuckSetMethod,
             "set",
-            Duck.values().toList().shuffled().toSet()
+            Duck.entries.toList().shuffled().toSet()
         ) { output, errorPrefix, currentDucks ->
             (output as? Set<Duck>) ?: run {
                 assert(false) { "$errorPrefix for the set $currentDucks it returns $output" }
@@ -74,7 +74,7 @@ class Test {
         val invokeData = TestMethodInvokeData(gameChangeFunctionsServiceTestClass, removeRandomDuckMapMethod)
         val errorPrefix = "The method ${removeRandomDuckMapMethod.name} should remove a random duck from a map of ducks, but "
         val removedDucks = mutableListOf<Pair<Duck, String>>()
-        val possibleDucks = Duck.values().toList()
+        val possibleDucks = Duck.entries.toList()
         repeat(100) {
             val currentDucks = possibleDucks.shuffled().associateWith { it.getDescription() }
             try {
@@ -101,7 +101,7 @@ class Test {
     @Test
     fun generateMapOfDucksMethodTest() {
         val invokeData = TestMethodInvokeData(gameModeServiceTestClass, generateMapOfDucksMethod)
-        val possibleDucks = Duck.values()
+        val possibleDucks = Duck.entries
         val generatedDucks = mutableSetOf<Map<Duck, String>>()
         repeat(100) {
             try {
@@ -125,7 +125,7 @@ class Test {
     @Test
     fun generateSetOfDucksMethodTest() {
         val invokeData = TestMethodInvokeData(gameModeServiceTestClass, generateSetOfDucksMethod)
-        val possibleDucks = Duck.values()
+        val possibleDucks = Duck.entries
         val generatedDucks = mutableSetOf<Set<Duck>>()
         repeat(100) {
             try {
@@ -164,7 +164,7 @@ class Test {
     @Test
     fun generateListOfDucksMethodTest() {
         val invokeData = TestMethodInvokeData(gameModeServiceTestClass, generateListOfDucksMethod)
-        val possibleDucks = Duck.values()
+        val possibleDucks = Duck.entries
         val generatedDucks = mutableSetOf<List<Duck>>()
         repeat(100) {
             try {

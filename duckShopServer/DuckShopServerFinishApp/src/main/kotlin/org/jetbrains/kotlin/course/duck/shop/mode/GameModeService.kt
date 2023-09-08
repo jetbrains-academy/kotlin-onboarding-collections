@@ -13,7 +13,7 @@ class GameModeService {
 
     fun generateSetOfDucks() = getRandomDucks().toSet()
 
-    private fun getRandomDucks() = Duck.values().toList().shuffled().take(MAX_NUMBER_OF_DUCKS)
+    private fun getRandomDucks() = Duck.entries.toList().shuffled().take(MAX_NUMBER_OF_DUCKS)
 
     fun generateMapOfDucks() = getRandomDucks().associateWith { it.getDescription() }
 }

@@ -4,7 +4,7 @@ import duck.shop.JsDuck
 import org.jetbrains.kotlin.course.duck.shop.duck.Duck
 import org.jetbrains.kotlin.course.duck.shop.functions.common.Body
 
-fun String.toDuck() = Duck.values().find { it.name == this || it.customName == this } ?: error("Can not find the duck $this")
+fun String.toDuck() = Duck.entries.find { it.name == this || it.customName == this } ?: error("Can not find the duck $this")
 
 fun String.toGameMode() = GameMode.valueOf(this)
 

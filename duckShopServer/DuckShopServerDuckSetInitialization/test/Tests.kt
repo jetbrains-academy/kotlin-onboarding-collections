@@ -2,7 +2,6 @@ import org.jetbrains.academy.test.system.core.findMethod
 import org.jetbrains.academy.test.system.core.models.method.TestMethodInvokeData
 import org.jetbrains.kotlin.course.duck.shop.duck.Duck
 import org.jetbrains.kotlin.course.duck.shop.utils.MAX_NUMBER_OF_DUCKS
-import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Test
 import java.lang.reflect.InvocationTargetException
 
@@ -10,7 +9,7 @@ class Test {
     @Test
     fun generateSetOfDucksMethodTest() {
         val invokeData = TestMethodInvokeData(gameModeServiceTestClass, generateSetOfDucksMethod)
-        val possibleDucks = Duck.values()
+        val possibleDucks = Duck.entries
         val generatedDucks = mutableSetOf<Set<Duck>>()
         repeat(100) {
             try {
@@ -49,7 +48,7 @@ class Test {
     @Test
     fun generateListOfDucksMethodTest() {
         val invokeData = TestMethodInvokeData(gameModeServiceTestClass, generateListOfDucksMethod)
-        val possibleDucks = Duck.values()
+        val possibleDucks = Duck.entries
         val generatedDucks = mutableSetOf<List<Duck>>()
         repeat(100) {
             try {

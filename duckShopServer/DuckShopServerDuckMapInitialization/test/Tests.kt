@@ -10,7 +10,7 @@ class Test {
     @Test
     fun generateMapOfDucksMethodTest() {
         val invokeData = TestMethodInvokeData(gameModeServiceTestClass, generateMapOfDucksMethod)
-        val possibleDucks = Duck.values()
+        val possibleDucks = Duck.entries
         val generatedDucks = mutableSetOf<Map<Duck, String>>()
         repeat(100) {
             try {
@@ -34,7 +34,7 @@ class Test {
     @Test
     fun generateSetOfDucksMethodTest() {
         val invokeData = TestMethodInvokeData(gameModeServiceTestClass, generateSetOfDucksMethod)
-        val possibleDucks = Duck.values()
+        val possibleDucks = Duck.entries
         val generatedDucks = mutableSetOf<Set<Duck>>()
         repeat(100) {
             try {
@@ -73,7 +73,7 @@ class Test {
     @Test
     fun generateListOfDucksMethodTest() {
         val invokeData = TestMethodInvokeData(gameModeServiceTestClass, generateListOfDucksMethod)
-        val possibleDucks = Duck.values()
+        val possibleDucks = Duck.entries
         val generatedDucks = mutableSetOf<List<Duck>>()
         repeat(100) {
             try {

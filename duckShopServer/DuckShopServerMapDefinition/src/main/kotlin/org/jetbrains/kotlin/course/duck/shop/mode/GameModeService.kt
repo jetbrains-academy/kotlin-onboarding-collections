@@ -11,7 +11,7 @@ class GameModeService {
     // but this way demonstrates different approaches to work with collections
     fun generateListOfDucks() = List(MAX_NUMBER_OF_DUCKS) { generateRandomDuck() }
 
-    fun generateSetOfDucks() = Duck.values().toList().shuffled().take(MAX_NUMBER_OF_DUCKS).toSet()
+    fun generateSetOfDucks() = Duck.entries.toList().shuffled().take(MAX_NUMBER_OF_DUCKS).toSet()
 
     fun generateMapOfDucks(): Map<Duck, String> = TODO("Not implemented yet")
 }
