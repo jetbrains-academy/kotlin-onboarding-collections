@@ -18,15 +18,13 @@ in the `GameUtil.kt` file in the `org.jetbrains.kotlin.course.duck.shop.utils` p
 
 After implementing this task the `List` button becomes alive:
 
-**TODO: gif with the game state**
+![Current state](../../utils/src/main/resources/images/duck/shop/states/state_1.gif)
 
 If you have any difficulties, **hints will help you solve this task**.
 
 ----
 
 ### Hints
-
-[//]: # (TODO: replace to entries?)
 
 <div class="hint" title="How to get all values from an enum class?">
 

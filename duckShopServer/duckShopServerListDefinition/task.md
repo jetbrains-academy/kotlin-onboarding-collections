@@ -9,7 +9,7 @@ elements by indices – integer numbers that reflect their position.
 The index of the first element is zero.
 Elements can occur more than once in a list.
 
-**TODO: img1**
+![List definition](../../utils/src/main/resources/images/duck/shop/theory/list_definition.png)
 
 <div class="hint" title="Different List implementations">
 
@@ -19,16 +19,22 @@ Elements can occur more than once in a list.
   and this interface can be backed by multiple implementations.
 
   Each implementation defines not only the set of possible operations with this collection, 
-  but also the complexity of `this` operation. TODO: can we refer to the algorithms course?
+  but also the complexity of `this` operation. 
 
-  TODO: add a link to read it in detail
+  By default `ArrayList` is built. `ArrayList` is an array-based implementation. 
+  It is cheap to read (find an item) and generally cheap to add, but it is expensive to inject or remove objects.
+  You can also use a `LinkedList` implementation from Java, if you work with Kotlin under JVM.
+  A linked list is composed of nodes which are connected with each other using pointers.
+  The insertion and deletion operations are efficient, but to find a node at position n, 
+  you have to start the search at the first node in the linked list, following the path 
+  of references n times.
 </div>
 
 In general `List` contains _only_ elements with the _same_ type. 
 In some cases it is possible to store elements with different types, 
-but which have a _relation_ between them, see TODO for more details.
+but which have a _relation_ between them, see the [documentation](https://kotlinlang.org/docs/generics.html) for more details.
 
-**TODO: img2**
+![Incorrect type in a list](../../utils/src/main/resources/images/duck/shop/theory/list_incorrect_type.png)
 
 ## Initialization
 
@@ -41,7 +47,10 @@ val emptyList2 = listOf<Int>() // Calls emptyList()
 
 <div class="hint" title="What is the difference between emptyList and a regular one?">
 
-TODO
+In Kotlin the `emptyList` implementation is an object under the hood.
+The main reason such function exists is to save allocations (creating and deleting new variables).
+Since `emptyList` returns the same _singleton_ instance every time it is called so one can 
+use it in allocation free manner. It allows to work your Kotlin program in a more efficient way.
 </div>
 
 ```kotlin

@@ -12,7 +12,7 @@ in the `GameUtil.kt` file in the `org.jetbrains.kotlin.course.duck.shop.utils` p
 
 After implementing this task the `Set` button becomes alive:
 
-**TODO: gif with the game state**
+![Current state](../../utils/src/main/resources/images/duck/shop/states/state_2.gif)
 
 If you have any difficulties, **hints will help you solve this task**.
 
@@ -37,8 +37,9 @@ We will not consider the detailed difference between lists and arrays in this pr
 <div class="hint" title="How can I take N first elements from a list?">
 
 To take first `N` elements from the list, you can use the [`take`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/take.html) built-in function.
-Note, since `List` is an ordered structure, you always will get first `N` elements 
-**TODO: add a description for set**
+Note, since `List` is an ordered structure, you always will get first `N` elements.
+To complete the task you can take the necessary amount of shuffled elements and convert the result into a set.
+Since the `Duck` enum has only different value, the resulting size of the set will be the same with the list size.
 </div>
 
 <div class="hint" title="How can I convert a list to a set">

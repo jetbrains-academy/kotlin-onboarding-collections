@@ -13,7 +13,7 @@ in the `GameUtil.kt` file in the `org.jetbrains.kotlin.course.duck.shop.utils` p
 
 After implementing this task the `Map` button becomes alive:
 
-**TODO: gif with the game state**
+![Current state](../../utils/src/main/resources/images/duck/shop/states/state_3.gif)
 
 If you have any difficulties, **hints will help you solve this task**.
 

@@ -34,4 +34,4 @@ and study `List`, `Set`, and `Map` collections.
 
 By the end of this task, you will create the following application:
 
-**TODO**
+![Final application](../../utils/src/main/resources/images/duck/shop/states/ready.gif)
