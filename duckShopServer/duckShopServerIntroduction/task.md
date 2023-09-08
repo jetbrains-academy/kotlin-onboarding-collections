@@ -1,48 +1,39 @@
+Hello! Welcome to the third module of the Kotlin onboarding course.
+This module will introduce you to definitions of **collections** in the Kotlin language 
+and will teach ypu hoe to work with them.
+We assume that you have completed the first and second parts of the course
+or are familiar with all topics they cover.
 
-This is a task description file.
-Its content will be displayed to a learner
-in the **Task Description** window.
+All topics will be accompanied by links to [the official Kotlin documentation](https://kotlinlang.org/docs/home.html),
+which you can read later.
 
-It supports both Markdown and HTML.
-To toggle the format, you can rename **task.md**
-to **task.html**, or vice versa.
-The default task description format can be changed
-in **Preferences | Tools | Education**,
-but this will not affect any existing task description files.
+Each lesson of the course is built in the form of a project:
+step by step, by completing different small tasks,
+you will get a fully working project in the end.
+At the end of each lesson, an additional project will be offered:
+it includes all the topics of the lesson but does not contain any theory materials.
+The topic of this module is **TODO**.
+It means that in each lesson, you will create a web application with 
+something familiar from your or your parents' childhood.
+Note, part of the code will be prewritten by the course author
+to avoid going deep into web programming in this course.
 
-The following features are available in
-**task.md/task.html** which are specific to the JetBrains Academy plugin:
+### Project description
 
-- Hints can be added anywhere in the task text.
-  Type "hint" and press Tab.
-  Hints should be added to an empty line in the task text.
-  In hints you can use both HTML and Markdown.
-<div class="hint">
+The project of this lesson is **Duck shop**.
+The main goal of this project is to implement a shop window with rubber duckies 
+and study `List`, `Set`, and `Map` collections.
 
-Text of your hint
+### Lesson topics
 
-</div>
+- definition of `List`, `Set`, and `Map` collections;
+- read-only and mutable collections with `add` and `remove` operations;
+- built-in functions to work with collections:
 
-- You may need to refer your learners to a particular lesson,
-task, or file. To achieve this, you can use the in-course links.
-Specify the path using the `[link_text](course://lesson1/task1/file1)` format.
+  - `filter`, `partition`, `shuffled`, `sort`
 
-- You can insert shortcuts in the task description.
-While **task.html/task.md** is open, right-click anywhere
-on the **Editor** tab and choose the **Insert shortcut** option
-from the context menu.
-For example: &shortcut:FileStructurePopup;.
+### Project example
 
-- Insert the &percnt;`IDE_NAME`&percnt; macro,
-which will be replaced by the actual IDE name.
-For example, **%IDE_NAME%**.
+By the end of this task, you will create the following application:
 
-- Insert PSI elements, by using links like
-`[element_description](psi_element://link.to.element)`.
-To get such a link, right-click the class or method
-and select **Copy Reference**.
-Then press &shortcut:EditorPaste; to insert the link where appropriate.
-For example, a [link to the "contains" method](psi_element://java.lang.String#contains).
-
-- You can add link to file using **full path** like this:
-  `[file_link](file://lesson1/task1/file.txt)`.
+![Final application](../../utils/src/main/resources/images/duck/shop/states/ready.gif)

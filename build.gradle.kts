@@ -1,5 +1,4 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import java.util.*
 
 group = "jetbrains.kotlin.course"
 version = "0.0.1-SNAPSHOT"
@@ -9,25 +8,15 @@ fun properties(key: String) = project.findProperty(key).toString()
 @Suppress("DSL_SCOPE_VIOLATION") // "libs" produces a false-positive warning, see https://youtrack.jetbrains.com/issue/KTIJ-19369
 plugins {
     java
-    val kotlinVersion = "1.7.10"
+    val kotlinVersion = "1.9.0"
     id("org.jetbrains.kotlin.jvm") version kotlinVersion apply false
     id("org.jetbrains.kotlin.multiplatform") version kotlinVersion apply false
     id("org.springframework.boot") version "2.7.3" apply false
     id("io.spring.dependency-management") version "1.0.13.RELEASE" apply false
     id("org.jetbrains.kotlin.plugin.spring") version kotlinVersion apply false
-    id("io.gitlab.arturbosch.detekt") version "1.21.0"
+    id("io.gitlab.arturbosch.detekt") version "1.23.1"
 
     id("org.siouan.frontend-jdk11") version "6.0.0"
-}
-
-fun printOutput(output: Any): Task {
-    return tasks.create("printOutput") {
-        println("#educational_plugin_check(er_version 1")
-        val lines = output.toString().split("(?<=\n)|(?=\n)")
-        for (line in lines) {
-            println("#educational_plugin$line")
-        }
-    }
 }
 
 val detektReportMerge by tasks.registering(io.gitlab.arturbosch.detekt.report.ReportMergeTask::class) {
@@ -75,7 +64,7 @@ configure(subprojects.filter { it.name != "common" && frontendSuffix !in it.name
     tasks.getByPath("detekt").onlyIf { project.hasProperty("runDetekt") }
 
     dependencies {
-        implementation("org.jetbrains.academy.test.system:kotlin-test-system:1.0.4")
+        implementation("org.jetbrains.academy.test.system:core:2.0.6")
     }
 
     val jvmVersion = "11"

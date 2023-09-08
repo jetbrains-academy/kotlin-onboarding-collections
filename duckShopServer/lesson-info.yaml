@@ -1,5 +1,19 @@
 type: framework
 custom_name: Duck shop
 content:
-- duckShopServerIntroduction
+  - duckShopServerIntroduction
+  - duckShopServerHowToRun
+  - duckShopServerListDefinition
+  - DuckShopServerDucksListInitialization
+  - DuckShopServerSetDefinition
+  - DuckShopServerDuckSetInitialization
+  - DuckShopServerMapDefinition
+  - DuckShopServerDuckMapInitialization
+  - duckShopServerMutableCollectionDefinition
+  - duckShopServerRemoveElements
+  - duckShopServerAddElements
+  - duckShopServerBuiltInFunctions
+  - duckShopServerFilter
+  - duckShopServerPartition
+  - DuckShopServerFinishApp
 is_template_based: false

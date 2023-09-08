@@ -1,6 +1,6 @@
-import org.jetbrains.academy.test.system.models.classes.ConstructorGetter
-import org.jetbrains.academy.test.system.models.method.TestMethod
-import org.jetbrains.academy.test.system.models.method.TestMethodInvokeData
+import org.jetbrains.academy.test.system.core.models.classes.ConstructorGetter
+import org.jetbrains.academy.test.system.core.models.method.TestMethod
+import org.jetbrains.academy.test.system.core.models.method.TestMethodInvokeData
 import org.jetbrains.kotlin.course.old.school.photo.Accessory
 import org.jetbrains.kotlin.course.old.school.photo.PhotoCharacter
 import org.junit.jupiter.api.Test

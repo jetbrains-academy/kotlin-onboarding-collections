@@ -91,7 +91,7 @@
   margin-bottom: 1vmin;
 }
 .App-button-start:hover {
-  opacity: 85%;
+  opacity: 0.85;
 }
 
 .App-teams-button-back {
@@ -311,7 +311,7 @@
 
 .App-unclickable-button {
   pointer-events: none;
-  opacity: 40%;
+  opacity: 0.4;
 }
 
 .App-button-back {

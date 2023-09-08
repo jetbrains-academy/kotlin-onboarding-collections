@@ -1,9 +1,9 @@
-import org.jetbrains.academy.test.system.models.TestKotlinType
-import org.jetbrains.academy.test.system.models.Visibility
-import org.jetbrains.academy.test.system.models.classes.ClassType
-import org.jetbrains.academy.test.system.models.classes.TestClass
-import org.jetbrains.academy.test.system.models.variable.TestVariable
-import org.jetbrains.academy.test.system.models.variable.VariableMutability
+import org.jetbrains.academy.test.system.core.models.TestKotlinType
+import org.jetbrains.academy.test.system.core.models.Visibility
+import org.jetbrains.academy.test.system.core.models.classes.ClassType
+import org.jetbrains.academy.test.system.core.models.classes.TestClass
+import org.jetbrains.academy.test.system.core.models.variable.TestVariable
+import org.jetbrains.academy.test.system.core.models.variable.VariableMutability
 
 internal val photoCharacterTestClass = TestClass(
     "PhotoCharacter",
