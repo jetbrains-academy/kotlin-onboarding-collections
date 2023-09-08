@@ -158,9 +158,9 @@ configure(subprojects.filter { server in it.name }) {
         implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.14.1")
     }
 
-//    tasks.named("processResources") {
-//        dependsOn(":$gameName$frontendSuffix:build")
-//    }
+    tasks.named("processResources") {
+        dependsOn(":$gameName$frontendSuffix:build")
+    }
 
     sourceSets {
         getByName("main").java.srcDirs("$gameName/src/main/kotlin")

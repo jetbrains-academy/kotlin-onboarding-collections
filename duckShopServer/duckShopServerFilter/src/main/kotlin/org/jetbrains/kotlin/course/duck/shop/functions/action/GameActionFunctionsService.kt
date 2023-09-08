@@ -10,9 +10,9 @@ class GameActionFunctionsService {
 
     fun List<Duck>.sortDucks(): List<Duck> = TODO("Not implemented yet")
 
-    fun Collection<Duck>.deleteDucksWithoutKotlinStuff() = this.filter { it.hasKotlinAttribute }
+    fun Collection<Duck>.deleteDucksWithoutKotlinStuff() = filter { it.hasKotlinAttribute }
 
-    fun Map<Duck, String>.deleteDucksWithoutKotlinStuff() = this.filterKeys { it.hasKotlinAttribute }
+    fun Map<Duck, String>.deleteDucksWithoutKotlinStuff() = filterKeys { it.hasKotlinAttribute }
 
     fun Collection<Duck>.divideDucksIntoKotlinAndNonKotlin(): Pair<Collection<Duck>, Collection<Duck>> = TODO("Not implemented yet")
 }

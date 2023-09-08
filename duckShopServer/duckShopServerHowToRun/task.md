@@ -14,7 +14,7 @@ Please don't forget to _stop all other runs_ by pressing the red square button:
 Next, you need to open any browser (we recommend using [Google Chrome](https://www.google.com/chrome/) to display the elements as in the examples)
 and open http://localhost:8080/. You will see the main page of the application:
 
-![The main page of the application](TODO)
+![The main page of the application](../../utils/src/main/resources/images/duck/shop/states/main_page.png)
 
 <div class="hint" title="The application from the last launch is displayed">
 

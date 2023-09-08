@@ -28,7 +28,9 @@ and study `List`, `Set`, and `Map` collections.
 
 - definition of `List`, `Set`, and `Map` collections;
 - read-only and mutable collections with `add` and `remove` operations;
-- **TODO**
+- built-in functions to work with collections:
+
+  - `filter`, `partition`, `shuffled`, `sort`
 
 ### Project example
 

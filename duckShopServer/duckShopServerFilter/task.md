@@ -11,7 +11,7 @@ We have only two functions, since the function `fun Collection<Duck>.deleteDucks
 
 After implementing this task the `Filter` button in all three modes becomes alive:
 
-*![Current state](../../utils/src/main/resources/images/duck/shop/states/state_6.gif)
+![Current state](../../utils/src/main/resources/images/duck/shop/states/state_6.gif)
 
 If you have any difficulties, **hints will help you solve this task**.
 
