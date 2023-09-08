@@ -1,5 +1,4 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import java.util.*
 
 group = "jetbrains.kotlin.course"
 version = "0.0.1-SNAPSHOT"
@@ -15,19 +14,9 @@ plugins {
     id("org.springframework.boot") version "2.7.3" apply false
     id("io.spring.dependency-management") version "1.0.13.RELEASE" apply false
     id("org.jetbrains.kotlin.plugin.spring") version kotlinVersion apply false
-    id("io.gitlab.arturbosch.detekt") version "1.21.0"
+    id("io.gitlab.arturbosch.detekt") version "1.23.1"
 
     id("org.siouan.frontend-jdk11") version "6.0.0"
-}
-
-fun printOutput(output: Any): Task {
-    return tasks.create("printOutput") {
-        println("#educational_plugin_check(er_version 1")
-        val lines = output.toString().split("(?<=\n)|(?=\n)")
-        for (line in lines) {
-            println("#educational_plugin$line")
-        }
-    }
 }
 
 val detektReportMerge by tasks.registering(io.gitlab.arturbosch.detekt.report.ReportMergeTask::class) {
