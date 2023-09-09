@@ -28,7 +28,10 @@ If you have any difficulties, **hints will help you solve this task**.
 
 <div class="hint" title="How to get all values from an enum class?">
 
-  To get all values from an enum class you can use a built-in function [`values`](https://kotlinlang.org/docs/enum-classes.html#working-with-enum-constants).
+  To get all values from an enum class you can use a built-in property [`entries`](https://kotlinlang.org/docs/enum-classes.html#working-with-enum-constants):
+```kotlin
+val allDucks = Duck.entries
+```
 </div>
 
 

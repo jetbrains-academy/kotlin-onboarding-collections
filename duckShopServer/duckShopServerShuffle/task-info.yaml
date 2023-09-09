@@ -1,0 +1,181 @@
+type: edu
+custom_name: Duck Shop - Shuffle Function
+files:
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/duck/Duck.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/functions/action/GameActionFunctionsResource.kt
+    visible: false
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/functions/action/GameActionFunctionsService.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/functions/change/GameChangeFunctionsResource.kt
+    visible: false
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/functions/change/GameChangeFunctionsService.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/functions/common/RequestBody.kt
+    visible: false
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/mode/GameModeResource.kt
+    visible: false
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/mode/GameModeService.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/utils/Converters.kt
+    visible: false
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/utils/GameMode.kt
+    visible: false
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/utils/GameUtil.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/DuckShopApplication.kt
+    visible: true
+  - name: src/main/resources/static/static/js/1.5bff5668.chunk.js
+    visible: false
+  - name: src/main/resources/static/static/js/2.95861944.chunk.js
+    visible: false
+  - name: src/main/resources/static/static/js/main.b0d38b47.chunk.js
+    visible: false
+  - name: src/main/resources/static/static/js/1.5bff5668.chunk.js.map
+    visible: false
+  - name: src/main/resources/static/static/js/2.95861944.chunk.js.map
+    visible: false
+  - name: src/main/resources/static/static/js/runtime~main.cf32845b.js
+    visible: false
+  - name: src/main/resources/static/static/js/main.b0d38b47.chunk.js.map
+    visible: false
+  - name: src/main/resources/static/static/js/runtime~main.cf32845b.js.map
+    visible: false
+  - name: src/main/resources/static/static/css/main.ceda10d0.chunk.css
+    visible: false
+  - name: src/main/resources/static/static/media/bg.159aeebb.svg
+    visible: false
+  - name: src/main/resources/static/static/media/add.cca0c873.svg
+    visible: false
+  - name: src/main/resources/static/static/media/leo.0df6dd7d.svg
+    visible: false
+  - name: src/main/resources/static/static/media/alex.f5248af4.svg
+    visible: false
+  - name: src/main/resources/static/static/media/jack.3458b1ab.svg
+    visible: false
+  - name: src/main/resources/static/static/media/logo.59194e54.svg
+    visible: false
+  - name: src/main/resources/static/static/media/sort.79f2b626.svg
+    visible: false
+  - name: src/main/resources/static/static/media/piter.5667efa6.svg
+    visible: false
+  - name: src/main/resources/static/static/media/daniel.d7b2d5c8.svg
+    visible: false
+  - name: src/main/resources/static/static/media/dorian.e2b3cbfb.svg
+    visible: false
+  - name: src/main/resources/static/static/media/filter.b3aed71b.svg
+    visible: false
+  - name: src/main/resources/static/static/media/oliver.9f6bab39.svg
+    visible: false
+  - name: src/main/resources/static/static/media/remove.5a9bab39.svg
+    visible: false
+  - name: src/main/resources/static/static/media/mr.pink.df18ec68.svg
+    visible: false
+  - name: src/main/resources/static/static/media/shuffle.931f0708.svg
+    visible: false
+  - name: src/main/resources/static/static/media/vanessa.28546e74.svg
+    visible: false
+  - name: src/main/resources/static/static/media/bg_white.177e2c94.svg
+    visible: false
+  - name: src/main/resources/static/static/media/box_best.04fd7659.svg
+    visible: false
+  - name: src/main/resources/static/static/media/duck_box.be7f68fa.svg
+    visible: false
+  - name: src/main/resources/static/static/media/kristian.2d99b6b9.svg
+    visible: false
+  - name: src/main/resources/static/static/media/add-hover.bad3ea55.svg
+    visible: false
+  - name: src/main/resources/static/static/media/map_hover.40feff6a.svg
+    visible: false
+  - name: src/main/resources/static/static/media/partition.35c2762b.svg
+    visible: false
+  - name: src/main/resources/static/static/media/set_hover.faeafc21.svg
+    visible: false
+  - name: src/main/resources/static/static/media/duck_label.29f4c090.svg
+    visible: false
+  - name: src/main/resources/static/static/media/list_hover.f624d13f.svg
+    visible: false
+  - name: src/main/resources/static/static/media/map_button.f3c62618.svg
+    visible: false
+  - name: src/main/resources/static/static/media/set_button.c4d0b664.svg
+    visible: false
+  - name: src/main/resources/static/static/media/sort-hover.66c8adb4.svg
+    visible: false
+  - name: src/main/resources/static/static/media/back_button.467450b5.svg
+    visible: false
+  - name: src/main/resources/static/static/media/list_button.4b86e57c.svg
+    visible: false
+  - name: src/main/resources/static/static/media/map_focused.511b7cfb.svg
+    visible: false
+  - name: src/main/resources/static/static/media/play_button.07c3d73d.svg
+    visible: false
+  - name: src/main/resources/static/static/media/set_focused.5225cb56.svg
+    visible: false
+  - name: src/main/resources/static/static/media/filter-hover.350dab65.svg
+    visible: false
+  - name: src/main/resources/static/static/media/list_focused.39eb0059.svg
+    visible: false
+  - name: src/main/resources/static/static/media/remove-hover.df57426a.svg
+    visible: false
+  - name: src/main/resources/static/static/media/shuffle-hover.b6060ebb.svg
+    visible: false
+  - name: src/main/resources/static/static/media/partition-hover.73b4dc21.svg
+    visible: false
+  - name: src/main/resources/static/static/media/back_button_hover.c7d14fd4.svg
+    visible: false
+  - name: src/main/resources/static/index.html
+    visible: false
+  - name: src/main/resources/static/robots.txt
+    visible: false
+  - name: src/main/resources/static/favicon.ico
+    visible: false
+  - name: src/main/resources/static/manifest.json
+    visible: false
+  - name: src/main/resources/static/service-worker.js
+    visible: false
+  - name: src/main/resources/static/asset-manifest.json
+    visible: false
+  - name: src/main/resources/static/precache-manifest.c27237e8cb8f0c050ee73228e06d2c79.js
+    visible: false
+  - name: src/main/resources/static/precache-manifest.70fad1423aecd2cc1dc8df1c8a51ab6a.js
+    visible: true
+  - name: src/main/resources/static/precache-manifest.79d5bbf541fc215a96f9bc662f0e090b.js
+    visible: true
+  - name: src/main/resources/static/precache-manifest.0577f04d58ba0da2390c65d13dcf7afd.js
+    visible: true
+  - name: src/main/resources/static/precache-manifest.fbf91b5cb2ecf803a1b77abb796a2a35.js
+    visible: true
+  - name: src/main/resources/static/static/css/main.ceda10d0.chunk.css.map
+    visible: false
+  - name: src/main/resources/static/precache-manifest.2e8a2be7461ed38c8849143c277d2049.js
+    visible: true
+  - name: src/main/resources/static/static/css/main.1319dc3c.chunk.css
+    visible: true
+  - name: src/main/resources/static/static/css/main.1319dc3c.chunk.css.map
+    visible: true
+  - name: src/main/resources/static/static/js/main.81c2fce0.chunk.js.map
+    visible: true
+  - name: src/main/resources/static/static/js/main.81c2fce0.chunk.js
+    visible: true
+  - name: src/main/resources/static/precache-manifest.1c5b37c8d31a391daf685e13faf741c5.js
+    visible: false
+  - name: src/main/resources/static/static/css/main.a4583d36.chunk.css
+    visible: false
+  - name: src/main/resources/static/static/css/main.a4583d36.chunk.css.map
+    visible: false
+  - name: src/main/resources/static/static/js/main.bf41c0d3.chunk.js
+    visible: false
+  - name: src/main/resources/static/static/js/main.bf41c0d3.chunk.js.map
+    visible: false
+  - name: test/DuckClassTestMethods.kt
+    visible: false
+  - name: test/GameActionFunctionsServiceTestClass.kt
+    visible: false
+  - name: test/GameChangeFunctionsService.kt
+    visible: false
+  - name: test/GameChangeFunctionsServiceTestClass.kt
+    visible: false
+  - name: test/GameModeServiceTestClass.kt
+    visible: false
+  - name: test/Tests.kt
+    visible: false

@@ -177,3 +177,5 @@ files:
     visible: false
   - name: src/main/resources/static/static/js/main.bf41c0d3.chunk.js.map
     visible: false
+  - name: test/GameActionFunctionsServiceTestClass.kt
+    visible: false

@@ -23,15 +23,6 @@ If you have any difficulties, **hints will help you solve this task**.
 <div class="hint" title="How can I shuffle a list of elements?">
 
 If you need to shuffle a list of elements, you can use the built-in function [`shuffled`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/shuffled.html).
-
-Since `Duck.entries()` returns [`kotlin.Array`](https://kotlinlang.org/docs/arrays.html), by default you cannot invoke the `shuffled` function, you need to convert the result into a list:
-```kotlin
-Duck.entries().shuffled() // ERROR
-
-Duck.entries().toList().shuffled() // OK
-```
-
-We will not consider the detailed difference between lists and arrays in this project, you can follow to the documentation to get more details.
 </div>
 
 <div class="hint" title="How can I take N first elements from a list?">

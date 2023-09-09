@@ -15,5 +15,6 @@ content:
   - duckShopServerBuiltInFunctions
   - duckShopServerFilter
   - duckShopServerPartition
-  - DuckShopServerFinishApp
+  - duckShopServerShuffle
+  - duckShopServerSortFunction
 is_template_based: false
