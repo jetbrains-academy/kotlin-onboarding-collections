@@ -6,5 +6,6 @@ summary: |-
 programming_language: Kotlin
 content:
   - duckShopServer
+  - oldSchoolServer
 environment_settings:
   jvm_language_level: JDK_17
