@@ -173,3 +173,9 @@ files:
     visible: false
   - name: src/main/resources/static/static/css/main.a4583d36.chunk.css.map
     visible: false
+  - name: test/GameActionFunctionsServiceTestClass.kt
+    visible: false
+  - name: test/GameChangeFunctionsService.kt
+    visible: false
+  - name: test/GameChangeFunctionsServiceTestClass.kt
+    visible: false
