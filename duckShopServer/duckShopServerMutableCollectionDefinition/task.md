@@ -1,7 +1,7 @@
 ## Definition
 
-We already have learned how to create different collections in Kotlin, e.g. `List`, `Set` or `Map`.
-Although, if you try to modify collections, that we created by built-in builders, e.g. `listOf()` etc, 
+We have already learned how to create different collections in Kotlin, e.g., `List`, `Set`, or `Map`.
+However, if you try to modify the collections that we've created by built-in builders (e.g., `listOf()`, etc.), 
 you will get an error:
 
 ```kotlin
@@ -17,9 +17,9 @@ fun main() {
 }
 ```
 
-It happens since in Kotlin all collections are divided into _read-only_ and _mutable_ ones.
-If you have a _read-only_ collection, you can create this collection only once and next you can only _read_ elements 
-from the collection, e.g. this code is correct:
+It happens since in Kotlin, all collections are divided into _read-only_ and _mutable_ ones.
+If you have a _read-only_ collection, you can create it only once and then you can only _read_ elements 
+from the collection: e.g., this code is correct:
 
 ```kotlin
 fun main() {
@@ -28,7 +28,7 @@ fun main() {
 }
 ```
 
-If you need to modify the collection somehow you need to create a _mutable_ collection or transform a _read-only_ 
+If you need to modify the collection somehow, you need to create a _mutable_ collection or transform a _read-only_ 
 version into a _mutable_ one:
 
 ```kotlin
@@ -42,14 +42,14 @@ fun main() {
 ```
 
 Each mutable collection has _all_ methods from the read-only version, but extends them 
-with such methods like `add`, `remove`, etc. 
+with such methods as `add`, `remove`, etc. 
 You can find all of them in the official [Kotlin documentation](https://kotlinlang.org/docs/collections-overview.html).
 
 ## Build a mutable collection
 
-As we mentioned in above, you can _create_ a mutable collection, or to _transform_ an existing one.
+As we mentioned above, you can _create_ a mutable collection or _transform_ an existing one.
 
-To create mutable collections you can use the built-in builders:
+To create mutable collections, you can use the built-in builders:
 
 ```kotlin
 fun main() {
@@ -64,7 +64,7 @@ fun main() {
 }
 ```
 
-If you need to _transform_ an existing one, you can also use the built-in functions:
+If you need to _transform_ an existing collection, you can also use the built-in functions:
 
 ```kotlin
 fun main() {
