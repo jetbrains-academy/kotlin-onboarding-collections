@@ -20,7 +20,7 @@ but also the complexity of `this` operation.
 a hash set. So, inserting elements into the linked hash set is cheap.
 </div>
 
-In general `Set` contains _only_ elements with the _same_ type.
+In general, `Set` contains _only_ elements with the _same_ type.
 In some cases, it is possible to store elements with different types,
 but they must have a _relation_ between them, see the [documentation](https://kotlinlang.org/docs/generics.html) for more details.
 
@@ -72,7 +72,7 @@ val emptySet2 = setOf<Int>() // Calls emptySet()
 In Kotlin, the `emptySet` implementation is an object under the hood.
 The main reason such a function exists is to save allocations (creating and deleting new variables).
 Since `emptySet` returns the same _singleton_ instance every time it is called, one can
-use it in allocation freely. It allows your Kotlin program to work in a more efficient way.
+use it in an allocation-free manner. It allows your Kotlin program to work in a more efficient way.
 </div>
 
 ```kotlin
