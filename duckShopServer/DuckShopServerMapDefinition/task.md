@@ -34,7 +34,7 @@ val emptyMap2 = mapOf<Int, String>() // Calls emptyMap()
 In Kotlin, the `emptyMap` implementation is an object under the hood.
 The main reason such a function exists is to save allocations (creating and deleting new variables).
 Since `emptyMap` returns the same _singleton_ instance every time it is called, one can
-use it in allocation freely. It allows your Kotlin program to work in a more efficient way.
+use it in an allocation-free manner. It allows your Kotlin program to work in a more efficient way.
 </div>
 
 ```kotlin
