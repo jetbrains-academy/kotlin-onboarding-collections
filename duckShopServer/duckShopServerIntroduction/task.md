@@ -1,8 +1,8 @@
-Hello! Welcome to the third module of the Kotlin onboarding course.
-This module will introduce you to definitions of **collections** in the Kotlin language 
-and will teach ypu hoe to work with them.
+Hello! Welcome to the third module of the "Kotlin onboarding" course.
+This module will introduce you to the definitions of **collections** in the Kotlin language 
+and will teach you how to work with them.
 We assume that you have completed the first and second parts of the course
-or are familiar with all topics they cover.
+or are familiar with all the topics they cover.
 
 All topics will be accompanied by links to [the official Kotlin documentation](https://kotlinlang.org/docs/home.html),
 which you can read later.
@@ -14,7 +14,7 @@ At the end of each lesson, an additional project will be offered:
 it includes all the topics of the lesson but does not contain any theory materials.
 The topic of this module is **TODO**.
 It means that in each lesson, you will create a web application with 
-something familiar from your or your parents' childhood.
+some images familiar from your (or your parents') childhood.
 Note, part of the code will be prewritten by the course author
 to avoid going deep into web programming in this course.
 
@@ -26,7 +26,7 @@ and study `List`, `Set`, and `Map` collections.
 
 ### Lesson topics
 
-- definition of `List`, `Set`, and `Map` collections;
+- definitions of `List`, `Set`, and `Map` collections;
 - read-only and mutable collections with `add` and `remove` operations;
 - built-in functions to work with collections:
 
