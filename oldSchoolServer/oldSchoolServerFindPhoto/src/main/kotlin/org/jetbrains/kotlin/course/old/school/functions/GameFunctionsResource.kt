@@ -1,3 +1,5 @@
+@file:Suppress("UnusedParameter")
+
 package org.jetbrains.kotlin.course.old.school.functions
 
 import org.springframework.web.bind.annotation.*

@@ -56,6 +56,7 @@ configure(subprojects.filter { it.name != "common" && frontendSuffix !in it.name
     }
 
     tasks.withType<io.gitlab.arturbosch.detekt.Detekt> {
+        exclude("**/GameFunctionsService.kt")
         finalizedBy(detektReportMerge)
         reports.sarif.required.set(true)
         detektReportMerge.get().input.from(sarifReportFile)
