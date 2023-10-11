@@ -8,9 +8,10 @@ version = rootProject.version
 
 kotlin {
     js(IR) {
+        binaries.executable()
         browser {
-            binaries.executable()
         }
+        generateTypeScriptDefinitions()
     }
     jvm()
 }
@@ -23,7 +24,7 @@ tasks {
                 into("$buildDir/libs/common-types")
             }
             copy {
-                from("$buildDir/compileSync/main/productionExecutable/kotlin")
+                from("$buildDir/compileSync/js/main/productionExecutable/kotlin")
                 into("$buildDir/libs/common-types")
                 rename { name -> name.replace("${rootProject.name}-common", "index") }
             }

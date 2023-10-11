@@ -23,18 +23,6 @@ If you have any difficulties, **hints will help you solve this task**.
 
 ### Hints
 
-[//]: # (        val sortedDucks = initialDucks.sortedByDescending { d ->)
-
-[//]: # (            d.accessories.sumOf {)
-
-[//]: # (                val coefficient = if &#40;d.hasKotlinAttribute&#41; 100 else 1)
-
-[//]: # (                it.price * coefficient)
-
-[//]: # (            })
-
-[//]: # (        })
-
 <div class="hint" title="How to sort a list of items">
 
 You can use the built-in functions [`sortedBy`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/sorted-by.html) 

@@ -1,0 +1,137 @@
+type: edu
+custom_name: Old School - Helper Functions
+files:
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/OldSchoolApplication.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/photo/PhotoCharacter.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/mode/GameModeService.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/mode/GameModeResource.kt
+    visible: false
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/functions/GameFunctionsService.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/functions/GameFunctionsResource.kt
+    visible: false
+  - name: src/main/resources/static/static/js/main.e50dc054.js
+    visible: false
+  - name: src/main/resources/static/static/js/main.e50dc054.js.map
+    visible: false
+  - name: src/main/resources/static/static/js/496.35c518b0.chunk.js
+    visible: false
+  - name: src/main/resources/static/static/js/496.35c518b0.chunk.js.map
+    visible: false
+  - name: src/main/resources/static/static/js/main.e50dc054.js.LICENSE.txt
+    visible: false
+  - name: src/main/resources/static/static/css/main.7674ae2c.css
+    visible: false
+  - name: src/main/resources/static/static/css/main.7674ae2c.css.map
+    visible: false
+  - name: src/main/resources/static/static/media/bg.36ac84bcfc4b1fa64b64.svg
+    visible: false
+  - name: src/main/resources/static/static/media/leo.7090c167f1f7f8dc126e.svg
+    visible: false
+  - name: src/main/resources/static/static/media/emma.e25f02cd3407ed1d8f77.svg
+    visible: false
+  - name: src/main/resources/static/static/media/evie.480976d7cf4ea3194210.svg
+    visible: false
+  - name: src/main/resources/static/static/media/noah.3f45fe4637507ba06d11.svg
+    visible: false
+  - name: src/main/resources/static/static/media/alice.c55b75f9dbf5b0a55ea2.svg
+    visible: false
+  - name: src/main/resources/static/static/media/david.3b3f95816ae3803fda82.svg
+    visible: false
+  - name: src/main/resources/static/static/media/diana.f6db41982ccf4f136594.svg
+    visible: false
+  - name: src/main/resources/static/static/media/emily.9955df4c6bdadc9e514f.svg
+    visible: false
+  - name: src/main/resources/static/static/media/henry.1e3b051188d24c574e83.svg
+    visible: false
+  - name: src/main/resources/static/static/media/jamie.4e478b82b6057ce13520.svg
+    visible: false
+  - name: src/main/resources/static/static/media/larry.31d5b1fb5eaf26f50bf0.svg
+    visible: false
+  - name: src/main/resources/static/static/media/daniel.d64c6dae0452b381e0e3.svg
+    visible: false
+  - name: src/main/resources/static/static/media/edward.8d1b412a6fdbf76a3147.svg
+    visible: false
+  - name: src/main/resources/static/static/media/helena.7efd6cd922e157060dc3.svg
+    visible: false
+  - name: src/main/resources/static/static/media/oliver.b790b3049bd60f66f70d.svg
+    visible: false
+  - name: src/main/resources/static/static/media/olivia.82a58c7d72e4bec949a2.svg
+    visible: false
+  - name: src/main/resources/static/static/media/thomas.42906515ce049595698a.svg
+    visible: false
+  - name: src/main/resources/static/static/media/bg_white.00acddcc6609eb49c481.svg
+    visible: false
+  - name: src/main/resources/static/static/media/charlotte.90ad2662fb747f951cc4.svg
+    visible: false
+  - name: src/main/resources/static/static/media/map_hover.2910bc8ec86e7dca97f8.svg
+    visible: false
+  - name: src/main/resources/static/static/media/set_hover.20dcadbf1c6fd57028ec.svg
+    visible: false
+  - name: src/main/resources/static/static/media/list_hover.a23493334686f017614a.svg
+    visible: false
+  - name: src/main/resources/static/static/media/map_button.7cfc2167ed06bd3e6a87.svg
+    visible: false
+  - name: src/main/resources/static/static/media/set_button.481dbe764f51d9b26229.svg
+    visible: false
+  - name: src/main/resources/static/static/media/back_button.578d2b1544fe8bc2e2ec.svg
+    visible: false
+  - name: src/main/resources/static/static/media/list_button.3603ac44f82c83f64348.svg
+    visible: false
+  - name: src/main/resources/static/static/media/map_focused.75f18bbc16afbc0d8071.svg
+    visible: false
+  - name: src/main/resources/static/static/media/play_button.aad770749eabbe8ac9b1.svg
+    visible: false
+  - name: src/main/resources/static/static/media/set_focused.e4e53e6f968a066cab17.svg
+    visible: false
+  - name: src/main/resources/static/static/media/list_focused.27940c1d99f32759b1b3.svg
+    visible: false
+  - name: src/main/resources/static/static/media/photo_gray_bg.a25a61ec67025937f7a6.svg
+    visible: false
+  - name: src/main/resources/static/static/media/dropdown_arrow.496c73087078b450581d.svg
+    visible: false
+  - name: src/main/resources/static/static/media/photo_purple_bg.d123fd2627e319256529.svg
+    visible: false
+  - name: src/main/resources/static/static/media/logo.268d00446166cf1de740cc64ed6c6686.svg
+    visible: false
+  - name: src/main/resources/static/static/media/back_button_hover.f4bf17adae27016a067f.svg
+    visible: false
+  - name: src/main/resources/static/static/media/photo_white_bg_left.64ab58d702848c04a051.svg
+    visible: false
+  - name: src/main/resources/static/static/media/photo_white_bg_right.64ab58d702848c04a051.svg
+    visible: false
+  - name: src/main/resources/static/static/media/photo_purple_separator.5ac5a220bce7108a9215.svg
+    visible: false
+  - name: src/main/resources/static/index.html
+    visible: false
+  - name: src/main/resources/static/robots.txt
+    visible: false
+  - name: src/main/resources/static/favicon.ico
+    visible: false
+  - name: src/main/resources/static/manifest.json
+    visible: false
+  - name: src/main/resources/static/asset-manifest.json
+    visible: false
+  - name: src/main/resources/static/static/js/main.649fc6c7.js.LICENSE.txt
+    visible: false
+  - name: src/main/resources/static/static/js/main.649fc6c7.js.map
+    visible: false
+  - name: src/main/resources/static/static/js/main.649fc6c7.js
+    visible: false
+  - name: test/AccessoryTestClass.kt
+    visible: false
+  - name: test/ColorTestClass.kt
+    visible: false
+  - name: test/GameFunctionsServiceTestClass.kt
+    visible: false
+  - name: test/GameModeServiceTestClass.kt
+    visible: false
+  - name: test/HairTypeTestClass.kt
+    visible: false
+  - name: test/PhotoCharacterTestClass.kt
+    visible: false
+  - name: test/Tests.kt
+    visible: false
