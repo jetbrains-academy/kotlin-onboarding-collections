@@ -1,5 +1,5 @@
 import {GameState} from "../GameScreen";
-import axios from "axios";
+import axios, {AxiosRequestConfig} from "axios";
 import {useEffect, useState} from "react";
 import {old} from "common-types";
 import JsPhoto = old.school.JsPhoto;
@@ -81,7 +81,7 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
             axios.post("/functions/find", {
                 "names": photos.map((photo) => photo.name),
                 "color": color
-            }, {headers: {'Content-Type': 'application/json'}})
+            }, {headers: {'Content-Type': 'application/json'}} as AxiosRequestConfig)
                 .then((response) => {
                     console.log(response)
 
@@ -112,8 +112,9 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
         return userFunction == possibleOptions[0]
     }
 
-    function sendGroupByRequest(url: string) {
-        axios.post(url, photos.map((photo) => photo.name), {headers: {'Content-Type': 'application/json'}})
+    function sendGroupByRequest(url: string, infoText: string) {
+        axios.post(url, photos.map((photo) => photo.name),
+            {headers: {'Content-Type': 'application/json'}} as AxiosRequestConfig)
             .then((response) => {
                 let grouped = (response.data as Array<string>).filter(function (elem, index, self) {
                     return index === self.indexOf(elem);
@@ -128,6 +129,7 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
                     }
                 })
                 photosSetter(sorted)
+                infoTextSetter(infoText)
             })
     }
 
@@ -136,11 +138,9 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
             return
         }
         if (type == "background color") {
-            sendGroupByRequest("/functions/groupByByColor")
-            infoTextSetter("Photos have been grouped according to\nthe background color.")
+            sendGroupByRequest("/functions/groupByByColor", "Photos have been grouped according to\nthe background color.")
         } else if (type == "hair type and hat") {
-            sendGroupByRequest("/functions/groupByPhotosByHairAndHat")
-            infoTextSetter("Photos have been grouped according to the hair tone (dark or light).\nInside each group, photos are grouped according to the absence/presence of a hat.")
+            sendGroupByRequest("/functions/groupByPhotosByHairAndHat", "Photos have been grouped according to the hair tone (dark or light).\nInside each group, photos are grouped according to the absence/presence of a hat.")
         }
     }
 
