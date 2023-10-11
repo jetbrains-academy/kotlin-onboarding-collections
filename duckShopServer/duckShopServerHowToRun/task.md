@@ -1,6 +1,6 @@
 At each stage, you can run the current version of the application.
 However, if some functionality is not yet ready,
-then some buttons may not work, and some information may not be displayed.
+then some buttons may not work and some information may not be displayed.
 
 To run the application, you need to run the `main` function inside
 the [DuckShopApplication.kt](./src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/DuckShopApplication.kt) file:
