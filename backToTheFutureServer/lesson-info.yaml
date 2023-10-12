@@ -2,5 +2,9 @@ type: framework
 custom_name: Back to the future
 content:
   - backToTheFutureServerIntroduction
+  - backToTheFutureServerHowToRun
+  - backToTheFutureServerFifo
+  - backToTheFutureServerLifo
+  - backToTheFutureServerInKotlin
   - backToTheFutureServerFinal
 is_template_based: false
