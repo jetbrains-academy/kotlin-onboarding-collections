@@ -10,8 +10,8 @@ implement several `List`, `Set`, and `Map` functions that allow you to navigate 
 
 ### Lesson topics
 
-- sorting collections
-- grouping collections
+- finding items in collections
+- grouping elements in collections
 
 ### Project example
 
