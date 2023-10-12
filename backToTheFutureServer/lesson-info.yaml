@@ -1,5 +1,6 @@
 type: framework
 custom_name: Back to the future
 content:
+  - backToTheFutureServerIntroduction
   - backToTheFutureServerFinal
 is_template_based: false
