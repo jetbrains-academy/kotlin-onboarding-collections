@@ -1,5 +1,12 @@
 type: framework
 custom_name: Back to the future
 content:
-  - backToTheFutureServerFinal
+  - backToTheFutureServerIntroduction
+  - backToTheFutureServerHowToRun
+  - backToTheFutureServerFifo
+  - backToTheFutureServerLifo
+  - backToTheFutureServerInKotlin
+  - backToTheFutureServerAddCommands
+  - backToTheFutureServerAddCommand
+  - backToTheFutureServerGetCommand
 is_template_based: false
