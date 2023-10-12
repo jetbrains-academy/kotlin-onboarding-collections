@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 import {State} from "../../models/TamagotchiState";
 import {Command} from "../../models/Command";
 import CommandRowProps from "../CommandRow";
+import axios, {AxiosRequestConfig} from "axios";
 
 type MainGameScreenProps = {
     gameStateSetter: (gs: GameState) => void
@@ -40,19 +41,41 @@ export default function MainGameScreen({gameStateSetter}: MainGameScreenProps) {
         commandsSetter(clonedCommands)
     }
 
-    function getCommand() {
-        if (mode == QUEUE) {
-            const command = commands[0]
-            setCommands(commands.slice(1, MAX_SIZE))
-            return command
+    function convertCommandNameToCommand(name: String): Command {
+        switch (name) {
+            case "Clean": {
+                return Command.Clean
+            }
+            case "Eat": {
+                return Command.Eat
+            }
+            case "Sleep": {
+                return Command.Sleep
+            }
+            case "Play": {
+                return Command.Play
+            }
         }
-        const command = commands[commands.length - 1]
-        setCommands(commands.slice(0, commands.length - 1))
-        return command
+        // Default value, but this case is impossible
+        return Command.Play
     }
 
-    function removeFromQueue() {
-        performCommand(getCommand())
+    function getCommandFromServer() {
+        axios.post("/command/get", mode, {headers: {'Content-Type': 'application/json'}} as AxiosRequestConfig)
+            .then(async (response) => {
+                if (response.data != "") {
+                    const commandToPerform = convertCommandNameToCommand(response.data as String)
+                    getAllCommandsFromServerAndSet(commandToPerform)
+                }
+        })
+    }
+
+    function getAllCommandsFromServerAndSet(commandToPerform: Command) {
+        axios.get("/command/all", {headers: {'Content-Type': 'application/json'}} as AxiosRequestConfig)
+            .then(async (response) => {
+                setCommands((response.data as Array<String>).map((c) => convertCommandNameToCommand(c)))
+                performCommand(commandToPerform)
+            })
     }
 
     function performCommand(command: Command) {
@@ -78,14 +101,13 @@ export default function MainGameScreen({gameStateSetter}: MainGameScreenProps) {
 
     useEffect(() => {
         if (commands.length > 0 && !isInProgress) {
-            removeFromQueue()
+            getCommandFromServer()
         }
     }, [isInProgress])
 
     useEffect(() => {
         const timer = setTimeout(() => {
             if (isAlive()) {
-                // TODO: get from server
                 const states = [State.Playing, State.Cleaning, State.Eating, State.Sleeping]
 
                 const randomState = states[randomIntFromInterval(0, states.length - 1)]
@@ -98,16 +120,23 @@ export default function MainGameScreen({gameStateSetter}: MainGameScreenProps) {
         return () => clearTimeout(timer)
     }, [damages])
 
+    function putCommandToServer(command: Command) {
+        axios.post("/command/add", command.valueOf(), {headers: {'Content-Type': 'application/json'}} as AxiosRequestConfig)
+            .then(async (response) => {
+                let isAdded = response.data as Boolean
+                if (isAdded) {
+                    setCommands(commands.concat([command]))
+                } else {
+                    alert("You cannot add more actions! The " + mode + " is full!")
+                }
+            })
+    }
+
     function putIntoQueue(command: Command) {
-        if (commands.length >= MAX_SIZE) {
-            alert("You cannot add more actions! The queue is full!")
+        if (!isInProgress) {
+            performCommand(command)
         } else {
-            // TODO: send a query to the server
-            if (!isInProgress) {
-                performCommand(command)
-            } else {
-                setCommands(commands.concat([command]))
-            }
+            putCommandToServer(command)
         }
     }
 
