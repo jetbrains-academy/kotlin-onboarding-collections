@@ -1,0 +1,14 @@
+type: edu
+files:
+  - name: test/Tests.kt
+    visible: false
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/tamagotchi/TamagotchiApplication.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/tamagotchi/models/Command.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/tamagotchi/game/GameService.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/tamagotchi/models/Mode.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/tamagotchi/game/GameResource.kt
+    visible: true
