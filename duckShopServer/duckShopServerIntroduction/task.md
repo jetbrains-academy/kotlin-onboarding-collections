@@ -10,9 +10,9 @@ which you can read later.
 Each lesson of the course is built in the form of a project:
 step by step, by completing different small tasks,
 you will get a fully working project in the end.
-At the end of each lesson, an additional project will be offered:
-it includes all the topics of the lesson but does not contain any theory materials.
-The topic of this module is **TODO**.
+Some of the projects are practice-based and introduce to you 
+different helpful Kotlin functions though practical exercises without much theory part.
+The topic of this module is _Next to the future_.
 It means that in each lesson, you will create a web application with 
 some images familiar from your (or your parents') childhood.
 Note, part of the code will be prewritten by the course author
