@@ -1,4 +1,5 @@
 import org.jetbrains.academy.test.system.core.models.method.TestMethodInvokeData
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
 class Test {
@@ -13,9 +14,9 @@ class Test {
             invokeData = invokeData,
         ).toString()
         val colorsParsed = colors.removePrefix("[").removeSuffix("]").split(",").map { it.trim() }
-        assert(colorsParsed.size == possibleExpectedColors.size) { "The method ${getAllPossibleColorsMethod.name} should return ${possibleExpectedColors.size} different colors!" }
+        assertTrue(colorsParsed.size == possibleExpectedColors.size) { "The method ${getAllPossibleColorsMethod.name} should return ${possibleExpectedColors.size} different colors!" }
         possibleExpectedColors.forEach { expectedColor ->
-            assert(expectedColor in colorsParsed) { "The method ${getAllPossibleColorsMethod.name} should return ${possibleExpectedColors.size} different colors, including $expectedColor!" }
+            assertTrue(expectedColor in colorsParsed) { "The method ${getAllPossibleColorsMethod.name} should return ${possibleExpectedColors.size} different colors, including $expectedColor!" }
         }
     }
 }

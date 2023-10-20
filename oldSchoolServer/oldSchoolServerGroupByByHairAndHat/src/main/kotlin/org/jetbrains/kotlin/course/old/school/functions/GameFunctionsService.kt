@@ -20,7 +20,7 @@ class GameFunctionsService {
         toPhotoCharacters().find { it.backgroundColor == this }
     }
     fun Iterable<String>.groupPhotosByColor() = toPhotoCharacters()
-        .groupBy { it.backgroundColor }.map { it.value }.flatten()
+        .groupBy { it.backgroundColor }.flatMap { it.value }
 
     fun Iterable<String>.groupPhotosByHairAndHat() = toPhotoCharacters()
         .groupBy { it.hairType }

@@ -16,7 +16,7 @@ class GameResource(val service: GameService) {
     private fun String.removeQuotes() = replace("\"", "")
     @CrossOrigin
     @PostMapping("/get")
-    fun getCommand(@RequestBody mode: String): Command? = TODO("Not implemented yet")
+    fun getCommand(@RequestBody mode: String): Command? = service.getCommand(mode.removeQuotes().toMode())
 
     private fun Int.toCommand() = when(this) {
         0 -> Command.Eat
@@ -28,7 +28,7 @@ class GameResource(val service: GameService) {
 
     @CrossOrigin
     @PostMapping("/add")
-    fun addCommand(@RequestBody command: Int): Boolean = TODO("Not implemented yet")
+    fun addCommand(@RequestBody command: Int): Boolean = service.addCommand(command.toCommand())
 
     @CrossOrigin
     @GetMapping("/all")
