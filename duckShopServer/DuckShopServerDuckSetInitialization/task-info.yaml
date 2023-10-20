@@ -1,6 +1,8 @@
 type: edu
 custom_name: Duck Shop - Duck Set Initialization
 files:
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/mode/GameModeService.kt
+    visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/DuckShopApplication.kt
     visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/duck/Duck.kt
@@ -17,8 +19,6 @@ files:
     visible: false
   - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/mode/GameModeResource.kt
     visible: false
-  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/mode/GameModeService.kt
-    visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/utils/Converters.kt
     visible: false
   - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/utils/GameMode.kt

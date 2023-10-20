@@ -1,6 +1,8 @@
 type: edu
 custom_name: Duck Shop - Remove Elements
 files:
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/functions/change/GameChangeFunctionsService.kt
+    visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/DuckShopApplication.kt
     visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/duck/Duck.kt
@@ -11,8 +13,6 @@ files:
     visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/functions/change/GameChangeFunctionsResource.kt
     visible: false
-  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/functions/change/GameChangeFunctionsService.kt
-    visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/functions/common/RequestBody.kt
     visible: false
   - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/mode/GameModeResource.kt

@@ -1,9 +1,9 @@
 type: edu
 custom_name: Duck Shop - Duck List Initialization
 files:
-  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/DuckShopApplication.kt
-    visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/duck/Duck.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/DuckShopApplication.kt
     visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/functions/action/GameActionFunctionsResource.kt
     visible: false

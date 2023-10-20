@@ -1,6 +1,8 @@
 type: edu
 custom_name: Old School - List of Colors
 files:
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/functions/GameFunctionsService.kt
+    visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/OldSchoolApplication.kt
     visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/photo/PhotoCharacter.kt
@@ -9,8 +11,6 @@ files:
     visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/mode/GameModeResource.kt
     visible: false
-  - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/functions/GameFunctionsService.kt
-    visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/functions/GameFunctionsResource.kt
     visible: false
   - name: src/main/resources/static/static/js/main.e50dc054.js

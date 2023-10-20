@@ -1,14 +1,14 @@
 type: edu
 custom_name: Duck Shop - Sort Function
 files:
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/functions/action/GameActionFunctionsService.kt
+    visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/DuckShopApplication.kt
     visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/duck/Duck.kt
     visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/functions/action/GameActionFunctionsResource.kt
     visible: false
-  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/functions/action/GameActionFunctionsService.kt
-    visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/functions/change/GameChangeFunctionsResource.kt
     visible: false
   - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/functions/change/GameChangeFunctionsService.kt
