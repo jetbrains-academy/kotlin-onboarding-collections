@@ -50,4 +50,20 @@ fun main() {
     println(photos.flatten()) // [olivia, daniel, larry, diana, david]
 }
 ```
+
+Also, if you work with a map where values are lists, and you need to get the values and flatten them into one list,
+you can use the built-in [`flatMap`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/flat-map.html) function:
+```kotlin
+fun main() {
+    val photos = mapOf(
+        1 to listOf("olivia", "daniel"),
+        2 to listOf("larry", "diana"),
+        3 to listOf("david"),
+    )
+
+    println(photos.map { it.value }.flatten()) // [olivia, daniel, larry, diana, david]
+    // is the same with 
+    println(photos.flatMap { it.value }) // [olivia, daniel, larry, diana, david]
+}
+```
 </div>

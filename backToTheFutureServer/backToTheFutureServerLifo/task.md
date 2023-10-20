@@ -1,4 +1,4 @@
-**LIFO** is an abbreviation for _last in, first out _.
+**LIFO** is an abbreviation for _last in, first out_.
 It is a method of handling data structures in which the last element
 is processed first and the first element is processed last.
 This approach is often called a _stack_.
