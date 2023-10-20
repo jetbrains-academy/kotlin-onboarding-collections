@@ -12,8 +12,8 @@ fun main() {
     val setOfNumbers = setOf(1, 2, 3)
     setOfNumbers.add(4) // ERROR
 
-    val myMap = mapOf(1 to "one", 2 to "two")
-    myMap.add(4) // ERROR
+    val mapOfNumbers = mapOf(1 to "one", 2 to "two", 3 to "three")
+    mapOfNumbers.put(4, "four") // ERROR
 }
 ```
 
@@ -33,11 +33,12 @@ version into a _mutable_ one:
 
 ```kotlin
 fun main() {
-  val listOfNumbers = listOf(1, 2, 3)
-  listOfNumbers.toMutableList().add(4) // OK
+    val listOfNumbers = listOf(1, 2, 3)
+    val mutableListOfNumbers = listOfNumbers.toMutableList()
+    mutableListOfNumbers.add(4) // OK
 
-  val setOfNumbers = mutableSetOf(1, 2, 3)
-  setOfNumbers.add(4) // OK
+    val setOfNumbers = mutableSetOf(1, 2, 3)
+    setOfNumbers.add(4) // OK
 }
 ```
 

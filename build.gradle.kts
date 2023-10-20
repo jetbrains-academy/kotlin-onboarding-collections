@@ -65,7 +65,7 @@ configure(subprojects.filter { it.name != "common" && frontendSuffix !in it.name
     tasks.getByPath("detekt").onlyIf { project.hasProperty("runDetekt") }
 
     dependencies {
-        implementation("org.jetbrains.academy.test.system:core:2.0.6")
+        implementation("org.jetbrains.academy.test.system:core:2.0.7")
     }
 
     val jvmVersion = "11"

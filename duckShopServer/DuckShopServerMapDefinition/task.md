@@ -1,6 +1,6 @@
 ## Definition
 
-`Map`s (or dictionaries) are sets of key-value pairs. 
+`Maps` (or dictionaries) are sets of key-value pairs. 
 The keys are unique, and each of them maps to exactly one value, 
 while the values can be duplicated.
 
@@ -38,5 +38,5 @@ use it in an allocation-free manner. It allows your Kotlin program to work in a 
 </div>
 
 ```kotlin
-val mapWithNumbers1 = mapOf(1 to "one", 2 to "two") // The type can be inferred, a set with elements 1 to "one", 2 to "two" will be created
+val mapWithNumbers = mapOf(1 to "one", 2 to "two") // The type can be inferred, a set with elements 1 to "one", 2 to "two" will be created
 ```

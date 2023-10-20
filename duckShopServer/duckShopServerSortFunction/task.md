@@ -43,7 +43,7 @@ val listOfNumbers = listOf(1, 2, 3, 4, 5)
 println(listOfNumbers.sum()) // 15
 ```
 
-If you need to use some extra calculations, e.g., multiply the values of even numbers in the list by a coefficient, you can use the built-in [`sumOf](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/sum-of.html)` function:
+If you need to use some extra calculations, e.g., multiply the values of even numbers in the list by a coefficient, you can use the built-in [`sumOf`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/sum-of.html)` function:
 ```kotlin
 val listOfNumbers = listOf(1, 2, 3, 4, 5)
 println(listOfNumbers.sumOf { if (it % 2 == 0) it * 2 else it }) // 21

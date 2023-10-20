@@ -8,8 +8,8 @@ internal val deleteDucksWithoutKotlinStuffCollectionMethod = TestMethod(
     returnType = TestKotlinType(
         "Collection",
         params = listOf("org.jetbrains.kotlin.course.duck.shop.duck.Duck"),
+        possibleBounds = listOf("List")
     ),
-    returnTypeJava = "List",
     arguments = listOf(
         TestVariable(
             "collection",
@@ -25,10 +25,10 @@ internal val deleteDucksWithoutKotlinStuffCollectionMethod = TestMethod(
 internal val deleteDucksWithoutKotlinStuffMapMethod = TestMethod(
     "deleteDucksWithoutKotlinStuff",
     returnType = TestKotlinType(
-        "Map",
+        "Collection",
         params = listOf("org.jetbrains.kotlin.course.duck.shop.duck.Duck", "kotlin.String"),
+        possibleBounds = listOf("Map")
     ),
-    returnTypeJava = "Map",
     arguments = listOf(
         TestVariable(
             "map",

@@ -64,4 +64,7 @@ val listOfNumbers1 = listOf(1, 2, 3, 4, 5)
 val listOfNumbers2 = listOf(1, 2, 3)
 println(listOfNumbers1.minus(listOfNumbers2.toSet())) // 4, 5
 ```
+
+The `minus` function can work with collections, it means the code `listOfNumbers1.minus(listOfNumbers2)` is also valid, 
+but for better performance you need to convert a list to a set to work with fewer elements.
 </div>

@@ -1,11 +1,11 @@
 type: edu
 custom_name: Back to The Future - Commands Storage
 files:
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/tamagotchi/game/GameService.kt
+    visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/tamagotchi/TamagotchiApplication.kt
     visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/tamagotchi/models/Command.kt
-    visible: true
-  - name: src/main/kotlin/org/jetbrains/kotlin/course/tamagotchi/game/GameService.kt
     visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/tamagotchi/models/Mode.kt
     visible: true

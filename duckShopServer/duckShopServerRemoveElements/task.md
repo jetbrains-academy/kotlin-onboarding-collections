@@ -51,13 +51,13 @@ fun main() {
     val setOfNumbers = setOf(1, 2, 3)
     val mutableSetOfNumbers = setOfNumbers.toMutableSet()
 
-    val myMap = mapOf(1 to "one", 2 to "two")
-    val mutableMyMap = myMap.toMutableMap()
+    val mapOfNumbers = mapOf(1 to "one", 2 to "two")
+    val mutableMapOfNumbers = mapOfNumbers.toMutableMap()
 }
 ```
  </div>
 
-<div class="hint" title="How to generate a random element from a list, set, or map?">
+<div class="hint" title="How to generate a random element from a list, or a set?">
 
 You can use different built-in functions. The first way to generate a random element from a list 
 is to generate a random index and get the element with this index from the list:
@@ -71,6 +71,16 @@ The second way is shorter, since you can generate a random element directly from
 val listOfNumbers = listOf(1, 2, 3)
 println(listOfNumbers.random())
 
+val mapOfNumbers = mapOf(1 to "one", 2 to "two")
+println(mapOfNumbers[mapOfNumbers.keys.random()])
+```
+</div>
+
+<div class="hint" title="How to generate a random element from a map?">
+
+Since in a map you have keys and values, you can apply the `random` function to the list of keys to
+generate a random key and next to get a value for this key:
+```kotlin
 val mapOfNumbers = mapOf(1 to "one", 2 to "two")
 println(mapOfNumbers[mapOfNumbers.keys.random()])
 ```
