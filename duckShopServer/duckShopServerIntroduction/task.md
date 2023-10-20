@@ -1,7 +1,7 @@
-Hello! Welcome to the third module of the "Kotlin onboarding" course.
+Hello! Welcome to the third module of the "Kotlin Onboarding" course.
 This module will introduce you to the definitions of **collections** in the Kotlin language 
 and will teach you how to work with them.
-We assume that you have completed the first and second parts of the course
+We assume that you have completed the [first](https://plugins.jetbrains.com/plugin/21067-kotlin-onboarding-introduction) and [second](https://plugins.jetbrains.com/plugin/21913-kotlin-onboarding-object-oriented-programming) parts of the course
 or are familiar with all the topics they cover.
 
 All topics will be accompanied by links to [the official Kotlin documentation](https://kotlinlang.org/docs/home.html),

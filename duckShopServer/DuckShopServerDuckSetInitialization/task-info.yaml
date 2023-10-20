@@ -1,6 +1,8 @@
 type: edu
 custom_name: Duck Shop - Duck Set Initialization
 files:
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/DuckShopApplication.kt
+    visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/duck/Duck.kt
     visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/functions/action/GameActionFunctionsResource.kt
@@ -23,19 +25,11 @@ files:
     visible: false
   - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/utils/GameUtil.kt
     visible: true
-  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/DuckShopApplication.kt
-    visible: true
-  - name: test/DuckClassTestMethods.kt
-    visible: false
-  - name: test/GameModeServiceTestClass.kt
-    visible: false
-  - name: test/Tests.kt
-    visible: false
   - name: src/main/resources/static/static/js/1.5bff5668.chunk.js
     visible: false
   - name: src/main/resources/static/static/js/2.95861944.chunk.js
     visible: false
-  - name: src/main/resources/static/static/js/main.b0d38b47.chunk.js
+  - name: src/main/resources/static/static/js/main.bf41c0d3.chunk.js
     visible: false
   - name: src/main/resources/static/static/js/1.5bff5668.chunk.js.map
     visible: false
@@ -43,11 +37,13 @@ files:
     visible: false
   - name: src/main/resources/static/static/js/runtime~main.cf32845b.js
     visible: false
-  - name: src/main/resources/static/static/js/main.b0d38b47.chunk.js.map
+  - name: src/main/resources/static/static/js/main.bf41c0d3.chunk.js.map
     visible: false
   - name: src/main/resources/static/static/js/runtime~main.cf32845b.js.map
     visible: false
-  - name: src/main/resources/static/static/css/main.ceda10d0.chunk.css
+  - name: src/main/resources/static/static/css/main.a4583d36.chunk.css
+    visible: false
+  - name: src/main/resources/static/static/css/main.a4583d36.chunk.css.map
     visible: false
   - name: src/main/resources/static/static/media/bg.159aeebb.svg
     visible: false
@@ -129,53 +125,17 @@ files:
     visible: false
   - name: src/main/resources/static/static/media/back_button_hover.c7d14fd4.svg
     visible: false
-  - name: src/main/resources/static/asset-manifest.json
-    visible: false
-  - name: src/main/resources/static/favicon.ico
-    visible: false
   - name: src/main/resources/static/index.html
-    visible: false
-  - name: src/main/resources/static/manifest.json
-    visible: false
-  - name: src/main/resources/static/precache-manifest.c27237e8cb8f0c050ee73228e06d2c79.js
     visible: false
   - name: src/main/resources/static/robots.txt
     visible: false
+  - name: src/main/resources/static/favicon.ico
+    visible: false
+  - name: src/main/resources/static/manifest.json
+    visible: false
   - name: src/main/resources/static/service-worker.js
     visible: false
-  - name: src/main/resources/static/precache-manifest.70fad1423aecd2cc1dc8df1c8a51ab6a.js
-    visible: true
-  - name: src/main/resources/static/precache-manifest.79d5bbf541fc215a96f9bc662f0e090b.js
-    visible: true
-  - name: src/main/resources/static/precache-manifest.0577f04d58ba0da2390c65d13dcf7afd.js
-    visible: true
-  - name: src/main/resources/static/precache-manifest.fbf91b5cb2ecf803a1b77abb796a2a35.js
-    visible: true
-  - name: src/main/resources/static/static/css/main.ceda10d0.chunk.css.map
+  - name: src/main/resources/static/asset-manifest.json
     visible: false
-  - name: src/main/resources/static/precache-manifest.2e8a2be7461ed38c8849143c277d2049.js
-    visible: true
-  - name: src/main/resources/static/static/css/main.1319dc3c.chunk.css
-    visible: true
-  - name: src/main/resources/static/static/css/main.1319dc3c.chunk.css.map
-    visible: true
-  - name: src/main/resources/static/static/js/main.81c2fce0.chunk.js.map
-    visible: true
-  - name: src/main/resources/static/static/js/main.81c2fce0.chunk.js
-    visible: true
   - name: src/main/resources/static/precache-manifest.1c5b37c8d31a391daf685e13faf741c5.js
-    visible: false
-  - name: src/main/resources/static/static/css/main.a4583d36.chunk.css
-    visible: false
-  - name: src/main/resources/static/static/css/main.a4583d36.chunk.css.map
-    visible: false
-  - name: src/main/resources/static/static/js/main.bf41c0d3.chunk.js
-    visible: false
-  - name: src/main/resources/static/static/js/main.bf41c0d3.chunk.js.map
-    visible: false
-  - name: test/GameActionFunctionsServiceTestClass.kt
-    visible: false
-  - name: test/GameChangeFunctionsService.kt
-    visible: false
-  - name: test/GameChangeFunctionsServiceTestClass.kt
     visible: false
