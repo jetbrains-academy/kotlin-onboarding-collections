@@ -40,7 +40,7 @@ println(listOfNumbers.filter { number -> number % 2 == 0 }) // 2, 4
 You can also use the built-in function [`filter`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/filter.html) to filter elements in a map:
 ```kotlin
 val myMap = mapOf(1 to "one", 2 to "two", 3 to "three")
-println(myMap.filter { (key, value) -> key % 2 != 0 && value.length > 2 }) // 1 to "one", 3 to "three"
+println(myMap.filter { (key, value) -> key % 2 != 0 && value.length > 3 }) // 3 to "three"
 ```
 
 If you need to filter a map _only_ by keys or values, you can use the [filterKeys](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/filter-keys.html#filterkeys) 
