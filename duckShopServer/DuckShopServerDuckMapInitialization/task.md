@@ -23,7 +23,7 @@ If you have any difficulties, **hints will help you solve this task**.
 
 <div class="hint" title="How to create a map from a list?">
 
-You can use the built-in [`associateWith`]("https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/associate-with.html) function to associate each item from the list with a value and create a map:
+You can use the built-in [`associateWith`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/associate-with.html) function to associate each item from the collection with a value and create a map:
 
 ```kotlin
 val l = listOf("cat", "dog", "rabbit")

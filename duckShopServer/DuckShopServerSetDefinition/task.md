@@ -1,7 +1,7 @@
 ## Definition
 
-`Set`s are collections of _unique_ elements. 
-They reflect the mathematical abstraction of `set`: 
+`Sets` are collections of _unique_ elements. 
+They reflect the mathematical abstraction of `Set`: 
 a group of objects without duplicates.
 It means, if we have two sets of the same size with the same objects inside, 
 these two sets will be equal.
@@ -15,7 +15,7 @@ But similar to the case of `List`, you can use different `Set` implementations t
 e.g., you can use the `LinkedHashSet` implementation, which sorts elements in the set by default.
 
 Each implementation defines not only the set of possible operations with this collection
-but also the complexity of `this` operation.
+but also the complexity of _this_ operation.
 `LinkedHashSet`, for the intents and purposes of being accessed using `contains`, is simply 
 a hash set. So, inserting elements into the linked hash set is cheap.
 </div>
@@ -28,7 +28,7 @@ but they must have a _relation_ between them, see the [documentation](https://ko
 
 If you have a set with objects, e.g., with your own type like `Duck`, 
 it is possible to override the behavior of comparing elements in `Set`.
-By default, to compare elements inside a set, the [`euqals`](https://kotlinlang.org/docs/equality.html) function is used.
+By default, to compare elements inside a set, the [`equals`](https://kotlinlang.org/docs/equality.html) function is used.
 It is possible to override this function and compare items only by a part of possible properties.
 
 <div class="hint" title="An example of comparing items in Set only by a part of possible properties">
@@ -76,5 +76,5 @@ use it in an allocation-free manner. It allows your Kotlin program to work in a 
 </div>
 
 ```kotlin
-val setWithNumbers1 = setOf(1, 2, 3) // The type can be inferred, a set with elements 1, 2, 3 will be created
+val setWithNumbers = setOf(1, 2, 3) // The type can be inferred, a set with elements 1, 2, 3 will be created
 ```

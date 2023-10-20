@@ -48,6 +48,6 @@ You can call a constructor from the `List` class directly with the number of ele
 val N = 5
 fun generateRandomInt(): Int = TODO("Not implemented yet")
 
-val listWithNumbers2 = List(N) { generateRandomInt() } // A list with N random integer numbers will be created
+val listWithNumbers = List(N) { generateRandomInt() } // A list with N random integer numbers will be created
 ```
 </div>

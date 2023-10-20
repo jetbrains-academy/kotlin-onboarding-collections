@@ -4,7 +4,7 @@ A collection usually contains a number of objects
 (this number may also be zero) of the same type.  
 Objects in a collection are called elements or items.  
 
-`List`s are ordered collections with access to 
+`Lists` are ordered collections with access to 
 elements by indices — integer numbers that reflect their position. 
 The index of the first element is zero.
 Elements can occur more than once in a list.
@@ -19,7 +19,7 @@ Elements can occur more than once in a list.
   and this interface can be backed by multiple implementations.
 
   Each implementation defines not only the set of possible operations with the collection 
-  but also the complexity of `this` operation. 
+  but also the complexity of _this_ operation. 
 
   By default, `ArrayList` is built. `ArrayList` is an array-based implementation. 
   It is cheap in terms of reading (finding an item) and, generally, adding items, but it is expensive as regards injecting or removing objects.

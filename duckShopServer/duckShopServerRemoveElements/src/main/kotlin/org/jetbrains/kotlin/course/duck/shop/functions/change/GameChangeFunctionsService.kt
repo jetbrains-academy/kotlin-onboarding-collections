@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service
 @Service
 class GameChangeFunctionsService  {
     fun List<Duck>.addRandomDuck(): Duck = TODO("Not implemented yet")
+
     fun Set<Duck>.addRandomDuck(): Duck = TODO("Not implemented yet")
 
     fun MutableMap<Duck, String>.addRandomDuck(): Pair<Duck, String> = TODO("Not implemented yet")
