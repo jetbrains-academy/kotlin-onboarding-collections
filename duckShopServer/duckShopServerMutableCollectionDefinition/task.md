@@ -75,7 +75,7 @@ fun main() {
     val setOfNumbers = setOf(1, 2, 3)
     val mutableSetOfNumbers = setOfNumbers.toMutableSet()
 
-    val myMap = mapOf(1 to "one", 2 to "two")
-    val mutableMyMap = myMap.toMutableMap()
+    val mapOfNumbers = mapOf(1 to "one", 2 to "two")
+    val mutableMyMap = mapOfNumbers.toMutableMap()
 }
 ```

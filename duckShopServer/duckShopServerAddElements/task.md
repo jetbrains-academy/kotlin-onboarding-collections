@@ -40,19 +40,19 @@ Note that if you try to add the _same_ element to the set, it will not be added.
 
 You can associate a new key with a new value:
 ```kotlin
-val myMap = mutableMapOf(1 to "one", 2 to "two")
-myMap[3] = "three"
-println(myMap) // 1 to "one", 2 to "two", 3 to "three"
+val mapOfNumbers = mutableMapOf(1 to "one", 2 to "two")
+mapOfNumbers[3] = "three"
+println(mapOfNumbers) // 1 to "one", 2 to "two", 3 to "three"
 ```
 
 In this case, if you try to use an existing key, the old key will be replaced with the new one.
 
 If you need to put something only if it is absent, you can use the built-in `putIfAbsent` function:
 ```kotlin
-val myMap = mutableMapOf(1 to "one", 2 to "two")
-myMap.putIfAbsent(3, "three")
-myMap.putIfAbsent(3, "three") // Will not be added
-println(myMap) // 1 to "one", 2 to "two", 3 to "three"
+val mapOfNumbers = mutableMapOf(1 to "one", 2 to "two")
+mapOfNumbers.putIfAbsent(3, "three")
+mapOfNumbers.putIfAbsent(3, "three") // Will not be added
+println(mapOfNumbers) // 1 to "one", 2 to "two", 3 to "three"
 ```
 </div>
 
