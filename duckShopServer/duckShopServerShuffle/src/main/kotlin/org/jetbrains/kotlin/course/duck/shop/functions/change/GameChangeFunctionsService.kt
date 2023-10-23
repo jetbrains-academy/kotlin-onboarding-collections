@@ -8,12 +8,12 @@ import org.springframework.stereotype.Service
 
 @Service
 class GameChangeFunctionsService  {
-    fun List<Duck>.addRandomDuck() = generateRandomDuck().also { toMutableList().add(it) }
+    fun MutableList<Duck>.addRandomDuck() = generateRandomDuck().also { add(it) }
 
     fun Collection<Duck>.getNewRandomDuck() = Duck.entries.toList().minus(toSet()).shuffled().random()
 
-    fun Set<Duck>.addRandomDuck() = getNewRandomDuck().also {
-        toMutableSet().add(it)
+    fun MutableSet<Duck>.addRandomDuck() = getNewRandomDuck().also {
+        add(it)
     }
 
     fun MutableMap<Duck, String>.addRandomDuck(): Pair<Duck, String> {
