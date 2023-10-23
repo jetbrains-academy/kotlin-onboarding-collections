@@ -3,7 +3,7 @@ However, if some functionality is not yet ready,
 then some buttons may not work and some information may not be displayed.
 
 To run the application, you need to run the `main` function inside
-the [TamagotchiApplication.kt](./src/main/kotlin/org/jetbrains/kotlin/course/tamagotchi/TamagotchiApplication.kt) file:
+the `TamagotchiApplication.kt` file:
 
 ![How to run the application](../../utils/src/main/resources/images/tamagotchi/ide/run.png)
 
