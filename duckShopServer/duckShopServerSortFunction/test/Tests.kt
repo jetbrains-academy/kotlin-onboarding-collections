@@ -128,6 +128,7 @@ class Test {
         val possibleDucks = Duck.entries.toList()
         repeat(100) {
             val currentDucks = toCollection(possibleDucks)
+            val frozenCollection = currentDucks.toList()
             try {
                 val output =
                     gameChangeFunctionsServiceTestClass.invokeMethodWithArgs(currentDucks, invokeData = invokeData)
@@ -136,7 +137,7 @@ class Test {
                     Duck.Alex
                 }
                 if (collectionName == "set") {
-                    assertTrue(duck !in currentDucks) { "$errorPrefix for the $collectionName $currentDucks it generated $duck that is already in the $collectionName" }
+                    assertTrue(duck !in frozenCollection) { "$errorPrefix for the $collectionName $currentDucks it generated $duck that is already in the $collectionName" }
                 }
                 addedDucks.add(duck)
             } catch (e: InvocationTargetException) {

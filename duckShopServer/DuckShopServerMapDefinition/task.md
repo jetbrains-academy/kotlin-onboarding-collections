@@ -38,5 +38,5 @@ use it in an allocation-free manner. It allows your Kotlin program to work in a 
 </div>
 
 ```kotlin
-val mapWithNumbers = mapOf(1 to "one", 2 to "two") // The type can be inferred, a set with elements 1 to "one", 2 to "two" will be created
+val mapOfNumbers = mapOf(1 to "one", 2 to "two") // The type can be inferred, a set with elements 1 to "one", 2 to "two" will be created
 ```
