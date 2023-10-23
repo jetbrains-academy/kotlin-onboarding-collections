@@ -12,7 +12,7 @@ not just from the beginning _or_ from the end, but in _both_ scenarios.
 
 ![Final application](../../utils/src/main/resources/images/tamagotchi/states/ready.gif)
 
-For such cases, the [`ArrayDeque`](https://docs.oracle.com/javase%2F7%2Fdocs%2Fapi%2F%2F/java/util/ArrayDeque.html) implementation is the best implementation for us.
+For such cases, the [`ArrayDeque`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-array-deque/) implementation is the best implementation for us.
 The `ArrayDeque` class provides constant time performance for inserting and
 removing items from both ends of the queue, making it a good choice for our scenario.
 
@@ -22,6 +22,15 @@ fun main() {
     val arrayDequeExample = ArrayDeque<Int>() // Create an empty ArrayDeque
 }
 ```
+
+**Note**, if you add this import on the top of the file
+```kotlin
+import java.util.ArrayDeque
+```
+and keep the same `ArrayDeque` definition, you will use the Java [`ArrayDeque`](https://docs.oracle.com/javase%2F7%2Fdocs%2Fapi%2F%2F/java/util/ArrayDeque.html)
+implementation, that has different names of methods, but the main meaning remains the same. 
+_In Kotlin, it is better to use the Kotlin implementation._
+
 
 This collection is _mutable_ by default. 
 This means that despite the fact that we have the read-only keyword `val`, 

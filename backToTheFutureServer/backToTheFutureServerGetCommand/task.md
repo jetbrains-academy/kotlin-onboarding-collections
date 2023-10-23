@@ -17,7 +17,7 @@ If you have any difficulties, **hints will help you solve this task**.
 
 <div class="hint" title="How to get the first and the last elements?">
 
-You can use the built-in functions [`removeFirst`](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayDeque.html#removeFirst) 
-and [`removeLast`](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayDeque.html#removeLast) 
-to remove and return the element.
+You can use the built-in functions [`removeFirstOrNull`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-array-deque/remove-first-or-null.html) 
+and [`removeLastOrNull`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-array-deque/remove-last-or-null.html) 
+to remove and return the element. Both these functions return `null` if the collection is empty.
 </div>

@@ -3,7 +3,6 @@ package org.jetbrains.kotlin.course.tamagotchi.game
 import org.jetbrains.kotlin.course.tamagotchi.models.Command
 import org.jetbrains.kotlin.course.tamagotchi.models.Mode
 import org.springframework.stereotype.Service
-import java.util.ArrayDeque
 
 @Service
 class GameService {
