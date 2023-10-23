@@ -3,7 +3,6 @@ package org.jetbrains.kotlin.course.tamagotchi.game
 import org.jetbrains.kotlin.course.tamagotchi.models.Command
 import org.jetbrains.kotlin.course.tamagotchi.models.Mode
 import org.springframework.stereotype.Service
-import java.util.ArrayDeque
 
 @Service
 class GameService {
@@ -18,13 +17,8 @@ class GameService {
         false
     }
 
-    fun getCommand(mode: Mode): Command? {
-        if (commands.isEmpty()) {
-            return null
-        }
-        return when(mode) {
-            Mode.Queue -> commands.removeFirst()
-            Mode.Stack -> commands.removeLast()
-        }
+    fun getCommand(mode: Mode): Command? = when(mode) {
+        Mode.Queue -> commands.removeFirstOrNull()
+        Mode.Stack -> commands.removeLastOrNull()
     }
 }

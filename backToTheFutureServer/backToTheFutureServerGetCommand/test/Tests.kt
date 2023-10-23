@@ -5,7 +5,6 @@ import org.jetbrains.kotlin.course.tamagotchi.models.Mode
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 import java.lang.reflect.Field
-import java.util.*
 
 class Test {
     companion object {
@@ -106,7 +105,7 @@ class Test {
         (field.get(instance) as? ArrayDeque<*>)?.let {
             return it
         }
-        assertTrue(false) { "The command field must be ArrayDeque!" }
+        assertTrue(false) { "The command field must be ArrayDeque (the Kotlin implementation)!" }
         return ArrayDeque<Command>()
     }
 
