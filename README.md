@@ -6,7 +6,7 @@
 # Kotlin Onboarding: Collections
 
 This course is designed for novices in Kotlin and focuses on working with collections in the Kotlin language.
-This is the third module of the course, the [first]((https://plugins.jetbrains.com/plugin/21067-kotlin-onboarding--introduction) and [second](https://plugins.jetbrains.com/plugin/21913-kotlin-onboarding-object-oriented-programming) modules can be found on JetBrains Marketplace.
+This is the third module of the course, the [first](https://plugins.jetbrains.com/plugin/21067-kotlin-onboarding--introduction) and [second](https://plugins.jetbrains.com/plugin/21913-kotlin-onboarding-object-oriented-programming) modules can be found on JetBrains Marketplace.
 This module assumes that you are already familiar with all the constructs discussed in the first and second parts.
 
 Each lesson of the course is built in the form of a project: step by step, by completing different small tasks,
