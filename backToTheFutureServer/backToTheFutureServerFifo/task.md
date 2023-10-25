@@ -12,4 +12,4 @@ In this case, _the first person in line gets to choose the dog first_.
 This means that in this case you will wait for people #1, #2, #3 to take the dog and then choose from the rest. 
 This is the FIFO approach.
 
-TODO: img_1
+![Queue example](../../utils/src/main/resources/images/tamagotchi/queue.png)

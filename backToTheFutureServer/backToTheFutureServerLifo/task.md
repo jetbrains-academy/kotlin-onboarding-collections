@@ -13,4 +13,4 @@ which you accidentally put away first - you can get it last,
 because you have to get all the other toys that put in the basket later.
 This is the LIFO approach.
 
-TODO: img_2
+![Stack example](../../utils/src/main/resources/images/tamagotchi/stack.png)
