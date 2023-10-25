@@ -37,11 +37,11 @@ Before starting this course, check the following requirements.
 1. Your computer needs to have a stable internet connection.
 2. Git version control system needs to be installed on your computer (link to the git site: https://git-scm.com/).
 3. Make sure that the path to the root folder of the course does not contain spaces, special characters, or non-Latin characters.
-4. Make sure that you use the [Intellij IDEA](https://www.jetbrains.com/idea/download/?_ga=2.189310830.494255415.1682514714-1823138827.1669894241&_gac=1.83806948.1682684894.Cj0KCQjw3a2iBhCFARIsAD4jQB3QkDU43KtbIx2HzEz02KvcN7Ma3QGzkIbyX4KS3H4x8b2bl9p4EfYaAvWsEALw_wcB&_gl=1*1h13lr8*_ga*MTgyMzEzODgyNy4xNjY5ODk0MjQx*_ga_9J976DJZ68*MTY4MjY5NDIyMy4xMjUuMS4xNjgyNjk0MjM4LjQ1LjAuMA..#section=windows) with version at least `2023.1.1`.
+4. Make sure that you use the [IntelliJ IDEA](https://www.jetbrains.com/idea/download/?_ga=2.189310830.494255415.1682514714-1823138827.1669894241&_gac=1.83806948.1682684894.Cj0KCQjw3a2iBhCFARIsAD4jQB3QkDU43KtbIx2HzEz02KvcN7Ma3QGzkIbyX4KS3H4x8b2bl9p4EfYaAvWsEALw_wcB&_gl=1*1h13lr8*_ga*MTgyMzEzODgyNy4xNjY5ODk0MjQx*_ga_9J976DJZ68*MTY4MjY5NDIyMy4xMjUuMS4xNjgyNjk0MjM4LjQ1LjAuMA..#section=windows) with version at least `2023.1.1`.
 5. Make sure that you use the [EduTools](https://plugins.jetbrains.com/plugin/10081-jetbrains-academy/versions/stable/405578) plugin with version at least `2023.9-2023.1-1603`.
 6. To be able to run web applications, you need to have a web browser. We recommend using [Google Chrome](https://www.google.com/chrome/).
 
-The course is integrated into the [Intellij Idea IDE](https://www.jetbrains.com/idea/), which has a free Community license.
+The course is integrated into the [IntelliJ IDEA IDE](https://www.jetbrains.com/idea/), which has a free Community license.
 You can use this license to complete the course.
 If you have some troubles with the course installation, feel free to contact us by email at education@jetbrains.com.
 
@@ -53,7 +53,7 @@ some images familiar from your (or your parents') childhood.
 
 The current version of the course covers three web-applications, two more will be released later:
 
-1) **Duck shop**. As you know, many programmers ask rubber ducks for help.
+1) **Duck shop**. As you know, many programmers ask rubber ducks for [help](https://en.wikipedia.org/wiki/Rubber_duck_debugging).
    The main goal of this project is to implement a shop window with rubber duckies
    and study `List`, `Set`, and `Map` collections.
 

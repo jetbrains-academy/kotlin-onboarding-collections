@@ -21,7 +21,7 @@ to avoid going deep into web programming in this course.
 ### Project description
 
 The project of this lesson is **Duck shop**.
-As you know, many programmers ask rubber ducks for help.
+As you know, many programmers ask rubber ducks for [help](https://en.wikipedia.org/wiki/Rubber_duck_debugging).
 The main goal of this project is to implement a shop window with rubber duckies 
 and study `List`, `Set`, and `Map` collections.
 
