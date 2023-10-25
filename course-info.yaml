@@ -1,7 +1,44 @@
 type: marketplace
 title: "Kotlin Onboarding: Collections"
 language: English
-summary: TODO
+summary: "
+<p>This course is designed for novices in Kotlin and focuses on working with collections in the Kotlin language.
+This is the third module of the course, the <a href=\"https://plugins.jetbrains.com/plugin/21067-kotlin-onboarding--introduction\">first</a> and <a href=\"https://plugins.jetbrains.com/plugin/21913-kotlin-onboarding-object-oriented-programming\">second</a> modules can be found on JetBrains Marketplace.
+This module assumes that you are already familiar with all the constructs discussed in the first and second parts.</p>
+
+<p>Each lesson of the course is built in the form of a project: step by step, by completing different small tasks,
+you will get a fully working project in the end. Some of the projects are practice-based and introduce to you
+different helpful Kotlin functions though practical exercises without much theory part.</p>
+
+<p><i>Note that this course does not provide a detailed explanation of such aspects as asymptotic complexity, 
+mostly, it just describes the definitions of different types of collections and shows how to use them in Kotlin.</i></p>
+
+<p>All topics will be accompanied by links to <a href=\"https://kotlinlang.org/docs/home.html\">the official Kotlin documentation</a>, 
+which you can read later. Some of the topics covered in the course are listed below:</p>
+<ul>
+  <li>definitions of <tt>List</tt>, <tt>Set</tt>, and <tt>Map</tt> collections;</li>
+  <li>read-only and mutable collections with <tt>add</tt> and <tt>remove</tt> operations;</li>
+  <li>built-in functions to work with <tt>List</tt>, <tt>Set</tt>, and <tt>Map</tt>;</li>
+  <li>FIFO (First-In-First-Out) approach and how to work with in Kotlin;</li>
+  <li>LIFO (Last-In-First-Out) approach and how to work with in Kotlin;</li>
+  <li><b>[will be available later]</b> aggregation operations;</li>
+  <li><b>[will be available later]</b> sequences.</li>
+</ul>
+
+<p><i>After this course, you will be ready to use Kotlin collections in efficient ways.</i></p>
+
+<p><b>Before starting this course, check the following requirements:</b></p>
+<ol>
+  <li> Your computer needs to have a stable internet connection.</li>
+  <li> Git version control system needs to be installed on your computer (link to <a href=\"https://git-scm.com/\">the git site</a>).</li>
+  <li> Make sure that the path to the root folder of the course does not contain spaces, special characters, or non-Latin characters.</li>
+  <li> Make sure that you use the <a href=\"https://www.jetbrains.com/idea/download/?_ga=2.189310830.494255415.1682514714-1823138827.1669894241&_gac=1.83806948.1682684894.Cj0KCQjw3a2iBhCFARIsAD4jQB3QkDU43KtbIx2HzEz02KvcN7Ma3QGzkIbyX4KS3H4x8b2bl9p4EfYaAvWsEALw_wcB&_gl=1*1h13lr8*_ga*MTgyMzEzODgyNy4xNjY5ODk0MjQx*_ga_9J976DJZ68*MTY4MjY5NDIyMy4xMjUuMS4xNjgyNjk0MjM4LjQ1LjAuMA..#section=windows\">Intellij IDEA</a> with version at least <em>2023.1.1</em>.</li>
+  <li> Make sure that you use the <a href=\"https://plugins.jetbrains.com/plugin/10081-jetbrains-academy/versions/stable/405578\">EduTools</a> plugin with version at least <em>2023.9-2023.1-1603</em>.</li>
+  <li> To be able to run web applications, you need to have a web browser. We recommend using <a href=\"https://www.google.com/chrome/\">Google Chrome</a>.</li>
+</ol>
+<p>The course is integrated into the <a href=\"https://www.jetbrains.com/idea/\">Intellij Idea IDE</a>, which has a free Community license. 
+You can use this license to complete the course. If you have some troubles with the course installation, feel free to contact us by email at <a href=\"mailto:education@jetbrains.com\">education@jetbrains.com</a>.</p>
+"
 programming_language: Kotlin
 content:
   - duckShopServer
