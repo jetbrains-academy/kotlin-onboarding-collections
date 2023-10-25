@@ -3,7 +3,7 @@ However, if some functionality is not yet ready,
 then some buttons may not work and some information may not be displayed.
 
 To run the application, you need to run the `main` function inside
-the `DuckShopApplication.kt` file:
+the [DuckShopApplication.kt](psi_element://org.jetbrains.kotlin.course.duck.shop.DuckShopApplicationKt#main) file:
 
 ![How to run the application](../../utils/src/main/resources/images/duck/shop/ide/run.png)
 
