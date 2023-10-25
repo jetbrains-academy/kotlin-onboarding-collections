@@ -57,11 +57,11 @@ The current version of the course covers three web-applications, two more will b
    The main goal of this project is to implement a shop window with rubber duckies
    and study `List`, `Set`, and `Map` collections.
 
-<details>
-<summary>Example of ready application</summary>
-
-![An example of the Duck shop application](./utils/src/main/resources/images/duck/shop/states/ready.gif)
-</details>
+   <details>
+   <summary>Example of ready application</summary>
+   
+   ![An example of the Duck shop application](./utils/src/main/resources/images/duck/shop/states/ready.gif)
+   </details>
 
 2) **Old school**. Nowadays, taking Polaroid photos is often a hobby,
    and most photos are stored electronically.
@@ -70,22 +70,22 @@ The current version of the course covers three web-applications, two more will b
    The main goal of this project is to go back in time and
    implement several `List`, `Set`, and `Map` functions that allow you to navigate through your photo album.
 
-<details>
-<summary>Example of ready application</summary>
-
-![An example of the Old school application](./utils/src/main/resources/images/old/school/states/ready.gif)
-</details>
+   <details>
+   <summary>Example of ready application</summary>
+   
+   ![An example of the Old school application](./utils/src/main/resources/images/old/school/states/ready.gif)
+   </details>
 
 3) **Tamagotchi**. This toy was once very popular - a small keychain device that lets you take care of a virtual pet.
    In our case, we will be looking after a little corgi called Andy.
    The main goal of this project is to go back in time and
    study two very important approaches in programming - FIFO and LIFO.
 
-<details>
-<summary>Example of ready application</summary>
-
-![An example of the Tamagotchi application](./utils/src/main/resources/images/tamagotchi/states/ready.gif)
-</details>
+   <details>
+   <summary>Example of ready application</summary>
+   
+   ![An example of the Tamagotchi application](./utils/src/main/resources/images/tamagotchi/states/ready.gif)
+   </details>
 
 ## Getting started
 
@@ -97,18 +97,20 @@ the Course Creator mode or create a course archive from the source code.
 
 You can create a [course preview](https://plugins.jetbrains.com/plugin/10081-edutools/docs/educator-start-guide.html#preview_course) from the source code:
 1. Clone the repository:
-```text
-git clone https://github.com/jetbrains-academy/kotlin-onboarding-part3.git
-```
+
+   ```text
+   git clone https://github.com/jetbrains-academy/kotlin-onboarding-part3.git
+   ```
 
 2. Install [npm](https://www.npmjs.com/) and [yarn](https://yarnpkg.com/) on your computer.
 
 3. Run yarn install in each module with frontend.
 
 4. Build the project:
-```text
-./gradlew build
-```
+
+   ```text
+   ./gradlew build
+   ```
 
 3. Install the [EduTools](https://plugins.jetbrains.com/plugin/10081-edutools/docs/educational-products.html) plugin from JetBrains Marketplace.
 
@@ -118,14 +120,16 @@ git clone https://github.com/jetbrains-academy/kotlin-onboarding-part3.git
 
 You can create a [course archive](https://plugins.jetbrains.com/plugin/10081-edutools/docs/educator-start-guide.html#fe7010f2) from the source code:
 1. Clone the repository:
-```text
-git clone https://github.com/jetbrains-academy/kotlin-onboarding-part3.git
-```
+
+   ```text
+   git clone https://github.com/jetbrains-academy/kotlin-onboarding-part3.git
+   ```
 
 2. Build the project:
-```text
-./gradlew build
-```
+
+   ```text
+   ./gradlew build
+   ```
 
 3. Install the [EduTools](https://plugins.jetbrains.com/plugin/10081-edutools/docs/educational-products.html) plugin from JetBrains Marketplace.
 
