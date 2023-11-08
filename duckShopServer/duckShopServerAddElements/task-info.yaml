@@ -139,3 +139,15 @@ files:
     visible: false
   - name: src/main/resources/static/precache-manifest.1c5b37c8d31a391daf685e13faf741c5.js
     visible: false
+  - name: test/DuckClassTestMethods.kt
+    visible: false
+  - name: test/GameActionFunctionsServiceTestClass.kt
+    visible: false
+  - name: test/GameChangeFunctionsService.kt
+    visible: false
+  - name: test/GameChangeFunctionsServiceTestClass.kt
+    visible: false
+  - name: test/GameModeServiceTestClass.kt
+    visible: false
+  - name: test/Tests.kt
+    visible: false
