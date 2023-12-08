@@ -10,9 +10,13 @@ and find _only the first one_ with `backgroundColor` equal to the one passed.
 
 You can use the already implemented functions `toColor` and `toPhotoCharacters` to implement the `findPhoto` function.
 
-After implementing this task, you will be able to find photos by color:
+After implementing this task, you will be able to find photos by color.
+
+<div class="hint" title="Push me to view the expected state of the application after completing this task">
 
 ![Current state](../../utils/src/main/resources/images/old/school/states/state_2.gif)
+
+</div>
 
 Note that only the first photo is highlighted, as this is how the Kotlin `find` function works.
 
@@ -22,7 +26,7 @@ If you have any difficulties, **hints will help you solve this task**.
 
 ### Hints
 
-<div class="hint" title="with function">
+<div class="hint" title="Push me to learn with function">
 
 To implement the `findPhoto` function you need to convert `colorStr` to `Color`. 
 It is more efficient to do it only once and then to call the `filter` function, e.g.

@@ -26,9 +26,13 @@ fun main() {
 
 You can use the already implemented function `toPhotoCharacters` to implement the `groupPhotosByColor` function.
 
-After implementing this task, you will be able to group photos by colour and reorder their on the album:
+After implementing this task, you will be able to group photos by colour and reorder their on the album.
+
+<div class="hint" title="Push me to view the expected state of the application after completing this task">
 
 ![Current state](../../utils/src/main/resources/images/old/school/states/state_3.gif)
+
+</div>
 
 If you have any difficulties, **hints will help you solve this task**.
 
@@ -36,7 +40,7 @@ If you have any difficulties, **hints will help you solve this task**.
 
 ### Hints
 
-<div class="hint" title="How do I flatten a list of lists?">
+<div class="hint" title="Push me to learn how to flatten a list of lists">
 
 The easiest way to do this is to use the built-in [`flatten`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/flatten.html) function:
 ```kotlin

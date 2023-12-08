@@ -12,11 +12,15 @@ Please don't forget to _stop all other runs_ by pressing the red square button:
 ![How to stop the application](../../utils/src/main/resources/images/duck/shop/ide/stop.png)
 
 Next, you need to open any browser (we recommend using [Google Chrome](https://www.google.com/chrome/) to display the elements as in the examples)
-and open http://localhost:8080/. You will see the main page of the application:
+and open http://localhost:8080/. You will see the main page of the application.
+
+<div class="hint" title="Push me to view how the main page of the application looks like">
 
 ![The main page of the application](../../utils/src/main/resources/images/duck/shop/states/main_page.png)
 
-<div class="hint" title="The application from the last launch is displayed">
+</div>
+
+<div class="hint" title="Push me if the application from the last launch is displayed">
 
 If an application from a previous launch is displayed on the screen when starting the game, you need to reset the caches.
 This can usually be done with a keyboard shortcut: `ctrl` + `shift` + `R` (`command` + `shift` + `R` for macOS).

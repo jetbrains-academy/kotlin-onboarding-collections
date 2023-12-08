@@ -31,7 +31,7 @@ it is possible to override the behavior of comparing elements in `Set`.
 By default, to compare elements inside a set, the [`equals`](https://kotlinlang.org/docs/equality.html) function is used.
 It is possible to override this function and compare items only by a part of possible properties.
 
-<div class="hint" title="An example of comparing items in Set only by a part of possible properties">
+<div class="hint" title="Push me to see an example of comparing items in Set only by a part of possible properties">
 
 Consider an example.
 
@@ -67,7 +67,7 @@ val emptySet1 = emptySet<Int>() // Builds the internal object EmptySet
 val emptySet2 = setOf<Int>() // Calls emptySet()
 ```
 
-<div class="hint" title="What is the difference between emptySet and a regular one?">
+<div class="hint" title="Push me to learn what is the difference between emptySet and a regular one">
 
 In Kotlin, the `emptySet` implementation is an object under the hood.
 The main reason such a function exists is to save allocations (creating and deleting new variables).

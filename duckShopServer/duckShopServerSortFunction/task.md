@@ -13,9 +13,13 @@ Kotlin-related attribute (`hasKotlinAttribute` is `true`).
 
 We have only one function – for `list`, since only `list` is an ordered collection by default.
 
-After implementing this task, the `Sort` button in the `list` mode becomes alive:
+After implementing this task, the `Sort` button in the `list` mode becomes alive.
+
+<div class="hint" title="Push me to view the expected state of the application after completing this task">
 
 ![Current state](../../utils/src/main/resources/images/duck/shop/states/state_9.gif)
+
+</div>
 
 If you have any difficulties, **hints will help you solve this task**.
 
@@ -23,7 +27,7 @@ If you have any difficulties, **hints will help you solve this task**.
 
 ### Hints
 
-<div class="hint" title="How to sort a list of items">
+<div class="hint" title="Push me to learn how to sort a list of items">
 
 You can use the built-in functions [`sortedBy`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/sorted-by.html) 
 or [`sortedByDescending`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/sorted-by-descending.html),
@@ -35,7 +39,7 @@ println(listOfWords.sortedBy { it.length }) // [a, aa, aaa, bbbbb, aaaaaaaa]
 In the provided example, the list is sorted according to the length of words.
 </div>
 
-<div class="hint" title="How to calculate the sum of elements in a list?">
+<div class="hint" title="Push me to learn how to calculate the sum of elements in a list">
 
 You can use the built-in [`sum`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/sum.html) function:
 ```kotlin

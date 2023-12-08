@@ -10,9 +10,13 @@ This function should divide ducks into two groups — those with some Kotlin att
 We have only one function, since the function `fun Collection<Duck>.divideDucksIntoKotlinAndNonKotlin()` works for both collections — for `List` and for `Set`.
 The map collection does not have this function.
 
-After implementing this task, the `Partition` button in `list` and `set` modes becomes alive:
+After implementing this task, the `Partition` button in `list` and `set` modes becomes alive.
+
+<div class="hint" title="Push me to view the expected state of the application after completing this task">
 
 ![Current state](../../utils/src/main/resources/images/duck/shop/states/state_7.gif)
+
+</div>
 
 If you have any difficulties, **hints will help you solve this task**.
 
@@ -20,7 +24,7 @@ If you have any difficulties, **hints will help you solve this task**.
 
 ### Hints
 
-<div class="hint" title="How can I divide a collection by condition?">
+<div class="hint" title="Push me to learn how to divide a collection by condition">
 
 You can do it in several ways, but the easiest one is to use the built-in [`partition`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/partition.html) function.
 It accepts a predicate (condition) to divide a collection into two parts according to this condition:

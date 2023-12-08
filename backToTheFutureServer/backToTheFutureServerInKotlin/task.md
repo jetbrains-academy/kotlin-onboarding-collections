@@ -10,7 +10,11 @@ This means that when we choose a data structure,
 it is important to us how quickly we get elements, 
 not just from the beginning _or_ from the end, but in _both_ scenarios.
 
+<div class="hint" title="Push me to view how the final application looks like">
+
 ![Final application](../../utils/src/main/resources/images/tamagotchi/states/ready.gif)
+
+</div>
 
 For such cases, the [`ArrayDeque`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-array-deque/) implementation is the best implementation for us.
 The `ArrayDeque` class provides constant time performance for inserting and
@@ -36,20 +40,3 @@ This collection is _mutable_ by default.
 This means that despite the fact that we have the read-only keyword `val`, 
 we can update the collection itself. 
 In this case we only cannot _reassign_ the variable.
-
-<div class="hint" title="Which implementations can be used for other scenarios?">
-
-**TODO: add a hint about FIFO and LIFO with links**
-[//]: # (If we need to use _only the queue scenario_, the best option is to use the [`LinkedList`]&#40;https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html&#41; implementation.)
-
-[//]: # (LinkedList is an efficient data structure for inserting or deleting elements )
-
-[//]: # (at the beginning of the list, because you only need to change the links between the elements, )
-
-[//]: # (rather than moving all the elements after the insertion or deletion point.)
-
-[//]: # ()
-[//]: # (If we need to use _only the stack scenario_, the best option is [`ArrayDeque`]&#40;https://docs.oracle.com/javase%2F7%2Fdocs%2Fapi%2F%2F/java/util/ArrayDeque.html&#41;.)
-
-</div>
-

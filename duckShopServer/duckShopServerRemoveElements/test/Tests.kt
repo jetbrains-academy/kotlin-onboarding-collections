@@ -5,6 +5,7 @@ import org.jetbrains.academy.test.system.core.models.method.TestMethodInvokeData
 import org.jetbrains.kotlin.course.duck.shop.duck.Duck
 import org.jetbrains.kotlin.course.duck.shop.duck.getDescription
 import org.jetbrains.kotlin.course.duck.shop.utils.MAX_NUMBER_OF_DUCKS
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 import java.lang.reflect.InvocationTargetException
@@ -32,6 +33,7 @@ class Test {
             try {
                 val output = testClass.invokeMethodWithArgs(currentDucks, invokeData = invokeData)
                 val ducks = convertOutputToDucks(output, errorPrefix, currentDucks)
+                assertEquals(ducks.size + 1, currentDucks.size) { "You need to delete a random duck from the collection! For now you are trying to remove a duck that is not in the collection already!" }
                 removedDucks.add(checkOutputForCollection(ducks, currentDucks, errorPrefix, collectionType, output))
             } catch (e: InvocationTargetException) {
                 assertTrue(false) { "$errorPrefix it throws an exception" }

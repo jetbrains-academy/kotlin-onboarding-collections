@@ -10,9 +10,13 @@ These functions should add a random duck from a list, set, or a map.
 Note, you need to _actually_ add a new duck, which means that in the cases with a set and a map, you 
 need to generate a duck that is not present in the collection and add it.
 
-After implementing this task, the `Add` button in all three modes becomes alive:
+After implementing this task, the `Add` button in all three modes becomes alive.
+
+<div class="hint" title="Push me to view the expected state of the application after completing this task">
 
 ![Current state](../../utils/src/main/resources/images/duck/shop/states/state_5.gif)
+
+</div>
 
 If you have any difficulties, **hints will help you solve this task**.
 
@@ -20,7 +24,7 @@ If you have any difficulties, **hints will help you solve this task**.
 
 ### Hints
 
-<div class="hint" title="How to add a new item into a list or set?">
+<div class="hint" title="Push me to learn how to add a new item into a list or set">
 
 To add a new item, you can use the built-in `add` function:
 ```kotlin
@@ -36,7 +40,7 @@ println(setOfNumbers) // 1, 2, 3, 4
 Note that if you try to add the _same_ element to the set, it will not be added.
 </div>
 
-<div class="hint" title="How to add a new item into a map?">
+<div class="hint" title="Push me to learn how to add a new item into a map">
 
 You can associate a new key with a new value:
 ```kotlin
@@ -56,7 +60,7 @@ println(mapOfNumbers) // 1 to "one", 2 to "two", 3 to "three"
 ```
 </div>
 
-<div class="hint" title="How to find the difference between two lists?">
+<div class="hint" title="Push me to learn how to find the difference between two lists">
 
 You can use the built-in `minus` function to make the call more efficient and convert one of the arguments of the set:
 ```kotlin

@@ -11,7 +11,7 @@ but there must be a _relation_ between them, see [documentation](https://kotlinl
 
 ![Map definition](../../utils/src/main/resources/images/duck/shop/theory/map_definition.png)
 
-<div class="hint" title="Different Map implementations">
+<div class="hint" title="Push me to learn different Map implementations">
 
 Similar to the case of `List` and `Set`, you can use different `Map` implementations to change this property:
 e.g., you can use the `LinkedHashMap` implementation, which is provided by default.
@@ -29,7 +29,7 @@ val emptyMap1 = emptyMap<Int, String>() // Builds the internal object EmptyMap
 val emptyMap2 = mapOf<Int, String>() // Calls emptyMap()
 ```
 
-<div class="hint" title="What is the difference between emptyMap and a regular one?">
+<div class="hint" title="Push me to learn the difference between emptyMap and a regular one">
 
 In Kotlin, the `emptyMap` implementation is an object under the hood.
 The main reason such a function exists is to save allocations (creating and deleting new variables).

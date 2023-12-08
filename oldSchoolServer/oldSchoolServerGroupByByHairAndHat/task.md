@@ -35,6 +35,10 @@ fun main() {
 
 You can use the already implemented function `toPhotoCharacters` to implement the `groupPhotosByHairAndHat` function.
 
-After implementing this task, you will be able to group photos by hair type and hat presence and reorder their on the album:
+After implementing this task, you will be able to group photos by hair type and hat presence and reorder their on the album.
+
+<div class="hint" title="Push me to view the expected state of the application after completing this task">
 
 ![Current state](../../utils/src/main/resources/images/old/school/states/state_4.gif)
+
+</div>

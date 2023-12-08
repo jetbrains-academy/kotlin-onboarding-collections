@@ -10,7 +10,7 @@ If you have any difficulties, **hints will help you solve this task**.
 
 ### Hints
 
-<div class="hint" title="Which type is most suitable for 'commands'?">
+<div class="hint" title="Push me to learn which type is most suitable for 'commands'">
 
 Since tamagotchi implies two modes - queue and stack - which can be changed during the game, 
 the most appropriate collection is `ArrayDeque`. 

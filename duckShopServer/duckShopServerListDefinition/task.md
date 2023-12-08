@@ -11,7 +11,7 @@ Elements can occur more than once in a list.
 
 ![List definition](../../utils/src/main/resources/images/duck/shop/theory/list_definition.png)
 
-<div class="hint" title="Different List implementations">
+<div class="hint" title="Push me to read about different List implementations">
 
   `List` may be implemented using an array or a doubly linked list internally. 
   We could say that `List` is an interface or specification determining which operations are supported 
@@ -45,7 +45,7 @@ val emptyList1 = emptyList<Int>() // Builds the internal object EmptyList
 val emptyList2 = listOf<Int>() // Calls emptyList()
 ```
 
-<div class="hint" title="What is the difference between emptyList and a regular one?">
+<div class="hint" title="Push me to learn the difference between emptyList and a regular one">
 
 In Kotlin, the `emptyList` implementation is an object under the hood.
 The main reason such a function exists is to save allocations (creating and deleting new variables).
