@@ -1,6 +1,6 @@
 It's time to practice with the `groupBy` function. 
 Implement the `groupPhotosByColor` function from the `GameFunctionsService` class.
-This function should group photos by background colour and then return 
+This function should group photos by the background colour and then return 
 the flattened list of grouped photos, e.g.:
 ```kotlin
 fun main() {
@@ -13,20 +13,20 @@ fun main() {
     )
 
     println(photos.groupPhotosByColor())
-    // Groups by colors and then build a flatten 
+    // Groups by colors and then builds a flattened 
     // list with the values for each color: 
     // - Purple: Olivia, Daniel
     // - Orange: Larry, Diana
     // - Gray: David
     //
-    // So, the final flatted output is:
+    // So, the final flattened output is:
     // [Olivia, Daniel, Larry, Diana, David]
 }
 ```
 
 You can use the already implemented function `toPhotoCharacters` to implement the `groupPhotosByColor` function.
 
-After implementing this task, you will be able to group photos by colour and reorder their on the album:
+After completing this task, you will be able to group photos by the colour and reorder them in the album:
 
 ![Current state](../../utils/src/main/resources/images/old/school/states/state_3.gif)
 
@@ -51,7 +51,7 @@ fun main() {
 }
 ```
 
-Also, if you work with a map where values are lists, and you need to get the values and flatten them into one list,
+Also, if you work with a map where values are lists and you need to get the values and flatten them into one list,
 you can use the built-in [`flatMap`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/flat-map.html) function:
 ```kotlin
 fun main() {
