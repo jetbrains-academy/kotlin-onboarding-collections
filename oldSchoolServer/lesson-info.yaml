@@ -9,4 +9,5 @@ content:
   - oldSchoolServerGroupBy
   - oldSchoolServerGroupByColor
   - oldSchoolServerGroupByByHairAndHat
+  - oldSchoolServerImprovements
 is_template_based: false

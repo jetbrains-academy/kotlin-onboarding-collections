@@ -17,4 +17,5 @@ content:
   - duckShopServerPartition
   - duckShopServerShuffle
   - duckShopServerSortFunction
+  - duckShopServerImprovments
 is_template_based: false
