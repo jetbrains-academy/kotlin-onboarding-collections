@@ -1,12 +1,12 @@
 ### Project description
 
 The project of this lesson is **Old school**.
-Nowadays, taking Polaroid photos is often a hobby, 
+Nowadays, taking Polaroid photos is a common hobby, 
 and most photos are stored electronically. 
-In the past, however, this was an almost inappropriate way to preserve 
-the memory of important moments.
+In the past, however, that was an almost inaccessible way to preserve 
+the memories of important moments.
 The main goal of this project is to go back in time and 
-implement several `List`, `Set`, and `Map` functions that allow you to navigate through your photo album.
+implement several `List`, `Set`, and `Map` functions, which will allow you to navigate through your photo album.
 
 ### Lesson topics
 
