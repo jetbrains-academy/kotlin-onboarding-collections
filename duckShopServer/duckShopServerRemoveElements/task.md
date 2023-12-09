@@ -7,9 +7,13 @@ Implement three versions of the `removeRandomDuck` function from the `GameChange
 the `org.jetbrains.kotlin.course.duck.shop.functions.change` package.
 These functions should remove a random duck from a list, set, or map.
 
-After implementing this task, the `Remove` button in all three modes becomes alive:
+After implementing this task, the `Remove` button in all three modes becomes alive.
+
+<div class="hint" title="Push me to view the expected state of the application after completing this task">
 
 ![Current state](../../utils/src/main/resources/images/duck/shop/states/state_4.gif)
+
+</div>
 
 If you have any difficulties, **hints will help you solve this task**.
 
@@ -17,7 +21,7 @@ If you have any difficulties, **hints will help you solve this task**.
 
 ### Hints
 
-<div class="hint" title="What are extension functions?">
+<div class="hint" title="Push me to learn what are extension functions">
 
   The `removeRandomDuck` functions are implemented as [extension](https://kotlinlang.org/docs/extensions.html#extension-functions) functions.
   These functions allow you to extend _any_ class with your own functionality, e.g.,
@@ -40,7 +44,7 @@ removeRandomDuck(myList)
 </div>
 
 
- <div class="hint" title="How to convert a collection to a mutable one">
+ <div class="hint" title="Push me to learn how to convert a collection to a mutable one">
 
 You can use the built-in `toMutableList`, `toMutableSet`, and `toMutableMap` functions:
 ```kotlin
@@ -57,7 +61,7 @@ fun main() {
 ```
  </div>
 
-<div class="hint" title="How to generate a random element from a list, or a set?">
+<div class="hint" title="Push me to learn how to generate a random element from a list, or a set">
 
 You can use different built-in functions. The first way to generate a random element from a list 
 is to generate a random index and get the element with this index from the list:
@@ -76,7 +80,7 @@ println(mapOfNumbers[mapOfNumbers.keys.random()])
 ```
 </div>
 
-<div class="hint" title="How to generate a random element from a map?">
+<div class="hint" title="Push me to learn how to generate a random element from a map">
 
 Since in a map you have keys and values, you can apply the `random` function to the list of keys to
 generate a random key and next to get a value for this key:
@@ -86,7 +90,7 @@ println(mapOfNumbers[mapOfNumbers.keys.random()])
 ```
 </div>
 
-<div class="hint" title="How to remove an element from a list, set, and map?">
+<div class="hint" title="Push me to learn how to remove an element from a list, set, and map">
 
 You can use different built-in functions to delete elements from collections.
 The first way is to delete an element from a list _by index_:

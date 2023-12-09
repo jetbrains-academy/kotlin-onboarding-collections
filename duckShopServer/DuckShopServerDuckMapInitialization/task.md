@@ -11,9 +11,13 @@ For the value of each duck, you need to use the `getDescription` function from t
 You can find the already defined variable `MAX_NUMBER_OF_DUCKS`
 in the `GameUtil.kt` file in the `org.jetbrains.kotlin.course.duck.shop.utils` package.
 
-After implementing this task, the `Map` button becomes alive:
+After implementing this task, the `Map` button becomes alive.
+
+<div class="hint" title="Push me to view the expected state of the application after completing this task">
 
 ![Current state](../../utils/src/main/resources/images/duck/shop/states/state_3.gif)
+
+</div>
 
 If you have any difficulties, **hints will help you solve this task**.
 
@@ -21,7 +25,7 @@ If you have any difficulties, **hints will help you solve this task**.
 
 ### Hints
 
-<div class="hint" title="How to create a map from a list?">
+<div class="hint" title="Push me to learn how to create a map from a list">
 
 You can use the built-in [`associateWith`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/associate-with.html) function to associate each item from the collection with a value and create a map:
 
