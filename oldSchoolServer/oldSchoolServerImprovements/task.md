@@ -8,16 +8,14 @@ so you can either explore that on your own or implement ideas that don't require
 
 **Server improvements:**
 
-- Currently, the ducks are hardcoded in the `Duck` enum class.
-  As an improvement, you can add generation for different kinds of ducks.
-- You can add more complex logic for adding, removing, or shuffling ducks.
+- You can add more complex logic for group by or searching operations.
+- You can add an ability to upload your own photo.
 - Currently, we lose the application state if we turn off the server.
-  You can implement the ability to save the current state of the duck shop in files,
+  You can implement the ability to save the current state of the applications in files,
   and when the server is starting, you can extract this data.
 
 
 **Client improvements:**
 
-- To be able to show generated ducks in a correct way, you can improve the client logic and generate
-a duck picture by duck's properties, e.g. color, or set of accessories.
-- You can make alive the duck shop via adding animations for all actions.
+- You can make alive the application via adding animations for all actions.
+- To make uploading new photo easier, you can add a special button for it.
