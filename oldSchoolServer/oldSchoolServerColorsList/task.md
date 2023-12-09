@@ -1,10 +1,10 @@
 It's time for coding! The first task is to implement the `getAllPossibleColors` 
-method in the `GameFunctionsService` which is already defined in the `org.jetbrains.kotlin.course.old.school.functions` 
+method in `GameFunctionsService`, which is already defined in the `org.jetbrains.kotlin.course.old.school.functions` 
 package in the `GameFunctionsService.kt` file.
 
 This function should return lowercase names of all _entities_ of the `Color` enum class from the `org.jetbrains.kotlin.course.old.school.photo` package.
 
-After implementing this task, the list of possible colors will be not empty.
+After implementing this task, the list of possible colors will be non-empty.
 
 <div class="hint" title="Push me to view the expected state of the application after completing this task">
 
@@ -28,7 +28,7 @@ val allColors = Color.entries
 
 <div class="hint" title="Push me to learn how to name of an enum entry">
 
-You can use `name` property:
+You can use the `name` property:
 ```kotlin
 enum class Color {
     White,

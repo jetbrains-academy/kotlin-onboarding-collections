@@ -4,7 +4,7 @@ or `null` if no such element was found.
 
 Implement the `findPhoto` function from the `GameFunctionsService` class.
 This function takes an iterable collection of photo character names and 
-also takes a colour name to be found in the collection.
+also a colour name to be found in the collection.
 You need to convert each element from the source collection to `PhotoCharacter` 
 and find _only the first one_ with `backgroundColor` equal to the one passed.
 
@@ -28,8 +28,8 @@ If you have any difficulties, **hints will help you solve this task**.
 
 <div class="hint" title="Push me to learn with function">
 
-To implement the `findPhoto` function you need to convert `colorStr` to `Color`. 
-It is more efficient to do it only once and then to call the `filter` function, e.g.
+To implement the `findPhoto` function, you need to convert `colorStr` to `Color`. 
+It is more efficient to do it only once and then to call the `filter` function, e.g.:
 ```kotlin
 fun Iterable<String>.findPhoto(colorStr: String): PhotoCharacter? {
     val color = colorStr.toColor()
@@ -37,7 +37,7 @@ fun Iterable<String>.findPhoto(colorStr: String): PhotoCharacter? {
 }
 ```
 
-But it Kotlin this code can be rewritten with the [`with`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/with.html) function that allows you 
+But in Kotlin, this code can be rewritten with the [`with`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/with.html) function, which allows you 
 to avoid defining a new variable:
 ```kotlin
 fun Iterable<String>.findPhoto(colorStr: String) = with(colorStr.toColor()) {
@@ -45,7 +45,7 @@ fun Iterable<String>.findPhoto(colorStr: String) = with(colorStr.toColor()) {
 }
 ```
 
-This function allows you to use an additional _context_, e.g. in the code snippets below 
+This function allows you to use an additional _context_, e.g., in the code snippets below, 
 we convert `colorStr` to `Color` only once and then we can use the produced `Color` _context_.
-In the code example we use `this` when we want to use the converted color.
+In the code example, we use `this` when we want to refer to the converted color.
 </div>

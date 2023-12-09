@@ -1,8 +1,8 @@
-Another exercise about the `groupBy` function.
+Here's another exercise with the `groupBy` function.
 Implement the `groupPhotosByHairAndHat` function from the `GameFunctionsService` class.
-This function should group photos by hair type, 
+This function should group photos by the hair type, 
 then group photos by the presence of hats in each hair type group, 
-and then return the flat list of the flattened list of all grouped photos, e.g.:
+and then return the flattened list of all grouped photos, e.g.:
 ```kotlin
 fun main() {
     val photos = listOf(
@@ -35,7 +35,7 @@ fun main() {
 
 You can use the already implemented function `toPhotoCharacters` to implement the `groupPhotosByHairAndHat` function.
 
-After implementing this task, you will be able to group photos by hair type and hat presence and reorder their on the album.
+After implementing this task, you will be able to group photos by the hair type and hat presence and reorder them in the album.
 
 <div class="hint" title="Push me to view the expected state of the application after completing this task">
 
