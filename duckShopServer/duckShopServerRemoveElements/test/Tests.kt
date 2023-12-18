@@ -33,7 +33,7 @@ class Test {
             try {
                 val output = testClass.invokeMethodWithArgs(currentDucks, invokeData = invokeData)
                 val ducks = convertOutputToDucks(output, errorPrefix, currentDucks)
-                assertEquals(ducks.size + 1, currentDucks.size) { "You need to delete a random duck from the collection! For now you are trying to remove a duck that is not in the collection already!" }
+                assertEquals(ducks.size + 1, currentDucks.size) { "You need to delete a random duck from the collection! Now you are trying to remove a duck that is not part of the collection yet!" }
                 removedDucks.add(checkOutputForCollection(ducks, currentDucks, errorPrefix, collectionType, output))
             } catch (e: InvocationTargetException) {
                 assertTrue(false) { "$errorPrefix it throws an exception" }

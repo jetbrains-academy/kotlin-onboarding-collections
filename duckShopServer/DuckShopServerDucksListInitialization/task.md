@@ -18,7 +18,7 @@ in the `GameUtil.kt` file in the `org.jetbrains.kotlin.course.duck.shop.utils` p
 
 After implementing this task, the `List` button becomes alive.
 
-<div class="hint" title="Push me to view the expected state of the application after completing this task">
+<div class="hint" title="Click me to view the expected state of the application after completing this task">
 
 ![Current state](../../utils/src/main/resources/images/duck/shop/states/state_1.gif)
 
@@ -30,7 +30,7 @@ If you have any difficulties, **hints will help you solve this task**.
 
 ### Hints
 
-<div class="hint" title="Push me to to learn how to get all values from an enum class">
+<div class="hint" title="Click me to to learn how to get all values from an enum class">
 
   To get all values from an enum class, you can use the built-in property [`entries`](https://kotlinlang.org/docs/enum-classes.html#working-with-enum-constants):
 ```kotlin
@@ -39,13 +39,13 @@ val allDucks = Duck.entries
 </div>
 
 
-<div class="hint" title="Push me to learn how to get a random item from a list">
+<div class="hint" title="Click me to learn how to get a random item from a list">
 
 You can use a special built-in function [`random`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/random.html), 
 which works with a _list_ and allows you to extract a random value from it.
 </div>
 
-<div class="hint" title="Push me to learn how to create a list with N items">
+<div class="hint" title="Click me to learn how to create a list with N items">
 
 You can call a constructor from the `List` class directly with the number of elements that should be generated:
 ```kotlin
