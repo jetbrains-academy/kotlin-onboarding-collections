@@ -37,7 +37,7 @@ You can use the already implemented function `toPhotoCharacters` to implement th
 
 After implementing this task, you will be able to group photos by the hair type and hat presence and reorder them in the album.
 
-<div class="hint" title="Push me to view the expected state of the application after completing this task">
+<div class="hint" title="Click me to view the expected state of the application after completing this task">
 
 ![Current state](../../utils/src/main/resources/images/old/school/states/state_4.gif)
 

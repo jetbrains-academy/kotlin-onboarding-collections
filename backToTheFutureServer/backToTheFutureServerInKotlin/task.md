@@ -10,7 +10,7 @@ This means that when we choose a data structure,
 it is important to us how quickly we get elements, 
 not just from the beginning _or_ from the end, but in _both_ scenarios.
 
-<div class="hint" title="Push me to view how the final application looks like">
+<div class="hint" title="Click me to view what the final application looks like">
 
 ![Final application](../../utils/src/main/resources/images/tamagotchi/states/ready.gif)
 

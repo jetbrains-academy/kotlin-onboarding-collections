@@ -11,7 +11,7 @@ We have only one function – for `list`, since only `list` is an ordered collec
 
 After implementing this task, the `Shuffle` button in the `list` mode becomes alive.
 
-<div class="hint" title="Push me to view the expected state of the application after completing this task">
+<div class="hint" title="Click me to view the expected state of the application after completing this task">
 
 ![Current state](../../utils/src/main/resources/images/duck/shop/states/state_8.gif)
 
@@ -23,7 +23,7 @@ If you have any difficulties, **hints will help you solve this task**.
 
 ### Hints
 
-<div class="hint" title="Push me to learn how to shuffle a list of items">
+<div class="hint" title="Click me to learn how to shuffle a list of items">
 
 You can use the built-in [`shuffled`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/shuffled.html) function:
 ```kotlin
