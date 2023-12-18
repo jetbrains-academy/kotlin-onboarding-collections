@@ -21,3 +21,7 @@ food that influence scales in varied ways.
 - Adding new characters requires improvements to both the server and the client — you need 
 to upload new pictures and icons, handle new actions, etc.
 - You could make the application more dynamic by adding animations for all actions.
+
+<p align="center">
+    <img src="../../utils/src/main/resources/images/tamagotchi/finish.svg" alt="Possible improvments" width="200"/>
+</p>

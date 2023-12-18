@@ -12,7 +12,7 @@ in the `GameUtil.kt` file in the `org.jetbrains.kotlin.course.duck.shop.utils` p
 
 After implementing this task, the `Set` button becomes alive.
 
-<div class="hint" title="Push me to view the expected state of the application after completing this task">
+<div class="hint" title="Click me to view the expected state of the application after completing this task">
 
 ![Current state](../../utils/src/main/resources/images/duck/shop/states/state_2.gif)
 
@@ -24,12 +24,12 @@ If you have any difficulties, **hints will help you solve this task**.
 
 ### Hints
 
-<div class="hint" title="Push me to learn how to shuffle a list of elements">
+<div class="hint" title="Click me to learn how to shuffle a list of elements">
 
 If you need to shuffle a list of elements, you can use the built-in function [`shuffled`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/shuffled.html).
 </div>
 
-<div class="hint" title="Push me to learn how to take N first elements from a list">
+<div class="hint" title="Click me to learn how to take N first elements from a list">
 
 To get the first `N` elements of the list, you can use the built-in [`take`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/take.html) function.
 Note, since `List` is an ordered structure, you will always get the first `N` elements.
@@ -37,7 +37,7 @@ To complete the task, you can take the necessary number of shuffled elements and
 Since the `Duck` enum has only different values, the resulting size of the set will be the same as the list size.
 </div>
 
-<div class="hint" title="Push me to learn to how to convert a list to a set">
+<div class="hint" title="Click me to learn to how to convert a list to a set">
 
 You can use the built-in function [`toSet`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/to-set.html) to convert a list to a set.
 </div>

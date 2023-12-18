@@ -6,7 +6,7 @@ This function should return lowercase names of all _entities_ of the `Color` enu
 
 After implementing this task, the list of possible colors will be non-empty.
 
-<div class="hint" title="Push me to view the expected state of the application after completing this task">
+<div class="hint" title="Click me to view the expected state of the application after completing this task">
 
 ![Current state](../../utils/src/main/resources/images/old/school/states/state_1.gif)
 
@@ -18,7 +18,7 @@ If you have any difficulties, **hints will help you solve this task**.
 
 ### Hints
 
-<div class="hint" title="Push me to learn how to get all values from an enum class">
+<div class="hint" title="Click me to learn how to get all values from an enum class">
 
 To get all values from an enum class, you can use the built-in property [`entries`](https://kotlinlang.org/docs/enum-classes.html#working-with-enum-constants):
 ```kotlin
@@ -26,7 +26,7 @@ val allColors = Color.entries
 ```
 </div>
 
-<div class="hint" title="Push me to learn how to name of an enum entry">
+<div class="hint" title="Click me to learn how to name an enum entry">
 
 You can use the `name` property:
 ```kotlin
@@ -42,7 +42,7 @@ fun main() {
 ```
 </div>
 
-<div class="hint" title="Push me to learn how to lowercase a string">
+<div class="hint" title="Click me to learn how to lowercase a string">
 
 You can use the built-in function [`lowercase`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/lowercase.html):
 ```kotlin

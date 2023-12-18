@@ -13,7 +13,7 @@ in the `GameUtil.kt` file in the `org.jetbrains.kotlin.course.duck.shop.utils` p
 
 After implementing this task, the `Map` button becomes alive.
 
-<div class="hint" title="Push me to view the expected state of the application after completing this task">
+<div class="hint" title="Click me to view the expected state of the application after completing this task">
 
 ![Current state](../../utils/src/main/resources/images/duck/shop/states/state_3.gif)
 
@@ -25,7 +25,7 @@ If you have any difficulties, **hints will help you solve this task**.
 
 ### Hints
 
-<div class="hint" title="Push me to learn how to create a map from a list">
+<div class="hint" title="Click me to learn how to create a map from a list">
 
 You can use the built-in [`associateWith`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/associate-with.html) function to associate each item from the collection with a value and create a map:
 
