@@ -21,3 +21,7 @@ so you can either explore it on your own or implement ideas that don't require i
 - To properly display generated ducks, you might want to improve the client logic and, for instance, generate
 a duck picture based on the duck's properties, such as its color or accessories.
 - You could also animate the duck shop by adding animations for all actions.
+
+<p align="center">
+    <img src="../../utils/src/main/resources/images/duck/shop/finish.svg" alt="Possible improvments" width="400"/>
+</p>

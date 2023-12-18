@@ -21,3 +21,7 @@ food that influence scales in different ways.
 - Adding new characters requires not only server, but client improvements - you need 
 to upload new pictures, icons, handle new actions, etc.
 - You can make alive the application via adding animations for all actions.
+
+<p align="center">
+    <img src="../../utils/src/main/resources/images/tamagotchi/finish.svg" alt="Possible improvments" width="200"/>
+</p>
