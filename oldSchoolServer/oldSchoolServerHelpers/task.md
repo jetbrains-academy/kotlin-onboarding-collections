@@ -12,7 +12,7 @@ If you have any difficulties, **hints will help you solve this task**.
 
 ### Hints
 
-<div class="hint" title="Push me to learn possible approaches to get an enum entity by name">
+<div class="hint" title="Click me to learn possible approaches to get an enum entity by name">
 
 We propose two main approaches to return a particular enum entity by its name:
 
@@ -48,7 +48,7 @@ fun main() {
 ```
 </div>
 
-<div class="hint" title="Push me to learn how to capitalize a string">
+<div class="hint" title="Click me to learn how to capitalize a string">
 
 To capitalize a string, you can use the built-in function [`replaceFirstChar`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace-first-char.html) 
 with the [`titlecase`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/titlecase.html) function as an argument:

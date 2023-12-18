@@ -19,3 +19,7 @@ so you can either explore that on your own or implement ideas that don't require
 
 - You can make alive the application via adding animations for all actions.
 - To make uploading new photo easier, you can add a special button for it.
+
+<p align="center">
+    <img src="../../utils/src/main/resources/images/old/school/finish.svg" alt="Possible improvments" width="220"/>
+</p>

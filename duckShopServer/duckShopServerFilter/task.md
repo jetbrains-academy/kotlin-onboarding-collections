@@ -11,7 +11,7 @@ We have only two functions, since the function `fun Collection<Duck>.deleteDucks
 
 After implementing this task, the `Filter` button in all three modes becomes alive.
 
-<div class="hint" title="Push me to view the expected state of the application after completing this task">
+<div class="hint" title="Click me to view the expected state of the application after completing this task">
 
 ![Current state](../../utils/src/main/resources/images/duck/shop/states/state_6.gif)
 
@@ -23,7 +23,7 @@ If you have any difficulties, **hints will help you solve this task**.
 
 ### Hints
 
-<div class="hint" title="Push me to learn how to filter items in a list or a set">
+<div class="hint" title="Click me to learn how to filter items in a list or a set">
 
 To filter elements in a list or a set, you can use the built-in function [`filter`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/filter.html) 
 to pass a function condition:
@@ -39,7 +39,7 @@ println(listOfNumbers.filter { number -> number % 2 == 0 }) // 2, 4
 ```
 </div>
 
-<div class="hint" title="Push me to learn how to filter items in a map">
+<div class="hint" title="Click me to learn how to filter items in a map">
 
 You can also use the built-in function [`filter`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/filter.html) to filter elements in a map:
 ```kotlin

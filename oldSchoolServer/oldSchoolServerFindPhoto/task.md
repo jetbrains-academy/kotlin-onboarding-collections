@@ -12,7 +12,7 @@ You can use the already implemented functions `toColor` and `toPhotoCharacters` 
 
 After implementing this task, you will be able to find photos by color.
 
-<div class="hint" title="Push me to view the expected state of the application after completing this task">
+<div class="hint" title="Click me to view the expected state of the application after completing this task">
 
 ![Current state](../../utils/src/main/resources/images/old/school/states/state_2.gif)
 
@@ -26,7 +26,7 @@ If you have any difficulties, **hints will help you solve this task**.
 
 ### Hints
 
-<div class="hint" title="Push me to learn with function">
+<div class="hint" title="Click me to learn about the 'with' function">
 
 To implement the `findPhoto` function, you need to convert `colorStr` to `Color`. 
 It is more efficient to do it only once and then to call the `filter` function, e.g.:
