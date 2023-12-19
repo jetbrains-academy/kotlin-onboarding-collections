@@ -40,6 +40,10 @@ summary: " <p>This course is designed for novices in Kotlin and focuses on worki
   \ to complete the course. If you have some troubles with the course installation,\
   \ feel free to contact us by email at <a href=\"mailto:education@jetbrains.com\"\
   >education@jetbrains.com</a>.</p> "
+vendor:
+  name: JetBrains
+  email: support@jetbrains.com
+  url: https://www.jetbrains.com/
 programming_language: Kotlin
 content:
   - introduction
