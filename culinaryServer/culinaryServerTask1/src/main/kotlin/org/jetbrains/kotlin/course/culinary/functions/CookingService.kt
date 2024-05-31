@@ -42,7 +42,8 @@ class CookingService {
 
         fun task4() {
             val fruits = listOf(FruitType.Citrus, FruitType.Berry)
-                .map { type -> fridge.getBasketOf(type) }
+
+            fruits.map { type -> fridge.getBasketOf(type) }
                 .onEach { basket -> counter.put(basket) }
                 .flatMap { basket -> List(basket.capacity) { counter.takeFromBasket(basket) } }
                 .distinctBy { it.type }
@@ -52,7 +53,7 @@ class CookingService {
             blender.blend()
         }
 
-        task1()
+        task4()
         println(actions.joinToString("\n"))
     }
 }

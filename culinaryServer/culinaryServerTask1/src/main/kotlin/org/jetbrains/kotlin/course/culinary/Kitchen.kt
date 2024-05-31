@@ -1,6 +1,5 @@
 package org.jetbrains.kotlin.course.culinary
 
-
 sealed interface IngredientType
 
 enum class VegetableType : IngredientType {
