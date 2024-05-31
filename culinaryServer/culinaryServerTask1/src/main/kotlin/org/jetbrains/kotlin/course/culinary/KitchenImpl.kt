@@ -56,9 +56,13 @@ internal fun Item.toJsItemType(): JsItemType = when (this) {
 internal fun JsAction(type: JsActionType, parameter: Item) = JsAction(type, parameter.toJsItemType())
 
 internal data object FridgeImpl : Fridge {
-    private val vegetables = mutableListOf<Vegetable>()
+    internal val vegetables = mutableListOf<Vegetable>()
 
     init {
+        fill()
+    }
+
+    internal fun fill() {
         repeat(7) {
             vegetables += Vegetable(VegetableType.entries.random(), Random.nextBoolean())
         }
@@ -215,4 +219,13 @@ internal data object KitchenCounterImpl : KitchenCounter {
         require(vegetable in contents) { "Vegetable $vegetable is not on the counter, so can't be checked" }
         return vegetable.isFresh
     }
+}
+
+internal fun clearKitchen() {
+    FridgeImpl.vegetables.clear()
+    FridgeImpl.fill()
+    PotImpl.contents.clear()
+    SaladBowlImpl.contents.clear()
+    BlenderImpl.contents.clear()
+    KitchenCounterImpl.contents.clear()
 }
