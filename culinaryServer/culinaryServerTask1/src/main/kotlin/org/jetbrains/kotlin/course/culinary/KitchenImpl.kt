@@ -228,4 +228,5 @@ internal fun clearKitchen() {
     SaladBowlImpl.contents.clear()
     BlenderImpl.contents.clear()
     KitchenCounterImpl.contents.clear()
+    actions.clear()
 }
