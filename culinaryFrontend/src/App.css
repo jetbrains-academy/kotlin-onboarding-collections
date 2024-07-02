@@ -250,21 +250,67 @@
   justify-content: center;
 }
 
-.App-citrus_basket {
+.App-basket {
   height: 20vmin;
   width: 20vmin;
+  position: relative;
   background-repeat: no-repeat;
   background-size: contain;
-  background-image: url('assets/kitchen/citrus-basket.svg');
 }
 
-.App-berry_basket {
-  height: 20vmin;
-  width: 20vmin;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-image: url('assets/kitchen/berry-basket.svg');
+.App-basket-back{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('assets/baskets/basket-back.svg');
 }
+
+.App-basket-front{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('assets/baskets/basket-front.svg');
+}
+
+.App-basket-item{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.App-basket-citrus-5{
+  background-image: url('assets/baskets/basket-citrus-5.svg');
+}
+.App-basket-citrus-4{
+  background-image: url('assets/baskets/basket-citrus-4.svg');
+}
+.App-basket-citrus-3{
+  background-image: url('assets/baskets/basket-citrus-3.svg');
+}
+.App-basket-citrus-2{
+  background-image: url('assets/baskets/basket-citrus-2.svg');
+}
+.App-basket-citrus-1{
+  background-image: url('assets/baskets/basket-citrus-1.svg');
+}
+
+
+.App-basket-berry-5{
+  background-image: url('assets/baskets/basket-berry-5.svg');
+}
+.App-basket-berry-4{
+  background-image: url('assets/baskets/basket-berry-4.svg');
+}
+.App-basket-berry-3{
+  background-image: url('assets/baskets/basket-berry-3.svg');
+}
+.App-basket-berry-2{
+  background-image: url('assets/baskets/basket-berry-2.svg');
+}
+.App-basket-berry-1{
+  background-image: url('assets/baskets/basket-berry-1.svg');
+}
+
 
 .App-salad {
   height: 20vmin;
@@ -275,41 +321,54 @@
 }
 
 .App-salad-bowl {
-  background-image: url('assets/kitchen/salad-bowl.svg');
+  background-image: url('assets/salad/salad-bowl.svg');
 }
 
 .App-salad-bowl-mixed {
-  background-image: url('assets/kitchen/salad-bowl-mixed.svg');
+  background-image: url('assets/salad/salad-bowl-mixed.svg');
 }
 
 .App-salad-tomato{
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url('assets/kitchen/salad-tomato.svg');
+  background-image: url('assets/salad/salad-tomato.svg');
 }
 
 .App-salad-cucumber{
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url('assets/kitchen/salad-cucumber.svg');
+  background-image: url('assets/salad/salad-cucumber.svg');
 }
 
 .App-salad-carrot{
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url('assets/kitchen/salad-carrot.svg');
+  background-image: url('assets/salad/salad-carrot.svg');
 }
 
-/*.App-salad_basket {*/
-/*  height: 20vmin;*/
-/*  width: 20vmin;*/
-/*  background-repeat: no-repeat;*/
-/*  background-size: contain;*/
-/*  background-image: url('assets/kitchen/salad-basket.svg');*/
-/*}*/
+.App-salad-mixed-tomato{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('assets/salad/salad-bowl-mixed-tomato.svg');
+}
+
+.App-salad-mixed-cucumber{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('assets/salad/salad-bowl-mixed-cucumber.svg');
+}
+
+.App-salad-mixed-carrot{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('assets/salad/salad-bowl-mixed-carrot.svg');
+}
 
 /* ### RIGHT #### */
 
@@ -333,57 +392,57 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url('assets/kitchen/pot-back.svg');
+  background-image: url('assets/pot/pot-back.svg');
 }
 
 .App-pot-water {
-  background-image: url('assets/kitchen/pot-water.svg');
+  background-image: url('assets/pot/pot-water.svg');
 }
 
 .App-pot-soup {
-  background-image: url('assets/kitchen/pot-soup.svg');
+  background-image: url('assets/pot/pot-soup.svg');
 }
 
 .App-pot-pepper{
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url('assets/kitchen/pot-pepper.svg');
+  background-image: url('assets/pot/pot-pepper.svg');
 }
 
 .App-pot-salt{
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url('assets/kitchen/pot-salt.svg');
+  background-image: url('assets/pot/pot-salt.svg');
 }
 
 .App-pot-oregano{
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url('assets/kitchen/pot-oregano.svg');
+  background-image: url('assets/pot/pot-oregano.svg');
 }
 
 .App-pot-tomato{
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url('assets/kitchen/pot-tomato.svg');
+  background-image: url('assets/pot/pot-tomato.svg');
 }
 
 .App-pot-cucumber{
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url('assets/kitchen/pot-cucumber.svg');
+  background-image: url('assets/pot/pot-cucumber.svg');
 }
 
 .App-pot-carrot{
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url('assets/kitchen/pot-carrot.svg');
+  background-image: url('assets/pot/pot-carrot.svg');
 }
 
 .App-blender {
@@ -396,25 +455,25 @@
 }
 
 .App-blender-jar{
-  background-image: url('assets/kitchen/blender.svg');
+  background-image: url('assets/blender/blender.svg');
 }
 
 .App-blender-citrus{
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url('assets/kitchen/blender-citrus.svg');
+  background-image: url('assets/blender/blender-citrus.svg');
 }
 
 .App-blender-berry{
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url('assets/kitchen/blender-berry.svg');
+  background-image: url('assets/blender/blender-berry.svg');
 }
 
 .App-blender-jar-full {
-  background-image: url('assets/kitchen/blender-full.svg');
+  background-image: url('assets/blender/blender-full.svg');
 }
 
 .App-animation-shake{

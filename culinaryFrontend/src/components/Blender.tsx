@@ -3,8 +3,8 @@ type BlenderProps = {
         visible: boolean;
         full: boolean;
         shake: boolean;
-        citrus: boolean;
-        berry: boolean;
+        citrus: number;
+        berry: number;
     }
 }
 
@@ -15,10 +15,20 @@ export default function Blender({blenderOptions: {visible, full, shake, citrus, 
         <div className={"App-blender" + (visible ? "" : " App-invisible") + (shake ? " App-animation-shake" : "")}>
             <div className={"App-blender " + blenderJarClass}
             ></div>
-            <div className={"App-blender App-blender-citrus " + ((citrus && !full) ? "" : "App-invisible")}
-            ></div>
-            <div className={"App-blender App-blender-berry " + ((berry && !full) ? "" : "App-invisible")}
-            ></div>
+            {!full && (
+                <>
+                    {Array.from({length: citrus}).map((_, i) => (
+                        <div key={i} className={"App-blender App-blender-citrus "}
+                             style={{top: `${-1 * (citrus - i - 1)}vmin`}}
+                        ></div>
+                    ))}
+                    {Array.from({length: berry}).map((_, i) => (
+                        <div key={i} className={"App-blender App-blender-berry "}
+                             style={{top: `${-1 * (berry - i - 1)}vmin`}}
+                        ></div>
+                    ))}
+                </>
+            )}
         </div>
     )
 }
