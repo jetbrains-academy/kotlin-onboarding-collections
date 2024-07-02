@@ -18,24 +18,23 @@ type MainActionsScreenProps = {
 
 export default function MainActionsScreen({gameStateSetter}: MainActionsScreenProps) {
 
-    // let url = "/functions/cooking"
-    // let url = "http://localhost:8000/functions/cooking"
-    const taskUrl = "/functions/test-task1"
+    // const taskUrl = "/functions/test-task1"
+    const taskUrl = "http://localhost:8000/functions/cooking"
 
     type BlenderOptions = {
         visible: boolean,
         full: boolean,
         shake: boolean,
-        berry: boolean,
-        citrus: boolean,
+        berry: number,
+        citrus: number,
     }
 
     const initialBlenderOptions: BlenderOptions = {
         visible: false,
         full: false,
         shake: false,
-        berry: false,
-        citrus: false,
+        berry: 0,
+        citrus: 0,
     }
 
     type PotOptions = {
@@ -45,50 +44,83 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
         pepper: boolean,
         salt: boolean,
         oregano: boolean,
-        cucumber: boolean,
-        tomato: boolean,
-        carrot: boolean,
+        cucumber: number,
+        tomato: number,
+        carrot: number,
+        soupHue: number,
     }
 
     const initialPotOptions: PotOptions = {
-        visible: false,
+        visible: true,
         simmer: false,
         soup: false,
         pepper: false,
         salt: false,
         oregano: false,
-        cucumber: false,
-        tomato: false,
-        carrot: false,
+        cucumber: 0,
+        tomato: 0,
+        carrot: 0,
+        soupHue: 0,
     }
 
     type SaladBowlOptions = {
         visible: boolean,
         mixing: boolean,
         mixed: boolean,
-        tomato: boolean,
-        cucumber: boolean,
-        carrot: boolean,
+        tomato: number,
+        cucumber: number,
+        carrot: number,
     }
 
     const initialSaladBowlOptions: SaladBowlOptions = {
         visible: false,
         mixing: false,
         mixed: false,
-        tomato: false,
-        cucumber: false,
-        carrot: false,
+        tomato: 0,
+        cucumber: 0,
+        carrot: 0,
+    }
+
+    type BasketOptions = {
+        type: string,
+        visible: boolean,
+        count: number,
+    }
+
+    const initialBerryBasketOptions: BasketOptions = {
+        type: "berry",
+        visible: false,
+        count: 5,
+    }
+
+    const initialCitrusBasketOptions: BasketOptions = {
+        type: "citrus",
+        visible: false,
+        count: 5,
     }
 
     let [counterProducts, counterProductsSetter] = useState<Array<JsItemType>>([])
     let [infoText, infoTextSetter] = useState<String>("Press \"Cook!\" button to start")
-    let [berryBasketVis, berryBasketVisSetter] = useState<boolean>(false)
-    let [citrusBasketVis, citrusBasketVisSetter] = useState<boolean>(false)
     let [spicesShelfVis, spicesShelfVisSetter] = useState<boolean>(false)
     let [blenderOptions, setBlenderOptions] = useState<BlenderOptions>(initialBlenderOptions);
     let [potOptions, setPotOptions] = useState<PotOptions>(initialPotOptions);
     let [saladBowlOptions, setSaladBowlOptions] = useState<SaladBowlOptions>(initialSaladBowlOptions);
+    let [berryBasketOptions, setBerryBasketOptions] = useState<BasketOptions>(initialBerryBasketOptions);
+    let [citrusBasketOptions, setCitrusBasketOptions] = useState<BasketOptions>(initialCitrusBasketOptions);
 
+    function berryBasketVisSetter(value: boolean){
+        setBerryBasketOptions(prevOptions => ({
+                ...prevOptions,
+                visible: value
+            }))
+    }
+
+    function citrusBasketVisSetter(value: boolean){
+        setCitrusBasketOptions(prevOptions => ({
+            ...prevOptions,
+            visible: value
+        }))
+    }
 
     function blenderVisSetter(value: boolean) {
         setBlenderOptions(prevOptions => ({
@@ -173,37 +205,58 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
             "PEPPER": () => {
                 setPotOptions(prevOptions => ({
                     ...prevOptions,
-                    pepper: true
+                    pepper: true,
+                    soupHue: 57,  // Dark green
                 }));
+                setTimeout(() => {
+                    setPotOptions(prevOptions => ({
+                        ...prevOptions,
+                        pepper: false
+                    }));
+                }, 750);
             },
             "SALT": () => {
                 setPotOptions(prevOptions => ({
                     ...prevOptions,
-                    salt: true
+                    salt: true,
+                    soupHue: 320,  // Pink
                 }));
+                setTimeout(() => {
+                    setPotOptions(prevOptions => ({
+                        ...prevOptions,
+                        salt: false
+                    }));
+                }, 750);
             },
             "OREGANO": () => {
                 setPotOptions(prevOptions => ({
                     ...prevOptions,
-                    oregano: true
+                    oregano: true,
+                    soupHue: 113,  // Green
                 }));
+                setTimeout(() => {
+                    setPotOptions(prevOptions => ({
+                        ...prevOptions,
+                        oregano: false
+                    }));
+                }, 750);
             },
             "CUT_TOMATO": () => {
                 setPotOptions(prevOptions => ({
                     ...prevOptions,
-                    tomato: true
+                    tomato: prevOptions.tomato+1
                 }));
             },
             "CUT_CARROT": () => {
                 setPotOptions(prevOptions => ({
                     ...prevOptions,
-                    carrot: true
+                    carrot: prevOptions.carrot+1
                 }));
             },
             "CUT_CUCUMBER": () => {
                 setPotOptions(prevOptions => ({
                     ...prevOptions,
-                    cucumber: true
+                    cucumber: prevOptions.cucumber+1
                 }));
             },
         }
@@ -218,7 +271,8 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
         setTimeout(() => {
             setPotOptions(prevOptions => ({
                 ...prevOptions,
-                soup: true
+                soup: true,
+                soupHue: 0,
             }));
         }, 500);
         setTimeout(() => {
@@ -239,19 +293,19 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
             "CUT_TOMATO": () => {
                 setSaladBowlOptions(prevOptions => ({
                     ...prevOptions,
-                    tomato: true
+                    tomato: prevOptions.tomato+1
                 }));
             },
             "CUT_CUCUMBER": () => {
                 setSaladBowlOptions(prevOptions => ({
                     ...prevOptions,
-                    cucumber: true
+                    cucumber: prevOptions.cucumber+1
                 }));
             },
             "CUT_CARROT": () => {
                 setSaladBowlOptions(prevOptions => ({
                     ...prevOptions,
-                    carrot: true
+                    carrot: prevOptions.carrot+1
                 }));
             },
         }
@@ -302,15 +356,25 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
         removeFromCounter(arg)
         let blenderMap: { [key: string]: () => void } = {
             "CITRUS": () => {
+                setCitrusBasketOptions(prevOptions => ({
+                    ...prevOptions,
+                    count: (prevOptions.count > 0) ? prevOptions.count-1 : 0
+                    })
+                )
                 setBlenderOptions(prevOptions => ({
                     ...prevOptions,
-                    citrus: true
+                    citrus: prevOptions.citrus+1
                 }));
             },
             "BERRY": () => {
+                setBerryBasketOptions(prevOptions => ({
+                        ...prevOptions,
+                        count: (prevOptions.count > 0) ? prevOptions.count-1 : 0
+                    })
+                )
                 setBlenderOptions(prevOptions => ({
                     ...prevOptions,
-                    berry: true
+                    berry: prevOptions.berry+1
                 }));
             },
         }
@@ -340,12 +404,24 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
             },
             "SALT": () => {
                 spicesShelfVisSetter(true)
+                setPotOptions(prevOptions => ({
+                    ...prevOptions,
+                    soup: true
+                }));
             },
             "PEPPER": () => {
                 spicesShelfVisSetter(true)
+                setPotOptions(prevOptions => ({
+                    ...prevOptions,
+                    soup: true
+                }));
             },
             "OREGANO": () => {
                 spicesShelfVisSetter(true)
+                setPotOptions(prevOptions => ({
+                    ...prevOptions,
+                    soup: true
+                }));
             },
         }
 
@@ -399,6 +475,8 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
         setBlenderOptions(initialBlenderOptions);
         setPotOptions(initialPotOptions);
         setSaladBowlOptions(initialSaladBowlOptions)
+        setCitrusBasketOptions(initialCitrusBasketOptions)
+        setBerryBasketOptions(initialBerryBasketOptions)
         spicesShelfVisSetter(false)
         counterProductsSetter([])
 
@@ -407,6 +485,7 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
         let actions = Array<JsAction>()
         axios.get(taskUrl).then(async (response) => {
             actions = response.data as Array<JsAction>
+            console.log("GOT: " + actions)
             infoTextSetter("Let's go!")
             equipKitchen(actions)
             console.log("equipKitchen() DONE")
@@ -443,9 +522,9 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
                         </div>
                         <div className={"App-center-kitchen-container"}>
                             <div className={"App-basket-kitchen-container"}>
-                                <Basket type={"berry"} visible={berryBasketVis}></Basket>
+                                <Basket basketOptions={berryBasketOptions}></Basket>
                                 <SaladBowl saladBowlOptions={saladBowlOptions}></SaladBowl>
-                                <Basket type={"citrus"} visible={citrusBasketVis}></Basket>
+                                <Basket basketOptions={citrusBasketOptions}></Basket>
                             </div>
                             <Counter products={counterProducts}></Counter>
                         </div>
