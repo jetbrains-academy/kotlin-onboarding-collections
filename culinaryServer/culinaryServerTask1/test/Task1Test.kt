@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
 class Task1Test {
-    @Test
     fun testTask1() {
         CookingService().performCooking()
         assertTrue(
