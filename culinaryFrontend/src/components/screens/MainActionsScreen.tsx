@@ -18,8 +18,8 @@ type MainActionsScreenProps = {
 
 export default function MainActionsScreen({gameStateSetter}: MainActionsScreenProps) {
 
-    // const taskUrl = "/functions/test-task1"
-    const taskUrl = "http://localhost:8000/functions/cooking"
+    const taskUrl = "/functions/test-task1"
+    // const taskUrl = "http://localhost:8080/functions/cooking"
 
     type BlenderOptions = {
         visible: boolean,

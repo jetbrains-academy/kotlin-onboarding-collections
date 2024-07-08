@@ -26,8 +26,9 @@ class CookingFunction(val service: CookingService) {
             .map { counter.cut(it) }
             .forEach { pot.put(counter.take(it)) }
         pot.simmer()
+        val res = actions.toMutableList()
         clearKitchen()
-        return actions
+        return res
     }
 
     @CrossOrigin
