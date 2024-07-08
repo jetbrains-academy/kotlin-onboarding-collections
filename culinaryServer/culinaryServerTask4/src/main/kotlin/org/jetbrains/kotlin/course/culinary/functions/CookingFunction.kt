@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*
 class CookingFunction(val service: CookingService) {
     @CrossOrigin
     @GetMapping("/cooking")
-    fun recipe(@RequestBody body: StreamingHttpOutputMessage.Body): List<JsAction> {
+    fun recipe(): List<JsAction> {
         service.performCooking()
         clearKitchen()
         return actions
@@ -19,7 +19,7 @@ class CookingFunction(val service: CookingService) {
 
     @CrossOrigin
     @GetMapping("/test-task1")
-    fun task1(@RequestBody body: StreamingHttpOutputMessage.Body): List<JsAction> {
+    fun task1(): List<JsAction> {
         val vegetables = List(3) { fridge.getVegetable(what = VegetableType.Tomato) }
         vegetables
             .onEach { counter.put(it) }
@@ -32,7 +32,7 @@ class CookingFunction(val service: CookingService) {
 
     @CrossOrigin
     @GetMapping("/test-task2")
-    fun task2(@RequestBody body: StreamingHttpOutputMessage.Body): List<JsAction> {
+    fun task2(): List<JsAction> {
         val spices = generateSequence { SpiceType.entries.random() }
         spices
             .map { shelf.getSpice(it) }
@@ -46,7 +46,7 @@ class CookingFunction(val service: CookingService) {
 
     @CrossOrigin
     @GetMapping("/test-task3")
-    fun task3(@RequestBody body: StreamingHttpOutputMessage.Body): List<JsAction> {
+    fun task3(): List<JsAction> {
         fridge.getAllVegetables()
             .map { counter.put(it) }
             .filter { counter.checkFresh(it) }
@@ -62,7 +62,7 @@ class CookingFunction(val service: CookingService) {
 
     @CrossOrigin
     @GetMapping("/test-task4")
-    fun task4(@RequestBody body: StreamingHttpOutputMessage.Body): List<JsAction> {
+    fun task4(): List<JsAction> {
         val fruits = listOf(FruitType.Citrus, FruitType.Berry)
         fruits.map { type -> fridge.getBasketOf(type) }
             .onEach { basket -> counter.put(basket) }
@@ -74,17 +74,4 @@ class CookingFunction(val service: CookingService) {
         clearKitchen()
         return actions
     }
-}
-
-
-fun main() {
-    val fruits = listOf(FruitType.Citrus, FruitType.Berry)
-    fruits.map { type -> fridge.getBasketOf(type) }
-        .onEach { basket -> counter.put(basket) }
-        .flatMap { basket -> List(basket.capacity) { counter.takeFromBasket(basket) } }
-        .distinctBy { it.type }
-        .sortedBy { it.type.sugarContent }
-        .forEach { blender.add(it) }
-    blender.blend()
-    println(actions.joinToString("\n"))
 }
