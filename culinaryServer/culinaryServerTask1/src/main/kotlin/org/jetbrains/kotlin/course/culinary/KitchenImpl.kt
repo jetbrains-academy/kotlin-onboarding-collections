@@ -225,8 +225,11 @@ internal fun clearKitchen() {
     FridgeImpl.vegetables.clear()
     FridgeImpl.fill()
     PotImpl.contents.clear()
+    PotImpl.simmering = false
     SaladBowlImpl.contents.clear()
+    SaladBowlImpl.mixing = false
     BlenderImpl.contents.clear()
+    BlenderImpl.blending = false
     KitchenCounterImpl.contents.clear()
     actions.clear()
 }
