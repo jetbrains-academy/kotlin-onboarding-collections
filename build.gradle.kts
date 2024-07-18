@@ -8,7 +8,7 @@ fun properties(key: String) = project.findProperty(key).toString()
 @Suppress("DSL_SCOPE_VIOLATION") // "libs" produces a false-positive warning, see https://youtrack.jetbrains.com/issue/KTIJ-19369
 plugins {
     java
-    val kotlinVersion = "1.9.0"
+    val kotlinVersion = "2.0.0"
     id("org.jetbrains.kotlin.jvm") version kotlinVersion apply false
     id("org.jetbrains.kotlin.multiplatform") version kotlinVersion apply false
     id("org.springframework.boot") version "2.7.3" apply false
