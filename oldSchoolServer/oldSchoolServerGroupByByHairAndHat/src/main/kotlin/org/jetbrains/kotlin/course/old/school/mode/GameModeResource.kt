@@ -1,6 +1,6 @@
 package org.jetbrains.kotlin.course.old.school.mode
 
-import old.school.JsPhoto
+import org.jetbrains.kotlin.course.old.school.photo.JsPhoto
 import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping

@@ -41,7 +41,7 @@ tasks {
 val frontendSuffix = "Frontend"
 val server = "Server"
 
-configure(subprojects.filter { it.name != "common" && frontendSuffix !in it.name }) {
+configure(subprojects.filter { frontendSuffix !in it.name }) {
     apply<io.gitlab.arturbosch.detekt.DetektPlugin>()
 
     apply {
@@ -140,7 +140,6 @@ configure(subprojects.filter { server in it.name }) {
     }
 
     dependencies {
-        implementation(project(":common"))
         implementation(project(":utils"))
 
         implementation("org.springframework.boot:spring-boot-starter-web")
@@ -179,16 +178,6 @@ configure(subprojects.filter { frontendSuffix in it.name }) {
         yarnVersion.set("3.0.0")
 
         installScript.set("install")
-    }
-
-    val addCommonTypesTask = tasks.register<Exec>("addCommonTypes") {
-        outputs.upToDateWhen { false }
-        workingDir = projectDir
-        commandLine("yarn", "remove", "common-types")
-        commandLine("yarn", "add", "common-types@file:$rootDir/common/build/libs/common-types")
-    }
-    addCommonTypesTask {
-        mustRunAfter(":common:build")
     }
 
     val yarnRunBuildTask = tasks.register<Exec>("yarnRunBuildTask") {
