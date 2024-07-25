@@ -1,7 +1,6 @@
 import {GameState} from "../GameScreen";
 import {useState} from "react";
-import {duck} from "common-types";
-import JsDuck = duck.shop.JsDuck;
+import {JsDuck} from '../../models/Duck';
 import axios from "axios";
 import DuckContainer from "../DuckContainer";
 
