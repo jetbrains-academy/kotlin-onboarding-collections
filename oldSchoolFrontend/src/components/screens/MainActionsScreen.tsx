@@ -1,8 +1,7 @@
 import {GameState} from "../GameScreen";
 import axios, {AxiosRequestConfig} from "axios";
 import {useEffect, useState} from "react";
-import {old} from "common-types";
-import JsPhoto = old.school.JsPhoto;
+import {JsPhoto} from "../../models/Photo";
 import PhotoAlbum from "../PhotoAlbum";
 
 type MainActionsScreenProps = {

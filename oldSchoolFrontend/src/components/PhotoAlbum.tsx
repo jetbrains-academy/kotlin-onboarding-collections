@@ -1,7 +1,6 @@
 import {PhotoInfo} from "../models/PhotoInfo";
 import Photo from "./Photo";
-import {old} from "common-types";
-import JsPhoto = old.school.JsPhoto;
+import {JsPhoto} from "../models/Photo";
 
 type PhotoAlbumProps = {
     photos: Array<JsPhoto>
@@ -13,7 +12,7 @@ export default function PhotoAlbum({photos, indexToHighLight}: PhotoAlbumProps) 
         if (photos.length > index) {
             return new PhotoInfo(photos[index], indexToHighLight == index)
         }
-        return new PhotoInfo(new JsPhoto("", null))
+        return new PhotoInfo(new JsPhoto())
     }
 
     return(
