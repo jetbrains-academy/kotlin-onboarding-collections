@@ -1,6 +1,6 @@
 package org.jetbrains.kotlin.course.duck.shop.mode
 
-import duck.shop.JsDuck
+import org.jetbrains.kotlin.course.duck.shop.duck.JsDuck
 import org.jetbrains.kotlin.course.duck.shop.utils.GameMode
 import org.jetbrains.kotlin.course.duck.shop.utils.toJsDuck
 import org.springframework.web.bind.annotation.CrossOrigin
