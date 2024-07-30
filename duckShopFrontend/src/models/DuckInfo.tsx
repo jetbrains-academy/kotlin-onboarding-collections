@@ -1,6 +1,5 @@
 import {Nullable} from "common-types";
-import {duck} from "common-types";
-import JsDuck = duck.shop.JsDuck;
+import {JsDuck} from './Duck';
 
 export class DuckInfo {
     imageClass: Nullable<string>

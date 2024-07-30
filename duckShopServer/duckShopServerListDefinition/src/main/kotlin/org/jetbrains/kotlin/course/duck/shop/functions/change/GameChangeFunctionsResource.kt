@@ -1,6 +1,6 @@
 package org.jetbrains.kotlin.course.duck.shop.functions.change
 
-import duck.shop.JsDuck
+import org.jetbrains.kotlin.course.duck.shop.duck.JsDuck
 import org.jetbrains.kotlin.course.duck.shop.duck.getDescription
 import org.jetbrains.kotlin.course.duck.shop.functions.common.Body
 import org.jetbrains.kotlin.course.duck.shop.utils.GameMode

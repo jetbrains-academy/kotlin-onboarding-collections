@@ -1,5 +1,5 @@
-import {Nullable, old} from "common-types";
-import JsPhoto = old.school.JsPhoto;
+import {Nullable} from "common-types";
+import {JsPhoto} from "./Photo";
 
 export class PhotoInfo {
     imageClass: Nullable<string>

@@ -1,5 +1,4 @@
-import {duck} from "common-types";
-import JsDuck = duck.shop.JsDuck;
+import {JsDuck} from '../models/Duck';
 import {DuckInfo} from "../models/DuckInfo";
 import Duck from "./Duck";
 
@@ -13,7 +12,7 @@ export default function DuckContainer({ducks, pressedFunction}: DuckContainerPro
         if (ducks.length > index) {
             return new DuckInfo(ducks[index])
         }
-        return new DuckInfo(new JsDuck("", null, false))
+        return new DuckInfo(new JsDuck())
     }
 
     return(

@@ -1,6 +1,6 @@
 package org.jetbrains.kotlin.course.duck.shop.utils
 
-import duck.shop.JsDuck
+import org.jetbrains.kotlin.course.duck.shop.duck.JsDuck
 import org.jetbrains.kotlin.course.duck.shop.duck.Duck
 import org.jetbrains.kotlin.course.duck.shop.functions.common.Body
 
