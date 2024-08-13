@@ -1,40 +1,49 @@
 type: edu
 custom_name: Culinary - Task 1
 files:
-  - name: src/main/resources/static/static/js/1.5bff5668.chunk.js
-    visible: false
-  - name: src/main/resources/static/static/js/2.95861944.chunk.js
-    visible: false
-  - name: src/main/resources/static/static/js/main.bf41c0d3.chunk.js
-    visible: false
-  - name: src/main/resources/static/static/js/1.5bff5668.chunk.js.map
-    visible: false
-  - name: src/main/resources/static/static/js/2.95861944.chunk.js.map
-    visible: false
-  - name: src/main/resources/static/static/js/runtime~main.cf32845b.js
-    visible: false
-  - name: src/main/resources/static/static/js/main.bf41c0d3.chunk.js.map
-    visible: false
-  - name: src/main/resources/static/static/js/runtime~main.cf32845b.js.map
-    visible: false
-  - name: src/main/resources/static/index.html
-    visible: false
-  - name: src/main/resources/static/robots.txt
-    visible: false
-  - name: src/main/resources/static/favicon.ico
-    visible: false
-  - name: src/main/resources/static/manifest.json
-    visible: false
-  - name: src/main/resources/static/service-worker.js
-    visible: false
-  - name: src/main/resources/static/asset-manifest.json
-    visible: false
-  - name: src/main/resources/static/precache-manifest.1c5b37c8d31a391daf685e13faf741c5.js
-    visible: false
-  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/KitchenImpl.kt
-    visible: false
   - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/CulinaryApplication.kt
-    visible: false
-  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/functions/CookingFunction.kt
-    visible: false
-
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/game/GameResource.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/game/GameService.kt
+    visible: true
+  - name: test/Tests.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/models/food/IngredientType.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/models/food/Ingredient.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/models/storage/Fridge.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/models/storage/Shelf.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/models/cooking/Pot.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/models/storage/Basket.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/models/cooking/SaladBowl.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/models/cooking/Blender.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/converters/JsItemTypeConverter.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/implementation/storage/FridgeImpl.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/implementation/storage/ShelfImpl.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/implementation/cooking/PotImpl.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/implementation/cooking/SaladBowlImpl.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/models/Resettable.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/implementation/cooking/BlenderImpl.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/models/Kitchen.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/implementation/KitchenImpl.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/game/GameEnviroment.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/game/GameActions.kt
+    visible: true
