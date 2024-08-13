@@ -11,10 +11,12 @@ import kotlin.random.Random
 
 internal const val NUMBER_OF_TOMATOES = 3
 
+// TODO: add tests
 // task#1
 fun getTomatoesForSoup(): List<Vegetable> =
     List(NUMBER_OF_TOMATOES) { fridge.getVegetable(what = VegetableType.Tomato) }
 
+// TODO: add tests
 // task#1
 fun prepareTomatoes(tomatoes: List<Vegetable>) {
     tomatoes
@@ -23,7 +25,6 @@ fun prepareTomatoes(tomatoes: List<Vegetable>) {
         .forEach { pot.put(kitchen.take(it)) }
 }
 
-// task#1
 fun cookSoup() {
     pot.simmer()
 }

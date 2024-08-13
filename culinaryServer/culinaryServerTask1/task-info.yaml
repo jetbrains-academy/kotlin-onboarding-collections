@@ -1,7 +1,7 @@
 type: edu
-custom_name: Culinary - Task 1
+custom_name: Master Chef - Introduction
 files:
-  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/CulinaryApplication.kt
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/MasterChefApplication.kt
     visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/game/GameResource.kt
     visible: true

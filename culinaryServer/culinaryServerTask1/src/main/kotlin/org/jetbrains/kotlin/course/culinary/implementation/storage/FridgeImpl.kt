@@ -13,17 +13,20 @@ data object FridgeImpl : Fridge {
 
     val vegetables: MutableList<Vegetable> = generateRandomVegetables().toMutableList()
 
+    // TODO: add tests
     private fun generateRandomVegetables() = buildList {
         addAll(List(RANDOM_VEGETABLES_NUMBER) { Vegetable(VegetableType.entries.random(), Random.nextBoolean()) })
-        addAll(List(RANDOM_FRESH_VEGETABLES_NUMBER) { Vegetable(VegetableType.Tomato, true) })
+        addAll(List(RANDOM_FRESH_VEGETABLES_NUMBER) { Vegetable(VegetableType.entries.random(), true) })
     }
 
+    // TODO: add tests
     // Task#0, student
     fun refill() {
         vegetables.clear()
         vegetables.addAll(generateRandomVegetables())
     }
 
+    // TODO: add tests
     // task#1, student
     override fun getVegetable(what: VegetableType): Vegetable {
         val vegetable = checkNotNull(vegetables.find { it.type == what && it.isFresh }) { "Fresh vegetable $what not found." }
