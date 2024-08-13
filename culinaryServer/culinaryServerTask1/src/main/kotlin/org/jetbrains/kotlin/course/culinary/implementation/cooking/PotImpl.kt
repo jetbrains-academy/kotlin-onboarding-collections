@@ -9,15 +9,11 @@ import org.jetbrains.kotlin.course.culinary.models.food.*
 
 data object PotImpl : Pot {
     val filling: MutableList<Ingredient> = mutableListOf()
-    var simmering = false
+    var simmering: Boolean = false
 
     override fun <T: Ingredient> put(ingredient: T) {
-        if (filling.add(ingredient)) {
-            actions.add(buildJsAction(JsActionType.PUT_IN_POT, ingredient))
-        }
-        else {
-            error("You are trying to put the same $ingredient in the pot twice")
-        }
+        filling.add(ingredient)
+        actions.add(buildJsAction(JsActionType.PUT_IN_POT, ingredient))
     }
 
     override fun put(vegetable: CutVegetable) {
@@ -32,6 +28,7 @@ data object PotImpl : Pot {
 
     private fun checkIfAllVegetablesFresh() = filling.filter{ it is Vegetable }.all{ (it as Vegetable).isFresh }
 
+    // task#2
     override fun doesTastePerfect(): Boolean = checkIfManySpices() && checkIfAllVegetablesFresh()
 
     override fun simmer() {

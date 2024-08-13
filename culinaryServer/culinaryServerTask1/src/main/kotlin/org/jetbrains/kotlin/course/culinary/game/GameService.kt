@@ -1,30 +1,22 @@
 package org.jetbrains.kotlin.course.culinary.game
 
+import org.jetbrains.kotlin.course.culinary.game.recipes.*
 import org.jetbrains.kotlin.course.culinary.models.food.FruitType
-import org.jetbrains.kotlin.course.culinary.models.food.SpiceType
-import org.jetbrains.kotlin.course.culinary.models.food.VegetableType
 import org.springframework.stereotype.Service
 
 @Service
 class CookingService {
     // task#1
     fun cookTomatoSoup() {
-        val vegetables = List(3) { fridge.getVegetable(what = VegetableType.Tomato) }
-        vegetables
-            .onEach { kitchen.put(it) }
-            .map { kitchen.cut(it) }
-            .forEach { pot.put(kitchen.take(it)) }
-        pot.simmer()
+        val tomatoes = getTomatoesForSoup()
+        prepareTomatoes(tomatoes)
+        cookSoup()
     }
 
     // task#2
     fun cookWithSpices() {
-        val spices = generateSequence { SpiceType.entries.random() }
-        spices
-            .map { shelf.getSpice(it) }
-            .map { pot.put(it) }
-            .takeWhile { !pot.doesTastePerfect() }
-            .toList() // terminate
+        val spices = generateSpices()
+        addSpecies(spices)
         pot.simmer()
     }
 

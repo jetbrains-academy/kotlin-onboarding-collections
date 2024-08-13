@@ -1,5 +1,6 @@
 import org.jetbrains.kotlin.course.culinary.game.CookingService
 import org.jetbrains.kotlin.course.culinary.game.clearKitchen
+import org.jetbrains.kotlin.course.culinary.game.pot
 import org.jetbrains.kotlin.course.culinary.implementation.cooking.BlenderImpl
 import org.jetbrains.kotlin.course.culinary.implementation.cooking.PotImpl
 import org.jetbrains.kotlin.course.culinary.implementation.cooking.SaladBowlImpl
@@ -28,10 +29,14 @@ class Test {
 
     @Test
     fun testTask2() {
-        clearKitchen()
-        CookingService().cookWithSpices()
-        assertTrue(PotImpl.doesTastePerfect(), "The soup in the pot does not taste perfect.")
-        assertTrue(PotImpl.simmering)
+        val tastes = List(100) {
+            clearKitchen()
+            CookingService().cookWithSpices()
+            assertTrue(PotImpl.simmering)
+            pot.doesTastePerfect()
+        }
+        assertTrue(tastes.toSet().size == 2, "The spices should be added randomly")
+
     }
 
     @Test

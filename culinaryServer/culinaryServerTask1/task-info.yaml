@@ -47,3 +47,5 @@ files:
     visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/game/GameActions.kt
     visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/game/recipes/TomatoSoup.kt
+    visible: true

@@ -11,7 +11,7 @@ import org.jetbrains.kotlin.course.culinary.models.food.VegetableType
 
 data object SaladBowlImpl : SaladBowl {
     val filling: MutableList<Ingredient> = mutableListOf()
-    var mixing = false
+    var mixing: Boolean = false
 
     override fun add(type: VegetableType, cuts: List<CutVegetable>) {
         requireNotNull(cuts.all { it.type == type }) {
