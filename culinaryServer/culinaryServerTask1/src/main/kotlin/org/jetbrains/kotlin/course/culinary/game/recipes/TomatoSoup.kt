@@ -1,3 +1,5 @@
+@file:Suppress("ForbiddenComment")
+
 package org.jetbrains.kotlin.course.culinary.game.recipes
 
 import org.jetbrains.kotlin.course.culinary.game.fridge

@@ -1,3 +1,5 @@
+@file:Suppress("ForbiddenComment")
+
 package org.jetbrains.kotlin.course.culinary.implementation.storage
 
 import org.jetbrains.kotlin.course.culinary.models.food.FruitType
