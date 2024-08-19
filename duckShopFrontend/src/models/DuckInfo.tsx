@@ -1,9 +1,8 @@
-import {Nullable} from "common-types";
 import {JsDuck} from './Duck';
 
 export class DuckInfo {
-    imageClass: Nullable<string>
-    description: Nullable<string>
+    imageClass: string | null
+    description: string | null
     hasKotlinAttribute: boolean
 
     constructor(duck: JsDuck) {
