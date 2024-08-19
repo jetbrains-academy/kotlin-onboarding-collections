@@ -1,9 +1,9 @@
 package org.jetbrains.kotlin.course.culinary.implementation.cooking
 
-import culinary.JsAction
-import culinary.JsActionType
 import org.jetbrains.kotlin.course.culinary.game.actions
-import org.jetbrains.kotlin.course.culinary.converters.buildJsAction
+import org.jetbrains.kotlin.course.culinary.converters.buildAction
+import org.jetbrains.kotlin.course.culinary.models.action.Action
+import org.jetbrains.kotlin.course.culinary.models.action.ActionType
 import org.jetbrains.kotlin.course.culinary.models.cooking.Pot
 import org.jetbrains.kotlin.course.culinary.models.food.*
 
@@ -13,7 +13,7 @@ data object PotImpl : Pot {
 
     override fun <T: Ingredient> put(ingredient: T) {
         filling.add(ingredient)
-        actions.add(buildJsAction(JsActionType.PUT_IN_POT, ingredient))
+        actions.add(buildAction(ActionType.PUT_IN_POT, ingredient))
     }
 
     override fun put(vegetable: CutVegetable) {
@@ -34,7 +34,7 @@ data object PotImpl : Pot {
     override fun simmer() {
         check(!simmering) { "You are already simmering" }
         simmering = true
-        actions += JsAction(JsActionType.SIMMER)
+        actions += Action(ActionType.SIMMER)
     }
 
     override fun reset() {

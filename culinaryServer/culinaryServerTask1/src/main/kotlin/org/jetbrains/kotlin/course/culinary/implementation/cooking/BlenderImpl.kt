@@ -1,9 +1,9 @@
 package org.jetbrains.kotlin.course.culinary.implementation.cooking
 
-import culinary.JsAction
-import culinary.JsActionType
 import org.jetbrains.kotlin.course.culinary.game.actions
-import org.jetbrains.kotlin.course.culinary.converters.buildJsAction
+import org.jetbrains.kotlin.course.culinary.converters.buildAction
+import org.jetbrains.kotlin.course.culinary.models.action.Action
+import org.jetbrains.kotlin.course.culinary.models.action.ActionType
 import org.jetbrains.kotlin.course.culinary.models.cooking.Blender
 import org.jetbrains.kotlin.course.culinary.models.food.Fruit
 
@@ -14,12 +14,12 @@ internal data object BlenderImpl : Blender {
     override fun blend() {
         check(!blending) { "You are already blending." }
         blending = true
-        actions += JsAction(JsActionType.BLEND)
+        actions += Action(ActionType.BLEND)
     }
 
     override fun add(fruit: Fruit) {
         filling.add(fruit)
-        actions += buildJsAction(JsActionType.ADD_TO_BLENDER, fruit)
+        actions += buildAction(ActionType.ADD_TO_BLENDER, fruit)
     }
 
     override fun reset() {

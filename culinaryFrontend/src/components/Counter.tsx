@@ -1,6 +1,5 @@
-import {culinary} from "common-types";
-import JsItemType = culinary.JsItemType;
 import Product from "./Product";
+import {JsItemType} from "../models/JsItemType";
 
 type CounterProps = {
     products: Array<JsItemType>,
@@ -11,7 +10,7 @@ export default function Counter({products}: CounterProps) {
         if (products.length > index) {
             return products[index]
         }
-        return JsItemType.valueOf("ROT_TOMATO")
+        return JsItemType.ROT_TOMATO
     }
 
     const half = Math.ceil(products.length / 2);

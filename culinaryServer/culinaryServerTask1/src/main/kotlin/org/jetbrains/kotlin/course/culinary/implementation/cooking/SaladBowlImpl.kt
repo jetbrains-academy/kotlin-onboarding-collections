@@ -1,9 +1,9 @@
 package org.jetbrains.kotlin.course.culinary.implementation.cooking
 
-import culinary.JsAction
-import culinary.JsActionType
 import org.jetbrains.kotlin.course.culinary.game.actions
-import org.jetbrains.kotlin.course.culinary.converters.buildJsAction
+import org.jetbrains.kotlin.course.culinary.converters.buildAction
+import org.jetbrains.kotlin.course.culinary.models.action.Action
+import org.jetbrains.kotlin.course.culinary.models.action.ActionType
 import org.jetbrains.kotlin.course.culinary.models.cooking.SaladBowl
 import org.jetbrains.kotlin.course.culinary.models.food.CutVegetable
 import org.jetbrains.kotlin.course.culinary.models.food.Ingredient
@@ -19,14 +19,14 @@ data object SaladBowlImpl : SaladBowl {
         }
         for (it in cuts) {
             filling.add(it)
-            actions += buildJsAction(JsActionType.ADD_TO_SALAD, it)
+            actions += buildAction(ActionType.ADD_TO_SALAD, it)
         }
     }
 
     override fun mix() {
         check(!mixing) { "You are already mixing" }
         mixing = true
-        actions += JsAction(JsActionType.MIX_SALAD)
+        actions += Action(ActionType.MIX_SALAD)
     }
 
     override fun reset() {

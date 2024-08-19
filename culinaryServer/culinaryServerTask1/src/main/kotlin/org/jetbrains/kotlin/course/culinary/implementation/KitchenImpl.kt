@@ -1,9 +1,9 @@
 package org.jetbrains.kotlin.course.culinary.implementation
 
-import culinary.JsActionType
 import org.jetbrains.kotlin.course.culinary.game.actions
-import org.jetbrains.kotlin.course.culinary.converters.buildJsAction
+import org.jetbrains.kotlin.course.culinary.converters.buildAction
 import org.jetbrains.kotlin.course.culinary.models.Kitchen
+import org.jetbrains.kotlin.course.culinary.models.action.ActionType
 import org.jetbrains.kotlin.course.culinary.models.food.CutVegetable
 import org.jetbrains.kotlin.course.culinary.models.food.Fruit
 import org.jetbrains.kotlin.course.culinary.models.food.Ingredient
@@ -15,7 +15,7 @@ data object KitchenImpl : Kitchen {
 
     override fun <T : Ingredient> put(item: T): T {
         filling.add(item)
-        actions.add(buildJsAction(JsActionType.SHOW_ON_COUNTER, item))
+        actions.add(buildAction(ActionType.SHOW_ON_COUNTER, item))
         return item
     }
 
@@ -23,17 +23,17 @@ data object KitchenImpl : Kitchen {
         require(vegetable in filling) { "Vegetable $vegetable is not on in the kitchen, so can't be cut" }
         require(vegetable.isFresh) { "One can't cut rot vegetable $vegetable" }
         filling -= vegetable
-        actions += buildJsAction(JsActionType.REMOVE_FROM_COUNTER, vegetable)
+        actions += buildAction(ActionType.REMOVE_FROM_COUNTER, vegetable)
         val cut = CutVegetable(vegetable.type)
         filling += cut
-        actions += buildJsAction(JsActionType.SHOW_ON_COUNTER, cut)
+        actions += buildAction(ActionType.SHOW_ON_COUNTER, cut)
         return cut
     }
 
     override fun <T : Ingredient> take(item: T): T {
         require(item in filling) { "You cannot remove an item from the kitchen if this item does not exist!" }
         filling.remove(item)
-        actions += buildJsAction(JsActionType.REMOVE_FROM_COUNTER, item)
+        actions += buildAction(ActionType.REMOVE_FROM_COUNTER, item)
         return item
     }
 
@@ -43,7 +43,7 @@ data object KitchenImpl : Kitchen {
         basket.left--
 
         if (basket.left == 0) {
-            actions += buildJsAction(JsActionType.REMOVE_FROM_COUNTER, basket)
+            actions += buildAction(ActionType.REMOVE_FROM_COUNTER, basket)
         }
 
         return Fruit(basket.type)

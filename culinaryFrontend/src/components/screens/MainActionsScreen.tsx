@@ -1,9 +1,8 @@
 import {GameState} from "../GameScreen";
 import {useState} from "react";
-import {culinary, Nullable} from "common-types";
-import JsActionType = culinary.JsActionType;
-import JsAction = culinary.JsAction;
-import JsItemType = culinary.JsItemType;
+import {JsActionType} from '../../models/JsActionType'
+import {JsAction} from '../../models/JsAction'
+import {JsItemType} from '../../models/JsItemType'
 import axios from "axios";
 import Counter from "../Counter";
 import Blender from "../Blender";
@@ -192,7 +191,7 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
         } else {
             counterProductsSetter((prevState) => [
                 ...prevState,
-                JsItemType.valueOf(arg),
+                JsItemType[arg as keyof typeof JsItemType],
             ]);
         }
     }
@@ -447,9 +446,9 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
             counterVisMap[arg](false)
         } else {
             console.log("counter: ", counterProducts)
-            console.log("filter: ", counterProducts.filter(item => item.name !== JsItemType.valueOf(arg).name))
+            console.log("filter: ", counterProducts.filter(item => JsItemType[item] !== arg))
             counterProductsSetter((prevState) => {
-                const index = prevState.findIndex(item => item.name === JsItemType.valueOf(arg).name);
+                const index = prevState.findIndex(item => JsItemType[item] === arg);
                 if (index > -1) {
                     const newState = [...prevState];
                     newState.splice(index, 1);
@@ -493,8 +492,8 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
             for (const action of actions) {
                 console.log(infoTextActionMap[String(action.type)] + " " + (action.parameter ? infoTextItemMap[String(action.parameter)] : ""))
                 infoTextSetter(infoTextActionMap[String(action.type)] + " " + (action.parameter ? infoTextItemMap[String(action.parameter)] : ""))
-                actionMap[JsActionType.valueOf(String(action.type)).name](
-                    action.parameter ? JsItemType.valueOf(String(action.parameter)).name : null
+                actionMap[String(action.type)](
+                    action.parameter ? String(action.parameter) : null
                 )
                 await delay(1500);
             }

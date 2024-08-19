@@ -1,13 +1,13 @@
 package org.jetbrains.kotlin.course.culinary.game
 
-import culinary.JsAction
 import org.jetbrains.kotlin.course.culinary.implementation.KitchenImpl
 import org.jetbrains.kotlin.course.culinary.implementation.cooking.BlenderImpl
 import org.jetbrains.kotlin.course.culinary.implementation.cooking.PotImpl
 import org.jetbrains.kotlin.course.culinary.implementation.cooking.SaladBowlImpl
 import org.jetbrains.kotlin.course.culinary.implementation.storage.FridgeImpl
+import org.jetbrains.kotlin.course.culinary.models.action.Action
 
-internal val actions: MutableList<JsAction> = ArrayList()
+internal val actions: MutableList<Action> = ArrayList()
 
 internal fun clearKitchen() {
     FridgeImpl.refill()
