@@ -4,19 +4,29 @@ import org.jetbrains.kotlin.course.culinary.game.pot
 import org.jetbrains.kotlin.course.culinary.implementation.cooking.BlenderImpl
 import org.jetbrains.kotlin.course.culinary.implementation.cooking.PotImpl
 import org.jetbrains.kotlin.course.culinary.implementation.cooking.SaladBowlImpl
+import org.jetbrains.kotlin.course.culinary.implementation.storage.FridgeImpl
 import org.jetbrains.kotlin.course.culinary.models.food.CutVegetable
 import org.jetbrains.kotlin.course.culinary.models.food.FruitType
+import org.jetbrains.kotlin.course.culinary.models.food.Vegetable
 import org.jetbrains.kotlin.course.culinary.models.food.VegetableType
-import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.assertNull
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
 class Test {
 
+    companion object {
+        private const val TOMATO_NUMBER = 10
+    }
+
+    private fun FridgeImpl.refillWithTomatoes() {
+        vegetables.addAll(List(TOMATO_NUMBER) { Vegetable(VegetableType.Tomato, true) })
+    }
+
     @Test
     fun testTask1() {
         clearKitchen()
+        FridgeImpl.refillWithTomatoes()
         CookingService().cookTomatoSoup()
         assertTrue(
             PotImpl.filling.size == 3,
@@ -31,6 +41,7 @@ class Test {
     fun testTask2() {
         val tastes = List(100) {
             clearKitchen()
+            FridgeImpl.refillWithTomatoes()
             CookingService().cookWithSpices()
             assertTrue(PotImpl.simmering)
             pot.doesTastePerfect()
@@ -42,6 +53,7 @@ class Test {
     @Test
     fun testTask3() {
         clearKitchen()
+        FridgeImpl.refill()
         CookingService().cookSalad()
         assertTrue(SaladBowlImpl.filling.size in 1..5) {
             "The salad bowl should contain between 1 and 5 cut vegetables, now it is ${SaladBowlImpl.filling.size}."
@@ -52,6 +64,7 @@ class Test {
     @Test
     fun testTask4() {
         clearKitchen()
+        FridgeImpl.refill()
         CookingService().cookSmoothie()
         val hasCitrus = BlenderImpl.filling.any { it.type == FruitType.Citrus }
         val hasBerry = BlenderImpl.filling.any { it.type == FruitType.Berry }
