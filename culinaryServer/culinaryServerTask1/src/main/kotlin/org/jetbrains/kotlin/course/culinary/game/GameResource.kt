@@ -21,6 +21,7 @@ class CookingFunction(val service: CookingService) {
     @CrossOrigin
     @GetMapping("/tomato-soup")
     fun tomatoSoup(): List<Action> {
+        clearActions()
         if (FridgeImpl.vegetables.count{ it.type == VegetableType.Tomato && it.isFresh } < NUMBER_OF_TOMATOES) {
             // Show an error
             return emptyList()
@@ -34,6 +35,7 @@ class CookingFunction(val service: CookingService) {
     @CrossOrigin
     @GetMapping("/soup-spices")
     fun soupSpices(): List<Action> {
+        clearActions()
         service.cookWithSpices()
         clearKitchen()
         return actions
@@ -46,6 +48,7 @@ class CookingFunction(val service: CookingService) {
     @CrossOrigin
     @GetMapping("/test-task3")
     fun task3(): List<Action> {
+        clearActions()
         service.cookSalad()
         clearKitchen()
         return actions
@@ -54,6 +57,7 @@ class CookingFunction(val service: CookingService) {
     @CrossOrigin
     @GetMapping("/test-task4")
     fun task4(): List<Action> {
+        clearActions()
         service.cookSmoothie()
         clearKitchen()
         return actions

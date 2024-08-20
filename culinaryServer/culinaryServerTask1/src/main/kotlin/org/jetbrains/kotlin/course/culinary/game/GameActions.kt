@@ -15,5 +15,8 @@ internal fun clearKitchen() {
     SaladBowlImpl.reset()
     BlenderImpl.reset()
     KitchenImpl.reset()
+}
+
+fun clearActions() {
     actions.clear()
 }
