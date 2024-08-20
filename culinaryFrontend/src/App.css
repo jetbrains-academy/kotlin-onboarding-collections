@@ -127,6 +127,18 @@
   background-image: url('assets/buttons/cook_hover.svg');
 }
 
+.App-button-fill {
+  background-size: contain;
+  width: 15vmin;
+  height: 5vmin;
+  color: black;
+  font-weight: 600;
+  background-image: url('assets/buttons/cook.svg');
+}
+.App-button-fill:hover {
+  background-image: url('assets/buttons/cook_hover.svg');
+}
+
 /*   PRODUCT COUNTER   */
 
 .App-counter-container {
@@ -156,10 +168,19 @@
 
 /*   COUNTER ITEMS   */
 .App-product-image {
-  height: 15vmin;
-  width: 15vmin;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.App-product-counter{
+  height: 15vmin;
+  width: 15vmin;
+}
+
+.App-product-fridge{
+  aspect-ratio: 1;
+  max-height: 8vmin;
+  width: 8vmin;
 }
 
 .App-product-image-ROT_TOMATO{
@@ -221,8 +242,27 @@
   width: 20vw;
   background-repeat: no-repeat;
   background-size: contain;
-  background-image: url('assets/kitchen/fridge-open.svg');
   visibility: visible;
+  position: relative;
+}
+
+.App-fridge-back{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('assets/kitchen/fridge-open.svg');
+}
+
+.App-fridge-first-shelf{
+  position: absolute;
+}
+
+.App-fridge-second-shelf{
+  position: absolute;
+}
+
+.App-fridge-third-shelf{
+  position: absolute;
 }
 
 .App-spices-shelf{

@@ -1,6 +1,5 @@
 import {GameState} from "../GameScreen";
 import {useState} from "react";
-import {JsActionType} from '../../models/JsActionType'
 import {JsAction} from '../../models/JsAction'
 import {JsItemType} from '../../models/JsItemType'
 import axios from "axios";
@@ -10,6 +9,7 @@ import Pot from "../Pot";
 import Basket from "../Basket";
 import SpicesShelf from "../SpicesShelf";
 import SaladBowl from "../SaladBowl";
+import Fridge from "../Fridge";
 
 type MainActionsScreenProps = {
     gameStateSetter: (gs: GameState) => void
@@ -17,8 +17,8 @@ type MainActionsScreenProps = {
 
 export default function MainActionsScreen({gameStateSetter}: MainActionsScreenProps) {
 
-    const taskUrl = "/functions/test-task1"
-    // const taskUrl = "http://localhost:8080/functions/cooking"
+    const refillUrl = "/functions/refill-fridge"
+    const soupUrl = "/functions/tomato-soup"
 
     type BlenderOptions = {
         visible: boolean,
@@ -99,6 +99,7 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
     }
 
     let [counterProducts, counterProductsSetter] = useState<Array<JsItemType>>([])
+    let [fridgeProducts, fridgeProductsSetter] = useState<Array<JsItemType>>([])
     let [infoText, infoTextSetter] = useState<String>("Press \"Cook!\" button to start")
     let [spicesShelfVis, spicesShelfVisSetter] = useState<boolean>(false)
     let [blenderOptions, setBlenderOptions] = useState<BlenderOptions>(initialBlenderOptions);
@@ -185,10 +186,10 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
         console.log("showOnCounter", arg)
         if (!arg)
             return
-
         if (arg in counterVisMap) {
             counterVisMap[arg](true)
         } else {
+            removeFromFridge(arg)
             counterProductsSetter((prevState) => [
                 ...prevState,
                 JsItemType[arg as keyof typeof JsItemType],
@@ -459,6 +460,24 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
         }
     }
 
+    function removeFromFridge(arg: string | null) {
+        console.log("removeFromFridge", arg)
+        if (!arg)
+            return
+        console.log("counter: ", fridgeProducts)
+        console.log("filter: ", fridgeProducts.filter(item => JsItemType[item] !== arg))
+        fridgeProductsSetter((prevState) => {
+            const index = prevState.findIndex(item => JsItemType[item] === arg);
+            if (index > -1) {
+                const newState = [...prevState];
+                newState.splice(index, 1);
+                return newState;
+            }
+            return prevState;
+        });
+    }
+
+
     let actionMap: { [key: string]: (arg: string | null) => void } = {
         "SHOW_ON_COUNTER": showOnCounter,
         "PUT_IN_POT": putInPot,
@@ -469,6 +488,26 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
         "ADD_TO_BLENDER": addToBlender,
         "REMOVE_FROM_COUNTER": removeFromCounter
     };
+
+    function refill(){
+        setBlenderOptions(initialBlenderOptions);
+        setPotOptions(initialPotOptions);
+        setSaladBowlOptions(initialSaladBowlOptions)
+        setCitrusBasketOptions(initialCitrusBasketOptions)
+        setBerryBasketOptions(initialBerryBasketOptions)
+        spicesShelfVisSetter(false)
+        counterProductsSetter([])
+        fridgeProductsSetter([])
+        infoTextSetter("Fridge refilling...")
+        let items = Array<JsItemType>()
+        axios.get(refillUrl).then(async (response) => {
+            const receivedItems: Array<keyof typeof JsItemType> = response.data;
+            items = receivedItems.map(item => JsItemType[item]);
+            console.log("Refill GOT: " + items)
+            fridgeProductsSetter(items)
+            infoTextSetter("Fridge is refilled!")
+        })
+    }
 
     function cook() {
         setBlenderOptions(initialBlenderOptions);
@@ -482,9 +521,13 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
         const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
 
         let actions = Array<JsAction>()
-        axios.get(taskUrl).then(async (response) => {
+        axios.get(soupUrl).then(async (response) => {
             actions = response.data as Array<JsAction>
             console.log("GOT: " + actions)
+            if (actions.length == 0){
+                infoTextSetter("Not enough vegetables to make soup!")
+                return
+            }
             infoTextSetter("Let's go!")
             equipKitchen(actions)
             console.log("equipKitchen() DONE")
@@ -517,7 +560,7 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
                     <div className={"App-kitchen-container"}>
                         <div className={"App-left-kitchen-container"}>
                             <SpicesShelf visible={spicesShelfVis}></SpicesShelf>
-                            <div className={"App-fridge"}></div>
+                            <Fridge products={fridgeProducts}></Fridge>
                         </div>
                         <div className={"App-center-kitchen-container"}>
                             <div className={"App-basket-kitchen-container"}>
@@ -536,8 +579,12 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
             }
             <div className="App-buttons-container">
                 <button
+                    className={"App-button-base App-button-fill"}
+                    onClick={() => refill()}>Refill!
+                </button>
+                <button
                     className={"App-button-base App-button-cook"}
-                    onClick={() => cook()}>Cook!
+                    onClick={() => cook()}>Soup!
                 </button>
             </div>
         </div>
