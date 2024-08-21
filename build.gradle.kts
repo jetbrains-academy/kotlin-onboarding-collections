@@ -14,13 +14,8 @@ plugins {
     id("org.springframework.boot") version "2.7.3" apply false
     id("io.spring.dependency-management") version "1.0.13.RELEASE" apply false
     id("org.jetbrains.kotlin.plugin.spring") version kotlinVersion apply false
-    id("io.gitlab.arturbosch.detekt") version "1.23.1"
 
     id("org.siouan.frontend-jdk11") version "6.0.0"
-}
-
-val detektReportMerge by tasks.registering(io.gitlab.arturbosch.detekt.report.ReportMergeTask::class) {
-    output.set(rootProject.buildDir.resolve("reports/detekt/merge.sarif"))
 }
 
 allprojects {
@@ -42,27 +37,10 @@ val frontendSuffix = "Frontend"
 val server = "Server"
 
 configure(subprojects.filter { frontendSuffix !in it.name }) {
-    apply<io.gitlab.arturbosch.detekt.DetektPlugin>()
-
     apply {
         plugin("java")
         plugin("kotlin")
     }
-
-    configure<io.gitlab.arturbosch.detekt.extensions.DetektExtension> {
-        config = rootProject.files("detekt.yml")
-        buildUponDefaultConfig = true
-        debug = true
-    }
-
-    tasks.withType<io.gitlab.arturbosch.detekt.Detekt> {
-        exclude("**/GameFunctionsService.kt", "**/GameService.kt")
-        finalizedBy(detektReportMerge)
-        reports.sarif.required.set(true)
-        detektReportMerge.get().input.from(sarifReportFile)
-    }
-
-    tasks.getByPath("detekt").onlyIf { project.hasProperty("runDetekt") }
 
     dependencies {
         implementation("org.jetbrains.academy.test.system:core:2.0.7")

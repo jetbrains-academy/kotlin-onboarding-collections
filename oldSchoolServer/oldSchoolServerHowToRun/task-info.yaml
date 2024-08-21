@@ -3,31 +3,15 @@ custom_name: Old School - How to Run
 files:
   - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/OldSchoolApplication.kt
     visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/photo/PhotoCharacter.kt
+    visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/mode/GameModeService.kt
     visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/mode/GameModeResource.kt
-    visible: true
-  - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/photo/JsPhoto.kt
-    visible: true
-  - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/photo/PhotoCharacter.kt
-    visible: true
+    visible: false
   - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/functions/GameFunctionsService.kt
     visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/functions/GameFunctionsResource.kt
-    visible: true
-  - name: src/main/resources/static/static/js/main.a487995b.js
-    visible: false
-  - name: src/main/resources/static/static/js/main.a487995b.js.map
-    visible: false
-  - name: src/main/resources/static/static/js/488.5dc472d5.chunk.js
-    visible: false
-  - name: src/main/resources/static/static/js/488.5dc472d5.chunk.js.map
-    visible: false
-  - name: src/main/resources/static/static/js/main.a487995b.js.LICENSE.txt
-    visible: false
-  - name: src/main/resources/static/static/css/main.a5cbd761.css
-    visible: false
-  - name: src/main/resources/static/static/css/main.a5cbd761.css.map
     visible: false
   - name: src/main/resources/static/static/media/bg.36ac84bcfc4b1fa64b64.svg
     visible: false
@@ -116,4 +100,20 @@ files:
   - name: src/main/resources/static/manifest.json
     visible: false
   - name: src/main/resources/static/asset-manifest.json
+    visible: false
+  - name: src/main/resources/static/static/css/main.a5cbd761.css
+    visible: false
+  - name: src/main/resources/static/static/css/main.a5cbd761.css.map
+    visible: false
+  - name: src/main/resources/static/static/js/488.5dc472d5.chunk.js
+    visible: false
+  - name: src/main/resources/static/static/js/488.5dc472d5.chunk.js.map
+    visible: false
+  - name: src/main/resources/static/static/js/main.a487995b.js.map
+    visible: false
+  - name: src/main/resources/static/static/js/main.a487995b.js
+    visible: false
+  - name: src/main/resources/static/static/js/main.a487995b.js.LICENSE.txt
+    visible: false
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/photo/JsPhoto.kt
     visible: false
