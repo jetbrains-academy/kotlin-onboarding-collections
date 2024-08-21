@@ -1,0 +1,660 @@
+/****************BASE***************/
+
+.font-link-base {
+  font-family: 'Inter', sans-serif;
+  color: black;
+}
+
+.font-link-bold {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+}
+
+.font-link-light {
+  font-family: 'Inter', sans-serif;
+  font-weight: 200;
+}
+
+.App-logo {
+  height: 35vmin;
+  pointer-events: none;
+}
+
+.App-big-name {
+  font-size: 10vmin;
+  margin-top: 2vmin;
+  margin-bottom: 2vmin;
+}
+
+.App-small-name {
+  font-size: 4vmin;
+  margin-top: 0;
+  margin-bottom: 2vmin;
+  color: white;
+}
+
+.App-invisible{
+  visibility: hidden;
+}
+
+.App-header-base {
+  font-size: calc(10px + 2vmin);
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.App-header-white {
+  background-image: url('assets/bg_white.svg');
+}
+
+.App-header-black {
+  background-image: url('assets/bg.svg');
+}
+
+.App-main-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+
+.App-buttons-container {
+  min-height: 10vmin;
+  display: block;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-display-flex {
+  display: flex;
+}
+
+.App-button-base {
+  height: 10vmin;
+  margin-top: 5vmin;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-color: transparent;
+  border: none;
+  background-position: center;
+  cursor:pointer;
+  color: white;
+  font-size: 100%;
+  font-family: 'Inter', sans-serif;
+}
+
+.App-button-start {
+  background-image: url('assets/play_button.svg');
+  width: 30vmin;
+  height: 6vmin;
+  margin-top: 4vmin;
+  background-size: contain;
+  margin-bottom: 1vmin;
+}
+.App-button-start:hover {
+  opacity: 0.85;
+}
+
+.App-teams-button-back {
+  background-image: url('assets/back_button.svg');
+  background-size: contain;
+}
+
+.App-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+}
+
+/****************BASE***************/
+
+.App-button-cook {
+  background-size: contain;
+  width: 15vmin;
+  height: 5vmin;
+  color: black;
+  font-weight: 600;
+  background-image: url('assets/buttons/cook.svg');
+}
+.App-button-cook:hover {
+  background-image: url('assets/buttons/cook_hover.svg');
+}
+
+.App-button-fill {
+  background-size: contain;
+  width: 15vmin;
+  height: 5vmin;
+  color: black;
+  font-weight: 600;
+  background-image: url('assets/buttons/cook.svg');
+}
+.App-button-fill:hover {
+  background-image: url('assets/buttons/cook_hover.svg');
+}
+
+/*   PRODUCT COUNTER   */
+
+.App-counter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-products-row {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.App-products-row-top {
+  padding-top: 3vmin;
+  padding-bottom: 0;
+}
+
+.App-products-row-bottom {
+  padding-top: 0;
+  padding-bottom: 2vmin;
+}
+/*   ===============   */
+
+/*   COUNTER ITEMS   */
+.App-product-image {
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.App-product-counter{
+  height: 15vmin;
+  width: 15vmin;
+}
+
+.App-product-fridge{
+  aspect-ratio: 1;
+  max-height: 8vmin;
+  width: 8vmin;
+}
+
+.App-product-image-ROT_TOMATO{
+  background-image: url('assets/kitchen/tomato-spoiled.svg');
+}
+.App-product-image-FRESH_TOMATO{
+  background-image: url('assets/kitchen/tomato-raw.svg');
+}
+.App-product-image-CUT_TOMATO{
+  background-image: url('assets/kitchen/tomato-cut.svg');
+}
+.App-product-image-ROT_CUCUMBER{
+  background-image: url('assets/kitchen/cucumber-spoiled.svg');
+}
+.App-product-image-FRESH_CUCUMBER{
+  background-image: url('assets/kitchen/cucumber-raw.svg');
+}
+.App-product-image-CUT_CUCUMBER{
+  background-image: url('assets/kitchen/cucumber-cut.svg');
+}
+.App-product-image-ROT_CARROT{
+  background-image: url('assets/kitchen/carrot-spoiled.svg');
+}
+.App-product-image-FRESH_CARROT{
+  background-image: url('assets/kitchen/carrot-raw.svg');
+}
+.App-product-image-CUT_CARROT{
+  background-image: url('assets/kitchen/carrow-cut.svg');
+}
+.App-product-image-BERRY{
+  background-image: url('assets/kitchen/berry.svg');
+}
+.App-product-image-CITRUS{
+  background-image: url('assets/kitchen/citrus.svg');
+}
+.App-product-image-SALT{
+  background-image: url('assets/kitchen/salt.svg');
+}
+.App-product-image-PEPPER{
+  background-image: url('assets/kitchen/pepper.svg');
+}
+.App-product-image-OREGANO{
+  background-image: url('assets/kitchen/oregano.svg');
+}
+/*   =============   */
+
+/* ### LEFT #### */
+
+.App-left-kitchen-container {
+  align-items: flex-start;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.App-fridge {
+  aspect-ratio: 1 / 1.25;
+  max-height: 40vh;
+  width: 20vw;
+  background-repeat: no-repeat;
+  background-size: contain;
+  visibility: visible;
+  position: relative;
+}
+
+.App-fridge-back{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('assets/kitchen/fridge-open.svg');
+}
+
+.App-fridge-first-shelf{
+  position: absolute;
+}
+
+.App-fridge-second-shelf{
+  position: absolute;
+}
+
+.App-fridge-third-shelf{
+  position: absolute;
+}
+
+.App-spices-shelf{
+  aspect-ratio: 1.1 / 1;
+  max-height: 22vh;
+  width: 20vw;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url('assets/kitchen/spices-shelf.svg');
+}
+
+/* ### CENTER #### */
+
+.App-center-kitchen-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-basket-kitchen-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-basket {
+  height: 20vmin;
+  width: 20vmin;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.App-basket-back{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('assets/baskets/basket-back.svg');
+}
+
+.App-basket-front{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('assets/baskets/basket-front.svg');
+}
+
+.App-basket-item{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.App-basket-citrus-5{
+  background-image: url('assets/baskets/basket-citrus-5.svg');
+}
+.App-basket-citrus-4{
+  background-image: url('assets/baskets/basket-citrus-4.svg');
+}
+.App-basket-citrus-3{
+  background-image: url('assets/baskets/basket-citrus-3.svg');
+}
+.App-basket-citrus-2{
+  background-image: url('assets/baskets/basket-citrus-2.svg');
+}
+.App-basket-citrus-1{
+  background-image: url('assets/baskets/basket-citrus-1.svg');
+}
+
+
+.App-basket-berry-5{
+  background-image: url('assets/baskets/basket-berry-5.svg');
+}
+.App-basket-berry-4{
+  background-image: url('assets/baskets/basket-berry-4.svg');
+}
+.App-basket-berry-3{
+  background-image: url('assets/baskets/basket-berry-3.svg');
+}
+.App-basket-berry-2{
+  background-image: url('assets/baskets/basket-berry-2.svg');
+}
+.App-basket-berry-1{
+  background-image: url('assets/baskets/basket-berry-1.svg');
+}
+
+
+.App-salad {
+  height: 20vmin;
+  width: 20vmin;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.App-salad-bowl {
+  background-image: url('assets/salad/salad-bowl.svg');
+}
+
+.App-salad-bowl-mixed {
+  background-image: url('assets/salad/salad-bowl-mixed.svg');
+}
+
+.App-salad-tomato{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('assets/salad/salad-tomato.svg');
+}
+
+.App-salad-cucumber{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('assets/salad/salad-cucumber.svg');
+}
+
+.App-salad-carrot{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('assets/salad/salad-carrot.svg');
+}
+
+.App-salad-mixed-tomato{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('assets/salad/salad-bowl-mixed-tomato.svg');
+}
+
+.App-salad-mixed-cucumber{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('assets/salad/salad-bowl-mixed-cucumber.svg');
+}
+
+.App-salad-mixed-carrot{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('assets/salad/salad-bowl-mixed-carrot.svg');
+}
+
+/* ### RIGHT #### */
+
+.App-right-kitchen-container {
+  align-items: flex-end;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.App-pot {
+  aspect-ratio: 1 / 1;
+  max-height: 26vh;
+  width: 20vw;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.App-pot-back{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('assets/pot/pot-back.svg');
+}
+
+.App-pot-water {
+  background-image: url('assets/pot/pot-water.svg');
+}
+
+.App-pot-soup {
+  background-image: url('assets/pot/pot-soup.svg');
+}
+
+.App-pot-pepper{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('assets/pot/pot-pepper.svg');
+}
+
+.App-pot-salt{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('assets/pot/pot-salt.svg');
+}
+
+.App-pot-oregano{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('assets/pot/pot-oregano.svg');
+}
+
+.App-pot-tomato{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('assets/pot/pot-tomato.svg');
+}
+
+.App-pot-cucumber{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('assets/pot/pot-cucumber.svg');
+}
+
+.App-pot-carrot{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('assets/pot/pot-carrot.svg');
+}
+
+.App-blender {
+  aspect-ratio: 1 / 1.5;
+  max-height: 28vh;
+  width: 20vw;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.App-blender-jar{
+  background-image: url('assets/blender/blender.svg');
+}
+
+.App-blender-citrus{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('assets/blender/blender-citrus.svg');
+}
+
+.App-blender-berry{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('assets/blender/blender-berry.svg');
+}
+
+.App-blender-jar-full {
+  background-image: url('assets/blender/blender-full.svg');
+}
+
+.App-animation-shake{
+  animation: shake 0.6s cubic-bezier(.36,.07,.19,.97) both;
+  animation-iteration-count: infinite;
+}
+
+.App-animation-simmer{
+  animation: simmer 0.7s cubic-bezier(.36,.07,.19,.97) both;
+  animation-iteration-count: infinite;
+}
+
+.App-animation-mixing{
+  animation: mixing 1s cubic-bezier(.36,.07,.19,.97) both;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+@keyframes simmer {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0) rotate(3deg);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0) rotate(-3deg);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0) rotate(3deg);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0) rotate(-3deg);
+  }
+}
+
+@keyframes mixing {
+  10%, 90% {
+    transform: translate3d(-5px, 0, 0) rotate(10deg);
+  }
+
+  20%, 80% {
+    transform: translate3d(6px, 0, 0) rotate(-10deg);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-8px, 0, 0) rotate(10deg);
+  }
+
+  40%, 60% {
+    transform: translate3d(8px, 0, 0) rotate(-10deg);
+  }
+}
+
+/* ####### */
+
+
+.App-kitchen-container {
+  min-width: 80vw;
+  max-width: 100vw;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.App-kitchen-space {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ======= */
+
+.App-display-none {
+  display: none;
+}
+
+.App-functions-container {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.App-button-action {
+  background-size: contain;
+  height: 4vmin;
+  width: 10vmin;
+  margin: 0 0.25vmin 0.25vmin;
+}
+
+.App-unclickable-button {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.App-button-back {
+  background-image: url('assets/back_button.svg');
+  background-size: contain;
+  width: 20vmin;
+  height: 5vmin;
+  position: absolute;
+  top: 1vmin;
+  right: 5vmin;
+}
+.App-button-back:hover {
+  background-image: url('assets/back_button_hover.svg');
+}
+
+
+.App-info-container {
+  text-align: center;
+  position: absolute;
+  top: 15%;
+  left: 20%;
+  width: 60%;
+}
+
+.App-info-container-text {
+  color: #5f5e5e;
+  font-size: 2.5vmin;
+  white-space: pre-line;
+}

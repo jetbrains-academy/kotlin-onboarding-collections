@@ -18,5 +18,6 @@ content:
   - oldSchoolServer
   - backToTheFutureServer
   - FeedbackSurvey
+  - culinaryServer
 environment_settings:
   jvm_language_level: JDK_17
