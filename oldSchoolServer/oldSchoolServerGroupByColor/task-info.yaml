@@ -3,29 +3,45 @@ custom_name: Old School - Group Photos by Background Color
 files:
   - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/functions/GameFunctionsService.kt
     visible: true
-  - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/OldSchoolApplication.kt
+  - name: test/Tests.kt
     visible: true
-  - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/photo/PhotoCharacter.kt
+  - name: test/ColorTestClass.kt
+    visible: true
+  - name: test/HairTypeTestClass.kt
+    visible: true
+  - name: test/AccessoryTestClass.kt
+    visible: true
+  - name: test/PhotoCharacterTestClass.kt
+    visible: true
+  - name: test/GameModeServiceTestClass.kt
+    visible: true
+  - name: test/GameFunctionsServiceTestClass.kt
     visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/mode/GameModeService.kt
     visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/mode/GameModeResource.kt
-    visible: false
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/photo/JsPhoto.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/photo/PhotoCharacter.kt
+    visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/functions/GameFunctionsResource.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/old/school/OldSchoolApplication.kt
+    visible: true
+  - name: src/main/resources/static/static/js/main.a487995b.js
     visible: false
-  - name: src/main/resources/static/static/js/main.e50dc054.js
+  - name: src/main/resources/static/static/js/main.a487995b.js.map
     visible: false
-  - name: src/main/resources/static/static/js/main.e50dc054.js.map
+  - name: src/main/resources/static/static/js/488.5dc472d5.chunk.js
     visible: false
-  - name: src/main/resources/static/static/js/496.35c518b0.chunk.js
+  - name: src/main/resources/static/static/js/488.5dc472d5.chunk.js.map
     visible: false
-  - name: src/main/resources/static/static/js/496.35c518b0.chunk.js.map
+  - name: src/main/resources/static/static/js/main.a487995b.js.LICENSE.txt
     visible: false
-  - name: src/main/resources/static/static/js/main.e50dc054.js.LICENSE.txt
+  - name: src/main/resources/static/static/css/main.a5cbd761.css
     visible: false
-  - name: src/main/resources/static/static/css/main.7674ae2c.css
-    visible: false
-  - name: src/main/resources/static/static/css/main.7674ae2c.css.map
+  - name: src/main/resources/static/static/css/main.a5cbd761.css.map
     visible: false
   - name: src/main/resources/static/static/media/bg.36ac84bcfc4b1fa64b64.svg
     visible: false
@@ -114,24 +130,4 @@ files:
   - name: src/main/resources/static/manifest.json
     visible: false
   - name: src/main/resources/static/asset-manifest.json
-    visible: false
-  - name: src/main/resources/static/static/js/main.649fc6c7.js.LICENSE.txt
-    visible: false
-  - name: src/main/resources/static/static/js/main.649fc6c7.js.map
-    visible: false
-  - name: src/main/resources/static/static/js/main.649fc6c7.js
-    visible: false
-  - name: test/AccessoryTestClass.kt
-    visible: false
-  - name: test/ColorTestClass.kt
-    visible: false
-  - name: test/GameFunctionsServiceTestClass.kt
-    visible: false
-  - name: test/GameModeServiceTestClass.kt
-    visible: false
-  - name: test/HairTypeTestClass.kt
-    visible: false
-  - name: test/PhotoCharacterTestClass.kt
-    visible: false
-  - name: test/Tests.kt
     visible: false
