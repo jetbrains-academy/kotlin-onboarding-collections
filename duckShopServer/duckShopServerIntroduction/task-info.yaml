@@ -5,122 +5,26 @@ files:
     visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/duck/Duck.kt
     visible: true
-  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/duck/JsDuck.kt
-    visible: true
-  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/mode/GameModeService.kt
-    visible: true
-  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/mode/GameModeResource.kt
-    visible: true
-  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/utils/GameMode.kt
-    visible: true
-  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/utils/GameUtil.kt
-    visible: true
-  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/utils/Converters.kt
-    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/functions/action/GameActionFunctionsResource.kt
+    visible: false
   - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/functions/action/GameActionFunctionsService.kt
     visible: true
-  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/functions/action/GameActionFunctionsResource.kt
-    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/functions/change/GameChangeFunctionsResource.kt
+    visible: false
   - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/functions/change/GameChangeFunctionsService.kt
     visible: true
-  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/functions/change/GameChangeFunctionsResource.kt
-    visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/functions/common/RequestBody.kt
+    visible: false
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/mode/GameModeResource.kt
+    visible: false
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/mode/GameModeService.kt
     visible: true
-  - name: src/main/resources/static/static/js/main.4ebad522.js
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/utils/Converters.kt
     visible: false
-  - name: src/main/resources/static/static/js/main.4ebad522.js.map
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/utils/GameMode.kt
     visible: false
-  - name: src/main/resources/static/static/js/453.70e8dd1c.chunk.js
-    visible: false
-  - name: src/main/resources/static/static/js/453.70e8dd1c.chunk.js.map
-    visible: false
-  - name: src/main/resources/static/static/js/main.4ebad522.js.LICENSE.txt
-    visible: false
-  - name: src/main/resources/static/static/css/main.8ddda7d5.css
-    visible: false
-  - name: src/main/resources/static/static/css/main.8ddda7d5.css.map
-    visible: false
-  - name: src/main/resources/static/static/media/bg.36ac84bcfc4b1fa64b64.svg
-    visible: false
-  - name: src/main/resources/static/static/media/add.ca4da65fdeaab104ebd6.svg
-    visible: false
-  - name: src/main/resources/static/static/media/leo.977c1747571c5ff5cb8c.svg
-    visible: false
-  - name: src/main/resources/static/static/media/alex.9a3fdeee1fa139592136.svg
-    visible: false
-  - name: src/main/resources/static/static/media/jack.e14063a59de7ad5196dd.svg
-    visible: false
-  - name: src/main/resources/static/static/media/sort.ab9f94aed7ea874e5a57.svg
-    visible: false
-  - name: src/main/resources/static/static/media/piter.8ad80ee9198622027f13.svg
-    visible: false
-  - name: src/main/resources/static/static/media/daniel.1baddb5e176d69d32bd2.svg
-    visible: false
-  - name: src/main/resources/static/static/media/dorian.6d606341a65a55473149.svg
-    visible: false
-  - name: src/main/resources/static/static/media/filter.43ad31bcc0f7e391a43f.svg
-    visible: false
-  - name: src/main/resources/static/static/media/oliver.143374bbf0952c744219.svg
-    visible: false
-  - name: src/main/resources/static/static/media/remove.bb5dde93029b58108391.svg
-    visible: false
-  - name: src/main/resources/static/static/media/mr.pink.ec182c8f02853a873a2a.svg
-    visible: false
-  - name: src/main/resources/static/static/media/shuffle.4926f020d616640d95a6.svg
-    visible: false
-  - name: src/main/resources/static/static/media/vanessa.ba93be7e46304da966cd.svg
-    visible: false
-  - name: src/main/resources/static/static/media/bg_white.00acddcc6609eb49c481.svg
-    visible: false
-  - name: src/main/resources/static/static/media/box_best.b72179c70b7297a5dee3.svg
-    visible: false
-  - name: src/main/resources/static/static/media/duck_box.f638b1eaf20376bece83.svg
-    visible: false
-  - name: src/main/resources/static/static/media/kristian.e1783cbdf20b7e34ecd2.svg
-    visible: false
-  - name: src/main/resources/static/static/media/add-hover.3cdaa82c79a750b23111.svg
-    visible: false
-  - name: src/main/resources/static/static/media/map_hover.2910bc8ec86e7dca97f8.svg
-    visible: false
-  - name: src/main/resources/static/static/media/partition.e3a2d23d36214ad06249.svg
-    visible: false
-  - name: src/main/resources/static/static/media/set_hover.20dcadbf1c6fd57028ec.svg
-    visible: false
-  - name: src/main/resources/static/static/media/duck_label.317a9011902625744207.svg
-    visible: false
-  - name: src/main/resources/static/static/media/list_hover.a23493334686f017614a.svg
-    visible: false
-  - name: src/main/resources/static/static/media/map_button.7cfc2167ed06bd3e6a87.svg
-    visible: false
-  - name: src/main/resources/static/static/media/set_button.481dbe764f51d9b26229.svg
-    visible: false
-  - name: src/main/resources/static/static/media/sort-hover.71daa951794dc8a16225.svg
-    visible: false
-  - name: src/main/resources/static/static/media/back_button.578d2b1544fe8bc2e2ec.svg
-    visible: false
-  - name: src/main/resources/static/static/media/list_button.3603ac44f82c83f64348.svg
-    visible: false
-  - name: src/main/resources/static/static/media/map_focused.75f18bbc16afbc0d8071.svg
-    visible: false
-  - name: src/main/resources/static/static/media/play_button.aad770749eabbe8ac9b1.svg
-    visible: false
-  - name: src/main/resources/static/static/media/set_focused.e4e53e6f968a066cab17.svg
-    visible: false
-  - name: src/main/resources/static/static/media/filter-hover.8a294b7f56f2ac0f9968.svg
-    visible: false
-  - name: src/main/resources/static/static/media/list_focused.27940c1d99f32759b1b3.svg
-    visible: false
-  - name: src/main/resources/static/static/media/remove-hover.c1742f0ee63413a714bb.svg
-    visible: false
-  - name: src/main/resources/static/static/media/shuffle-hover.3f7ca6a36531e1f0397a.svg
-    visible: false
-  - name: src/main/resources/static/static/media/partition-hover.43f6e6a1f04c1d323273.svg
-    visible: false
-  - name: src/main/resources/static/static/media/logo.cf642a9f5735ef617d1d9c4fa769d33b.svg
-    visible: false
-  - name: src/main/resources/static/static/media/back_button_hover.f4bf17adae27016a067f.svg
-    visible: false
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/utils/GameUtil.kt
+    visible: true
   - name: src/main/resources/static/index.html
     visible: false
   - name: src/main/resources/static/robots.txt
@@ -130,4 +34,100 @@ files:
   - name: src/main/resources/static/manifest.json
     visible: false
   - name: src/main/resources/static/asset-manifest.json
+    visible: false
+  - name: src/main/resources/static/static/css/main.8ddda7d5.css
+    visible: false
+  - name: src/main/resources/static/static/css/main.8ddda7d5.css.map
+    visible: false
+  - name: src/main/resources/static/static/media/duck_label.317a9011902625744207.svg
+    visible: false
+  - name: src/main/resources/static/static/media/set_focused.e4e53e6f968a066cab17.svg
+    visible: false
+  - name: src/main/resources/static/static/media/kristian.e1783cbdf20b7e34ecd2.svg
+    visible: false
+  - name: src/main/resources/static/static/media/shuffle.4926f020d616640d95a6.svg
+    visible: false
+  - name: src/main/resources/static/static/media/list_hover.a23493334686f017614a.svg
+    visible: false
+  - name: src/main/resources/static/static/media/dorian.6d606341a65a55473149.svg
+    visible: false
+  - name: src/main/resources/static/static/media/jack.e14063a59de7ad5196dd.svg
+    visible: false
+  - name: src/main/resources/static/static/media/piter.8ad80ee9198622027f13.svg
+    visible: false
+  - name: src/main/resources/static/static/media/remove-hover.c1742f0ee63413a714bb.svg
+    visible: false
+  - name: src/main/resources/static/static/media/list_focused.27940c1d99f32759b1b3.svg
+    visible: false
+  - name: src/main/resources/static/static/media/sort.ab9f94aed7ea874e5a57.svg
+    visible: false
+  - name: src/main/resources/static/static/media/add.ca4da65fdeaab104ebd6.svg
+    visible: false
+  - name: src/main/resources/static/static/media/map_focused.75f18bbc16afbc0d8071.svg
+    visible: false
+  - name: src/main/resources/static/static/media/filter.43ad31bcc0f7e391a43f.svg
+    visible: false
+  - name: src/main/resources/static/static/media/vanessa.ba93be7e46304da966cd.svg
+    visible: false
+  - name: src/main/resources/static/static/media/alex.9a3fdeee1fa139592136.svg
+    visible: false
+  - name: src/main/resources/static/static/media/shuffle-hover.3f7ca6a36531e1f0397a.svg
+    visible: false
+  - name: src/main/resources/static/static/media/box_best.b72179c70b7297a5dee3.svg
+    visible: false
+  - name: src/main/resources/static/static/media/mr.pink.ec182c8f02853a873a2a.svg
+    visible: false
+  - name: src/main/resources/static/static/media/list_button.3603ac44f82c83f64348.svg
+    visible: false
+  - name: src/main/resources/static/static/media/play_button.aad770749eabbe8ac9b1.svg
+    visible: false
+  - name: src/main/resources/static/static/media/partition.e3a2d23d36214ad06249.svg
+    visible: false
+  - name: src/main/resources/static/static/media/filter-hover.8a294b7f56f2ac0f9968.svg
+    visible: false
+  - name: src/main/resources/static/static/media/set_button.481dbe764f51d9b26229.svg
+    visible: false
+  - name: src/main/resources/static/static/media/map_button.7cfc2167ed06bd3e6a87.svg
+    visible: false
+  - name: src/main/resources/static/static/media/set_hover.20dcadbf1c6fd57028ec.svg
+    visible: false
+  - name: src/main/resources/static/static/media/oliver.143374bbf0952c744219.svg
+    visible: false
+  - name: src/main/resources/static/static/media/daniel.1baddb5e176d69d32bd2.svg
+    visible: false
+  - name: src/main/resources/static/static/media/remove.bb5dde93029b58108391.svg
+    visible: false
+  - name: src/main/resources/static/static/media/duck_box.f638b1eaf20376bece83.svg
+    visible: false
+  - name: src/main/resources/static/static/media/partition-hover.43f6e6a1f04c1d323273.svg
+    visible: false
+  - name: src/main/resources/static/static/media/sort-hover.71daa951794dc8a16225.svg
+    visible: false
+  - name: src/main/resources/static/static/media/bg.36ac84bcfc4b1fa64b64.svg
+    visible: false
+  - name: src/main/resources/static/static/media/map_hover.2910bc8ec86e7dca97f8.svg
+    visible: false
+  - name: src/main/resources/static/static/media/leo.977c1747571c5ff5cb8c.svg
+    visible: false
+  - name: src/main/resources/static/static/media/logo.cf642a9f5735ef617d1d9c4fa769d33b.svg
+    visible: false
+  - name: src/main/resources/static/static/media/back_button_hover.f4bf17adae27016a067f.svg
+    visible: false
+  - name: src/main/resources/static/static/media/add-hover.3cdaa82c79a750b23111.svg
+    visible: false
+  - name: src/main/resources/static/static/media/bg_white.00acddcc6609eb49c481.svg
+    visible: false
+  - name: src/main/resources/static/static/media/back_button.578d2b1544fe8bc2e2ec.svg
+    visible: false
+  - name: src/main/resources/static/static/js/main.4ebad522.js.map
+    visible: false
+  - name: src/main/resources/static/static/js/main.4ebad522.js
+    visible: false
+  - name: src/main/resources/static/static/js/453.70e8dd1c.chunk.js.map
+    visible: false
+  - name: src/main/resources/static/static/js/453.70e8dd1c.chunk.js
+    visible: false
+  - name: src/main/resources/static/static/js/main.4ebad522.js.LICENSE.txt
+    visible: false
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/duck/shop/duck/JsDuck.kt
     visible: false

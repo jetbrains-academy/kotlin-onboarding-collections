@@ -3,35 +3,13 @@ custom_name: Back to The Future - Add Commands
 files:
   - name: src/main/kotlin/org/jetbrains/kotlin/course/tamagotchi/game/GameService.kt
     visible: true
-  - name: test/Tests.kt
-    visible: true
-  - name: test/ModeTestClass.kt
-    visible: true
-  - name: test/CommandTestClass.kt
-    visible: true
-  - name: test/GameServiceTestClass.kt
-    visible: true
-  - name: src/main/kotlin/org/jetbrains/kotlin/course/tamagotchi/game/GameResource.kt
-    visible: true
-  - name: src/main/kotlin/org/jetbrains/kotlin/course/tamagotchi/models/Mode.kt
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/tamagotchi/TamagotchiApplication.kt
     visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/tamagotchi/models/Command.kt
     visible: true
-  - name: src/main/kotlin/org/jetbrains/kotlin/course/tamagotchi/TamagotchiApplication.kt
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/tamagotchi/models/Mode.kt
     visible: true
-  - name: src/main/resources/static/static/js/main.1a5d9cb2.js
-    visible: false
-  - name: src/main/resources/static/static/js/main.1a5d9cb2.js.map
-    visible: false
-  - name: src/main/resources/static/static/js/488.3da9a9e9.chunk.js
-    visible: false
-  - name: src/main/resources/static/static/js/488.3da9a9e9.chunk.js.map
-    visible: false
-  - name: src/main/resources/static/static/js/main.1a5d9cb2.js.LICENSE.txt
-    visible: false
-  - name: src/main/resources/static/static/css/main.16cd265e.css
-    visible: false
-  - name: src/main/resources/static/static/css/main.16cd265e.css.map
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/tamagotchi/game/GameResource.kt
     visible: false
   - name: src/main/resources/static/static/media/bg.36ac84bcfc4b1fa64b64.svg
     visible: false
@@ -108,4 +86,26 @@ files:
   - name: src/main/resources/static/manifest.json
     visible: false
   - name: src/main/resources/static/asset-manifest.json
+    visible: false
+  - name: test/CommandTestClass.kt
+    visible: false
+  - name: test/GameServiceTestClass.kt
+    visible: false
+  - name: test/ModeTestClass.kt
+    visible: false
+  - name: test/Tests.kt
+    visible: false
+  - name: src/main/resources/static/static/css/main.16cd265e.css
+    visible: false
+  - name: src/main/resources/static/static/css/main.16cd265e.css.map
+    visible: false
+  - name: src/main/resources/static/static/js/main.1a5d9cb2.js
+    visible: false
+  - name: src/main/resources/static/static/js/488.3da9a9e9.chunk.js.map
+    visible: false
+  - name: src/main/resources/static/static/js/main.1a5d9cb2.js.LICENSE.txt
+    visible: false
+  - name: src/main/resources/static/static/js/488.3da9a9e9.chunk.js
+    visible: false
+  - name: src/main/resources/static/static/js/main.1a5d9cb2.js.map
     visible: false
