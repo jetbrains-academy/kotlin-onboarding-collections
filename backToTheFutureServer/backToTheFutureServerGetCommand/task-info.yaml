@@ -11,151 +11,101 @@ files:
     visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/tamagotchi/game/GameResource.kt
     visible: false
-    propagatable: false
-  - name: src/main/resources/static/static/js/main.00f53094.js
-    visible: false
-    propagatable: false
-  - name: src/main/resources/static/static/js/main.00f53094.js.map
-    visible: false
-    propagatable: false
-  - name: src/main/resources/static/static/js/496.9bc3d35c.chunk.js
-    visible: false
-    propagatable: false
-  - name: src/main/resources/static/static/js/496.9bc3d35c.chunk.js.map
-    visible: false
-    propagatable: false
-  - name: src/main/resources/static/static/js/main.00f53094.js.LICENSE.txt
-    visible: false
-    propagatable: false
-  - name: src/main/resources/static/static/css/main.a893872b.css
-    visible: false
-    propagatable: false
-  - name: src/main/resources/static/static/css/main.a893872b.css.map
-    visible: false
-    propagatable: false
   - name: src/main/resources/static/static/media/bg.36ac84bcfc4b1fa64b64.svg
     visible: false
-    propagatable: false
   - name: src/main/resources/static/static/media/eat.a88dcc3f38221ae92e4b.svg
     visible: false
-    propagatable: false
   - name: src/main/resources/static/static/media/play.a0403f21ddd3aa5ba3c8.svg
     visible: false
-    propagatable: false
   - name: src/main/resources/static/static/media/alert.b723737ede11d9a9d30f.svg
     visible: false
-    propagatable: false
   - name: src/main/resources/static/static/media/clean.7481ae6329fc7181184c.svg
     visible: false
-    propagatable: false
   - name: src/main/resources/static/static/media/queue.aada8a5b8802ed35a5ea.svg
     visible: false
-    propagatable: false
   - name: src/main/resources/static/static/media/sleep.e1f53034d920fcfa5462.svg
     visible: false
-    propagatable: false
   - name: src/main/resources/static/static/media/stack.dc708741aded5ab4367c.svg
     visible: false
-    propagatable: false
   - name: src/main/resources/static/static/media/bg_white.00acddcc6609eb49c481.svg
     visible: false
-    propagatable: false
   - name: src/main/resources/static/static/media/small-eat.e8381ec88f34f61c8102.svg
     visible: false
-    propagatable: false
   - name: src/main/resources/static/static/media/try_again.99752e1307fc4df9dc24.svg
     visible: false
-    propagatable: false
   - name: src/main/resources/static/static/media/dog-resize.756f5d39fbcc2c728105.svg
     visible: false
-    propagatable: false
   - name: src/main/resources/static/static/media/eat-button.8e97eec55581353ef22e.svg
     visible: false
-    propagatable: false
   - name: src/main/resources/static/static/media/small-play.79c836478caeccb210db.svg
     visible: false
-    propagatable: false
   - name: src/main/resources/static/static/media/back_button.578d2b1544fe8bc2e2ec.svg
     visible: false
-    propagatable: false
   - name: src/main/resources/static/static/media/play-button.91d3376b929e822afda1.svg
     visible: false
-    propagatable: false
   - name: src/main/resources/static/static/media/play_button.aad770749eabbe8ac9b1.svg
     visible: false
-    propagatable: false
   - name: src/main/resources/static/static/media/queue-hover.e5d6f953296e4b52632e.svg
     visible: false
-    propagatable: false
   - name: src/main/resources/static/static/media/small-clean.9c72422613311ce82d21.svg
     visible: false
-    propagatable: false
   - name: src/main/resources/static/static/media/small-sleep.b03582acfc707aa5cb46.svg
     visible: false
-    propagatable: false
   - name: src/main/resources/static/static/media/stack-hover.a00dfff4b6154623cb14.svg
     visible: false
-    propagatable: false
   - name: src/main/resources/static/static/media/clean-button.11007d7305d0ecdad48f.svg
     visible: false
-    propagatable: false
   - name: src/main/resources/static/static/media/sleep-button.66090336c5b4c959d58f.svg
     visible: false
-    propagatable: false
   - name: src/main/resources/static/static/media/queue-focused.31ef64a6e332d524e85e.svg
     visible: false
-    propagatable: false
   - name: src/main/resources/static/static/media/stack-focused.f8da7cbe882061263b85.svg
     visible: false
-    propagatable: false
   - name: src/main/resources/static/static/media/tamagotchi_bg.bb16871724937aed4f27.svg
     visible: false
-    propagatable: false
   - name: src/main/resources/static/static/media/try_again-hover.76e3cf6b4825eab2bc9f.svg
     visible: false
-    propagatable: false
   - name: src/main/resources/static/static/media/eat-button-hover.ff0218929150f33a360d.svg
     visible: false
-    propagatable: false
   - name: src/main/resources/static/static/media/logo.6c9604b9eb6bc28750167d753ef31856.svg
     visible: false
-    propagatable: false
   - name: src/main/resources/static/static/media/back_button_hover.f4bf17adae27016a067f.svg
     visible: false
-    propagatable: false
   - name: src/main/resources/static/static/media/play-button-hover.7b4cd0d9a5177eba99e3.svg
     visible: false
-    propagatable: false
   - name: src/main/resources/static/static/media/clean-button-hover.5a82e7dd742289d2b29a.svg
     visible: false
-    propagatable: false
   - name: src/main/resources/static/static/media/sleep-button-hover.bbbad756dbdbad8c14b4.svg
     visible: false
-    propagatable: false
   - name: src/main/resources/static/index.html
     visible: false
-    propagatable: false
   - name: src/main/resources/static/robots.txt
     visible: false
-    propagatable: false
   - name: src/main/resources/static/favicon.ico
     visible: false
-    propagatable: false
   - name: src/main/resources/static/manifest.json
     visible: false
-    propagatable: false
   - name: src/main/resources/static/asset-manifest.json
     visible: false
-    propagatable: false
   - name: test/CommandTestClass.kt
     visible: false
-    propagatable: false
   - name: test/GameServiceTestClass.kt
     visible: false
-    propagatable: false
   - name: test/ModeTestClass.kt
     visible: false
-    propagatable: false
   - name: test/Tests.kt
     visible: false
-    propagatable: false
+  - name: src/main/resources/static/static/js/main.1a5d9cb2.js
+    visible: false
+  - name: src/main/resources/static/static/js/488.3da9a9e9.chunk.js.map
+    visible: false
+  - name: src/main/resources/static/static/js/main.1a5d9cb2.js.LICENSE.txt
+    visible: false
+  - name: src/main/resources/static/static/js/488.3da9a9e9.chunk.js
+    visible: false
+  - name: src/main/resources/static/static/js/main.1a5d9cb2.js.map
+    visible: false
+  - name: src/main/resources/static/static/css/main.16cd265e.css
+    visible: false
+  - name: src/main/resources/static/static/css/main.16cd265e.css.map
+    visible: false
