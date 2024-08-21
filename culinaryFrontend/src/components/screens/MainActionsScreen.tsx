@@ -19,6 +19,8 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
 
     const refillUrl = "/functions/refill-fridge"
     const soupUrl = "/functions/tomato-soup"
+    const spiceUrl = "/functions/soup-spices"
+    const tasteUrl = "/functions/check-soup"
 
     type BlenderOptions = {
         visible: boolean,
@@ -540,7 +542,46 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
                 )
                 await delay(1500);
             }
-            infoTextSetter("🎉 Cooking is done! 🎉")
+            infoTextSetter("Cooking is done!")
+        })
+    }
+
+    function spice() {
+        const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
+
+        let actions = Array<JsAction>()
+        axios.get(spiceUrl).then(async (response) => {
+            actions = response.data as Array<JsAction>
+            console.log("GOT: " + actions)
+            if (actions.length == 0){
+                infoTextSetter("You need to cook the soup first!")
+                return
+            }
+            infoTextSetter("Let's add some spices!")
+            equipKitchen(actions)
+            console.log("equipKitchen() DONE")
+            await delay(1500);
+            for (const action of actions) {
+                console.log(infoTextActionMap[String(action.type)] + " " + (action.parameter ? infoTextItemMap[String(action.parameter)] : ""))
+                infoTextSetter(infoTextActionMap[String(action.type)] + " " + (action.parameter ? infoTextItemMap[String(action.parameter)] : ""))
+                actionMap[String(action.type)](
+                    action.parameter ? String(action.parameter) : null
+                )
+                await delay(1500);
+            }
+            infoTextSetter("Adding the spices is done!")
+        })
+    }
+
+    function taste() {
+        axios.get(tasteUrl).then(async (response) => {
+            let isTasteGood = response.data as boolean
+            console.log("isTasteGood: " + isTasteGood)
+            if(isTasteGood){
+                infoTextSetter("It tastes great! 🎉")
+            } else {
+                infoTextSetter("It tastes so bad... Try it again!")
+            }
         })
     }
 
@@ -586,6 +627,15 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
                     className={"App-button-base App-button-cook"}
                     onClick={() => cook()}>Soup!
                 </button>
+                <button
+                    className={"App-button-base App-button-spice"}
+                    onClick={() => spice()}>Spice!
+                </button>
+                <button
+                    className={"App-button-base App-button-taste"}
+                    onClick={() => taste()}>Taste!
+                </button>
+
             </div>
         </div>
     );
