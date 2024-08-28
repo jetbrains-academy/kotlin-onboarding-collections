@@ -620,19 +620,19 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
             }
             <div className="App-buttons-container">
                 <button
-                    className={"App-button-base App-button-fill"}
+                    className={"App-button-base App-button-action "}
                     onClick={() => refill()}>Refill!
                 </button>
                 <button
-                    className={"App-button-base App-button-cook"}
+                    className={"App-button-base App-button-action " + (fridgeProducts.length > 0 ? "" : "App-button-disable")}
                     onClick={() => cook()}>Soup!
                 </button>
                 <button
-                    className={"App-button-base App-button-spice"}
+                    className={"App-button-base App-button-action " + (potOptions.soup ? "" : "App-button-disable")}
                     onClick={() => spice()}>Spice!
                 </button>
                 <button
-                    className={"App-button-base App-button-taste"}
+                    className={"App-button-base App-button-action " + (potOptions.soup ? "" : "App-button-disable")}
                     onClick={() => taste()}>Taste!
                 </button>
 

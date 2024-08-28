@@ -84,7 +84,7 @@
   background-position: center;
   cursor:pointer;
   color: white;
-  font-size: 100%;
+  font-size:3.5vmin;
   font-family: 'Inter', sans-serif;
 }
 
@@ -115,52 +115,22 @@
 
 /****************BASE***************/
 
-.App-button-cook {
+.App-button-action{
   background-size: contain;
   width: 15vmin;
   height: 5vmin;
   color: black;
   font-weight: 600;
-  background-image: url('assets/buttons/cook.svg');
-}
-.App-button-cook:hover {
-  background-image: url('assets/buttons/cook_hover.svg');
+  background-image: url('assets/buttons/action.svg');
 }
 
-.App-button-fill {
-  background-size: contain;
-  width: 15vmin;
-  height: 5vmin;
-  color: black;
-  font-weight: 600;
-  background-image: url('assets/buttons/cook.svg');
-}
-.App-button-fill:hover {
-  background-image: url('assets/buttons/cook_hover.svg');
+.App-button-action:hover {
+  background-image: url('assets/buttons/action_hover.svg');
 }
 
-.App-button-spice {
-  background-size: contain;
-  width: 15vmin;
-  height: 5vmin;
-  color: black;
-  font-weight: 600;
-  background-image: url('assets/buttons/cook.svg');
-}
-.App-button-spice:hover {
-  background-image: url('assets/buttons/cook_hover.svg');
-}
-
-.App-button-taste {
-  background-size: contain;
-  width: 15vmin;
-  height: 5vmin;
-  color: black;
-  font-weight: 600;
-  background-image: url('assets/buttons/cook.svg');
-}
-.App-button-taste:hover {
-  background-image: url('assets/buttons/cook_hover.svg');
+.App-button-disable {
+  pointer-events: none;
+  opacity: 0.4;
 }
 
 /*   PRODUCT COUNTER   */
@@ -641,18 +611,6 @@
   justify-content: center;
   display: flex;
   flex-direction: row;
-}
-
-.App-button-action {
-  background-size: contain;
-  height: 4vmin;
-  width: 10vmin;
-  margin: 0 0.25vmin 0.25vmin;
-}
-
-.App-unclickable-button {
-  pointer-events: none;
-  opacity: 0.4;
 }
 
 .App-button-back {
