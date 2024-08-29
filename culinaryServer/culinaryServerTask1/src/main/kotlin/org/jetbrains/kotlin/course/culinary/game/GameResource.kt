@@ -46,19 +46,37 @@ class CookingFunction(val service: CookingService) {
     fun checkSoup(): Boolean = pot.doesTastePerfect()
 
     @CrossOrigin
-    @GetMapping("/test-task3")
-    fun task3(): List<Action> {
+    @GetMapping("/salad-list")
+    fun cookSaladAsList(): List<Action> {
         clearActions()
-        service.cookSalad()
+        service.cookSaladAsList()
         clearKitchen()
         return actions
     }
 
     @CrossOrigin
-    @GetMapping("/test-task4")
-    fun task4(): List<Action> {
+    @GetMapping("/salad-sequence")
+    fun cookSaladAsSequence(): List<Action> {
         clearActions()
-        service.cookSmoothie()
+        service.cookSaladAsSequence()
+        clearKitchen()
+        return actions
+    }
+
+    @CrossOrigin
+    @GetMapping("/smoothie-list")
+    fun cookSmoothieAsList(): List<Action> {
+        clearActions()
+        service.cookSmoothieAsList()
+        clearKitchen()
+        return actions
+    }
+
+    @CrossOrigin
+    @GetMapping("/smoothie-sequence")
+    fun cookSmoothieAsSequence(): List<Action> {
+        clearActions()
+        service.cookSmoothieAsSequence()
         clearKitchen()
         return actions
     }

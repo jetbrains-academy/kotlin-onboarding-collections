@@ -23,7 +23,7 @@ data object PotImpl : Pot {
     private fun checkIfManySpices() = filling.filter{ it is Spice }
         .groupingBy{ it }
         .eachCount()
-        .filter{ (s, n) -> n > 2 }
+        .filter{ (_, n) -> n > 2 }
         .isNotEmpty()
 
     private fun checkIfAllVegetablesFresh() = filling.filter{ it is Vegetable }.all{ (it as Vegetable).isFresh }
