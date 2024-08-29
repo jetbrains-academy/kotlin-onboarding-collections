@@ -54,7 +54,7 @@ class Test {
     fun testTask3() {
         clearKitchen()
         FridgeImpl.refill()
-        CookingService().cookSalad()
+        CookingService().cookSaladAsList()
         assertTrue(SaladBowlImpl.filling.size in 1..5) {
             "The salad bowl should contain between 1 and 5 cut vegetables, now it is ${SaladBowlImpl.filling.size}."
         }
@@ -65,7 +65,7 @@ class Test {
     fun testTask4() {
         clearKitchen()
         FridgeImpl.refill()
-        CookingService().cookSmoothie()
+        CookingService().cookSmoothieAsList()
         val hasCitrus = BlenderImpl.filling.any { it.type == FruitType.Citrus }
         val hasBerry = BlenderImpl.filling.any { it.type == FruitType.Berry }
         println(BlenderImpl.filling)

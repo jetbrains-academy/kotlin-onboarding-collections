@@ -23,7 +23,6 @@ data object KitchenImpl : Kitchen {
         require(vegetable in filling) { "Vegetable $vegetable is not on in the kitchen, so can't be cut" }
         require(vegetable.isFresh) { "One can't cut rot vegetable $vegetable" }
         filling -= vegetable
-        actions += buildAction(ActionType.REMOVE_FROM_COUNTER, vegetable)
         val cut = CutVegetable(vegetable.type)
         filling += cut
         actions += buildAction(ActionType.SHOW_ON_COUNTER, cut)

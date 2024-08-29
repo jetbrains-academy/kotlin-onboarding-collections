@@ -1,11 +1,16 @@
 package org.jetbrains.kotlin.course.culinary.game
 
 import org.jetbrains.kotlin.course.culinary.game.recipes.*
+import org.jetbrains.kotlin.course.culinary.models.food.CutVegetable
 import org.jetbrains.kotlin.course.culinary.models.food.FruitType
 import org.springframework.stereotype.Service
 
 @Service
 class CookingService {
+    companion object {
+        private const val NUM_VEGETABLES_FOR_SALAD = 5
+    }
+
     // task#1
     fun cookTomatoSoup() {
         val tomatoes = getTomatoesForSoup()
@@ -21,26 +26,52 @@ class CookingService {
     }
 
     // task#3
-    fun cookSalad() {
-        fridge.getAllVegetables()
-            .map { kitchen.put(it) }
+    fun cookSaladAsList() {
+        val listOfVegetables = fridge.getAllVegetables()
+        val cutVegetables = listOfVegetables.map { kitchen.put(it) }
             .filter { kitchen.checkFresh(it) }
             .map { kitchen.cut(it) }
-            .take(5)
+            .take(NUM_VEGETABLES_FOR_SALAD)
             .map { kitchen.take(it) }
-            .groupBy { it.type }
+        mixVegetablesForSalad(cutVegetables)
+    }
+
+    // task#3
+    fun cookSaladAsSequence() {
+        val listOfVegetables = fridge.getAllVegetables().asSequence()
+        val cutVegetables = listOfVegetables.map { kitchen.put(it) }
+            .filter { kitchen.checkFresh(it) }
+            .map { kitchen.cut(it) }
+            .take(NUM_VEGETABLES_FOR_SALAD)
+            .map { kitchen.take(it) }
+            .toList()
+        mixVegetablesForSalad(cutVegetables)
+    }
+
+    private fun mixVegetablesForSalad(cutVegetables: List<CutVegetable>) {
+        cutVegetables.groupBy { it.type }
             .forEach { (type, cuts) -> saladBowl.add(type, cuts) }
         saladBowl.mix()
     }
 
     // task#4
-    fun cookSmoothie(){
-        val fruits = listOf(FruitType.Citrus, FruitType.Berry)
-        fruits.map { type -> fridge.getBasketOf(type) }
+    fun cookSmoothieAsList(){
+        FruitType.entries.map { type -> fridge.getBasketOf(type) }
             .onEach { basket -> kitchen.put(basket) }
             .flatMap { basket -> List(basket.capacity) { kitchen.takeFromBasket(basket) } }
             .distinctBy { it.type }
             .sortedBy { it.type.sugarContent }
+            .forEach { blender.add(it) }
+        blender.blend()
+    }
+
+    // task#4
+    fun cookSmoothieAsSequence(){
+        FruitType.entries.asSequence().map { type -> fridge.getBasketOf(type) }
+            .onEach { basket -> kitchen.put(basket) }
+            .flatMap { basket -> List(basket.capacity) { kitchen.takeFromBasket(basket) } }
+            .distinctBy { it.type }
+            .sortedBy { it.type.sugarContent }.toList()
             .forEach { blender.add(it) }
         blender.blend()
     }

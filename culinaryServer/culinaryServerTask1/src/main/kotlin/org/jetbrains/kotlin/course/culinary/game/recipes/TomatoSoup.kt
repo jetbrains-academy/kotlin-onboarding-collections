@@ -36,7 +36,7 @@ fun generateSpices(): Sequence<SpiceType> = generateSequence { SpiceType.entries
 
 // task#2
 fun addSpecies(spices: Sequence<SpiceType>) {
-    val howMuchToAdd = Random.nextInt(1, 10)
+    val howMuchToAdd = Random.nextInt(1, 5)
     spices
         .map { shelf.getSpice(it) }
         .map { pot.put(it) }
