@@ -19,6 +19,8 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
 
     const refillUrl = "/functions/refill-fridge"
     const soupUrl = "/functions/tomato-soup"
+    const spiceUrl = "/functions/soup-spices"
+    const tasteUrl = "/functions/check-soup"
 
     type BlenderOptions = {
         visible: boolean,
@@ -107,6 +109,7 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
     let [saladBowlOptions, setSaladBowlOptions] = useState<SaladBowlOptions>(initialSaladBowlOptions);
     let [berryBasketOptions, setBerryBasketOptions] = useState<BasketOptions>(initialBerryBasketOptions);
     let [citrusBasketOptions, setCitrusBasketOptions] = useState<BasketOptions>(initialCitrusBasketOptions);
+    let [buttonBlocker, setButtonBlocker] = useState<String>("");
 
     function berryBasketVisSetter(value: boolean){
         setBerryBasketOptions(prevOptions => ({
@@ -517,6 +520,7 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
         setBerryBasketOptions(initialBerryBasketOptions)
         spicesShelfVisSetter(false)
         counterProductsSetter([])
+        setButtonBlocker("cook")
 
         const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
 
@@ -526,6 +530,7 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
             console.log("GOT: " + actions)
             if (actions.length == 0){
                 infoTextSetter("Not enough vegetables to make soup!")
+                setButtonBlocker("")
                 return
             }
             infoTextSetter("Let's go!")
@@ -540,8 +545,55 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
                 )
                 await delay(1500);
             }
-            infoTextSetter("🎉 Cooking is done! 🎉")
+            infoTextSetter("Cooking is done!")
+            setButtonBlocker("")
         })
+    }
+
+    function spice() {
+        setButtonBlocker("spice")
+        const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
+
+        let actions = Array<JsAction>()
+        axios.get(spiceUrl).then(async (response) => {
+            actions = response.data as Array<JsAction>
+            console.log("GOT: " + actions)
+            if (actions.length == 0){
+                infoTextSetter("You need to cook the soup first!")
+                setButtonBlocker("")
+                return
+            }
+            infoTextSetter("Let's add some spices!")
+            equipKitchen(actions)
+            console.log("equipKitchen() DONE")
+            await delay(1500);
+            for (const action of actions) {
+                console.log(infoTextActionMap[String(action.type)] + " " + (action.parameter ? infoTextItemMap[String(action.parameter)] : ""))
+                infoTextSetter(infoTextActionMap[String(action.type)] + " " + (action.parameter ? infoTextItemMap[String(action.parameter)] : ""))
+                actionMap[String(action.type)](
+                    action.parameter ? String(action.parameter) : null
+                )
+                await delay(1500);
+            }
+            infoTextSetter("Adding the spices is done!")
+            setButtonBlocker("")
+        })
+    }
+
+    function taste() {
+        axios.get(tasteUrl).then(async (response) => {
+            let isTasteGood = response.data as boolean
+            console.log("isTasteGood: " + isTasteGood)
+            if(isTasteGood){
+                infoTextSetter("It tastes great! 🎉")
+            } else {
+                infoTextSetter("It tastes so bad... Try it again!")
+            }
+        })
+    }
+
+    function shouldShow(buttonName: string){
+        return !buttonBlocker;
     }
 
     return (
@@ -579,13 +631,22 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
             }
             <div className="App-buttons-container">
                 <button
-                    className={"App-button-base App-button-fill"}
+                    className={"App-button-base App-button-action " + (shouldShow("refill") ? "" : "App-button-disable")}
                     onClick={() => refill()}>Refill!
                 </button>
                 <button
-                    className={"App-button-base App-button-cook"}
+                    className={"App-button-base App-button-action " + (fridgeProducts.length > 0 && shouldShow("cook") ? "" : "App-button-disable")}
                     onClick={() => cook()}>Soup!
                 </button>
+                <button
+                    className={"App-button-base App-button-action " + (potOptions.soup && shouldShow("spice") ? "" : "App-button-disable")}
+                    onClick={() => spice()}>Spice!
+                </button>
+                <button
+                    className={"App-button-base App-button-action " + (potOptions.soup && shouldShow("taste") ? "" : "App-button-disable")}
+                    onClick={() => taste()}>Taste!
+                </button>
+
             </div>
         </div>
     );
