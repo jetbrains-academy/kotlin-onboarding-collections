@@ -18,18 +18,15 @@ data object PotImpl : Pot {
 
     override fun put(vegetable: CutVegetable) {
         filling.add(vegetable)
+        actions.add(buildAction(ActionType.PUT_IN_POT, vegetable))
     }
 
-    private fun checkIfManySpices() = filling.filter{ it is Spice }
+    // task#2
+    override fun doesTastePerfect(): Boolean = filling.filter{ it is Spice }
         .groupingBy{ it }
         .eachCount()
         .filter{ (_, n) -> n > 2 }
-        .isNotEmpty()
-
-    private fun checkIfAllVegetablesFresh() = filling.filter{ it is Vegetable }.all{ (it as Vegetable).isFresh }
-
-    // task#2
-    override fun doesTastePerfect(): Boolean = checkIfManySpices() && checkIfAllVegetablesFresh()
+        .isEmpty()
 
     override fun simmer() {
         check(!simmering) { "You are already simmering" }

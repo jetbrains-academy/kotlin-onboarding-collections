@@ -2,4 +2,8 @@ type: framework
 custom_name: Master chef
 content:
   - culinaryServerTask1
+  - culinaryServerIntroduction
+  - culinaryServerHowToRun
+  - culinaryServerKitchenModels
+  - culinaryServerFridgeRefill
 is_template_based: false

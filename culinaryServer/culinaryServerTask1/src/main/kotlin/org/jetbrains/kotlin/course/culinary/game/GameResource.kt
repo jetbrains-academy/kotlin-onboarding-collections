@@ -1,9 +1,11 @@
 package org.jetbrains.kotlin.course.culinary.game
 
 import org.jetbrains.kotlin.course.culinary.converters.toItemType
+import org.jetbrains.kotlin.course.culinary.game.CookingService.Companion.NUM_VEGETABLES_FOR_SALAD
 import org.jetbrains.kotlin.course.culinary.game.recipes.NUMBER_OF_TOMATOES
 import org.jetbrains.kotlin.course.culinary.implementation.storage.FridgeImpl
 import org.jetbrains.kotlin.course.culinary.models.ItemType
+import org.jetbrains.kotlin.course.culinary.models.Task
 import org.jetbrains.kotlin.course.culinary.models.action.Action
 import org.jetbrains.kotlin.course.culinary.models.food.VegetableType
 import org.springframework.web.bind.annotation.*
@@ -49,6 +51,11 @@ class CookingFunction(val service: CookingService) {
     @GetMapping("/salad-list")
     fun cookSaladAsList(): List<Action> {
         clearActions()
+        if (FridgeImpl.vegetables.count{ it.isFresh } < NUM_VEGETABLES_FOR_SALAD) {
+            // Show an error
+            return emptyList()
+        }
+
         service.cookSaladAsList()
         clearKitchen()
         return actions
@@ -58,26 +65,26 @@ class CookingFunction(val service: CookingService) {
     @GetMapping("/salad-sequence")
     fun cookSaladAsSequence(): List<Action> {
         clearActions()
+        if (FridgeImpl.vegetables.count{ it.isFresh } < NUM_VEGETABLES_FOR_SALAD) {
+            // Show an error
+            return emptyList()
+        }
+
         service.cookSaladAsSequence()
         clearKitchen()
         return actions
     }
 
     @CrossOrigin
-    @GetMapping("/smoothie-list")
+    @GetMapping("/smoothie")
     fun cookSmoothieAsList(): List<Action> {
         clearActions()
-        service.cookSmoothieAsList()
+        service.cookSmoothie()
         clearKitchen()
         return actions
     }
 
     @CrossOrigin
-    @GetMapping("/smoothie-sequence")
-    fun cookSmoothieAsSequence(): List<Action> {
-        clearActions()
-        service.cookSmoothieAsSequence()
-        clearKitchen()
-        return actions
-    }
+    @GetMapping("/current-task")
+    fun getCurrentTask(): String = Task.SOUP.toString()
 }

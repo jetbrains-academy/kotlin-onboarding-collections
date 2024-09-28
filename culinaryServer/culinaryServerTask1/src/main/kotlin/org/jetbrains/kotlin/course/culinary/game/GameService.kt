@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service
 @Service
 class CookingService {
     companion object {
-        private const val NUM_VEGETABLES_FOR_SALAD = 5
+        const val NUM_VEGETABLES_FOR_SALAD = 5
     }
 
     // task#1
@@ -27,7 +27,7 @@ class CookingService {
 
     // task#3
     fun cookSaladAsList() {
-        val listOfVegetables = fridge.getAllVegetables()
+        val listOfVegetables = fridge.getAllVegetables().filter { it.isFresh }
         val cutVegetables = listOfVegetables.map { kitchen.put(it) }
             .filter { kitchen.checkFresh(it) }
             .map { kitchen.cut(it) }
@@ -38,7 +38,7 @@ class CookingService {
 
     // task#3
     fun cookSaladAsSequence() {
-        val listOfVegetables = fridge.getAllVegetables().asSequence()
+        val listOfVegetables = fridge.getAllVegetables().filter { it.isFresh }.asSequence()
         val cutVegetables = listOfVegetables.map { kitchen.put(it) }
             .filter { kitchen.checkFresh(it) }
             .map { kitchen.cut(it) }
@@ -55,23 +55,11 @@ class CookingService {
     }
 
     // task#4
-    fun cookSmoothieAsList(){
+    fun cookSmoothie(){
         FruitType.entries.map { type -> fridge.getBasketOf(type) }
             .onEach { basket -> kitchen.put(basket) }
             .flatMap { basket -> List(basket.capacity) { kitchen.takeFromBasket(basket) } }
-            .distinctBy { it.type }
             .sortedBy { it.type.sugarContent }
-            .forEach { blender.add(it) }
-        blender.blend()
-    }
-
-    // task#4
-    fun cookSmoothieAsSequence(){
-        FruitType.entries.asSequence().map { type -> fridge.getBasketOf(type) }
-            .onEach { basket -> kitchen.put(basket) }
-            .flatMap { basket -> List(basket.capacity) { kitchen.takeFromBasket(basket) } }
-            .distinctBy { it.type }
-            .sortedBy { it.type.sugarContent }.toList()
             .forEach { blender.add(it) }
         blender.blend()
     }

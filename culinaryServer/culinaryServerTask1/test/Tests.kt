@@ -65,7 +65,7 @@ class Test {
     fun testTask4() {
         clearKitchen()
         FridgeImpl.refill()
-        CookingService().cookSmoothieAsList()
+        CookingService().cookSmoothie()
         val hasCitrus = BlenderImpl.filling.any { it.type == FruitType.Citrus }
         val hasBerry = BlenderImpl.filling.any { it.type == FruitType.Berry }
         println(BlenderImpl.filling)

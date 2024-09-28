@@ -13,7 +13,7 @@ data object FridgeImpl : Fridge {
     private const val RANDOM_VEGETABLES_NUMBER = 7
     private const val RANDOM_FRESH_VEGETABLES_NUMBER = 3
 
-    val vegetables: MutableList<Vegetable> = generateRandomVegetables().toMutableList()
+    val vegetables: MutableList<Vegetable> = mutableListOf()
 
     // TODO: add tests
     private fun generateRandomVegetables() = buildList {
@@ -43,5 +43,5 @@ data object FridgeImpl : Fridge {
         return allVegs
     }
 
-    override fun getBasketOf(type: FruitType): Basket = Basket(type, Random.nextInt(1, 3))
+    override fun getBasketOf(type: FruitType): Basket = Basket(type, Random.nextInt(3, 5))
 }

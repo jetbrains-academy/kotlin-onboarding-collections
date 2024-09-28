@@ -1,10 +1,10 @@
 type: edu
-custom_name: Master Chef - Introduction
+custom_name: Master Chef - TMP
 files:
   - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/MasterChefApplication.kt
     visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/game/GameResource.kt
-    visible: true
+    visible: false
   - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/game/GameService.kt
     visible: true
   - name: test/Tests.kt
@@ -192,4 +192,6 @@ files:
   - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/models/ItemType.kt
     visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/converters/ItemTypeConverter.kt
-    visible: true
+    visible: false
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/models/Task.kt
+    visible: false
