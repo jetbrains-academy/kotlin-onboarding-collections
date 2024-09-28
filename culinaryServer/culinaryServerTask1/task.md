@@ -201,10 +201,10 @@ Consider examples for both scenarios. Imagine generating a sequence of spices fo
 We could use the [`generateSequence`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.sequences/generate-sequence.html) function with a condition:
 
 ```kotlin
-val species = generateSequence{ shelfWithSpecies.getNextValidOne(...) }
+val spices = generateSequence{ shelfWithSpices.getNextValidOne(...) }
 ```
 
-In this case, the `spices` aren't actually retrieved until needed. Each time the next jar of spices is required, `shelfWithSpecies.getNextValidOne(...)` is called.
+In this case, the `spices` aren't actually retrieved until needed. Each time the next jar of spices is required, `shelfWithSpices.getNextValidOne(...)` is called.
 For example, if we need to add 3 different spices to the soup, this process will be as follows:
 
 ![Current state](TODO: a picture where we get and handle each piece step by step)
