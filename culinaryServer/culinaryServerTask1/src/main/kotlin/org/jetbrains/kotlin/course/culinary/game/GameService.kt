@@ -21,7 +21,7 @@ class CookingService {
     // task#2
     fun cookWithSpices() {
         val spices = generateSpices()
-        addSpecies(spices)
+        addSpices(spices)
         pot.simmer()
     }
 
