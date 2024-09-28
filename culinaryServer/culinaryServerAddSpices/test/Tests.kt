@@ -11,13 +11,48 @@ import org.jetbrains.kotlin.course.culinary.implementation.storage.FridgeImpl.RA
 import org.jetbrains.kotlin.course.culinary.models.ItemType
 import org.jetbrains.kotlin.course.culinary.models.action.Action
 import org.jetbrains.kotlin.course.culinary.models.action.ActionType
+import org.jetbrains.kotlin.course.culinary.models.food.SpiceType
 import org.jetbrains.kotlin.course.culinary.models.food.Vegetable
 import org.jetbrains.kotlin.course.culinary.models.food.VegetableType
 import org.junit.jupiter.api.Test
 import java.lang.reflect.InvocationTargetException
 
 class Test {
-    // TODO: add tests for the current task
+    @Test
+    fun generateSpicesMethodTest() {
+        val spices = generateSpices().take(5).toList()
+        if (spices.isEmpty()) {
+           assert(false) { "The method ${generateSpicesMethod.name} should generate random spices! Now you always generate an empty sequence!" }
+        }
+        assert(spices.toSet().size > 1) { "The method ${generateSpicesMethod.name} should generate random spices! Now you always generate ${spices.first()}" }
+    }
+
+    private fun generateSpices(): Sequence<SpiceType> {
+        val clazz = tomatoSoupKtTestClass.checkBaseDefinition()
+        val method = clazz.declaredMethods.findMethod(generateSpicesMethod)
+
+        return try {
+            method.invokeWithoutArgs(clazz = clazz) as Sequence<SpiceType>
+        } catch(e: InvocationTargetException) {
+            assert(false) { "Can not invoke method ${method.name}. Please, add an implementation!" }
+            emptySequence()
+        }
+    }
+
+    @Test
+    fun addSpicesMethodTest() {
+        clearActions()
+        val clazz = tomatoSoupKtTestClass.checkBaseDefinition()
+        val method = clazz.declaredMethods.findMethod(addSpicesMethod)
+
+        try {
+            method.invoke(clazz, generateSpices())
+        } catch(e: InvocationTargetException) {
+            assert(false) { "Can not invoke method ${method.name}. Please, add an implementation!" }
+        }
+
+        assert(actions.isNotEmpty() && actions.all{ it.type == ActionType.PUT_IN_POT }) { "The ${method.name} should generate spices and add them into the pot." }
+    }
 
     @Test
     fun getTomatoesForSoupMethodTest() {

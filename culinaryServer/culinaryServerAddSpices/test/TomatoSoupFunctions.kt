@@ -21,11 +21,31 @@ internal val prepareTomatoesMethod = TestMethod(
     )
 )
 
+internal val generateSpicesMethod = TestMethod(
+    "generateSpices",
+    TestKotlinType("Sequence", params = listOf("org.jetbrains.kotlin.course.culinary.models.food.SpiceType")),
+)
+
+internal val addSpicesMethod = TestMethod(
+    "addSpices",
+    TestKotlinType("Unit"),
+    returnTypeJava = "void",
+    arguments = listOf(
+        TestVariable(
+            name = "spices",
+            javaType = "Sequence",
+            kotlinType = TestKotlinType("Sequence", params = listOf("org.jetbrains.kotlin.course.culinary.models.food.SpiceType")),
+        ),
+    )
+)
+
 internal val tomatoSoupKtTestClass = TestClass(
     "TomatoSoupKt",
     "org.jetbrains.kotlin.course.culinary.game.recipes",
     customMethods = listOf(
         getTomatoesForSoupMethod,
-        prepareTomatoesMethod
+        prepareTomatoesMethod,
+        generateSpicesMethod,
+        addSpicesMethod
     ),
 )

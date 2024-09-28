@@ -62,9 +62,12 @@ files:
   - name: test/FridgeImplTestClass.kt
     visible: false
     propagatable: false
+  - name: test/Tests.kt
+    visible: false
+    propagatable: false
   - name: test/TomatoSoupFunctions.kt
     visible: false
     propagatable: false
-  - name: test/Tests.kt
+  - name: test/SaladFunctions.kt
     visible: false
     propagatable: false

@@ -1,5 +1,6 @@
 type: framework
 custom_name: Master chef
+is_template_based: false
 content:
   - culinaryServerIntroduction
   - culinaryServerHowToRun
@@ -11,4 +12,3 @@ content:
   - culinaryServerAddSpices
   - culinaryServerCookSalad
   - culinaryServerCookSmoothie
-is_template_based: false

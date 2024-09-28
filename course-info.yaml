@@ -17,7 +17,7 @@ content:
   - duckShopServer
   - oldSchoolServer
   - backToTheFutureServer
-  - FeedbackSurvey
   - culinaryServer
+  - FeedbackSurvey
 environment_settings:
   jvm_language_level: JDK_17

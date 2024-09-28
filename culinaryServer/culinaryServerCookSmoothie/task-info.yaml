@@ -59,12 +59,15 @@ files:
     visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/game/recipes/Smoothie.kt
     visible: true
+  - name: test/SaladFunctions.kt
+    visible: false
+    propagatable: false
   - name: test/FridgeImplTestClass.kt
     visible: false
     propagatable: false
-  - name: test/TomatoSoupFunctions.kt
+  - name: test/Tests.kt
     visible: false
     propagatable: false
-  - name: test/Tests.kt
+  - name: test/TomatoSoupFunctions.kt
     visible: false
     propagatable: false
