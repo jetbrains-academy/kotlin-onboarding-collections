@@ -35,7 +35,7 @@ fun cookSoup() {
 fun generateSpices(): Sequence<SpiceType> = generateSequence { SpiceType.entries.random() }
 
 // task#2
-fun addSpecies(spices: Sequence<SpiceType>) {
+fun addSpices(spices: Sequence<SpiceType>) {
     val howMuchToAdd = Random.nextInt(1, 5)
     spices
         .map { shelf.getSpice(it) }

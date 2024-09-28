@@ -201,10 +201,10 @@ Consider examples for both cases. Let's imagine that we need to generate a seque
 We can use [`generateSequence`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.sequences/generate-sequence.html) function with a condition inside:
 
 ```kotlin
-val species = generateSequence{ shelfWithSpecies.getNextValidOne(...) }
+val spices = generateSequence{ shelfWithSpices.getNextValidOne(...) }
 ```
 
-In this case we will not actually have these `species`, `shelfWithSpecies.getNextValidOne(...)` will be called each time when it will be necessary, i.e. when we will actually need the next jar of species.
+In this case we will not actually have these `spices`, `shelfWithSpices.getNextValidOne(...)` will be called each time when it will be necessary, i.e. when we will actually need the next jar of species.
 For example, if for each jar of species we need to add it into the soup and we want to add only 3 different species, it will be done in the following way:
 
 ![Current state](TODO: a picture where we get and handle each piece step by step)
