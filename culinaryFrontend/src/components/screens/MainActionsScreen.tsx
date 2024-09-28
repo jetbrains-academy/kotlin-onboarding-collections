@@ -17,10 +17,20 @@ type MainActionsScreenProps = {
 
 export default function MainActionsScreen({gameStateSetter}: MainActionsScreenProps) {
 
-    const refillUrl = "/functions/refill-fridge"
-    const soupUrl = "/functions/tomato-soup"
-    const spiceUrl = "/functions/soup-spices"
-    const tasteUrl = "/functions/check-soup"
+    const refillUrl     = "/functions/refill-fridge"
+    const soupUrl       = "/functions/tomato-soup"
+    const spiceUrl      = "/functions/soup-spices"
+    const tasteUrl      = "/functions/check-soup"
+    const saladListUrl  = "/functions/salad-list"
+    const saladSequenceUrl    = "/functions/salad-sequence"
+    const smoothieListUrl     = "/functions/smoothie-list"
+    const smoothieSequenceUrl = "/functions/smoothie-sequence"
+
+    const soupName = "soup"
+    const saladListName = "salad (list)"
+    const saladSequenceName = "salad (sequence)"
+    const smoothieListName = "smoothie (list)"
+    const smoothieSequenceName = "smoothie (sequence)"
 
     type BlenderOptions = {
         visible: boolean,
@@ -102,7 +112,7 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
 
     let [counterProducts, counterProductsSetter] = useState<Array<JsItemType>>([])
     let [fridgeProducts, fridgeProductsSetter] = useState<Array<JsItemType>>([])
-    let [infoText, infoTextSetter] = useState<String>("Press \"Cook!\" button to start")
+    let [infoText, infoTextSetter] = useState<String>("Press button to start")
     let [spicesShelfVis, spicesShelfVisSetter] = useState<boolean>(false)
     let [blenderOptions, setBlenderOptions] = useState<BlenderOptions>(initialBlenderOptions);
     let [potOptions, setPotOptions] = useState<PotOptions>(initialPotOptions);
@@ -512,7 +522,8 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
         })
     }
 
-    function cook() {
+
+    function cook(url: string, dishName: string){
         setBlenderOptions(initialBlenderOptions);
         setPotOptions(initialPotOptions);
         setSaladBowlOptions(initialSaladBowlOptions)
@@ -520,16 +531,16 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
         setBerryBasketOptions(initialBerryBasketOptions)
         spicesShelfVisSetter(false)
         counterProductsSetter([])
-        setButtonBlocker("cook")
+        setButtonBlocker(dishName)
 
         const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
 
         let actions = Array<JsAction>()
-        axios.get(soupUrl).then(async (response) => {
+        axios.get(url).then(async (response) => {
             actions = response.data as Array<JsAction>
             console.log("GOT: " + actions)
             if (actions.length == 0){
-                infoTextSetter("Not enough vegetables to make soup!")
+                infoTextSetter(`Not enough ingredients to make ${dishName}!`)
                 setButtonBlocker("")
                 return
             }
@@ -635,8 +646,8 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
                     onClick={() => refill()}>Refill!
                 </button>
                 <button
-                    className={"App-button-base App-button-action " + (fridgeProducts.length > 0 && shouldShow("cook") ? "" : "App-button-disable")}
-                    onClick={() => cook()}>Soup!
+                    className={"App-button-base App-button-action " + (fridgeProducts.length > 0 && shouldShow(soupName) ? "" : "App-button-disable")}
+                    onClick={() => cook(soupUrl, soupName)}>Soup!
                 </button>
                 <button
                     className={"App-button-base App-button-action " + (potOptions.soup && shouldShow("spice") ? "" : "App-button-disable")}
@@ -645,6 +656,23 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
                 <button
                     className={"App-button-base App-button-action " + (potOptions.soup && shouldShow("taste") ? "" : "App-button-disable")}
                     onClick={() => taste()}>Taste!
+                </button>
+
+                <button
+                    className={"App-button-base App-button-action " + (shouldShow(saladListName) ? "" : "App-button-disable")}
+                    onClick={() => cook(saladListUrl, saladListName)}>Sld list!
+                </button>
+                <button
+                    className={"App-button-base App-button-action " + (shouldShow(saladSequenceName) ? "" : "App-button-disable")}
+                    onClick={() => cook(saladSequenceUrl, saladSequenceName)}>Sld seq!
+                </button>
+                <button
+                    className={"App-button-base App-button-action " + (shouldShow(smoothieListName) ? "" : "App-button-disable")}
+                    onClick={() => cook(smoothieListUrl, smoothieListName)}>Smth list!
+                </button>
+                <button
+                    className={"App-button-base App-button-action " + (shouldShow(smoothieSequenceName) ? "" : "App-button-disable")}
+                    onClick={() => cook(smoothieSequenceUrl, smoothieSequenceName)}>Smth seq!
                 </button>
 
             </div>
