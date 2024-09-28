@@ -10,8 +10,8 @@ import org.jetbrains.kotlin.course.culinary.models.storage.Fridge
 import kotlin.random.Random
 
 data object FridgeImpl : Fridge {
-    private const val RANDOM_VEGETABLES_NUMBER = 7
-    private const val RANDOM_FRESH_VEGETABLES_NUMBER = 3
+    const val RANDOM_VEGETABLES_NUMBER = 7
+    const val RANDOM_FRESH_VEGETABLES_NUMBER = 3
 
     val vegetables: MutableList<Vegetable> = mutableListOf()
 

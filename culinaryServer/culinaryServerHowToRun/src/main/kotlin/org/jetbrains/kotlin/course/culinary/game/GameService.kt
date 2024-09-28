@@ -10,7 +10,7 @@ class CookingService {
     fun cookTomatoSoup() {
         val tomatoes = getTomatoesForSoup()
         prepareTomatoes(tomatoes)
-        cookSoup()
+        pot.simmer()
     }
 
     fun cookWithSpices() {
@@ -28,7 +28,6 @@ class CookingService {
     }
 
     private fun Sequence<Vegetable>.cut(): List<CutVegetable> = map { kitchen.put(it) }
-        .filter { kitchen.checkFresh(it) }
         .map { kitchen.cut(it) }
         .take(NUM_VEGETABLES_FOR_SALAD)
         .map { kitchen.take(it) }

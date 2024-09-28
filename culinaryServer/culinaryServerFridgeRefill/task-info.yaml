@@ -62,3 +62,6 @@ files:
   - name: test/Tests.kt
     visible: false
     propagatable: false
+  - name: test/FridgeImplTestClass.kt
+    visible: false
+    propagatable: false

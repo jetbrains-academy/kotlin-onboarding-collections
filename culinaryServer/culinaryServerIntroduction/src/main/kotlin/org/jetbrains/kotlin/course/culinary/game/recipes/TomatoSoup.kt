@@ -13,10 +13,6 @@ fun prepareTomatoes(tomatoes: List<Vegetable>) {
     TODO("Not implemented yet")
 }
 
-fun cookSoup() {
-    TODO("Not implemented yet")
-}
-
 fun generateSpices(): Sequence<SpiceType> = TODO("Not implemented yet")
 
 fun addSpices(spices: Sequence<SpiceType>) {

@@ -11,7 +11,11 @@ data object PotImpl : Pot {
     val filling: MutableList<Ingredient> = mutableListOf()
     var simmering: Boolean = false
 
-    override fun doesTastePerfect(): Boolean = TODO("Not implemented yet")
+    override fun doesTastePerfect(): Boolean = filling.filter{ it is Spice }
+        .groupingBy{ it }
+        .eachCount()
+        .filter{ (_, n) -> n > 2 }
+        .isEmpty()
 
     override fun <T: Ingredient> put(ingredient: T) {
         filling.add(ingredient)

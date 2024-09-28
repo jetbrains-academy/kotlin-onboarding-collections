@@ -1,5 +1,5 @@
 type: theory
-custom_name: Master Chef - The Kitchen, Models
+custom_name: "Master Chef - The Kitchen, Models"
 files:
   - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/MasterChefApplication.kt
     visible: true

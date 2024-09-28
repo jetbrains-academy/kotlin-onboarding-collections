@@ -1,0 +1,1 @@
+TODO: coding task, getFruitsForSmoothie and cookSmoothie, show that we do not have the difference
