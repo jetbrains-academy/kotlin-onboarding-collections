@@ -1,0 +1,61 @@
+type: theory
+custom_name: Master Chef - Sequence Initialization
+files:
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/MasterChefApplication.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/game/GameResource.kt
+    visible: false
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/game/GameService.kt
+    visible: false
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/models/food/IngredientType.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/models/food/Ingredient.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/models/storage/Fridge.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/models/storage/Shelf.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/models/cooking/Pot.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/models/storage/Basket.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/models/cooking/SaladBowl.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/models/cooking/Blender.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/implementation/storage/FridgeImpl.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/implementation/storage/ShelfImpl.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/implementation/cooking/PotImpl.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/implementation/cooking/SaladBowlImpl.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/models/Resettable.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/implementation/cooking/BlenderImpl.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/models/Kitchen.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/implementation/KitchenImpl.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/game/GameEnviroment.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/game/GameActions.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/game/recipes/TomatoSoup.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/models/action/Action.kt
+    visible: false
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/models/action/ActionType.kt
+    visible: false
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/models/ItemType.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/converters/ItemTypeConverter.kt
+    visible: false
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/models/Task.kt
+    visible: false
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/game/recipes/Salad.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/game/recipes/Smoothie.kt
+    visible: true

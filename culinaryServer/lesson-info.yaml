@@ -1,5 +1,14 @@
 type: framework
 custom_name: Master chef
 content:
-  - culinaryServerTask1
+  - culinaryServerIntroduction
+  - culinaryServerHowToRun
+  - culinaryServerKitchenModels
+  - culinaryServerFridgeRefill
+  - culinaryServerListSequenceTheory
+  - culinaryServerTomatoSoup
+  - culinaryServerSequenceInitialization
+  - culinaryServerAddSpices
+  - culinaryServerCookSalad
+  - culinaryServerCookSmoothie
 is_template_based: false

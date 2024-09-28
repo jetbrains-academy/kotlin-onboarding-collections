@@ -1,0 +1,1 @@
+TODO: coding task, getFreshVegetables, cut, and mixVegetablesForSalad + show the differene
