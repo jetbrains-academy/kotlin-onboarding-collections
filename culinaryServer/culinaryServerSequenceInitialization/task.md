@@ -19,9 +19,9 @@ val spices = generateSequence{ shelfWithSpices.getNextValidOne(...) }
 In this case we will not actually have these `spices`, `shelfWithSpices.getNextValidOne(...)` will be called each time when it will be necessary, i.e. when we will actually need the next jar of species.
 For example, if for each jar of species we need to add it into the soup and we want to add only 3 different species, it will be done in the following way:
 
-![Current state](TODO: a picture where we get and handle each piece step by step)
+![Current state](../../utils/src/main/resources/images/master/chef/explanations/soup_cooking_spices.png)
 
 Consider the second example. A _terminal_ function is necessary to show the Kotlin compiler, that you actually ready to proceed with the actions, e.g. `take(5)` or `toList()` for finite sequences.
 From the example above, if we don't use `take(5)` and in theory have infinite shelf, we will not be able to handle all of them, we do have limited resources on our laptop (or in a pot from the example).
 
-![Current state](TODO: a picture - limited size of the pot, and we cannot handle all of them)
+![Current state](../../utils/src/main/resources/images/master/chef/explanations/soup_cooking_spices_no_space.png)
