@@ -1,5 +1,6 @@
 export enum JsActionType {
     SHOW_ON_COUNTER, // baskets, fruits, vegetables
+    CUT_ON_COUNTER,
     PUT_IN_POT, // cut vegetables
     SIMMER, // null
     ADD_TO_SALAD, // vegetables

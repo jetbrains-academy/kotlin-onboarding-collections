@@ -9,7 +9,8 @@ type PotProps = {
         cucumber: number,
         tomato: number,
         carrot: number,
-        soupHue: number
+        soupHue: number,
+        spiced: boolean
     }
 }
 
