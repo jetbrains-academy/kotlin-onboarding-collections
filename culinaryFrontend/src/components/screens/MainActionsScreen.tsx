@@ -77,6 +77,8 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
     const tasteBadMsg = "It tastes so bad... Try to cook the soup again."
     const tasteErrMsg = "Failed to get taste status. Check your implementation."
 
+    const saladEmptyListMsg = "Try to refill the fridge!"
+
     const soupName = "tomato soup"
     const saladListName = "salad (list)"
     const saladSequenceName = "salad (sequence)"
@@ -652,11 +654,11 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
                     <>
                         <button
                             className={"App-button-base App-button-action-wide " + (fridgeProducts.length > 0 && shouldShow(saladListName) ? "" : "App-button-disable")}
-                            onClick={() => cook(saladListUrl, saladListName)}>Salad list
+                            onClick={() => cook(saladListUrl, saladListName, saladEmptyListMsg)}>Salad list
                         </button>
                         <button
                             className={"App-button-base App-button-action-wide " + (fridgeProducts.length > 0 && shouldShow(saladSequenceName) ? "" : "App-button-disable")}
-                            onClick={() => cook(saladSequenceUrl, saladSequenceName)}>Salad seq.
+                            onClick={() => cook(saladSequenceUrl, saladSequenceName, saladEmptyListMsg)}>Salad seq.
                         </button>
                     </>
                 )}
