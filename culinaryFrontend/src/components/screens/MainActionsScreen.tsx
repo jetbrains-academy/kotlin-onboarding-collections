@@ -1,5 +1,5 @@
 import {GameState} from "../GameScreen";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {JsAction} from '../../models/JsAction'
 import {JsItemType} from '../../models/JsItemType'
 import axios from "axios";
@@ -17,20 +17,72 @@ type MainActionsScreenProps = {
 
 export default function MainActionsScreen({gameStateSetter}: MainActionsScreenProps) {
 
+    const taskTypeUrl   = "/functions/current-task"
     const refillUrl     = "/functions/refill-fridge"
     const soupUrl       = "/functions/tomato-soup"
     const spiceUrl      = "/functions/soup-spices"
     const tasteUrl      = "/functions/check-soup"
     const saladListUrl  = "/functions/salad-list"
     const saladSequenceUrl    = "/functions/salad-sequence"
-    const smoothieListUrl     = "/functions/smoothie-list"
-    const smoothieSequenceUrl = "/functions/smoothie-sequence"
+    const smoothieUrl     = "/functions/smoothie"
 
-    const soupName = "soup"
+    let infoTextActionMap: { [key: string]: string } = {
+        "SHOW_ON_COUNTER": "<SHOW_ON_COUNTER_TEXT>",
+        "PUT_IN_POT": "Putting into the pot",
+        "SIMMER": "Cooking!",
+        "ADD_TO_SALAD": "Adding to the salad",
+        "MIX_SALAD": "Mixing the salad",
+        "BLEND": "Blending",
+        "ADD_TO_BLENDER": "Adding to the blender",
+        "REMOVE_FROM_COUNTER": "<REMOVE_FROM_COUNTER_TEXT>",
+        "CUT_ON_COUNTER": "Cutting",
+    }
+
+    let infoTextItemMap: { [key: string]: string } = {
+        "CITRUS_BASKET": "citrus basket",
+        "BERRY_BASKET": "berry basket",
+        "ROT_TOMATO": "rot tomato",
+        "FRESH_TOMATO": "fresh tomato",
+        "CUT_TOMATO": "cut tomato",
+        "ROT_CUCUMBER": "rot cucumber",
+        "FRESH_CUCUMBER": "fresh cucumber",
+        "CUT_CUCUMBER": "cut cucumber",
+        "ROT_CARROT": "rot carrot",
+        "FRESH_CARROT": "fresh carrot",
+        "CUT_CARROT": "cut carrot",
+        "BERRY": "berry",
+        "CITRUS": "orange",
+        "SALT": "salt",
+        "PEPPER": "pepper",
+        "OREGANO": "oregano",
+    }
+
+    const startupMsg = "Press button to start"
+    const getTaskErrMsg = "Can't get task type. Check backend."
+
+    const refillSuccMsg = "Fridge is refilled!"
+    const refillErrMsg = "Failed to refill the fridge. Check your implementation."
+    const soupEmptyListMsg = "You need at least three fresh tomato in the fridge! Try to refill!"
+
+    const cookingNoActionsMsg = "Not enough ingredients to make"
+    const cookingDoneMsg = "Cooking is done!"
+    const cookingErrMsg = "Failed to cook. Check your implementation."
+
+    const noSoupSpicingMsg = "You need to cook the soup first!"
+    const beforeSpicingMsg = "Let's add some spices!"
+    const afterSpicingMsg = "Adding spices is done!"
+    const spicingErrMsg = "Failed to add spices. Check your implementation."
+
+    const tasteGoodMsg = "It tastes great! 🎉"
+    const tasteBadMsg = "It tastes so bad... Try to cook the soup again."
+    const tasteErrMsg = "Failed to get taste status. Check your implementation."
+
+    const soupName = "tomato soup"
     const saladListName = "salad (list)"
     const saladSequenceName = "salad (sequence)"
-    const smoothieListName = "smoothie (list)"
-    const smoothieSequenceName = "smoothie (sequence)"
+    const smoothieName = "smoothie"
+
+    const cookingDelay = 1000 // ms
 
     type BlenderOptions = {
         visible: boolean,
@@ -41,7 +93,7 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
     }
 
     const initialBlenderOptions: BlenderOptions = {
-        visible: false,
+        visible: true,
         full: false,
         shake: false,
         berry: 0,
@@ -59,6 +111,7 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
         tomato: number,
         carrot: number,
         soupHue: number,
+        spiced: boolean
     }
 
     const initialPotOptions: PotOptions = {
@@ -72,6 +125,7 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
         tomato: 0,
         carrot: 0,
         soupHue: 0,
+        spiced: false
     }
 
     type SaladBowlOptions = {
@@ -110,16 +164,27 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
         count: 5,
     }
 
+    useEffect(() => {
+        axios.get(taskTypeUrl).then(async (response) => {
+            console.log(`Current task type: ${response.data as String}`)
+            setCurrentTask(response.data as String)
+            SaladBowlVisSetter((response.data as String)==="SALAD")
+        }).catch(error => {
+            infoTextSetter(getTaskErrMsg)
+        })
+    }, [])
+
     let [counterProducts, counterProductsSetter] = useState<Array<JsItemType>>([])
     let [fridgeProducts, fridgeProductsSetter] = useState<Array<JsItemType>>([])
-    let [infoText, infoTextSetter] = useState<String>("Press button to start")
-    let [spicesShelfVis, spicesShelfVisSetter] = useState<boolean>(false)
+    let [infoText, infoTextSetter] = useState<String>(startupMsg)
+    let [spicesShelfVis, spicesShelfVisSetter] = useState<boolean>(true)
     let [blenderOptions, setBlenderOptions] = useState<BlenderOptions>(initialBlenderOptions);
     let [potOptions, setPotOptions] = useState<PotOptions>(initialPotOptions);
     let [saladBowlOptions, setSaladBowlOptions] = useState<SaladBowlOptions>(initialSaladBowlOptions);
     let [berryBasketOptions, setBerryBasketOptions] = useState<BasketOptions>(initialBerryBasketOptions);
     let [citrusBasketOptions, setCitrusBasketOptions] = useState<BasketOptions>(initialCitrusBasketOptions);
     let [buttonBlocker, setButtonBlocker] = useState<String>("");
+    let [currentTask, setCurrentTask] = useState<String>("");
 
     function berryBasketVisSetter(value: boolean){
         setBerryBasketOptions(prevOptions => ({
@@ -156,49 +221,18 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
         }));
     }
 
-    let infoTextActionMap: { [key: string]: string } = {
-        "SHOW_ON_COUNTER": "<SHOW_ON_COUNTER_TEXT>",
-        "PUT_IN_POT": "<PUT_IN_POT_TEXT>",
-        "SIMMER": "<SIMMER_TEXT>",
-        "ADD_TO_SALAD": "<ADD_TO_SALAD_TEXT>",
-        "MIX_SALAD": "<MIX_SALAD_TEXT>",
-        "BLEND": "<BLEND_TEXT>",
-        "ADD_TO_BLENDER": "<ADD_TO_BLENDER_TEXT>",
-        "REMOVE_FROM_COUNTER": "<REMOVE_FROM_COUNTER_TEXT>",
-    }
-
-    let infoTextItemMap: { [key: string]: string } = {
-        "CITRUS_BASKET": "<CITRUS_BASKET_TEXT>",
-        "BERRY_BASKET": "<BERRY_BASKET_TEXT>",
-        "ROT_TOMATO": "<ROT_TOMATO_TEXT>",
-        "FRESH_TOMATO": "<FRESH_TOMATO_TEXT>",
-        "CUT_TOMATO": "<CUT_TOMATO_TEXT>",
-        "ROT_CUCUMBER": "<ROT_CUCUMBER_TEXT>",
-        "FRESH_CUCUMBER": "<FRESH_CUCUMBER_TEXT>",
-        "CUT_CUCUMBER": "<CUT_CUCUMBER_TEXT>",
-        "ROT_CARROT": "<ROT_CARROT_TEXT>",
-        "FRESH_CARROT": "<FRESH_CARROT_TEXT>",
-        "CUT_CARROT": "<CUT_CARROT_TEXT>",
-        "BERRY": "<BERRY_TEXT>",
-        "CITRUS": "<CITRUS_TEXT>",
-        "SALT": "<SALT_TEXT>",
-        "PEPPER": "<PEPPER_TEXT>",
-        "OREGANO": "<OREGANO_TEXT>",
-    }
-
     let counterVisMap: { [key: string]: (arg: boolean) => void } = {
         "BERRY_BASKET": berryBasketVisSetter,
-        "???SALAD_BOWL???": SaladBowlVisSetter,
         "CITRUS_BASKET": citrusBasketVisSetter,
-        "???SPICES_SHELF???": spicesShelfVisSetter,
         "BLENDER": blenderVisSetter,
         "POT": potVisSetter
     }
 
     function showOnCounter(arg: string | null) {
         console.log("showOnCounter", arg)
-        if (!arg)
+        if (!arg) {
             return
+        }
         if (arg in counterVisMap) {
             counterVisMap[arg](true)
         } else {
@@ -213,7 +247,7 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
     function putInPot(arg: string | null) {
         if (arg == null)
             return
-        removeFromCounter(arg)
+        //removeFromCounter(arg)
         let potMap: { [key: string]: () => void } = {
             "PEPPER": () => {
                 setPotOptions(prevOptions => ({
@@ -301,7 +335,7 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
         console.log(arg)
         if (arg == null)
             return
-        removeFromCounter(arg)
+        //removeFromCounter(arg)
         let saladMap: { [key: string]: () => void } = {
             "CUT_TOMATO": () => {
                 setSaladBowlOptions(prevOptions => ({
@@ -394,71 +428,13 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
         blenderMap[arg]()
     }
 
-    function equipKitchen(actions: Array<JsAction>) {
-        console.log("equipKitchen()")
-        let equipmentMap: { [key: string]: () => void } = {
-            "ADD_TO_BLENDER": () => {
-                blenderVisSetter(true)
-            },
-            "BLEND": () => {
-                blenderVisSetter(true)
-            },
-            "MIX_SALAD": () => {
-                SaladBowlVisSetter(true)
-            },
-            "ADD_TO_SALAD": () => {
-                SaladBowlVisSetter(true)
-            },
-            "PUT_IN_POT": () => {
-                potVisSetter(true)
-            },
-            "SIMMER": () => {
-                potVisSetter(true)
-            },
-            "SALT": () => {
-                spicesShelfVisSetter(true)
-                setPotOptions(prevOptions => ({
-                    ...prevOptions,
-                    soup: true
-                }));
-            },
-            "PEPPER": () => {
-                spicesShelfVisSetter(true)
-                setPotOptions(prevOptions => ({
-                    ...prevOptions,
-                    soup: true
-                }));
-            },
-            "OREGANO": () => {
-                spicesShelfVisSetter(true)
-                setPotOptions(prevOptions => ({
-                    ...prevOptions,
-                    soup: true
-                }));
-            },
-        }
-
-        for (const action of actions) {
-            // check is SALT PEPPER or OREGANO is shown on the counter
-            if (String(action.type) == "SHOW_ON_COUNTER" || String(action.type) == "PUT_IN_POT") {
-                if (String(action.parameter) in equipmentMap) {
-                    equipmentMap[String(action.parameter)]()
-                }
-            } else {  // check is POT BLENDER or SALAD-bowl is used in cooking
-                if (String(action.type) in equipmentMap) {
-                    equipmentMap[String(action.type)]()
-                }
-            }
-        }
-    }
 
     function removeFromCounter(arg: string | null) {
         console.log("removeFromCounter", arg)
-        if (!arg)
+        if (!arg){
             return
-        if (arg in counterVisMap) {
-            counterVisMap[arg](false)
-        } else {
+        }
+        else {
             console.log("counter: ", counterProducts)
             console.log("filter: ", counterProducts.filter(item => JsItemType[item] !== arg))
             counterProductsSetter((prevState) => {
@@ -499,37 +475,38 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
         "MIX_SALAD": mixSalad,
         "BLEND": blend,
         "ADD_TO_BLENDER": addToBlender,
-        "REMOVE_FROM_COUNTER": removeFromCounter
+        "REMOVE_FROM_COUNTER": removeFromCounter,
+        "CUT_ON_COUNTER": removeFromCounter
     };
 
     function refill(){
         setBlenderOptions(initialBlenderOptions);
         setPotOptions(initialPotOptions);
         setSaladBowlOptions(initialSaladBowlOptions)
+        SaladBowlVisSetter(currentTask==="SALAD")
         setCitrusBasketOptions(initialCitrusBasketOptions)
         setBerryBasketOptions(initialBerryBasketOptions)
-        spicesShelfVisSetter(false)
         counterProductsSetter([])
-        fridgeProductsSetter([])
-        infoTextSetter("Fridge refilling...")
         let items = Array<JsItemType>()
         axios.get(refillUrl).then(async (response) => {
             const receivedItems: Array<keyof typeof JsItemType> = response.data;
             items = receivedItems.map(item => JsItemType[item]);
             console.log("Refill GOT: " + items)
             fridgeProductsSetter(items)
-            infoTextSetter("Fridge is refilled!")
+            infoTextSetter(refillSuccMsg)
+        }).catch(error => {
+            infoTextSetter(refillErrMsg);
         })
     }
 
 
-    function cook(url: string, dishName: string){
+    function cook(url: string, dishName: string, emptyListMsg: string = ""){
         setBlenderOptions(initialBlenderOptions);
         setPotOptions(initialPotOptions);
         setSaladBowlOptions(initialSaladBowlOptions)
+        SaladBowlVisSetter(currentTask==="SALAD")
         setCitrusBasketOptions(initialCitrusBasketOptions)
         setBerryBasketOptions(initialBerryBasketOptions)
-        spicesShelfVisSetter(false)
         counterProductsSetter([])
         setButtonBlocker(dishName)
 
@@ -537,26 +514,27 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
 
         let actions = Array<JsAction>()
         axios.get(url).then(async (response) => {
+            console.log("GOT: " + JSON.stringify(response.data, null, 2))
             actions = response.data as Array<JsAction>
-            console.log("GOT: " + actions)
             if (actions.length == 0){
-                infoTextSetter(`Not enough ingredients to make ${dishName}!`)
+                infoTextSetter(`${cookingNoActionsMsg} ${dishName}! ${emptyListMsg}`)
                 setButtonBlocker("")
                 return
             }
             infoTextSetter("Let's go!")
-            equipKitchen(actions)
-            console.log("equipKitchen() DONE")
-            await delay(1500);
+            await delay(cookingDelay);
             for (const action of actions) {
                 console.log(infoTextActionMap[String(action.type)] + " " + (action.parameter ? infoTextItemMap[String(action.parameter)] : ""))
                 infoTextSetter(infoTextActionMap[String(action.type)] + " " + (action.parameter ? infoTextItemMap[String(action.parameter)] : ""))
                 actionMap[String(action.type)](
                     action.parameter ? String(action.parameter) : null
                 )
-                await delay(1500);
+                await delay(cookingDelay);
             }
-            infoTextSetter("Cooking is done!")
+            infoTextSetter(cookingDoneMsg)
+        }).catch(error => {
+            infoTextSetter(cookingErrMsg)
+        }).finally(() => {
             setButtonBlocker("")
         })
     }
@@ -570,23 +548,28 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
             actions = response.data as Array<JsAction>
             console.log("GOT: " + actions)
             if (actions.length == 0){
-                infoTextSetter("You need to cook the soup first!")
+                infoTextSetter(noSoupSpicingMsg)
                 setButtonBlocker("")
                 return
             }
-            infoTextSetter("Let's add some spices!")
-            equipKitchen(actions)
-            console.log("equipKitchen() DONE")
-            await delay(1500);
+            infoTextSetter(beforeSpicingMsg)
+            await delay(cookingDelay);
             for (const action of actions) {
                 console.log(infoTextActionMap[String(action.type)] + " " + (action.parameter ? infoTextItemMap[String(action.parameter)] : ""))
                 infoTextSetter(infoTextActionMap[String(action.type)] + " " + (action.parameter ? infoTextItemMap[String(action.parameter)] : ""))
                 actionMap[String(action.type)](
                     action.parameter ? String(action.parameter) : null
                 )
-                await delay(1500);
+                await delay(cookingDelay);
             }
-            infoTextSetter("Adding the spices is done!")
+            infoTextSetter(afterSpicingMsg)
+            setPotOptions(prevOptions => ({
+                ...prevOptions,
+                spiced: true
+            }));
+        }).catch(error => {
+            infoTextSetter(spicingErrMsg)
+        }).finally(() => {
             setButtonBlocker("")
         })
     }
@@ -596,10 +579,12 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
             let isTasteGood = response.data as boolean
             console.log("isTasteGood: " + isTasteGood)
             if(isTasteGood){
-                infoTextSetter("It tastes great! 🎉")
+                infoTextSetter(tasteGoodMsg)
             } else {
-                infoTextSetter("It tastes so bad... Try it again!")
+                infoTextSetter(tasteBadMsg)
             }
+        }).catch(error => {
+            infoTextSetter(tasteErrMsg)
         })
     }
 
@@ -641,40 +626,46 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
                 </div>
             }
             <div className="App-buttons-container">
-                <button
-                    className={"App-button-base App-button-action " + (shouldShow("refill") ? "" : "App-button-disable")}
-                    onClick={() => refill()}>Refill!
-                </button>
-                <button
-                    className={"App-button-base App-button-action " + (fridgeProducts.length > 0 && shouldShow(soupName) ? "" : "App-button-disable")}
-                    onClick={() => cook(soupUrl, soupName)}>Soup!
-                </button>
-                <button
-                    className={"App-button-base App-button-action " + (potOptions.soup && shouldShow("spice") ? "" : "App-button-disable")}
-                    onClick={() => spice()}>Spice!
-                </button>
-                <button
-                    className={"App-button-base App-button-action " + (potOptions.soup && shouldShow("taste") ? "" : "App-button-disable")}
-                    onClick={() => taste()}>Taste!
-                </button>
-
-                <button
-                    className={"App-button-base App-button-action " + (shouldShow(saladListName) ? "" : "App-button-disable")}
-                    onClick={() => cook(saladListUrl, saladListName)}>Sld list!
-                </button>
-                <button
-                    className={"App-button-base App-button-action " + (shouldShow(saladSequenceName) ? "" : "App-button-disable")}
-                    onClick={() => cook(saladSequenceUrl, saladSequenceName)}>Sld seq!
-                </button>
-                <button
-                    className={"App-button-base App-button-action " + (shouldShow(smoothieListName) ? "" : "App-button-disable")}
-                    onClick={() => cook(smoothieListUrl, smoothieListName)}>Smth list!
-                </button>
-                <button
-                    className={"App-button-base App-button-action " + (shouldShow(smoothieSequenceName) ? "" : "App-button-disable")}
-                    onClick={() => cook(smoothieSequenceUrl, smoothieSequenceName)}>Smth seq!
-                </button>
-
+                {(currentTask === "SOUP" || currentTask === "SALAD") && (
+                    <button
+                        className={"App-button-base App-button-action " + (shouldShow("refill") ? "" : "App-button-disable")}
+                        onClick={() => refill()}>Refill
+                    </button>
+                )}
+                {currentTask === "SOUP" && (
+                    <>
+                        <button
+                            className={"App-button-base App-button-action " + (fridgeProducts.length > 0 && shouldShow(soupName) ? "" : "App-button-disable")}
+                            onClick={() => cook(soupUrl, soupName, soupEmptyListMsg)}>Soup
+                        </button>
+                        <button
+                            className={"App-button-base App-button-action " + (potOptions.soup && !potOptions.spiced && shouldShow("spice") ? "" : "App-button-disable")}
+                            onClick={() => spice()}>Spice
+                        </button>
+                        <button
+                            className={"App-button-base App-button-action " + (potOptions.soup && potOptions.spiced && shouldShow("taste") ? "" : "App-button-disable")}
+                            onClick={() => taste()}>Taste
+                        </button>
+                    </>
+                )}
+                {currentTask === "SALAD" && (
+                    <>
+                        <button
+                            className={"App-button-base App-button-action-wide " + (fridgeProducts.length > 0 && shouldShow(saladListName) ? "" : "App-button-disable")}
+                            onClick={() => cook(saladListUrl, saladListName)}>Salad list
+                        </button>
+                        <button
+                            className={"App-button-base App-button-action-wide " + (fridgeProducts.length > 0 && shouldShow(saladSequenceName) ? "" : "App-button-disable")}
+                            onClick={() => cook(saladSequenceUrl, saladSequenceName)}>Salad seq.
+                        </button>
+                    </>
+                )}
+                {currentTask === "SMOOTHIE" && (
+                    <button
+                        className={"App-button-base App-button-action-wide " + (shouldShow(smoothieName) ? "" : "App-button-disable")}
+                        onClick={() => cook(smoothieUrl, smoothieName)}>Smoothie
+                    </button>
+                )}
             </div>
         </div>
     );
