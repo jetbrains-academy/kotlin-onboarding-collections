@@ -33,7 +33,6 @@ data object KitchenImpl : Kitchen {
     override fun <T : Ingredient> take(item: T): T {
         require(item in filling) { "You cannot remove an item from the kitchen if this item does not exist!" }
         filling.remove(item)
-        actions += buildAction(ActionType.REMOVE_FROM_COUNTER, item)
         return item
     }
 
