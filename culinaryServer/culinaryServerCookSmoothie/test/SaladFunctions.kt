@@ -20,11 +20,25 @@ internal val cutMethod = TestMethod(
     )
 )
 
+internal val mixVegetablesForSaladMethod = TestMethod(
+    "mixVegetablesForSalad",
+    TestKotlinType("Unit"),
+    arguments = listOf(
+        TestVariable(
+            name = "cutVegetables",
+            javaType = "List",
+            kotlinType = TestKotlinType("List", params = listOf("org.jetbrains.kotlin.course.culinary.ingredient.CutVegetable")),
+        ),
+    ),
+    returnTypeJava = "void",
+)
+
 internal val saladKtTestClass = TestClass(
     "SaladKt",
     "org.jetbrains.kotlin.course.culinary.game.recipes",
     customMethods = listOf(
         getFreshVegetablesMethod,
-        cutMethod
+        cutMethod,
+        mixVegetablesForSaladMethod
     ),
 )

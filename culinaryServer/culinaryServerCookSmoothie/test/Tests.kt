@@ -1,7 +1,6 @@
 import org.jetbrains.academy.test.system.core.findMethod
-import org.jetbrains.academy.test.system.core.invokeWithArgs
 import org.jetbrains.academy.test.system.core.invokeWithoutArgs
-import org.jetbrains.academy.test.system.core.models.classes.ConstructorGetter
+import org.jetbrains.kotlin.course.culinary.converters.buildAction
 import org.jetbrains.kotlin.course.culinary.game.actions
 import org.jetbrains.kotlin.course.culinary.game.clearActions
 import org.jetbrains.kotlin.course.culinary.game.recipes.NUMBER_OF_TOMATOES
@@ -20,7 +19,6 @@ import org.junit.jupiter.api.Test
 import java.lang.reflect.InvocationTargetException
 
 class Test {
-    // TODO: add tests for mixVegetablesForSalad
     @Test
     fun getFreshVegetablesMethodTest() {
         val randomVegetables = fillFridge()
@@ -48,25 +46,30 @@ class Test {
         }
     }
 
-    @Test
-    fun cutMethodTest() {
-        clearActions()
-        fillFridge()
-
+    private fun cutVegetablesInvoke(vegetables: List<Vegetable>): List<CutVegetable> {
         val clazz = saladKtTestClass.checkBaseDefinition()
         val method = clazz.declaredMethods.findMethod(cutMethod)
-        val vegetables = getFreshVegetables()
-        val expectedVegetables = vegetables.take(NUM_VEGETABLES_FOR_SALAD).map{ CutVegetable(it.type) }
 
-        val cutVegetables = try {
+        return try {
             method(clazz, vegetables) as List<CutVegetable>
         } catch(e: InvocationTargetException) {
             assert(false) { "Can not invoke method ${method.name}. Please, add an implementation!" }
             emptyList()
         }
+    }
 
-        assert(expectedVegetables.size == cutVegetables.size) { "The ${method.name} method should take all vegetables from the list of vegetables and cut them!" }
-        assert(expectedVegetables.sortedBy { it.type } == cutVegetables.sortedBy { it.type }) { "The ${method.name} method should take vegetables and cut them!" }
+    @Test
+    fun cutMethodTest() {
+        clearActions()
+        fillFridge()
+
+        val vegetables = getFreshVegetables()
+        val expectedVegetables = vegetables.take(NUM_VEGETABLES_FOR_SALAD).map{ CutVegetable(it.type) }
+
+        val cutVegetables = cutVegetablesInvoke(vegetables)
+
+        assert(expectedVegetables.size == cutVegetables.size) { "The ${cutMethod.name} method should take all vegetables from the list of vegetables and cut them!" }
+        assert(expectedVegetables.sortedBy { it.type } == cutVegetables.sortedBy { it.type }) { "The ${cutMethod.name} method should take vegetables and cut them!" }
 
         val expectedActions = buildList {
             addAll(List(vegetables.size) { ActionType.SHOW_ON_COUNTER })
@@ -74,14 +77,38 @@ class Test {
                 addAll(listOf(ActionType.CUT_ON_COUNTER, ActionType.SHOW_ON_COUNTER))
             }
         }
-        assert(expectedActions == actions.map{ it.type }) { "The ${method.name} method should take vegetables and cut them: take each of them from the fridge, and then cut" }
+        assert(expectedActions == actions.map{ it.type }) { "The ${cutMethod.name} method should take vegetables and cut them: take each of them from the fridge, and then cut" }
+    }
+
+    @Test
+    fun mixVegetablesForSaladMethodTest() {
+        fillFridge()
+
+        val clazz = saladKtTestClass.checkBaseDefinition()
+        val method = clazz.declaredMethods.findMethod(mixVegetablesForSaladMethod)
+        val vegetables = getFreshVegetables()
+        val cutVegetables = cutVegetablesInvoke(vegetables)
+
+        val expectedActions = cutVegetables.groupBy { it.type }
+            .map { (_, cuts) ->
+                cuts.map{ c -> buildAction(ActionType.ADD_TO_SALAD, c) }
+            }.flatten()
+
+        clearActions()
+        try {
+            method(clazz, cutVegetables)
+        } catch(e: InvocationTargetException) {
+            assert(false) { "Can not invoke method ${method.name}. Please, add an implementation!" }
+        }
+
+        assert(expectedActions + Action(ActionType.MIX_SALAD) == actions) { "The ${method.name} method should group cut vegetables by their type, and then for each type add to the salad bowl" }
     }
 
     @Test
     fun generateSpicesMethodTest() {
         val spices = generateSpices().take(5).toList()
         if (spices.isEmpty()) {
-           assert(false) { "The method ${generateSpicesMethod.name} should generate random spices! Now you always generate an empty sequence!" }
+            assert(false) { "The method ${generateSpicesMethod.name} should generate random spices! Now you always generate an empty sequence!" }
         }
         assert(spices.toSet().size > 1) { "The method ${generateSpicesMethod.name} should generate random spices! Now you always generate ${spices.first()}" }
     }
