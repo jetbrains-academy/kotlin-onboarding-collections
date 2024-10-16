@@ -128,6 +128,19 @@
   background-image: url('assets/buttons/action_hover.svg');
 }
 
+.App-button-action-wide{
+  background-size: contain;
+  width: 21vmin;
+  height: 5vmin;
+  color: black;
+  font-weight: 600;
+  background-image: url('assets/buttons/action_wide.svg');
+}
+
+.App-button-action-wide:hover {
+  background-image: url('assets/buttons/action_wide_hover.svg');
+}
+
 .App-button-disable {
   pointer-events: none;
   opacity: 0.4;
