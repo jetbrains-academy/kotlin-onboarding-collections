@@ -27,14 +27,14 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
     const smoothieUrl     = "/functions/smoothie"
 
     let infoTextActionMap: { [key: string]: string } = {
-        "SHOW_ON_COUNTER": "<SHOW_ON_COUNTER_TEXT>",
+        "SHOW_ON_COUNTER": "Placing the current ingredient to the cooking space",
         "PUT_IN_POT": "Putting into the pot",
         "SIMMER": "Cooking!",
         "ADD_TO_SALAD": "Adding to the salad",
         "MIX_SALAD": "Mixing the salad",
         "BLEND": "Blending",
         "ADD_TO_BLENDER": "Adding to the blender",
-        "REMOVE_FROM_COUNTER": "<REMOVE_FROM_COUNTER_TEXT>",
+        "REMOVE_FROM_COUNTER": "Removing the current ingredient from the cooking space",
         "CUT_ON_COUNTER": "Cutting",
     }
 
@@ -249,7 +249,7 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
     function putInPot(arg: string | null) {
         if (arg == null)
             return
-        //removeFromCounter(arg)
+        removeFromCounter(arg)
         let potMap: { [key: string]: () => void } = {
             "PEPPER": () => {
                 setPotOptions(prevOptions => ({
@@ -337,7 +337,7 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
         console.log(arg)
         if (arg == null)
             return
-        //removeFromCounter(arg)
+        removeFromCounter(arg)
         let saladMap: { [key: string]: () => void } = {
             "CUT_TOMATO": () => {
                 setSaladBowlOptions(prevOptions => ({
