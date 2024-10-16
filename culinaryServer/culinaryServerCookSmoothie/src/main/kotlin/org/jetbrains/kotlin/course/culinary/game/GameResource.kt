@@ -3,6 +3,7 @@ package org.jetbrains.kotlin.course.culinary.game
 import org.jetbrains.kotlin.course.culinary.converters.toItemType
 import org.jetbrains.kotlin.course.culinary.game.recipes.NUMBER_OF_TOMATOES
 import org.jetbrains.kotlin.course.culinary.game.recipes.NUM_VEGETABLES_FOR_SALAD
+import org.jetbrains.kotlin.course.culinary.implementation.cooking.PotImpl
 import org.jetbrains.kotlin.course.culinary.implementation.storage.FridgeImpl
 import org.jetbrains.kotlin.course.culinary.models.ItemType
 import org.jetbrains.kotlin.course.culinary.models.Task
@@ -24,13 +25,14 @@ class CookingFunction(val service: CookingService) {
     @GetMapping("/tomato-soup")
     fun tomatoSoup(): List<Action> {
         clearActions()
+        PotImpl.reset()
         if (FridgeImpl.vegetables.count{ it.type == VegetableType.Tomato && it.isFresh } < NUMBER_OF_TOMATOES) {
             // Show an error
             return emptyList()
         }
 
         service.cookTomatoSoup()
-        clearKitchen()
+        PotImpl.simmering = false
         return actions
     }
 
@@ -38,8 +40,9 @@ class CookingFunction(val service: CookingService) {
     @GetMapping("/soup-spices")
     fun soupSpices(): List<Action> {
         clearActions()
+        PotImpl.reset()
         service.cookWithSpices()
-        clearKitchen()
+        PotImpl.simmering = false
         return actions
     }
 

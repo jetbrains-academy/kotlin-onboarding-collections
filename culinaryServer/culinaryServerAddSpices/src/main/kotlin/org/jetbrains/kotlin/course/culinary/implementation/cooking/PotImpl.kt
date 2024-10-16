@@ -14,7 +14,7 @@ data object PotImpl : Pot {
     override fun doesTastePerfect(): Boolean = filling.filter{ it is Spice }
         .groupingBy{ it }
         .eachCount()
-        .filter{ (_, n) -> n > 2 }
+        .filter{ (_, n) -> n >= 2 }
         .isEmpty()
 
     override fun <T: Ingredient> put(ingredient: T) {
