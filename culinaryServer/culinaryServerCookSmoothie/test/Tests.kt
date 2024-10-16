@@ -3,6 +3,8 @@ import org.jetbrains.academy.test.system.core.invokeWithoutArgs
 import org.jetbrains.kotlin.course.culinary.converters.buildAction
 import org.jetbrains.kotlin.course.culinary.game.actions
 import org.jetbrains.kotlin.course.culinary.game.clearActions
+import org.jetbrains.kotlin.course.culinary.game.fridge
+import org.jetbrains.kotlin.course.culinary.game.kitchen
 import org.jetbrains.kotlin.course.culinary.game.recipes.NUMBER_OF_TOMATOES
 import org.jetbrains.kotlin.course.culinary.game.recipes.NUM_VEGETABLES_FOR_SALAD
 import org.jetbrains.kotlin.course.culinary.implementation.storage.FridgeImpl
@@ -11,14 +13,53 @@ import org.jetbrains.kotlin.course.culinary.implementation.storage.FridgeImpl.RA
 import org.jetbrains.kotlin.course.culinary.models.ItemType
 import org.jetbrains.kotlin.course.culinary.models.action.Action
 import org.jetbrains.kotlin.course.culinary.models.action.ActionType
-import org.jetbrains.kotlin.course.culinary.models.food.CutVegetable
-import org.jetbrains.kotlin.course.culinary.models.food.SpiceType
-import org.jetbrains.kotlin.course.culinary.models.food.Vegetable
-import org.jetbrains.kotlin.course.culinary.models.food.VegetableType
+import org.jetbrains.kotlin.course.culinary.models.food.*
 import org.junit.jupiter.api.Test
 import java.lang.reflect.InvocationTargetException
 
 class Test {
+    @Test
+    fun getFruitsForSmoothieMethodTest() {
+        clearActions()
+        val fruits = getFruitsForSmoothie()
+
+        assert(fruits.toSet().size == 2) { "The ${getFruitsForSmoothieMethod.name} method should return a lit of Citrus and Berry fruits only" }
+        val expectedActions = buildList{
+            add(Action(ActionType.SHOW_ON_COUNTER, ItemType.BERRY_BASKET))
+            add(Action(ActionType.SHOW_ON_COUNTER, ItemType.CITRUS_BASKET))
+        }
+        assert(expectedActions == actions) { "The ${getFruitsForSmoothieMethod.name} method should return a lit of fruits for smoothie, sorted by sugarContent amount" }
+    }
+
+    private fun getFruitsForSmoothie(): List<Fruit> {
+        val clazz = smoothieKtTestClass.checkBaseDefinition()
+        val method = clazz.declaredMethods.findMethod(getFruitsForSmoothieMethod)
+
+        return try {
+            method.invokeWithoutArgs(clazz = clazz) as List<Fruit>
+        } catch(e: InvocationTargetException) {
+            assert(false) { "Can not invoke method ${method.name}. Please, add an implementation!" }
+            emptyList()
+        }
+    }
+
+    @Test
+    fun cookSmoothieMethodTest() {
+        val fruits = getFruitsForSmoothie()
+
+        clearActions()
+        val clazz = smoothieKtTestClass.checkBaseDefinition()
+        val method = clazz.declaredMethods.findMethod(cookSmoothieMethod)
+        try {
+            method(clazz, fruits)
+        } catch(e: InvocationTargetException) {
+            assert(false) { "Can not invoke method ${method.name}. Please, add an implementation!" }
+        }
+
+        val expectedActions = fruits.map{ buildAction(ActionType.ADD_TO_BLENDER, it) }
+        assert(expectedActions + Action(ActionType.BLEND) == actions) { "The ${method.name} method should add to the blender all fruits and then blend them" }
+    }
+
     @Test
     fun getFreshVegetablesMethodTest() {
         val randomVegetables = fillFridge()

@@ -71,3 +71,6 @@ files:
   - name: test/TomatoSoupFunctions.kt
     visible: false
     propagatable: false
+  - name: test/SmoothieFunctions.kt
+    visible: false
+    propagatable: false
