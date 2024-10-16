@@ -73,7 +73,6 @@ class Test {
             repeat(vegetables.size) {
                 addAll(listOf(ActionType.CUT_ON_COUNTER, ActionType.SHOW_ON_COUNTER))
             }
-            addAll(List(NUM_VEGETABLES_FOR_SALAD) { ActionType.REMOVE_FROM_COUNTER })
         }
         assert(expectedActions == actions.map{ it.type }) { "The ${method.name} method should take vegetables and cut them: take each of them from the fridge, and then cut" }
     }
@@ -153,7 +152,6 @@ class Test {
             }
             repeat(NUMBER_OF_TOMATOES) {
                 addAll(listOf(
-                    Action(ActionType.REMOVE_FROM_COUNTER, ItemType.CUT_TOMATO),
                     Action(ActionType.PUT_IN_POT, ItemType.CUT_TOMATO)
                 ))
             }

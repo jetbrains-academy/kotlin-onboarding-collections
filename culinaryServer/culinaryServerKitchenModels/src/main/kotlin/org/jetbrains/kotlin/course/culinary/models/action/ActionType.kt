@@ -8,6 +8,5 @@ enum class ActionType {
     MIX_SALAD, // null
     BLEND, // null
     ADD_TO_BLENDER, // fruits
-    REMOVE_FROM_COUNTER, // baskets, fruits, vegetables
     CUT_ON_COUNTER, // Cut a fruit or a vegetable
 }

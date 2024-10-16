@@ -93,7 +93,6 @@ class Test {
             }
             repeat(NUMBER_OF_TOMATOES) {
                 addAll(listOf(
-                    Action(ActionType.REMOVE_FROM_COUNTER, ItemType.CUT_TOMATO),
                     Action(ActionType.PUT_IN_POT, ItemType.CUT_TOMATO)
                 ))
             }
