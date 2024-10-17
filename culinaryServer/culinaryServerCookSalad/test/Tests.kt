@@ -74,7 +74,7 @@ class Test {
         val expectedActions = buildList {
             addAll(List(vegetables.size) { ActionType.SHOW_ON_COUNTER })
             repeat(vegetables.size) {
-                addAll(listOf(ActionType.CUT_ON_COUNTER, ActionType.SHOW_ON_COUNTER))
+                add(ActionType.CUT_ON_COUNTER)
             }
         }
         assert(expectedActions == actions.map{ it.type }) { "The ${cutMethod.name} method should take vegetables and cut them: take each of them from the fridge, and then cut" }
@@ -174,7 +174,6 @@ class Test {
             repeat(NUMBER_OF_TOMATOES) {
                 addAll(listOf(
                     Action(ActionType.CUT_ON_COUNTER, ItemType.FRESH_TOMATO),
-                    Action(ActionType.SHOW_ON_COUNTER, ItemType.CUT_TOMATO)
                 ))
             }
             repeat(NUMBER_OF_TOMATOES) {

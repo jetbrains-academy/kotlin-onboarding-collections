@@ -86,10 +86,7 @@ class Test {
         val expectedActions = buildList {
             addAll(List(NUMBER_OF_TOMATOES) { Action(ActionType.SHOW_ON_COUNTER, ItemType.FRESH_TOMATO) })
             repeat(NUMBER_OF_TOMATOES) {
-                addAll(listOf(
-                    Action(ActionType.CUT_ON_COUNTER, ItemType.FRESH_TOMATO),
-                    Action(ActionType.SHOW_ON_COUNTER, ItemType.CUT_TOMATO)
-                ))
+                add(Action(ActionType.CUT_ON_COUNTER, ItemType.FRESH_TOMATO))
             }
             repeat(NUMBER_OF_TOMATOES) {
                 addAll(listOf(

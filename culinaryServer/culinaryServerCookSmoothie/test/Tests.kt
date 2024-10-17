@@ -3,8 +3,6 @@ import org.jetbrains.academy.test.system.core.invokeWithoutArgs
 import org.jetbrains.kotlin.course.culinary.converters.buildAction
 import org.jetbrains.kotlin.course.culinary.game.actions
 import org.jetbrains.kotlin.course.culinary.game.clearActions
-import org.jetbrains.kotlin.course.culinary.game.fridge
-import org.jetbrains.kotlin.course.culinary.game.kitchen
 import org.jetbrains.kotlin.course.culinary.game.recipes.NUMBER_OF_TOMATOES
 import org.jetbrains.kotlin.course.culinary.game.recipes.NUM_VEGETABLES_FOR_SALAD
 import org.jetbrains.kotlin.course.culinary.implementation.storage.FridgeImpl
@@ -115,7 +113,7 @@ class Test {
         val expectedActions = buildList {
             addAll(List(vegetables.size) { ActionType.SHOW_ON_COUNTER })
             repeat(vegetables.size) {
-                addAll(listOf(ActionType.CUT_ON_COUNTER, ActionType.SHOW_ON_COUNTER))
+                add(ActionType.CUT_ON_COUNTER)
             }
         }
         assert(expectedActions == actions.map{ it.type }) { "The ${cutMethod.name} method should take vegetables and cut them: take each of them from the fridge, and then cut" }
@@ -213,10 +211,7 @@ class Test {
         val expectedActions = buildList {
             addAll(List(NUMBER_OF_TOMATOES) { Action(ActionType.SHOW_ON_COUNTER, ItemType.FRESH_TOMATO) })
             repeat(NUMBER_OF_TOMATOES) {
-                addAll(listOf(
-                    Action(ActionType.CUT_ON_COUNTER, ItemType.FRESH_TOMATO),
-                    Action(ActionType.SHOW_ON_COUNTER, ItemType.CUT_TOMATO)
-                ))
+                add(Action(ActionType.CUT_ON_COUNTER, ItemType.FRESH_TOMATO))
             }
             repeat(NUMBER_OF_TOMATOES) {
                 addAll(listOf(
