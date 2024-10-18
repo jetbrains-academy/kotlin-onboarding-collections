@@ -12,7 +12,11 @@ Vegetables can be fresh or not, cut or in their original form.
 **Check all the possible models before going to the next steps,
 it will help you when we refer to them in the tasks.**
 
-![Food models](TODO: picture with all possible food)
+<div class="hint" title="Click me to view all possible food models">
+
+![Food models](../../utils/src/main/resources/images/master/chef/api/food_models.png)
+
+</div>
 
 Then we have the _storage_ models.
 We only have three types of storage: a fridge that can only store vegetables,
@@ -20,7 +24,11 @@ a basket for storing fruit and a shelf for storing spices.
 **Check all the possible models before going to the next steps,
 it will help you when we refer to them in the tasks.**
 
-![Food models](TODO: picture with all possible storages)
+<div class="hint" title="Click me to view all possible storage models">
+
+![Storage models](../../utils/src/main/resources/images/master/chef/api/storage_models.png)
+
+</div>
 
 Finally, we have the _cooking_ models.
 These will help us to cook our dishes.
@@ -29,4 +37,4 @@ and you will be implementing some of these functions yourself during this lesson
 **Check all the possible models before going to the next steps,
 it will help you when we refer to them in the tasks.**
 
-![Food models](TODO: picture with all possible kitchen utensils)
+![Сooking models](TODO: picture with all possible kitchen utensils)

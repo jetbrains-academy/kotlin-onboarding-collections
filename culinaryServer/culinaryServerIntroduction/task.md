@@ -15,4 +15,14 @@ to cook delicious dishes and learn programming. Isn't it great?
 
 By the end of this task, you will create the following application:
 
+Tomato soup tasks:
+
+![Final application](TODO)
+
+Salad tasks:
+
+![Final application](TODO)
+
+Smoothie tasks:
+
 ![Final application](TODO)

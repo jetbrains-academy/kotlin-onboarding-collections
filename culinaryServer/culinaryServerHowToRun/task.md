@@ -16,7 +16,7 @@ and open http://localhost:8080/. You will see the main page of the application.
 
 <div class="hint" title="Click me to view what the main page of the application looks like">
 
-![The main page of the application](TODO)
+![The main page of the application](../../utils/src/main/resources/images/master/chef/states/main_window.png)
 
 </div>
 

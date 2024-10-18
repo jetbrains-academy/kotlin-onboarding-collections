@@ -15,7 +15,7 @@ In this task you need to implement two methods inside `FridgeImpl`:
 
 <div class="hint" title="Click me to view the expected state of the application after completing this task">
 
-![Current state](TODO)
+![Current state](../../utils/src/main/resources/images/master/chef/states/refil.gif)
 
 </div>
 
