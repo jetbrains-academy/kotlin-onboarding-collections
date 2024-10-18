@@ -430,7 +430,34 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
         blenderMap[arg]()
     }
 
+    let cuttedMap: { [key: string]: string } = {
+        "FRESH_TOMATO": "CUT_TOMATO",
+        "FRESH_CUCUMBER": "CUT_CUCUMBER",
+        "FRESH_CARROT": "CUT_CARROT",
+    }
 
+    function cutOnCounter(arg: string | null){
+        console.log("cutOnCounter", arg)
+        if (!arg){
+            return
+        }
+        console.log("counter: ", counterProducts)
+        if (cuttedMap.hasOwnProperty(arg)) {
+            let cuttedArg = cuttedMap[arg];
+            console.log("counter: ", counterProducts)
+            console.log("filter: ", counterProducts.filter(item => JsItemType[item] !== arg))
+            counterProductsSetter((prevState) => {
+                const index = prevState.findIndex(item => JsItemType[item] === arg);
+                if (index > -1) {
+                    const newState = [...prevState];
+                    newState.splice(index, 1, JsItemType[cuttedArg as keyof typeof JsItemType]);
+                    return newState;
+                }
+                return prevState;
+            });
+        }
+    }
+    
     function removeFromCounter(arg: string | null) {
         console.log("removeFromCounter", arg)
         if (!arg){
@@ -478,7 +505,7 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
         "BLEND": blend,
         "ADD_TO_BLENDER": addToBlender,
         "REMOVE_FROM_COUNTER": removeFromCounter,
-        "CUT_ON_COUNTER": removeFromCounter
+        "CUT_ON_COUNTER": cutOnCounter
     };
 
     function refill(){
