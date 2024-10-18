@@ -59,3 +59,17 @@ files:
     visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/game/recipes/Smoothie.kt
     visible: true
+  - name: src/main/resources/static/service-worker.js
+    visible: true
+  - name: src/main/resources/static/asset-manifest.json
+    visible: true
+  - name: src/main/resources/static/manifest.json
+    visible: true
+  - name: src/main/resources/static/index.html
+    visible: true
+  - name: src/main/resources/static/precache-manifest.316b04815eda041fdc97ff67764c39ef.js
+    visible: true
+  - name: src/main/resources/static/favicon.ico
+    visible: true
+  - name: src/main/resources/static/robots.txt
+    visible: true
