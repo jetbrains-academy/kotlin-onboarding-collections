@@ -26,7 +26,6 @@ data object KitchenImpl : Kitchen {
         actions += buildAction(ActionType.CUT_ON_COUNTER, vegetable)
         val cut = CutVegetable(vegetable.type)
         filling += cut
-        actions += buildAction(ActionType.SHOW_ON_COUNTER, cut)
         return cut
     }
 
