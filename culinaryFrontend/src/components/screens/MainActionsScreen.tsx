@@ -27,57 +27,57 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
     const smoothieUrl     = "/functions/smoothie"
 
     let infoTextActionMap: { [key: string]: string } = {
-        "SHOW_ON_COUNTER": "Placing the current ingredient to the cooking space",
-        "PUT_IN_POT": "Putting into the pot",
+        "SHOW_ON_COUNTER": "Placing the current ingredient on the cooking space:",
+        "PUT_IN_POT": "Putting into the pot:",
         "SIMMER": "Cooking!",
-        "ADD_TO_SALAD": "Adding to the salad",
-        "MIX_SALAD": "Mixing the salad",
-        "BLEND": "Blending",
-        "ADD_TO_BLENDER": "Adding to the blender",
-        "REMOVE_FROM_COUNTER": "Removing the current ingredient from the cooking space",
+        "ADD_TO_SALAD": "Adding to the salad:",
+        "MIX_SALAD": "Mixing the salad.",
+        "BLEND": "Blending.",
+        "ADD_TO_BLENDER": "Adding to the blender:",
+        "REMOVE_FROM_COUNTER": "Removing the current ingredient from the cooking space:",
         "CUT_ON_COUNTER": "Cutting",
     }
 
     let infoTextItemMap: { [key: string]: string } = {
         "CITRUS_BASKET": "citrus basket",
         "BERRY_BASKET": "berry basket",
-        "ROT_TOMATO": "rot tomato",
+        "ROT_TOMATO": "rotten tomato",
         "FRESH_TOMATO": "fresh tomato",
         "CUT_TOMATO": "cut tomato",
-        "ROT_CUCUMBER": "rot cucumber",
+        "ROT_CUCUMBER": "rotten cucumber",
         "FRESH_CUCUMBER": "fresh cucumber",
         "CUT_CUCUMBER": "cut cucumber",
-        "ROT_CARROT": "rot carrot",
+        "ROT_CARROT": "rotten carrot",
         "FRESH_CARROT": "fresh carrot",
         "CUT_CARROT": "cut carrot",
-        "BERRY": "berry",
-        "CITRUS": "orange",
+        "BERRY": "a berry",
+        "CITRUS": "an orange",
         "SALT": "salt",
         "PEPPER": "pepper",
         "OREGANO": "oregano",
     }
 
-    const startupMsg = "Press button to start"
-    const getTaskErrMsg = "Can't get task type. Check backend."
+    const startupMsg = "Press the button to start"
+    const getTaskErrMsg = "Can't retrieve task type. Please check the backend."
 
-    const refillSuccMsg = "Fridge is refilled!"
+    const refillSuccMsg = "The fridge has been refilled!"
     const refillErrMsg = "Failed to refill the fridge. Check your implementation."
-    const soupEmptyListMsg = "You need at least three fresh tomato in the fridge! Try to refill!"
+    const soupEmptyListMsg = "You need at least three fresh tomatoes in the fridge! Please refill!"
 
-    const cookingNoActionsMsg = "Not enough ingredients to make"
-    const cookingDoneMsg = "Cooking is done!"
+    const cookingNoActionsMsg = "Not enough ingredients to cook"
+    const cookingDoneMsg = "Cooking is complete!"
     const cookingErrMsg = "Failed to cook. Check your implementation."
 
     const noSoupSpicingMsg = "You need to cook the soup first!"
     const beforeSpicingMsg = "Let's add some spices!"
-    const afterSpicingMsg = "Adding spices is done!"
+    const afterSpicingMsg = "Spices have been added!"
     const spicingErrMsg = "Failed to add spices. Check your implementation."
 
     const tasteGoodMsg = "It tastes great! 🎉"
-    const tasteBadMsg = "It tastes so bad... Try to cook the soup again."
-    const tasteErrMsg = "Failed to get taste status. Check your implementation."
+    const tasteBadMsg = "It tastes terrible... Pkease try cooking the soup again."
+    const tasteErrMsg = "Failed to retrieve taste status. Check your implementation."
 
-    const saladEmptyListMsg = "Try to refill the fridge!"
+    const saladEmptyListMsg = "Please refill the fridge!"
 
     const soupName = "tomato soup"
     const saladListName = "salad (list)"
