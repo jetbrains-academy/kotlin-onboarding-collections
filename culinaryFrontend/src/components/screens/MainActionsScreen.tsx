@@ -74,7 +74,7 @@ export default function MainActionsScreen({gameStateSetter}: MainActionsScreenPr
     const spicingErrMsg = "Failed to add spices. Check your implementation."
 
     const tasteGoodMsg = "It tastes great! 🎉"
-    const tasteBadMsg = "It tastes terrible... Pkease try cooking the soup again."
+    const tasteBadMsg = "It tastes terrible... Please try cooking the soup again."
     const tasteErrMsg = "Failed to retrieve taste status. Check your implementation."
 
     const saladEmptyListMsg = "Please refill the fridge!"
