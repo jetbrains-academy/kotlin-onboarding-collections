@@ -5,11 +5,11 @@ then some buttons may not work and some information may not be displayed.
 To run the application, you need to run the `main` function inside
 the [MasterChefApplication.kt](psi_element://org.jetbrains.kotlin.course.culinary.MasterChefApplicationKt#main) file:
 
-![How to run the application](TODO)
+![How to run the application](../../utils/src/main/resources/images/master/chef/ide/run.png)
 
 Please don't forget to _stop all other runs_ by pressing the red square button:
 
-![How to stop the application](TODO)
+![How to stop the application](../../utils/src/main/resources/images/master/chef/ide/stop.png)
 
 Next, you need to open any browser (we recommend using [Google Chrome](https://www.google.com/chrome/) to display the elements as in the examples)
 and open http://localhost:8080/. You will see the main page of the application.
