@@ -15,14 +15,14 @@ to cook delicious dishes and learn programming. Isn't it great?
 
 By the end of this task, you will create the following application:
 
-Tomato soup tasks:
+**Tomato soup tasks:**
 
-![Final application](TODO)
+![Final application](../../utils/src/main/resources/images/master/chef/states/spice.gif)
 
-Salad tasks:
+**Salad tasks:**
 
-![Final application](TODO)
+![Final application](../../utils/src/main/resources/images/master/chef/states/salad_list.gif)
 
-Smoothie tasks:
+**Smoothie tasks:**
 
-![Final application](TODO)
+![Final application](../../utils/src/main/resources/images/master/chef/states/smoothie.gif)

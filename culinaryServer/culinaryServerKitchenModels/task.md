@@ -37,4 +37,4 @@ and you will be implementing some of these functions yourself during this lesson
 **Check all the possible models before going to the next steps,
 it will help you when we refer to them in the tasks.**
 
-![Сooking models](TODO: picture with all possible kitchen utensils)
+![Сooking models](../../utils/src/main/resources/images/master/chef/api/utensils_models.png)

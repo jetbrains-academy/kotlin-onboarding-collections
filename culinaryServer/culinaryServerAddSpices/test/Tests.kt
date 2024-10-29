@@ -20,11 +20,17 @@ import java.lang.reflect.InvocationTargetException
 class Test {
     @Test
     fun generateSpicesMethodTest() {
-        val spices = generateSpices().take(5).toList()
-        if (spices.isEmpty()) {
-           assert(false) { "The method ${generateSpicesMethod.name} should generate random spices! Now you always generate an empty sequence!" }
+        val spicesSizes = mutableListOf<Int>()
+        repeat(100) {
+            val spices = generateSpices().take(5).toList()
+            if (spices.isEmpty()) {
+                assert(false) { "The method ${generateSpicesMethod.name} should generate random spices! Now you always generate an empty sequence!" }
+            }
+            spicesSizes.add(spices.toSet().size)
         }
-        assert(spices.toSet().size > 1) { "The method ${generateSpicesMethod.name} should generate random spices! Now you always generate ${spices.first()}" }
+
+        assert(spicesSizes.toSet().size > 1) { "The method ${generateSpicesMethod.name} should generate random spices! Now you always generate ${spicesSizes.first()}" }
+        assert(spicesSizes.toSet().all { it in 1..4 }) { "The method ${generateSpicesMethod.name} should generate 1..4 random spices! Please, check how many spices you generated!" }
     }
 
     private fun generateSpices(): Sequence<SpiceType> {
