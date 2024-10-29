@@ -59,21 +59,15 @@ files:
     visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/game/recipes/Smoothie.kt
     visible: true
-  - name: src/main/resources/static/precache-manifest.4fd452a6b0b6eaab270365ae145d9252.js
-    visible: false
   - name: src/main/resources/static/static/js/2.dbb8f406.chunk.js
     visible: false
   - name: src/main/resources/static/static/js/3.d8ac33f5.chunk.js
-    visible: false
-  - name: src/main/resources/static/static/js/main.8072c9ee.chunk.js
     visible: false
   - name: src/main/resources/static/static/js/2.dbb8f406.chunk.js.map
     visible: false
   - name: src/main/resources/static/static/js/3.d8ac33f5.chunk.js.map
     visible: false
   - name: src/main/resources/static/static/js/runtime~main.35de78a9.js
-    visible: false
-  - name: src/main/resources/static/static/js/main.8072c9ee.chunk.js.map
     visible: false
   - name: src/main/resources/static/static/js/runtime~main.35de78a9.js.map
     visible: false
@@ -210,4 +204,10 @@ files:
   - name: src/main/resources/static/service-worker.js
     visible: false
   - name: src/main/resources/static/asset-manifest.json
+    visible: false
+  - name: src/main/resources/static/static/js/main.2934fd44.chunk.js.map
+    visible: false
+  - name: src/main/resources/static/static/js/main.2934fd44.chunk.js
+    visible: false
+  - name: src/main/resources/static/precache-manifest.57de0f1ef141f1222d900c3dbd9fb46b.js
     visible: false
