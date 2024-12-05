@@ -1,22 +1,22 @@
-The last recipe is a smoothie! Let's make a fruit smoothie with berries and oranges.
-In this task we will make the `Smoothie` button live.
+The last recipe is a smoothie! Let's make a delicious fruit smoothie with berries and oranges.
+In this task, we'll make the `Smoothie` button live.
 
-In this task it does not matter which of the collection we will use since we will use all the possible fruits. 
+Currently, it doesn't matter which collection we use since we'll be using all available fruits. 
 As an example, you will use a list to implement the functions, but you can try a sequence afterward.
 
 In this task, you need to implement three functions in the `Smoothie.kt` file:
 
-- `getFruitsForSmoothie`, which returns a list of fruits for the smoothie:
+- `getFruitsForSmoothie` – returns a list of fruits for the smoothie:
 
-    - gets baskets of all possible fruits (see `FruitType` and `FridgeImpl.getBasketOf`)
-    - put each basket in the kitchen (see `KitchenImpl.put`)
-    - take from each basket `capacity` number of fruits (see `KitchenImpl.put`) (see `KitchenImpl.takeFromBasket`)
-    - and finally sort fruits by the amount of sugar (`sugarContent`)
+    - Retrieve baskets of all available fruits (see `FruitType` and `FridgeImpl.getBasketOf`).
+    - Place each basket in the kitchen (see `KitchenImpl.put`).
+    - Take the specified `capacity` of fruits from each basket (see `KitchenImpl.put`) (see `KitchenImpl.takeFromBasket`).
+    - Finally, sort the fruits by their sugar content (`sugarContent`).
 
-- `cookSmoothie` - which accepts a list of fruits for the smoothie and cook them:
+- `cookSmoothie` – accepts a list of fruits for the smoothie and cooks them:
 
-    - add each of them to the blender (see `BlenderImpl.add`)
-    - and blend them in the end (see `BlenderImpl.blend`)
+    - Add each fruit to the blender (see `BlenderImpl.add`).
+    - Blend the ingredients together (see `BlenderImpl.blend`).
 
 
 <div class="hint" title="Click me to view the expected state of the application after completing this task">
