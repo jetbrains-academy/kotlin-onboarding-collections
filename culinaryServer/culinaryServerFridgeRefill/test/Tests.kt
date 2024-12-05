@@ -5,8 +5,20 @@ import org.jetbrains.kotlin.course.culinary.implementation.storage.FridgeImpl.RA
 import org.jetbrains.kotlin.course.culinary.models.food.Vegetable
 import org.junit.jupiter.api.Test
 import java.lang.reflect.InvocationTargetException
+import java.lang.reflect.Method
 
 class Test {
+    private fun handleInvocationException(e: InvocationTargetException, method: Method) {
+        val errorMessage = e.targetException.message
+        errorMessage?.let { m ->
+            if ("An operation is not implemented" in m) {
+                assert(false) { "Can not invoke method ${method.name}. Please, add an implementation!" }
+            }
+        }
+        val messageForStudent = errorMessage?.let{ ": $it" } ?: ""
+        assert(false) { "Ooops! Something went wrong during invocation ${method.name} method$messageForStudent" }
+    }
+
     @Test
     fun generateRandomVegetablesMethodTest() {
         val vegetables = generateRandomVegetables()
@@ -24,7 +36,7 @@ class Test {
         return try {
             fridgeImplTestClass.invokeMethodWithoutArgs(clazz, instance, method, true) as List<Vegetable>
         } catch(e: InvocationTargetException) {
-            assert(false) { "Can not invoke method ${method.name}. Please, add an implementation!" }
+            handleInvocationException(e, method)
             emptyList()
         }
     }
@@ -43,7 +55,7 @@ class Test {
         try {
             method.invoke(instance)
         } catch(e: InvocationTargetException) {
-            assert(false) { "Can not invoke method ${method.name}. Please, add an implementation!" }
+            handleInvocationException(e, method)
         }
 
         val vegetablesNumAfterRefill = FridgeImpl.vegetables.size

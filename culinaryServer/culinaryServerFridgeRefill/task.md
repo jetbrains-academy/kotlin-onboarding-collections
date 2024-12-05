@@ -7,8 +7,8 @@ In this task you need to implement two methods inside `FridgeImpl`:
 
 - `generateRandomVegetables` - that should build a list of `Vegetable` by the following rules:
 
-  - generates `RANDOM_VEGETABLES_NUMBER` random vegetables with random value for `isFresh` property
-  - generates `RANDOM_FRESH_VEGETABLES_NUMBER` random not fresh vegetables (with `isFresh = True` property)
+  - generates `RANDOM_VEGETABLES_NUMBER` random _uncut_ vegetables with random value for `isFresh` property
+  - generates `RANDOM_FRESH_VEGETABLES_NUMBER` random _uncut_ not fresh vegetables (with `isFresh = True` property)
 
 - `refill` - that should clear all the vegetables from the list of `vegetables`,
   generates new ones with the `generateRandomVegetables` function and add them into the list of `vegetables`

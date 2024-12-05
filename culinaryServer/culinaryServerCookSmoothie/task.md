@@ -10,8 +10,8 @@ In this task, you need to implement three functions in the `Smoothie.kt` file:
 
     - Retrieve baskets of all available fruits (see `FruitType` and `FridgeImpl.getBasketOf`).
     - Place each basket in the kitchen (see `KitchenImpl.put`).
-    - Take the specified `capacity` of fruits from each basket (see `KitchenImpl.put`) (see `KitchenImpl.takeFromBasket`).
-    - Finally, sort the fruits by their sugar content (`sugarContent`).
+    - Take the specified `capacity` of fruits from each basket (see `KitchenImpl.takeFromBasket`).
+    - Finally, sort the fruits by their sugar content (See `sugarContent` in the enum class `FruitType`).
 
 - `cookSmoothie` – accepts a list of fruits for the smoothie and cooks them:
 
@@ -24,3 +24,19 @@ In this task, you need to implement three functions in the `Smoothie.kt` file:
 ![Current state](../../utils/src/main/resources/images/master/chef/states/smoothie.gif)
 
 </div>
+
+If you have any difficulties, **hints will help you solve this task**.
+
+----
+
+### Hints
+
+<div class="hint" title="Click me to learn how to use API functions">
+
+The game has the `GameEnviroment.kt` file which contains _instances_ of all possible objects, e.g.
+it has `kitchen` variable for `KitchenImpl` and to use `KitchenImpl` API you need to call it with `kitchen`:
+```kotlin
+kitchen.put(...)
+```
+</div>
+
