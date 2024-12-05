@@ -14,8 +14,20 @@ import org.jetbrains.kotlin.course.culinary.models.action.ActionType
 import org.jetbrains.kotlin.course.culinary.models.food.*
 import org.junit.jupiter.api.Test
 import java.lang.reflect.InvocationTargetException
+import java.lang.reflect.Method
 
 class Test {
+    private fun handleInvocationException(e: InvocationTargetException, method: Method) {
+        val errorMessage = e.targetException.message
+        errorMessage?.let { m ->
+            if ("An operation is not implemented" in m) {
+                assert(false) { "Can not invoke method ${method.name}. Please, add an implementation!" }
+            }
+        }
+        val messageForStudent = errorMessage?.let{ ": $it" } ?: ""
+        assert(false) { "Ooops! Something went wrong during invocation ${method.name} method$messageForStudent" }
+    }
+
     @Test
     fun getFruitsForSmoothieMethodTest() {
         clearActions()
@@ -36,7 +48,7 @@ class Test {
         return try {
             method.invokeWithoutArgs(clazz = clazz) as List<Fruit>
         } catch(e: InvocationTargetException) {
-            assert(false) { "Can not invoke method ${method.name}. Please, add an implementation!" }
+            handleInvocationException(e, method)
             emptyList()
         }
     }
@@ -51,7 +63,7 @@ class Test {
         try {
             method(clazz, fruits)
         } catch(e: InvocationTargetException) {
-            assert(false) { "Can not invoke method ${method.name}. Please, add an implementation!" }
+            handleInvocationException(e, method)
         }
 
         val expectedActions = fruits.map{ buildAction(ActionType.ADD_TO_BLENDER, it) }
@@ -80,7 +92,7 @@ class Test {
         return try {
             method.invokeWithoutArgs(clazz = clazz) as List<Vegetable>
         } catch(e: InvocationTargetException) {
-            assert(false) { "Can not invoke method ${method.name}. Please, add an implementation!" }
+            handleInvocationException(e, method)
             emptyList()
         }
     }
@@ -92,7 +104,7 @@ class Test {
         return try {
             method(clazz, vegetables) as List<CutVegetable>
         } catch(e: InvocationTargetException) {
-            assert(false) { "Can not invoke method ${method.name}. Please, add an implementation!" }
+            handleInvocationException(e, method)
             emptyList()
         }
     }
@@ -137,10 +149,10 @@ class Test {
         try {
             method(clazz, cutVegetables)
         } catch(e: InvocationTargetException) {
-            assert(false) { "Can not invoke method ${method.name}. Please, add an implementation!" }
+            handleInvocationException(e, method)
         }
 
-        assert(expectedActions + Action(ActionType.MIX_SALAD) == actions) { "The ${method.name} method should group cut vegetables by their type, and then for each type add to the salad bowl" }
+        assert(expectedActions + Action(ActionType.MIX_SALAD) == actions) { "The ${method.name} method should group cut vegetables by their type, and then for each type add to the salad bowl. Finally it should mix the vegetables." }
     }
 
     @Test
@@ -159,7 +171,7 @@ class Test {
         return try {
             method.invokeWithoutArgs(clazz = clazz) as Sequence<SpiceType>
         } catch(e: InvocationTargetException) {
-            assert(false) { "Can not invoke method ${method.name}. Please, add an implementation!" }
+            handleInvocationException(e, method)
             emptySequence()
         }
     }
@@ -171,12 +183,14 @@ class Test {
         val method = clazz.declaredMethods.findMethod(addSpicesMethod)
 
         try {
-            method.invoke(clazz, generateSpices())
+            val spices = generateSpices()
+            clearActions()
+            method.invoke(clazz, spices)
         } catch(e: InvocationTargetException) {
-            assert(false) { "Can not invoke method ${method.name}. Please, add an implementation!" }
+            handleInvocationException(e, method)
         }
 
-        assert(actions.isNotEmpty() && actions.all{ it.type == ActionType.PUT_IN_POT }) { "The ${method.name} should generate spices and add them into the pot." }
+        assert(actions.isNotEmpty() && actions.all{ it.type == ActionType.PUT_IN_POT }) { "The ${method.name} should accepts a sequence of spices and add them into the pot. Don't forget about the terminal function in the end!" }
     }
 
     @Test
@@ -188,7 +202,7 @@ class Test {
         val vegetables: List<Vegetable> = try {
             method.invokeWithoutArgs(clazz = clazz) as List<Vegetable>
         } catch(e: InvocationTargetException) {
-            assert(false) { "Can not invoke method ${method.name}. Please, add an implementation!" }
+            handleInvocationException(e, method)
             emptyList()
         }
 
@@ -205,7 +219,7 @@ class Test {
         try {
             method.invoke(clazz, generateTomatoesForSoup())
         } catch(e: InvocationTargetException) {
-            assert(false) { "Can not invoke method ${method.name}. Please, add an implementation!" }
+            handleInvocationException(e, method)
         }
 
         val expectedActions = buildList {
@@ -242,7 +256,7 @@ class Test {
         return try {
             fridgeImplTestClass.invokeMethodWithoutArgs(clazz, instance, method, true) as List<Vegetable>
         } catch(e: InvocationTargetException) {
-            assert(false) { "Can not invoke method ${method.name}. Please, add an implementation!" }
+            handleInvocationException(e, method)
             emptyList()
         }
     }
@@ -261,7 +275,7 @@ class Test {
         try {
             method.invoke(instance)
         } catch(e: InvocationTargetException) {
-            assert(false) { "Can not invoke method ${method.name}. Please, add an implementation!" }
+            handleInvocationException(e, method)
         }
 
         val vegetablesNumAfterRefill = FridgeImpl.vegetables.size

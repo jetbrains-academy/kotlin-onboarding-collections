@@ -1,6 +1,8 @@
 type: edu
 custom_name: Master Chef - Cook Smoothie
 files:
+  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/game/recipes/Smoothie.kt
+    visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/MasterChefApplication.kt
     visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/game/GameResource.kt
@@ -56,8 +58,6 @@ files:
   - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/models/Task.kt
     visible: false
   - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/game/recipes/Salad.kt
-    visible: true
-  - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/game/recipes/Smoothie.kt
     visible: true
   - name: test/SaladFunctions.kt
     visible: false

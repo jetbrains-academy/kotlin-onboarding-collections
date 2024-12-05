@@ -8,7 +8,7 @@ to cook delicious dishes and learn programming. Isn't it great?
 
 ### Lesson topics
 
-- Working with pre-rewritten API
+- Working with API
 - List vs Sequence
 
 ### Project example

@@ -15,8 +15,20 @@ import org.jetbrains.kotlin.course.culinary.models.food.Vegetable
 import org.jetbrains.kotlin.course.culinary.models.food.VegetableType
 import org.junit.jupiter.api.Test
 import java.lang.reflect.InvocationTargetException
+import java.lang.reflect.Method
 
 class Test {
+    private fun handleInvocationException(e: InvocationTargetException, method: Method) {
+        val errorMessage = e.targetException.message
+        errorMessage?.let { m ->
+            if ("An operation is not implemented" in m) {
+                assert(false) { "Can not invoke method ${method.name}. Please, add an implementation!" }
+            }
+        }
+        val messageForStudent = errorMessage?.let{ ": $it" } ?: ""
+        assert(false) { "Ooops! Something went wrong during invocation ${method.name} method$messageForStudent" }
+    }
+
     @Test
     fun getTomatoesForSoupMethodTest() {
         val clazz = tomatoSoupKtTestClass.checkBaseDefinition()
@@ -26,7 +38,7 @@ class Test {
         val vegetables: List<Vegetable> = try {
             method.invokeWithoutArgs(clazz = clazz) as List<Vegetable>
         } catch(e: InvocationTargetException) {
-            assert(false) { "Can not invoke method ${method.name}. Please, add an implementation!" }
+            handleInvocationException(e, method)
             emptyList()
         }
 
@@ -43,7 +55,7 @@ class Test {
         try {
             method.invoke(clazz, generateTomatoesForSoup())
         } catch(e: InvocationTargetException) {
-            assert(false) { "Can not invoke method ${method.name}. Please, add an implementation!" }
+            handleInvocationException(e, method)
         }
 
         val expectedActions = buildList {
@@ -80,7 +92,7 @@ class Test {
         return try {
             fridgeImplTestClass.invokeMethodWithoutArgs(clazz, instance, method, true) as List<Vegetable>
         } catch(e: InvocationTargetException) {
-            assert(false) { "Can not invoke method ${method.name}. Please, add an implementation!" }
+            handleInvocationException(e, method)
             emptyList()
         }
     }
@@ -99,7 +111,7 @@ class Test {
         try {
             method.invoke(instance)
         } catch(e: InvocationTargetException) {
-            assert(false) { "Can not invoke method ${method.name}. Please, add an implementation!" }
+            handleInvocationException(e, method)
         }
 
         val vegetablesNumAfterRefill = FridgeImpl.vegetables.size
