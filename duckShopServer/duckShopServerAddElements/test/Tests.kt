@@ -62,7 +62,9 @@ class Test {
         val addedDucks = mutableListOf<Pair<Duck, String>>()
         val possibleDucks = Duck.entries.toList()
         repeat(100) {
-            val currentDucks = possibleDucks.shuffled().take(MAX_NUMBER_OF_DUCKS).associateWith { it.getDescription() }
+            val currentDucks = possibleDucks.shuffled().take(MAX_NUMBER_OF_DUCKS).associateWith { it.getDescription() }.toMutableMap()
+            val beforeKeys = currentDucks.keys.toSet()
+            val beforeSize = currentDucks.size
             try {
                 val output =
                     gameChangeFunctionsServiceTestClass.invokeMethodWithArgs(currentDucks, invokeData = invokeData)
@@ -70,7 +72,16 @@ class Test {
                     assertTrue(false) { "$errorPrefix for the map $currentDucks it returns $output" }
                     Pair(Duck.Alex, Duck.Alex.getDescription())
                 }
-                assertTrue(duckWithDescription.first !in currentDucks.keys) { "$errorPrefix for the map $currentDucks it generated $duckWithDescription that is already in the map" }
+                val (duck, desc) = duckWithDescription
+                assertTrue(duck !in beforeKeys) {
+                    "$errorPrefix for the map $currentDucks it generated $duckWithDescription that was already in the map before call"
+                }
+                assertTrue(currentDucks.size == beforeSize + 1) {
+                    "$errorPrefix map size did not increase by 1"
+                }
+                assertTrue(currentDucks[duck] == desc) {
+                    "$errorPrefix stored value for $duck is ${currentDucks[duck]}, expected $desc"
+                }
                 addedDucks.add(duckWithDescription)
             } catch (e: InvocationTargetException) {
                 assertTrue(false) { "$errorPrefix it throws an exception" }
