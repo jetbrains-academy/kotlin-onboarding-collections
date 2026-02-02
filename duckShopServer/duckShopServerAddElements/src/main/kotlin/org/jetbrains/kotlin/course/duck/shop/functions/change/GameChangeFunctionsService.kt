@@ -19,7 +19,7 @@ class GameChangeFunctionsService  {
     fun MutableMap<Duck, String>.addRandomDuck(): Pair<Duck, String> {
         val duck = keys.getNewRandomDuck()
         return Pair(duck, duck.getDescription()).also { (duck, d) ->
-            toMutableMap()[duck] = d
+            this[duck] = d
         }
     }
 
