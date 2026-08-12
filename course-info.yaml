@@ -3,7 +3,7 @@ title: "Kotlin Onboarding: Collections"
 language: English
 summary: |-
   <p>This course is designed for novices in Kotlin and focuses on working with collections in the Kotlin language. This is the third module of the course, the <a href="https://plugins.jetbrains.com/plugin/21067-kotlin-onboarding--introduction">first</a> and <a href="https://plugins.jetbrains.com/plugin/21913-kotlin-onboarding-object-oriented-programming">second</a> modules can be found on JetBrains Marketplace. This module assumes that you are already familiar with all the constructs discussed in the first and second parts.</p>
-  <p>Each lesson of the course is built in the form of a project: step by step, by completing different small tasks, you will get a fully working project in the end. Some of the projects are practice-based and introduce to you different helpful Kotlin functions though practical exercises without much theory part.</p>
+  <p>Each lesson of the course is built in the form of a project: step by step, by completing different small tasks, you will get a fully working project in the end. Some of the projects are practice-based and introduce to you different helpful Kotlin functions through practical exercises without much theory part.</p>
   <p><i>Note that this course does not provide a detailed explanation of such aspects as asymptotic complexity, mostly, it just describes the definitions of different types of collections and shows how to use them in Kotlin.</i></p>
   <p>All topics will be accompanied by links to <a href="https://kotlinlang.org/docs/home.html">the official Kotlin documentation</a>, which you can read later.</p>
   <p><i>After this course, you will be ready to use Kotlin collections in efficient ways.</i></p>
@@ -21,3 +21,175 @@ content:
   - FeedbackSurvey
 environment_settings:
   jvm_language_level: JDK_17
+additional_files:
+  - name: .idea/inspectionProfiles/profiles_settings.xml
+  - name: .idea/inspectionProfiles/Custom_Inspections.xml
+  - name: utils/src/main/resources/images/old/school/ide/run.png
+    is_binary: true
+  - name: utils/src/main/resources/images/old/school/ide/stop.png
+    is_binary: true
+  - name: utils/src/main/resources/images/old/school/ide/run_dark.png
+    is_binary: true
+  - name: utils/src/main/resources/images/old/school/ide/stop_dark.png
+    is_binary: true
+  - name: utils/src/main/resources/images/old/school/states/ready.gif
+    is_binary: true
+  - name: utils/src/main/resources/images/old/school/states/state_1.gif
+    is_binary: true
+  - name: utils/src/main/resources/images/old/school/states/state_2.gif
+    is_binary: true
+  - name: utils/src/main/resources/images/old/school/states/state_3.gif
+    is_binary: true
+  - name: utils/src/main/resources/images/old/school/states/state_4.gif
+    is_binary: true
+  - name: utils/src/main/resources/images/old/school/states/main_page.png
+    is_binary: true
+  - name: utils/src/main/resources/images/old/school/finish.svg
+  - name: utils/src/main/resources/images/duck/shop/ide/run.png
+    is_binary: true
+  - name: utils/src/main/resources/images/duck/shop/ide/stop.png
+    is_binary: true
+  - name: utils/src/main/resources/images/duck/shop/ide/run_dark.png
+    is_binary: true
+  - name: utils/src/main/resources/images/duck/shop/ide/stop_dark.png
+    is_binary: true
+  - name: utils/src/main/resources/images/duck/shop/states/ready.gif
+    is_binary: true
+  - name: utils/src/main/resources/images/duck/shop/states/state_1.gif
+    is_binary: true
+  - name: utils/src/main/resources/images/duck/shop/states/state_2.gif
+    is_binary: true
+  - name: utils/src/main/resources/images/duck/shop/states/state_3.gif
+    is_binary: true
+  - name: utils/src/main/resources/images/duck/shop/states/state_4.gif
+    is_binary: true
+  - name: utils/src/main/resources/images/duck/shop/states/state_5.gif
+    is_binary: true
+  - name: utils/src/main/resources/images/duck/shop/states/state_6.gif
+    is_binary: true
+  - name: utils/src/main/resources/images/duck/shop/states/state_7.gif
+    is_binary: true
+  - name: utils/src/main/resources/images/duck/shop/states/state_8.gif
+    is_binary: true
+  - name: utils/src/main/resources/images/duck/shop/states/state_9.gif
+    is_binary: true
+  - name: utils/src/main/resources/images/duck/shop/states/main_page.png
+    is_binary: true
+  - name: utils/src/main/resources/images/duck/shop/theory/map_definition.png
+    is_binary: true
+  - name: utils/src/main/resources/images/duck/shop/theory/set_definition.png
+    is_binary: true
+  - name: utils/src/main/resources/images/duck/shop/theory/set_wrong_type.png
+    is_binary: true
+  - name: utils/src/main/resources/images/duck/shop/theory/list_definition.png
+    is_binary: true
+  - name: utils/src/main/resources/images/duck/shop/theory/set_equal_example.png
+    is_binary: true
+  - name: utils/src/main/resources/images/duck/shop/theory/list_incorrect_type.png
+    is_binary: true
+  - name: utils/src/main/resources/images/duck/shop/theory/map_definition_dark.png
+    is_binary: true
+  - name: utils/src/main/resources/images/duck/shop/theory/set_definition_dark.png
+    is_binary: true
+  - name: utils/src/main/resources/images/duck/shop/theory/set_wrong_type_dark.png
+    is_binary: true
+  - name: utils/src/main/resources/images/duck/shop/theory/list_definition_dark.png
+    is_binary: true
+  - name: utils/src/main/resources/images/duck/shop/theory/set_equal_example_dark.png
+    is_binary: true
+  - name: utils/src/main/resources/images/duck/shop/theory/list_incorrect_type_dark.png
+    is_binary: true
+  - name: utils/src/main/resources/images/duck/shop/finish.svg
+  - name: utils/src/main/resources/images/master/chef/api/food_models.png
+    is_binary: true
+  - name: utils/src/main/resources/images/master/chef/api/storage_models.png
+    is_binary: true
+  - name: utils/src/main/resources/images/master/chef/api/utensils_models.png
+    is_binary: true
+  - name: utils/src/main/resources/images/master/chef/api/food_models_dark.png
+    is_binary: true
+  - name: utils/src/main/resources/images/master/chef/api/storage_models_dark.png
+    is_binary: true
+  - name: utils/src/main/resources/images/master/chef/api/utensils_models_dark.png
+    is_binary: true
+  - name: utils/src/main/resources/images/master/chef/ide/run.png
+    is_binary: true
+  - name: utils/src/main/resources/images/master/chef/ide/stop.png
+    is_binary: true
+  - name: utils/src/main/resources/images/master/chef/ide/run_dark.png
+    is_binary: true
+  - name: utils/src/main/resources/images/master/chef/ide/stop_dark.png
+    is_binary: true
+  - name: utils/src/main/resources/images/master/chef/states/soup.gif
+    is_binary: true
+  - name: utils/src/main/resources/images/master/chef/states/refil.gif
+    is_binary: true
+  - name: utils/src/main/resources/images/master/chef/states/spice.gif
+    is_binary: true
+  - name: utils/src/main/resources/images/master/chef/states/smoothie.gif
+    is_binary: true
+  - name: utils/src/main/resources/images/master/chef/states/salad_seq.gif
+    is_binary: true
+  - name: utils/src/main/resources/images/master/chef/states/salad_list.gif
+    is_binary: true
+  - name: utils/src/main/resources/images/master/chef/states/list_vs_seq.gif
+    is_binary: true
+  - name: utils/src/main/resources/images/master/chef/states/main_window.png
+    is_binary: true
+  - name: utils/src/main/resources/images/master/chef/finish.svg
+  - name: utils/src/main/resources/images/master/chef/explanations/soup_cooking_list.png
+    is_binary: true
+  - name: utils/src/main/resources/images/master/chef/explanations/soup_cooking_spices.png
+    is_binary: true
+  - name: utils/src/main/resources/images/master/chef/explanations/soup_cooking_no_space.png
+    is_binary: true
+  - name: utils/src/main/resources/images/master/chef/explanations/soup_cooking_sequence.png
+    is_binary: true
+  - name: utils/src/main/resources/images/master/chef/explanations/soup_cooking_list_dark.png
+    is_binary: true
+  - name: utils/src/main/resources/images/master/chef/explanations/soup_cooking_spices_dark.png
+    is_binary: true
+  - name: utils/src/main/resources/images/master/chef/explanations/soup_cooking_no_space_dark.png
+    is_binary: true
+  - name: utils/src/main/resources/images/master/chef/explanations/soup_cooking_sequence_dark.png
+    is_binary: true
+  - name: utils/src/main/resources/images/master/chef/explanations/soup_cooking_spices_no_space.png
+    is_binary: true
+  - name: utils/src/main/resources/images/master/chef/explanations/soup_cooking_spices_no_space_dark.png
+    is_binary: true
+  - name: utils/src/main/resources/images/master/chef/finish_dark.svg
+  - name: utils/src/main/resources/images/tamagotchi/ide/run.png
+    is_binary: true
+  - name: utils/src/main/resources/images/tamagotchi/ide/stop.png
+    is_binary: true
+  - name: utils/src/main/resources/images/tamagotchi/ide/run_dark.png
+    is_binary: true
+  - name: utils/src/main/resources/images/tamagotchi/ide/stop_dark.png
+    is_binary: true
+  - name: utils/src/main/resources/images/tamagotchi/states/ready.gif
+    is_binary: true
+  - name: utils/src/main/resources/images/tamagotchi/states/main_page.png
+    is_binary: true
+  - name: utils/src/main/resources/images/tamagotchi/queue.png
+    is_binary: true
+  - name: utils/src/main/resources/images/tamagotchi/stack.png
+    is_binary: true
+  - name: utils/src/main/resources/images/tamagotchi/finish.svg
+  - name: utils/src/main/resources/images/tamagotchi/queue_dark.png
+    is_binary: true
+  - name: utils/src/main/resources/images/tamagotchi/stack_dark.png
+    is_binary: true
+  - name: utils/build.gradle.kts
+  - name: LICENSE
+  - name: contributing.md
+  - name: build.gradle.kts
+  - name: gradle.properties
+  - name: settings.gradle.kts
+  - name: gradle/wrapper/gradle-wrapper.properties
+  - name: checklist.md
+  - name: checklist-audit-plan.md
+  - name: culinaryFrontend/yarn.lock
+  - name: backToTheFutureFrontend/yarn.lock
+  - name: duckShopFrontend/yarn.lock
+  - name: oldSchoolFrontend/yarn.lock
+yaml_version: 6

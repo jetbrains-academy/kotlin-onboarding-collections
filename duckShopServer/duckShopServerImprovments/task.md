@@ -23,5 +23,5 @@ a duck picture based on the duck's properties, such as its color or accessories.
 - You could also animate the duck shop by adding animations for all actions.
 
 <p align="center">
-    <img src="../../utils/src/main/resources/images/duck/shop/finish.svg" alt="Possible improvments" width="400"/>
+    <img src="../../utils/src/main/resources/images/duck/shop/finish.svg" alt="Possible improvements" width="400"/>
 </p>
