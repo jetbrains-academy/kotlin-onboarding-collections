@@ -122,7 +122,7 @@ configure(subprojects.filter { server in it.name }) {
         implementation(project(":utils"))
 
         implementation("org.springframework.boot:spring-boot-starter-web")
-        implementation("org.jetbrains.kotlin:kotlin-reflect:2.3.20")
+        implementation("org.jetbrains.kotlin:kotlin-reflect")
         implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     }
 
