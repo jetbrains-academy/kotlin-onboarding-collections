@@ -22,8 +22,6 @@ content:
 environment_settings:
   jvm_language_level: JDK_17
 additional_files:
-  - name: .idea/inspectionProfiles/profiles_settings.xml
-  - name: .idea/inspectionProfiles/Custom_Inspections.xml
   - name: utils/src/main/resources/images/old/school/ide/run.png
     is_binary: true
   - name: utils/src/main/resources/images/old/school/ide/stop.png
@@ -186,10 +184,4 @@ additional_files:
   - name: gradle.properties
   - name: settings.gradle.kts
   - name: gradle/wrapper/gradle-wrapper.properties
-  - name: checklist.md
-  - name: checklist-audit-plan.md
-  - name: culinaryFrontend/yarn.lock
-  - name: backToTheFutureFrontend/yarn.lock
-  - name: duckShopFrontend/yarn.lock
-  - name: oldSchoolFrontend/yarn.lock
 yaml_version: 6

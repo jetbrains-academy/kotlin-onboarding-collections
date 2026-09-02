@@ -10,7 +10,7 @@ fun properties(key: String) = project.findProperty(key).toString()
 @Suppress("DSL_SCOPE_VIOLATION") // "libs" produces a false-positive warning, see https://youtrack.jetbrains.com/issue/KTIJ-19369
 plugins {
     java
-    val kotlinVersion = "2.3.20"
+    val kotlinVersion = "2.4.10"
     id("org.jetbrains.kotlin.jvm") version kotlinVersion apply false
     id("org.jetbrains.kotlin.multiplatform") version kotlinVersion apply false
     id("org.springframework.boot") version "3.5.16" apply false
@@ -49,8 +49,8 @@ configure(subprojects.filter { frontendSuffix !in it.name }) {
     }
 
     java {
-        sourceCompatibility = JavaVersion.VERSION_21
-        targetCompatibility = JavaVersion.VERSION_21
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     tasks {
@@ -58,7 +58,7 @@ configure(subprojects.filter { frontendSuffix !in it.name }) {
             compilerOptions {
                 // Keep in sync with source/target versions in `java` block above
                 freeCompilerArgs.add("-Xjsr305=strict")
-                jvmTarget = JvmTarget.JVM_21
+                jvmTarget = JvmTarget.JVM_17
             }
         }
 
