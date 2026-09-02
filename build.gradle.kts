@@ -17,7 +17,7 @@ plugins {
     id("io.spring.dependency-management") version "1.1.7" apply false
     id("org.jetbrains.kotlin.plugin.spring") version kotlinVersion apply false
 
-    id("org.siouan.frontend-jdk21") version "10.0.0" apply false
+    id("org.siouan.frontend-jdk17") version "10.0.0" apply false
 }
 
 allprojects {
@@ -146,7 +146,7 @@ configure(subprojects.filter { frontendSuffix in it.name }) {
     val gameName = projectName.getGameName(frontendSuffix)
 
     apply {
-        plugin("org.siouan.frontend-jdk21")
+        plugin("org.siouan.frontend-jdk17")
     }
 
     configure<FrontendExtension> {
