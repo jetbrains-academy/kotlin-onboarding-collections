@@ -1,4 +1,6 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.siouan.frontendgradleplugin.infrastructure.gradle.FrontendExtension
 
 group = "jetbrains.kotlin.course"
 version = "0.0.1-SNAPSHOT"
@@ -8,14 +10,14 @@ fun properties(key: String) = project.findProperty(key).toString()
 @Suppress("DSL_SCOPE_VIOLATION") // "libs" produces a false-positive warning, see https://youtrack.jetbrains.com/issue/KTIJ-19369
 plugins {
     java
-    val kotlinVersion = "2.0.0"
+    val kotlinVersion = "2.4.10"
     id("org.jetbrains.kotlin.jvm") version kotlinVersion apply false
     id("org.jetbrains.kotlin.multiplatform") version kotlinVersion apply false
-    id("org.springframework.boot") version "2.7.3" apply false
-    id("io.spring.dependency-management") version "1.0.13.RELEASE" apply false
+    id("org.springframework.boot") version "3.5.16" apply false
+    id("io.spring.dependency-management") version "1.1.7" apply false
     id("org.jetbrains.kotlin.plugin.spring") version kotlinVersion apply false
 
-    id("org.siouan.frontend-jdk11") version "6.0.0"
+    id("org.siouan.frontend-jdk17") version "10.0.0" apply false
 }
 
 allprojects {
@@ -46,19 +48,18 @@ configure(subprojects.filter { frontendSuffix !in it.name }) {
         implementation("org.jetbrains.academy.test.system:core:2.0.7")
     }
 
-    val jvmVersion = "11"
+    java {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
 
     tasks {
         withType<KotlinCompile> {
-            kotlinOptions {
-                freeCompilerArgs = listOf("-Xjsr305=strict")
-                jvmTarget = jvmVersion
+            compilerOptions {
+                // Keep in sync with source/target versions in `java` block above
+                freeCompilerArgs.add("-Xjsr305=strict")
+                jvmTarget = JvmTarget.JVM_17
             }
-        }
-
-        withType<JavaCompile> {
-            sourceCompatibility = jvmVersion
-            targetCompatibility = jvmVersion
         }
 
         withType<Test> {
@@ -97,11 +98,11 @@ configure(subprojects.filter { server in it.name || "utils" in it.name }) {
     }
 
     dependencies {
-        val junitJupiterVersion = "5.9.0"
+        val junitJupiterVersion = "5.12.2"
         implementation("org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion")
         testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
         testImplementation("org.junit.jupiter:junit-jupiter-params:$junitJupiterVersion")
-        testRuntimeOnly("org.junit.platform:junit-platform-console:1.9.0")
+        testRuntimeOnly("org.junit.platform:junit-platform-console:1.12.2")
     }
 }
 
@@ -121,8 +122,8 @@ configure(subprojects.filter { server in it.name }) {
         implementation(project(":utils"))
 
         implementation("org.springframework.boot:spring-boot-starter-web")
-        implementation("org.jetbrains.kotlin:kotlin-reflect:1.7.10")
-        implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.14.1")
+        implementation("org.jetbrains.kotlin:kotlin-reflect")
+        implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     }
 
 //    tasks.named("processResources") {
@@ -145,17 +146,17 @@ configure(subprojects.filter { frontendSuffix in it.name }) {
     val gameName = projectName.getGameName(frontendSuffix)
 
     apply {
-        plugin("org.siouan.frontend-jdk11")
+        plugin("org.siouan.frontend-jdk17")
     }
 
-    frontend {
+    configure<FrontendExtension> {
         nodeDistributionProvided.set(false)
         nodeVersion.set("16.17.1")
 
-        yarnEnabled.set(true)
-        yarnVersion.set("3.0.0")
-
-        installScript.set("install")
+        // Yarn Berry enables immutable installs whenever CI=true, which forbids creating a lockfile.
+        // `yarn.lock` is not committed here (see the frontend .gitignore files), so the install must
+        // be allowed to write it. Drop this flag if lockfiles are ever committed.
+        installScript.set("install --no-immutable")
     }
 
     val yarnRunBuildTask = tasks.register<Exec>("yarnRunBuildTask") {

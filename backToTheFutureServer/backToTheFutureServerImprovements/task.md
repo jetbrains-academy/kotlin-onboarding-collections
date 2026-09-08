@@ -23,5 +23,5 @@ to upload new pictures and icons, handle new actions, etc.
 - You could make the application more dynamic by adding animations for all actions.
 
 <p align="center">
-    <img src="../../utils/src/main/resources/images/tamagotchi/finish.svg" alt="Possible improvments" width="200"/>
+    <img src="../../utils/src/main/resources/images/tamagotchi/finish.svg" alt="Possible improvements" width="200"/>
 </p>

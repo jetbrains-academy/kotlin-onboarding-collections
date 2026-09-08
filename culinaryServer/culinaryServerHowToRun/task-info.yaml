@@ -60,8 +60,8 @@ files:
   - name: src/main/kotlin/org/jetbrains/kotlin/course/culinary/game/recipes/Smoothie.kt
     visible: true
   - name: src/main/resources/static/precache-manifest.57de0f1ef141f1222d900c3dbd9fb46b.js
-    visible: true
+    visible: false
   - name: src/main/resources/static/static/js/main.2934fd44.chunk.js.map
-    visible: true
+    visible: false
   - name: src/main/resources/static/static/js/main.2934fd44.chunk.js
-    visible: true
+    visible: false

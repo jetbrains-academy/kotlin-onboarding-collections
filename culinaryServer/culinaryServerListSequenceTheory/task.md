@@ -17,11 +17,11 @@ since we will be working with all the tomatoes per action, e.g., get all tomatoe
 ![Current state](../../utils/src/main/resources/images/master/chef/explanations/soup_cooking_list.png)
 
 If we work with a _sequence_ of tomatoes, then we will handle each tomato separately until we get the necessary number of tomatoes, e.g.
-we will get one tomatoe, put it into the kitchen, cut it, put into the pot. Then we will repeat this action with the next tomato, and etc:
+we will get one tomato, put it into the kitchen, cut it, put into the pot. Then we will repeat this action with the next tomato, and etc:
 
 ![Current state](../../utils/src/main/resources/images/master/chef/explanations/soup_cooking_sequence.png)
 
-The first approach works good in the case, when you have enough space in the kitchen, but if you don't,
+The first approach works well in the case, when you have enough space in the kitchen, but if you don't,
 probably the second one will be better - since it can handle a long _sequence_ of tomatoes with a limited space in the kitchen.
 
 ![Current state](../../utils/src/main/resources/images/master/chef/explanations/soup_cooking_no_space.png)
