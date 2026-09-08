@@ -184,4 +184,8 @@ additional_files:
   - name: gradle.properties
   - name: settings.gradle.kts
   - name: gradle/wrapper/gradle-wrapper.properties
+  - name: backToTheFutureFrontend/yarn.lock
+  - name: culinaryFrontend/yarn.lock
+  - name: duckShopFrontend/yarn.lock
+  - name: oldSchoolFrontend/yarn.lock
 yaml_version: 6
