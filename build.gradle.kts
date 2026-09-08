@@ -153,7 +153,10 @@ configure(subprojects.filter { frontendSuffix in it.name }) {
         nodeDistributionProvided.set(false)
         nodeVersion.set("16.17.1")
 
-        installScript.set("install")
+        // Yarn Berry enables immutable installs whenever CI=true, which forbids creating a lockfile.
+        // `yarn.lock` is not committed here (see the frontend .gitignore files), so the install must
+        // be allowed to write it. Drop this flag if lockfiles are ever committed.
+        installScript.set("install --no-immutable")
     }
 
     val yarnRunBuildTask = tasks.register<Exec>("yarnRunBuildTask") {
