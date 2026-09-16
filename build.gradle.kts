@@ -1,18 +1,17 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.siouan.frontendgradleplugin.infrastructure.gradle.FrontendExtension
+import org.siouan.frontendgradleplugin.infrastructure.gradle.RunYarnTaskType
 
 group = "jetbrains.kotlin.course"
 version = "0.0.1-SNAPSHOT"
 
 fun properties(key: String) = project.findProperty(key).toString()
 
-@Suppress("DSL_SCOPE_VIOLATION") // "libs" produces a false-positive warning, see https://youtrack.jetbrains.com/issue/KTIJ-19369
 plugins {
     java
     val kotlinVersion = "2.4.10"
     id("org.jetbrains.kotlin.jvm") version kotlinVersion apply false
-    id("org.jetbrains.kotlin.multiplatform") version kotlinVersion apply false
     id("org.springframework.boot") version "3.5.16" apply false
     id("io.spring.dependency-management") version "1.1.7" apply false
     id("org.jetbrains.kotlin.plugin.spring") version kotlinVersion apply false
@@ -159,8 +158,12 @@ configure(subprojects.filter { frontendSuffix in it.name }) {
         installScript.set("install --no-immutable")
     }
 
-    val yarnRunBuildTask = tasks.register<Exec>("yarnRunBuildTask") {
-        commandLine("yarn", "run", "build")
+    // Runs the Yarn that `installFrontend` provisioned. A plain `Exec` on `yarn` would resolve
+    // whatever is on PATH -- nothing installs a global Yarn since the plugin's 7.0.0 release, and
+    // on CI images that ships Yarn Classic, which ignores the `packageManager` field entirely.
+    val yarnRunBuildTask = tasks.register<RunYarnTaskType>("yarnRunBuildTask") {
+        dependsOn("installFrontend")
+        args.set("run build")
     }
 
     val serveResourcesTask = tasks.register("serveResources") {

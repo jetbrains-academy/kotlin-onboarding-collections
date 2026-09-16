@@ -2,13 +2,13 @@ type: theory
 custom_name: Back to The Future - Possible Improvements
 files:
   - name: src/main/kotlin/org/jetbrains/kotlin/course/tamagotchi/game/GameService.kt
-    visible: false
+    visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/tamagotchi/TamagotchiApplication.kt
-    visible: false
+    visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/tamagotchi/models/Command.kt
-    visible: false
+    visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/tamagotchi/models/Mode.kt
-    visible: false
+    visible: true
   - name: src/main/kotlin/org/jetbrains/kotlin/course/tamagotchi/game/GameResource.kt
     visible: false
   - name: src/main/resources/static/static/media/bg.36ac84bcfc4b1fa64b64.svg
