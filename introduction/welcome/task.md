@@ -18,7 +18,7 @@ some images familiar from your (or your parents') childhood.
 Note, part of the code will be prewritten by the course author
 to avoid going deep into web programming in this course.
 
-**Please join the course chat on Discord** using [this link](https://discord.gg/pN3kfttB).
+**Please join the course chat on Discord** using [this link](https://discord.gg/tuF6FjGY9U).
 There, you can ask questions, interact with instructors, and connect with your fellow students.
 
 Let's get started!
