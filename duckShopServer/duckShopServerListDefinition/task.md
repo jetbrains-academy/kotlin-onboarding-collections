@@ -50,7 +50,7 @@ val emptyList2 = listOf<Int>() // Calls emptyList()
 In Kotlin, the `emptyList` implementation is an object under the hood.
 The main reason such a function exists is to save allocations (creating and deleting new variables).
 Since `emptyList` returns the same _singleton_ instance every time it is called, one can 
-use it in an allocation-free manner. It allows to work your Kotlin program to work in a more efficient way.
+use it in an allocation-free manner. It allows your Kotlin program to work in a more efficient way.
 </div>
 
 ```kotlin

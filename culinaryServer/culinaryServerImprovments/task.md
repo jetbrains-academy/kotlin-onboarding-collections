@@ -33,5 +33,5 @@ using more diverse ingredients, and combining actions. These changes will automa
 to add more buttons and handlers to process them.
 
 <p align="center">
-    <img src="../../utils/src/main/resources/images/master/chef/finish.svg" alt="Possible improvments" width="400"/>
+    <img src="../../utils/src/main/resources/images/master/chef/finish.svg" alt="Possible improvements" width="400"/>
 </p>

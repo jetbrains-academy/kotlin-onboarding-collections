@@ -11,7 +11,7 @@ This module assumes that you are already familiar with all the constructs discus
 
 Each lesson of the course is built in the form of a project: step by step, by completing different small tasks,
 you will get a fully working project in the end. Some of the projects are practice-based and introduce to you
-different helpful Kotlin functions though practical exercises without much theory part.
+different helpful Kotlin functions through practical exercises without much theory part.
 
 Note that this course does not provide a detailed explanation of such aspects as asymptotic complexity, 
 mostly, it just describes the definitions of different types of collections and shows how to use them in Kotlin.

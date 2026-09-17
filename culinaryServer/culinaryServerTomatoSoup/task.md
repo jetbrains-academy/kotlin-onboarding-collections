@@ -3,7 +3,7 @@ In this task we will make the `Soup` button live.
 
 In this task, you need to implement two functions in the `TomatoSoup.kt` file:
 
-- `getTomatoesForSoup` - which get `NUMBER_OF_TOMATOES` tomatoes from the _fridge_ (a `VegetableType` with type `VegetableType.Tomato`), see `FridgeImpl` class to find the nessesary API
+- `getTomatoesForSoup` - which get `NUMBER_OF_TOMATOES` tomatoes from the _fridge_ (a `VegetableType` with type `VegetableType.Tomato`), see `FridgeImpl` class to find the necessary API
 - `prepareTomatoes` - that accept a _list_ of tomatoes, and do the following with each item from the list:
 
   - put it into the kitchen (see `KitchenImpl.put`)
