@@ -21,6 +21,7 @@ content:
   - FeedbackSurvey
 environment_settings:
   jvm_language_level: JDK_17
+  gradle_version: 9.5.0
 additional_files:
   - name: utils/src/main/resources/images/old/school/ide/run.png
     is_binary: true
