@@ -21,5 +21,5 @@ you can either explore it on your own or implement ideas that don't require inve
 - To simplify the process of uploading a new photo, you could add a special button for it.
 
 <p align="center">
-    <img src="../../utils/src/main/resources/images/old/school/finish.svg" alt="Possible improvments" width="220"/>
+    <img src="../../utils/src/main/resources/images/old/school/finish.svg" alt="Possible improvements" width="220"/>
 </p>
