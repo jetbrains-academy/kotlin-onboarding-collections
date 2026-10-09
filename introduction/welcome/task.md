@@ -11,14 +11,14 @@ Each lesson of the course is built in the form of a project:
 step by step, by completing different small tasks,
 you will get a fully working project in the end.
 Some of the projects are practice-based and introduce to you
-different helpful Kotlin functions though practical exercises without much theory part.
+different helpful Kotlin functions through practical exercises without much theory part.
 The topic of this module is _Next to the future_.
 It means that in each lesson, you will create a web application with
 some images familiar from your (or your parents') childhood.
 Note, part of the code will be prewritten by the course author
 to avoid going deep into web programming in this course.
 
-**Please join the course chat on Discord** using [this link](https://discord.gg/pN3kfttB).
+**Please join the course chat on Discord** using [this link](https://discord.gg/tuF6FjGY9U).
 There, you can ask questions, interact with instructors, and connect with your fellow students.
 
 Let's get started!
