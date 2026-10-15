@@ -1,5 +1,5 @@
 type: marketplace
-title: "Kotlin Onboarding: Collections"
+title: "Kotlin Onboarding 3: Collections"
 language: English
 summary: |-
   <p>This course is designed for novices in Kotlin and focuses on working with collections in the Kotlin language. This is the third module of the course, the <a href="https://plugins.jetbrains.com/plugin/21067-kotlin-onboarding--introduction">first</a> and <a href="https://plugins.jetbrains.com/plugin/21913-kotlin-onboarding-object-oriented-programming">second</a> modules can be found on JetBrains Marketplace. This module assumes that you are already familiar with all the constructs discussed in the first and second parts.</p>
@@ -8,7 +8,7 @@ summary: |-
   <p>All topics will be accompanied by links to <a href="https://kotlinlang.org/docs/home.html">the official Kotlin documentation</a>, which you can read later.</p>
   <p><i>After this course, you will be ready to use Kotlin collections in efficient ways.</i></p>
 vendor:
-  name: JetBrains
+  name: JetBrains s.r.o.
   email: support@jetbrains.com
   url: https://www.jetbrains.com/
 programming_language: Kotlin
